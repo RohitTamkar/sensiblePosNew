@@ -4040,6 +4040,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                       await FFAppState().kotDocRef!.update({
                                                                                         ...createTableKotRecordData(
                                                                                           finalBillAmt: FFAppState().finalAmt,
+                                                                                          id: '',
                                                                                         ),
                                                                                         ...mapToFirestore(
                                                                                           {
@@ -4061,6 +4062,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                           tableNo: FFAppState().tableNo,
                                                                                           premiseName: FFAppState().selectedPremise,
                                                                                           finalBillAmt: FFAppState().finalAmt,
+                                                                                          billAmt: FFAppState().billAmt,
                                                                                         ),
                                                                                         ...mapToFirestore(
                                                                                           {
@@ -4080,6 +4082,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                           tableNo: FFAppState().tableNo,
                                                                                           premiseName: FFAppState().selectedPremise,
                                                                                           finalBillAmt: FFAppState().finalAmt,
+                                                                                          billAmt: FFAppState().billAmt,
                                                                                         ),
                                                                                         ...mapToFirestore(
                                                                                           {
@@ -4203,6 +4206,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                     await FFAppState().kotDocRef!.update({
                                                                                       ...createTableKotRecordData(
                                                                                         finalBillAmt: FFAppState().finalAmt,
+                                                                                        billAmt: FFAppState().billAmt,
                                                                                       ),
                                                                                       ...mapToFirestore(
                                                                                         {
@@ -4224,6 +4228,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                         tableNo: FFAppState().tableNo,
                                                                                         premiseName: FFAppState().selectedPremise,
                                                                                         finalBillAmt: FFAppState().finalAmt,
+                                                                                        billAmt: FFAppState().billAmt,
                                                                                       ),
                                                                                       ...mapToFirestore(
                                                                                         {
@@ -4243,6 +4248,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                         tableNo: FFAppState().tableNo,
                                                                                         premiseName: FFAppState().selectedPremise,
                                                                                         finalBillAmt: FFAppState().finalAmt,
+                                                                                        billAmt: FFAppState().billAmt,
                                                                                       ),
                                                                                       ...mapToFirestore(
                                                                                         {
@@ -4393,24 +4399,199 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 hasBeenTriggered: hasContainerTriggered7),
                                                                       ),
                                                                     ),
-                                                                    if (tableListAppSettingsRecord
-                                                                            ?.settingList
-                                                                            ?.where((e) =>
-                                                                                e.title ==
-                                                                                'enableSaveBill')
-                                                                            .toList()
-                                                                            ?.firstOrNull
-                                                                            ?.value ??
-                                                                        true)
-                                                                      Expanded(
-                                                                        flex: 8,
+                                                                    Expanded(
+                                                                      flex: 8,
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0),
                                                                         child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              1.0,
-                                                                              0.0),
+                                                                            Container(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 0.15,
+                                                                          height:
+                                                                              MediaQuery.sizeOf(context).height * 0.085,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                          ),
+                                                                          child:
+                                                                              FFButtonWidget(
+                                                                            onPressed:
+                                                                                () async {
+                                                                              var _shouldSetState = false;
+                                                                              if (functions.filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList()).length > 0) {
+                                                                                _model.prdlistsavebillkotCopy = await actions.filterProductsKot(
+                                                                                  FFAppState().selBill,
+                                                                                  FFAppState().allBillsList.toList(),
+                                                                                  true,
+                                                                                );
+                                                                                _shouldSetState = true;
+                                                                                _model.internetconkotCopy = await actions.checkInternetConnection();
+                                                                                _shouldSetState = true;
+                                                                                if (_model.internetconkotCopy!) {
+                                                                                  if (FFAppState().kotDocRef != null) {
+                                                                                    await FFAppState().kotDocRef!.update({
+                                                                                      ...createTableKotRecordData(
+                                                                                        finalBillAmt: FFAppState().finalAmt,
+                                                                                        billAmt: FFAppState().billAmt,
+                                                                                        kotStatus: 'BILLING',
+                                                                                      ),
+                                                                                      ...mapToFirestore(
+                                                                                        {
+                                                                                          'productList': getSelItemListListFirestoreData(
+                                                                                            _model.prdlistsavebillkotCopy,
+                                                                                          ),
+                                                                                        },
+                                                                                      ),
+                                                                                    });
+                                                                                  } else {
+                                                                                    var tableKotRecordReference = TableKotRecord.createDoc(FFAppState().outletIdRef!);
+                                                                                    await tableKotRecordReference.set({
+                                                                                      ...createTableKotRecordData(
+                                                                                        dayId: functions.getDayId(),
+                                                                                        createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                        checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                        orderType: 'TABLE_KOT',
+                                                                                        kotStatus: 'BILLING',
+                                                                                        tableNo: FFAppState().tableNo,
+                                                                                        premiseName: FFAppState().selectedPremise,
+                                                                                        finalBillAmt: FFAppState().finalAmt,
+                                                                                        billAmt: FFAppState().billAmt,
+                                                                                      ),
+                                                                                      ...mapToFirestore(
+                                                                                        {
+                                                                                          'productList': getSelItemListListFirestoreData(
+                                                                                            _model.prdlistsavebillkotCopy,
+                                                                                          ),
+                                                                                        },
+                                                                                      ),
+                                                                                    });
+                                                                                    _model.kotCopyCopy = TableKotRecord.getDocumentFromData({
+                                                                                      ...createTableKotRecordData(
+                                                                                        dayId: functions.getDayId(),
+                                                                                        createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                        checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                        orderType: 'TABLE_KOT',
+                                                                                        kotStatus: 'BILLING',
+                                                                                        tableNo: FFAppState().tableNo,
+                                                                                        premiseName: FFAppState().selectedPremise,
+                                                                                        finalBillAmt: FFAppState().finalAmt,
+                                                                                        billAmt: FFAppState().billAmt,
+                                                                                      ),
+                                                                                      ...mapToFirestore(
+                                                                                        {
+                                                                                          'productList': getSelItemListListFirestoreData(
+                                                                                            _model.prdlistsavebillkotCopy,
+                                                                                          ),
+                                                                                        },
+                                                                                      ),
+                                                                                    }, tableKotRecordReference);
+                                                                                    _shouldSetState = true;
+
+                                                                                    await _model.kotCopyCopy!.reference.update(createTableKotRecordData(
+                                                                                      id: _model.kotCopyCopy?.reference.id,
+                                                                                    ));
+                                                                                  }
+                                                                                } else {
+                                                                                  await showDialog(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        content: Text('Internet Not Available'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  );
+                                                                                  if (_shouldSetState) safeSetState(() {});
+                                                                                  return;
+                                                                                }
+
+                                                                                await actions.removeFromAllBillList(
+                                                                                  FFAppState().selBill,
+                                                                                );
+                                                                                safeSetState(() {
+                                                                                  _model.dropDownValueController?.value = 'CASH';
+                                                                                });
+                                                                                _model.prdid = null;
+                                                                                await actions.clearValue();
+                                                                                FFAppState().noOfItems = 0;
+                                                                                FFAppState().subTotal = 0.0;
+                                                                                FFAppState().delCharges = 0.0;
+                                                                                FFAppState().kotDocRef = null;
+                                                                                FFAppState().prdid = '';
+                                                                                FFAppState().finalAmt = 0.0;
+                                                                                FFAppState().billAmt = 0.0;
+                                                                                FFAppState().tableViewHideShow = true;
+                                                                                safeSetState(() {});
+                                                                                if (_shouldSetState) safeSetState(() {});
+                                                                                return;
+                                                                              } else {
+                                                                                if (_shouldSetState) safeSetState(() {});
+                                                                                return;
+                                                                              }
+
+                                                                              if (_shouldSetState)
+                                                                                safeSetState(() {});
+                                                                            },
+                                                                            text:
+                                                                                FFLocalizations.of(context).getText(
+                                                                              '3gebdqgm' /* Save Bill */,
+                                                                            ),
+                                                                            options:
+                                                                                FFButtonOptions(
+                                                                              height: 40.0,
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                    color: Colors.white,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.bold,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                  ),
+                                                                              elevation: 0.0,
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
+                                                                          ),
+                                                                        ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation8']!,
+                                                                                hasBeenTriggered: hasContainerTriggered8),
+                                                                      ),
+                                                                    ),
+                                                                    Expanded(
+                                                                      flex: 8,
+                                                                      child:
+                                                                          InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          if (animationsMap['containerOnActionTriggerAnimation9'] !=
+                                                                              null) {
+                                                                            safeSetState(() =>
+                                                                                hasContainerTriggered9 = true);
+                                                                            SchedulerBinding.instance.addPostFrameCallback((_) async =>
+                                                                                await animationsMap['containerOnActionTriggerAnimation9']!.controller.forward(from: 0.0));
+                                                                          }
+                                                                        },
+                                                                        child:
+                                                                            ClipRRect(
                                                                           child:
                                                                               Container(
                                                                             width:
@@ -4421,6 +4602,230 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                             ),
+                                                                            child:
+                                                                                FFButtonWidget(
+                                                                              onPressed: () async {
+                                                                                var _shouldSetState = false;
+                                                                                if (functions.filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList()).length > 0) {
+                                                                                  _model.prdlistsavebillupiCopy = await actions.filterProductsKot(
+                                                                                    FFAppState().selBill,
+                                                                                    FFAppState().allBillsList.toList(),
+                                                                                    false,
+                                                                                  );
+                                                                                  _shouldSetState = true;
+                                                                                  _model.internetconCopyCopy = await actions.checkInternetConnection();
+                                                                                  _shouldSetState = true;
+                                                                                  if (_model.internetconCopyCopy!) {
+                                                                                    if (FFAppState().kotDocRef != null) {
+                                                                                      await FFAppState().kotDocRef!.update({
+                                                                                        ...createTableKotRecordData(
+                                                                                          finalBillAmt: FFAppState().finalAmt,
+                                                                                          billAmt: FFAppState().billAmt,
+                                                                                          kotJson: 'BILLING',
+                                                                                        ),
+                                                                                        ...mapToFirestore(
+                                                                                          {
+                                                                                            'productList': getSelItemListListFirestoreData(
+                                                                                              _model.prdlistsavebillupiCopy,
+                                                                                            ),
+                                                                                          },
+                                                                                        ),
+                                                                                      });
+                                                                                    } else {
+                                                                                      var tableKotRecordReference = TableKotRecord.createDoc(FFAppState().outletIdRef!);
+                                                                                      await tableKotRecordReference.set({
+                                                                                        ...createTableKotRecordData(
+                                                                                          dayId: functions.getDayId(),
+                                                                                          createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                          checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                          orderType: 'TABLE_KOT',
+                                                                                          kotStatus: 'BILLING',
+                                                                                          tableNo: FFAppState().tableNo,
+                                                                                          premiseName: FFAppState().selectedPremise,
+                                                                                          finalBillAmt: FFAppState().finalAmt,
+                                                                                          billAmt: FFAppState().billAmt,
+                                                                                        ),
+                                                                                        ...mapToFirestore(
+                                                                                          {
+                                                                                            'productList': getSelItemListListFirestoreData(
+                                                                                              _model.prdlistsavebillupiCopy,
+                                                                                            ),
+                                                                                          },
+                                                                                        ),
+                                                                                      });
+                                                                                      _model.kotCopy2 = TableKotRecord.getDocumentFromData({
+                                                                                        ...createTableKotRecordData(
+                                                                                          dayId: functions.getDayId(),
+                                                                                          createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                          checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                          orderType: 'TABLE_KOT',
+                                                                                          kotStatus: 'BILLING',
+                                                                                          tableNo: FFAppState().tableNo,
+                                                                                          premiseName: FFAppState().selectedPremise,
+                                                                                          finalBillAmt: FFAppState().finalAmt,
+                                                                                          billAmt: FFAppState().billAmt,
+                                                                                        ),
+                                                                                        ...mapToFirestore(
+                                                                                          {
+                                                                                            'productList': getSelItemListListFirestoreData(
+                                                                                              _model.prdlistsavebillupiCopy,
+                                                                                            ),
+                                                                                          },
+                                                                                        ),
+                                                                                      }, tableKotRecordReference);
+                                                                                      _shouldSetState = true;
+
+                                                                                      await _model.kotCopy!.reference.update(createTableKotRecordData(
+                                                                                        id: _model.kotCopy?.reference.id,
+                                                                                      ));
+                                                                                      FFAppState().kotDocRef = _model.kotCopy?.reference;
+                                                                                      safeSetState(() {});
+                                                                                    }
+
+                                                                                    _model.tablekotCopy = await queryTableKotRecordOnce(
+                                                                                      parent: FFAppState().outletIdRef,
+                                                                                      queryBuilder: (tableKotRecord) => tableKotRecord.where(
+                                                                                        'id',
+                                                                                        isEqualTo: FFAppState().kotDocRef?.id,
+                                                                                      ),
+                                                                                      singleRecord: true,
+                                                                                    ).then((s) => s.firstOrNull);
+                                                                                    _shouldSetState = true;
+                                                                                    _model.returnedListkotCopy = await actions.selectBillPrint(
+                                                                                      FFAppState().selBill.toString(),
+                                                                                      FFAppState().allBillsList.toList(),
+                                                                                    );
+                                                                                    _shouldSetState = true;
+                                                                                    _model.devicekotCopy = await actions.newCustomAction(
+                                                                                      FFAppState().printerIndex,
+                                                                                    );
+                                                                                    _shouldSetState = true;
+                                                                                    _model.spoutletkotCopy = await queryServicePointOutletRecordOnce(
+                                                                                      parent: FFAppState().outletIdRef,
+                                                                                    );
+                                                                                    _shouldSetState = true;
+                                                                                    await actions.printBilltable(
+                                                                                      _model.returnedListkotCopy!.toList(),
+                                                                                      _model.devicekotCopy!.toList(),
+                                                                                      FFAppState().isPrinterConnected,
+                                                                                      FFAppState().printerName,
+                                                                                      _model.tablekotCopy!,
+                                                                                      FFAppState().paperSize,
+                                                                                      tableListAppSettingsRecord!,
+                                                                                    );
+                                                                                    _model.prdlistsavebillkotupdateCopy = await actions.filterProductsKot(
+                                                                                      FFAppState().selBill,
+                                                                                      FFAppState().allBillsList.toList(),
+                                                                                      true,
+                                                                                    );
+                                                                                    _shouldSetState = true;
+
+                                                                                    await FFAppState().kotDocRef!.update({
+                                                                                      ...mapToFirestore(
+                                                                                        {
+                                                                                          'productList': getSelItemListListFirestoreData(
+                                                                                            _model.prdlistsavebillkotupdateCopy,
+                                                                                          ),
+                                                                                        },
+                                                                                      ),
+                                                                                    });
+                                                                                    await actions.removeFromAllBillList(
+                                                                                      FFAppState().selBill,
+                                                                                    );
+                                                                                    safeSetState(() {
+                                                                                      _model.dropDownValueController?.value = 'CASH';
+                                                                                    });
+                                                                                    _model.prdid = null;
+                                                                                    await actions.clearValue();
+                                                                                    FFAppState().noOfItems = 0;
+                                                                                    FFAppState().subTotal = 0.0;
+                                                                                    FFAppState().delCharges = 0.0;
+                                                                                    FFAppState().kotDocRef = null;
+                                                                                    FFAppState().prdid = '';
+                                                                                    FFAppState().finalAmt = 0.0;
+                                                                                    FFAppState().billAmt = 0.0;
+                                                                                    FFAppState().tableViewHideShow = true;
+                                                                                    safeSetState(() {});
+                                                                                    if (_shouldSetState) safeSetState(() {});
+                                                                                    return;
+                                                                                  } else {
+                                                                                    await showDialog(
+                                                                                      context: context,
+                                                                                      builder: (alertDialogContext) {
+                                                                                        return AlertDialog(
+                                                                                          content: Text('Internet Not Available'),
+                                                                                          actions: [
+                                                                                            TextButton(
+                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                              child: Text('Ok'),
+                                                                                            ),
+                                                                                          ],
+                                                                                        );
+                                                                                      },
+                                                                                    );
+                                                                                    if (_shouldSetState) safeSetState(() {});
+                                                                                    return;
+                                                                                  }
+                                                                                } else {
+                                                                                  if (_shouldSetState) safeSetState(() {});
+                                                                                  return;
+                                                                                }
+
+                                                                                if (_shouldSetState) safeSetState(() {});
+                                                                              },
+                                                                              text: FFLocalizations.of(context).getText(
+                                                                                'sse8xp3p' /* Print Bill */,
+                                                                              ),
+                                                                              options: FFButtonOptions(
+                                                                                height: 40.0,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      color: Colors.white,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.bold,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                    ),
+                                                                                elevation: 0.0,
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ).animateOnActionTrigger(
+                                                                              animationsMap['containerOnActionTriggerAnimation9']!,
+                                                                              hasBeenTriggered: hasContainerTriggered9),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                                Padding(
+                                                                  padding:
+                                                                      EdgeInsets
+                                                                          .all(
+                                                                              16.0),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      Expanded(
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              250.0,
+                                                                          height:
+                                                                              50.0,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Visibility(
+                                                                            visible:
+                                                                                tableListAppSettingsRecord?.settingList?.where((e) => e.title == 'enableSaveBill').toList()?.firstOrNull?.value ?? true,
                                                                             child:
                                                                                 FFButtonWidget(
                                                                               onPressed: () async {
@@ -4892,642 +5297,12 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 if (_shouldSetState) safeSetState(() {});
                                                                               },
                                                                               text: FFLocalizations.of(context).getText(
-                                                                                'l5p8byv1' /* Save Bill */,
+                                                                                'l5p8byv1' /* Settled & Save Bill */,
                                                                               ),
                                                                               options: FFButtonOptions(
-                                                                                width: double.infinity,
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                textStyle: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                                      color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                      letterSpacing: 0.0,
-                                                                                      fontWeight: FontWeight.w600,
-                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
-                                                                                    ),
-                                                                                borderSide: BorderSide(
-                                                                                  color: Colors.transparent,
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                              ),
-                                                                            ),
-                                                                          ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation8']!, hasBeenTriggered: hasContainerTriggered8),
-                                                                        ),
-                                                                      ),
-                                                                    Expanded(
-                                                                      flex: 8,
-                                                                      child:
-                                                                          InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          if (animationsMap['containerOnActionTriggerAnimation9'] !=
-                                                                              null) {
-                                                                            safeSetState(() =>
-                                                                                hasContainerTriggered9 = true);
-                                                                            SchedulerBinding.instance.addPostFrameCallback((_) async =>
-                                                                                await animationsMap['containerOnActionTriggerAnimation9']!.controller.forward(from: 0.0));
-                                                                          }
-                                                                        },
-                                                                        child:
-                                                                            ClipRRect(
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                MediaQuery.sizeOf(context).width * 0.15,
-                                                                            height:
-                                                                                MediaQuery.sizeOf(context).height * 0.085,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                            ),
-                                                                            child:
-                                                                                FFButtonWidget(
-                                                                              onPressed: () async {
-                                                                                var _shouldSetState = false;
-                                                                                if (getJsonField(
-                                                                                  FFAppState().shiftDetailsJson,
-                                                                                  r'''$.shiftExists''',
-                                                                                )) {
-                                                                                  FFAppState().count = FFAppState().count + 1;
-                                                                                  FFAppState().newcount = FFAppState().newcount + 1;
-                                                                                  FFAppState().billcount = FFAppState().billcount + 1;
-                                                                                } else {
-                                                                                  FFAppState().count = FFAppState().count + 1;
-                                                                                  FFAppState().newcount = FFAppState().newcount + 1;
-                                                                                  FFAppState().billcount = FFAppState().billcount + 1;
-                                                                                }
-
-                                                                                _model.prdlinstnewtx = await actions.filterProductsKot(
-                                                                                  FFAppState().selBill,
-                                                                                  FFAppState().allBillsList.toList(),
-                                                                                  true,
-                                                                                );
-                                                                                _shouldSetState = true;
-                                                                                if (!isAndroid) {
-                                                                                  await actions.newCustomAction5();
-                                                                                }
-                                                                                if (_model.dropDownValue == 'CREDIT') {
-                                                                                  if (FFAppState().setCustRef?.id != null && FFAppState().setCustRef?.id != '') {
-                                                                                    if (FFAppState().oldBalance < FFAppState().custCredit) {
-                                                                                      _model.totalcredit = await actions.oldbalanceplusamt(
-                                                                                        FFAppState().oldBalance,
-                                                                                        FFAppState().finalAmt,
-                                                                                      );
-                                                                                      _shouldSetState = true;
-
-                                                                                      await FFAppState().setCustRef!.update(createPartyRecordData(
-                                                                                            credit: true,
-                                                                                            oldBalance: valueOrDefault<int>(
-                                                                                              _model.totalcredit,
-                                                                                              0,
-                                                                                            ),
-                                                                                            lastVisit: getCurrentTimestamp.millisecondsSinceEpoch.toString(),
-                                                                                          ));
-                                                                                    } else {
-                                                                                      await showDialog(
-                                                                                        context: context,
-                                                                                        builder: (alertDialogContext) {
-                                                                                          return AlertDialog(
-                                                                                            content: Text('Credit Limit Exceeded !'),
-                                                                                            actions: [
-                                                                                              TextButton(
-                                                                                                onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                child: Text('Ok'),
-                                                                                              ),
-                                                                                            ],
-                                                                                          );
-                                                                                        },
-                                                                                      );
-                                                                                      if (_shouldSetState) safeSetState(() {});
-                                                                                      return;
-                                                                                    }
-                                                                                  } else {
-                                                                                    await showDialog(
-                                                                                      context: context,
-                                                                                      builder: (alertDialogContext) {
-                                                                                        return AlertDialog(
-                                                                                          content: Text('Select Customer '),
-                                                                                          actions: [
-                                                                                            TextButton(
-                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                              child: Text('Ok'),
-                                                                                            ),
-                                                                                          ],
-                                                                                        );
-                                                                                      },
-                                                                                    );
-                                                                                    scaffoldKey.currentState!.openEndDrawer();
-                                                                                    if (_shouldSetState) safeSetState(() {});
-                                                                                    return;
-                                                                                  }
-                                                                                }
-                                                                                _model.interprd = await actions.checkInternetConnection();
-                                                                                _shouldSetState = true;
-                                                                                if (_model.interprd!) {
-                                                                                  var invoiceRecordReference = InvoiceRecord.createDoc(FFAppState().outletIdRef!);
-                                                                                  await invoiceRecordReference.set({
-                                                                                    ...createInvoiceRecordData(
-                                                                                      invoice: functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
-                                                                                      party: valueOrDefault<String>(
-                                                                                        FFAppState().setCustRef?.id,
-                                                                                        'NA',
-                                                                                      ),
-                                                                                      products: '',
-                                                                                      invoiceDate: functions.timestampToMili(getCurrentTimestamp),
-                                                                                      paymentMode: _model.dropDownValue,
-                                                                                      dayId: functions.getDayId(),
-                                                                                      discountAmt: valueOrDefault<double>(
-                                                                                        FFAppState().disAmt,
-                                                                                        0.0,
-                                                                                      ),
-                                                                                      discountPer: valueOrDefault<double>(
-                                                                                        FFAppState().disPer,
-                                                                                        0.0,
-                                                                                      ),
-                                                                                      delliveryChrg: valueOrDefault<double>(
-                                                                                        FFAppState().delCharges,
-                                                                                        0.0,
-                                                                                      ),
-                                                                                      taxAmt: FFAppState().taxamt,
-                                                                                      billAmt: valueOrDefault<double>(
-                                                                                        FFAppState().billAmt,
-                                                                                        0.0,
-                                                                                      ),
-                                                                                      finalBillAmt: valueOrDefault<double>(
-                                                                                        FFAppState().finalAmt,
-                                                                                        0.0,
-                                                                                      ),
-                                                                                      shiftId: getJsonField(
-                                                                                        FFAppState().shiftDetailsJson,
-                                                                                        r'''$.shiftId''',
-                                                                                      ).toString(),
-                                                                                      isDeleted: false,
-                                                                                      count: FFAppState().newcount,
-                                                                                    ),
-                                                                                    ...mapToFirestore(
-                                                                                      {
-                                                                                        'productList': getSelItemListListFirestoreData(
-                                                                                          _model.prdlinstnewtx,
-                                                                                        ),
-                                                                                      },
-                                                                                    ),
-                                                                                  });
-                                                                                  _model.invonlineprt = InvoiceRecord.getDocumentFromData({
-                                                                                    ...createInvoiceRecordData(
-                                                                                      invoice: functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
-                                                                                      party: valueOrDefault<String>(
-                                                                                        FFAppState().setCustRef?.id,
-                                                                                        'NA',
-                                                                                      ),
-                                                                                      products: '',
-                                                                                      invoiceDate: functions.timestampToMili(getCurrentTimestamp),
-                                                                                      paymentMode: _model.dropDownValue,
-                                                                                      dayId: functions.getDayId(),
-                                                                                      discountAmt: valueOrDefault<double>(
-                                                                                        FFAppState().disAmt,
-                                                                                        0.0,
-                                                                                      ),
-                                                                                      discountPer: valueOrDefault<double>(
-                                                                                        FFAppState().disPer,
-                                                                                        0.0,
-                                                                                      ),
-                                                                                      delliveryChrg: valueOrDefault<double>(
-                                                                                        FFAppState().delCharges,
-                                                                                        0.0,
-                                                                                      ),
-                                                                                      taxAmt: FFAppState().taxamt,
-                                                                                      billAmt: valueOrDefault<double>(
-                                                                                        FFAppState().billAmt,
-                                                                                        0.0,
-                                                                                      ),
-                                                                                      finalBillAmt: valueOrDefault<double>(
-                                                                                        FFAppState().finalAmt,
-                                                                                        0.0,
-                                                                                      ),
-                                                                                      shiftId: getJsonField(
-                                                                                        FFAppState().shiftDetailsJson,
-                                                                                        r'''$.shiftId''',
-                                                                                      ).toString(),
-                                                                                      isDeleted: false,
-                                                                                      count: FFAppState().newcount,
-                                                                                    ),
-                                                                                    ...mapToFirestore(
-                                                                                      {
-                                                                                        'productList': getSelItemListListFirestoreData(
-                                                                                          _model.prdlinstnewtx,
-                                                                                        ),
-                                                                                      },
-                                                                                    ),
-                                                                                  }, invoiceRecordReference);
-                                                                                  _shouldSetState = true;
-
-                                                                                  await _model.invonlineprt!.reference.update(createInvoiceRecordData(
-                                                                                    id: _model.invonlineprt?.reference.id,
-                                                                                  ));
-
-                                                                                  await FFAppState().kotDocRef!.update(createTableKotRecordData(
-                                                                                        kotStatus: 'FINAL',
-                                                                                      ));
-                                                                                } else {
-                                                                                  await showDialog(
-                                                                                    context: context,
-                                                                                    builder: (alertDialogContext) {
-                                                                                      return AlertDialog(
-                                                                                        content: Text('Internet Not Available'),
-                                                                                        actions: [
-                                                                                          TextButton(
-                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                            child: Text('Ok'),
-                                                                                          ),
-                                                                                        ],
-                                                                                      );
-                                                                                    },
-                                                                                  );
-                                                                                  if (_shouldSetState) safeSetState(() {});
-                                                                                  return;
-                                                                                }
-
-                                                                                if (getJsonField(
-                                                                                  FFAppState().shiftDetailsJson,
-                                                                                  r'''$.shiftExists''',
-                                                                                )) {
-                                                                                  _model.shiftSummarResultsNew = await actions.calShiftSummary(
-                                                                                    _model.invonlineprt!,
-                                                                                    FFAppState().shiftDetailsJson,
-                                                                                  );
-                                                                                  _shouldSetState = true;
-                                                                                  FFAppState().updateShiftDetailsStruct(
-                                                                                    (e) => e
-                                                                                      ..billCount = valueOrDefault<int>(
-                                                                                        FFAppState().billcount,
-                                                                                        0,
-                                                                                      )
-                                                                                      ..totalSale = getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.totalSale''',
-                                                                                      )
-                                                                                      ..deliveryCharges = getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.deliveryCharges''',
-                                                                                      )
-                                                                                      ..tax = getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.tax''',
-                                                                                      )
-                                                                                      ..lastBillNo = getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.lastBillNo''',
-                                                                                      ).toString()
-                                                                                      ..discount = getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.discount''',
-                                                                                      )
-                                                                                      ..lastBillTime = functions.timestampToMili(getCurrentTimestamp)
-                                                                                      ..cashSale = getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.cashSale''',
-                                                                                      )
-                                                                                      ..paymentJson = getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.paymentJson''',
-                                                                                      ).toString()
-                                                                                      ..dayId = getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.dayId''',
-                                                                                      ).toString()
-                                                                                      ..shiftId = getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.shiftId''',
-                                                                                      ).toString()
-                                                                                      ..hivekey = FFAppState().shiftDetails.hivekey
-                                                                                      ..newIDShift = FFAppState().shiftDetails.newIDShift
-                                                                                      ..code = FFAppState().shiftDetails.code
-                                                                                      ..endTime = FFAppState().shiftDetails.endTime
-                                                                                      ..advanceAmtTotal = FFAppState().shiftDetails.advanceAmtTotal
-                                                                                      ..customerReciveAmtTotal = FFAppState().shiftDetails.customerReciveAmtTotal
-                                                                                      ..expensesAmtTotal = FFAppState().shiftDetails.expensesAmtTotal
-                                                                                      ..openingAmt = FFAppState().shiftDetails.openingAmt
-                                                                                      ..receiveAmtTotal = FFAppState().shiftDetails.receiveAmtTotal
-                                                                                      ..refoundAmount = FFAppState().shiftDetails.refoundAmount
-                                                                                      ..roundOff = FFAppState().shiftDetails.roundOff
-                                                                                      ..cashInHand = FFAppState().shiftDetails.cashInHand
-                                                                                      ..startTime = FFAppState().shiftDetails.startTime
-                                                                                      ..inActive = FFAppState().shiftDetails.inActive
-                                                                                      ..shiftNo = FFAppState().shiftDetails.shiftNo
-                                                                                      ..subTotalBill = FFAppState().shiftDetails.subTotalBill
-                                                                                      ..version = FFAppState().shiftDetails.version
-                                                                                      ..userId = FFAppState().shiftDetails.userId
-                                                                                      ..deviceId = FFAppState().shiftDetails.deviceId
-                                                                                      ..synC = FFAppState().shiftDetails.synC
-                                                                                      ..id = FFAppState().shiftDetails.id,
-                                                                                  );
-                                                                                  if (_model.interprd!) {
-                                                                                    _model.shiftondataprint = await queryShiftRecordOnce(
-                                                                                      parent: FFAppState().outletIdRef,
-                                                                                      queryBuilder: (shiftRecord) => shiftRecord.where(
-                                                                                        'id',
-                                                                                        isEqualTo: valueOrDefault<String>(
-                                                                                          getJsonField(
-                                                                                            FFAppState().shiftDetailsJson,
-                                                                                            r'''$.ref''',
-                                                                                          )?.toString(),
-                                                                                          'NA',
-                                                                                        ),
-                                                                                      ),
-                                                                                      singleRecord: true,
-                                                                                    ).then((s) => s.firstOrNull);
-                                                                                    _shouldSetState = true;
-
-                                                                                    await _model.shiftondataprint!.reference.update(createShiftRecordData(
-                                                                                      billCount: FFAppState().shiftDetails.billCount,
-                                                                                      dayId: getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.dayId''',
-                                                                                      ).toString(),
-                                                                                      lastBillNo: getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.lastBillNo''',
-                                                                                      ).toString(),
-                                                                                      lastBillTime: functions.timestampToMili(getCurrentTimestamp),
-                                                                                      tax: getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.tax''',
-                                                                                      ),
-                                                                                      deliveryCharges: getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.deliveryCharges''',
-                                                                                      ),
-                                                                                      discount: getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.discount''',
-                                                                                      ),
-                                                                                      totalSale: getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.totalSale''',
-                                                                                      ),
-                                                                                      cashSale: getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.cashSale''',
-                                                                                      ),
-                                                                                      paymentJson: getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.paymentJson''',
-                                                                                      ).toString(),
-                                                                                      code: FFAppState().shiftDetails.code,
-                                                                                      endTime: FFAppState().shiftDetails.endTime,
-                                                                                      advanceAmtTotal: FFAppState().shiftDetails.advanceAmtTotal,
-                                                                                      customerReciveAmtTotal: FFAppState().shiftDetails.customerReciveAmtTotal,
-                                                                                      expensesAmtTotal: FFAppState().shiftDetails.expensesAmtTotal,
-                                                                                      openingAmt: FFAppState().shiftDetails.openingAmt,
-                                                                                      receiveAmtTotal: FFAppState().shiftDetails.receiveAmtTotal,
-                                                                                      refoundAmount: FFAppState().shiftDetails.refoundAmount,
-                                                                                      roundOff: FFAppState().shiftDetails.roundOff,
-                                                                                      cashInHand: getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.cashSale''',
-                                                                                      ),
-                                                                                      startTime: FFAppState().shiftDetails.startTime,
-                                                                                      inActive: FFAppState().shiftDetails.inActive,
-                                                                                      shiftNo: FFAppState().shiftDetails.shiftNo,
-                                                                                      shiftId: getJsonField(
-                                                                                        _model.shiftSummarResultsNew,
-                                                                                        r'''$.shiftId''',
-                                                                                      ).toString(),
-                                                                                    ));
-                                                                                  } else {
-                                                                                    await showDialog(
-                                                                                      context: context,
-                                                                                      builder: (alertDialogContext) {
-                                                                                        return AlertDialog(
-                                                                                          content: Text('Internet Not Available'),
-                                                                                          actions: [
-                                                                                            TextButton(
-                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                              child: Text('Ok'),
-                                                                                            ),
-                                                                                          ],
-                                                                                        );
-                                                                                      },
-                                                                                    );
-                                                                                    if (_shouldSetState) safeSetState(() {});
-                                                                                    return;
-                                                                                  }
-                                                                                } else {
-                                                                                  ScaffoldMessenger.of(context).showSnackBar(
-                                                                                    SnackBar(
-                                                                                      content: Text(
-                                                                                        'Login again to start Shift ',
-                                                                                        style: TextStyle(
-                                                                                          color: FlutterFlowTheme.of(context).primaryText,
-                                                                                        ),
-                                                                                      ),
-                                                                                      duration: Duration(milliseconds: 4000),
-                                                                                      backgroundColor: Color(0x00000000),
-                                                                                    ),
-                                                                                  );
-                                                                                  if (_shouldSetState) safeSetState(() {});
-                                                                                  return;
-                                                                                }
-
-                                                                                if (!functions.isPrinterSelected(FFAppState().printerDevice)!) {
-                                                                                  _model.resDevice2 = await actions.scanPrinter(
-                                                                                    FFAppState().posMode,
-                                                                                  );
-                                                                                  _shouldSetState = true;
-                                                                                }
-                                                                                _model.isconnected = await actions.connectDevice(
-                                                                                  FFAppState().printerDevice,
-                                                                                  FFAppState().printerIndex,
-                                                                                );
-                                                                                _shouldSetState = true;
-                                                                                if (_model.isconnected!) {
-                                                                                  FFAppState().lastBill = FFAppState().finalAmt;
-                                                                                  _model.returnedList2 = await actions.selectBillPrint(
-                                                                                    FFAppState().selBill.toString(),
-                                                                                    FFAppState().allBillsList.toList(),
-                                                                                  );
-                                                                                  _shouldSetState = true;
-                                                                                  _model.device = await actions.newCustomAction(
-                                                                                    FFAppState().printerIndex,
-                                                                                  );
-                                                                                  _shouldSetState = true;
-                                                                                  await actions.printBillnewhiveNEW(
-                                                                                    _model.returnedList2!.toList(),
-                                                                                    _model.device!.toList(),
-                                                                                    FFAppState().isPrinterConnected,
-                                                                                    FFAppState().printerName,
-                                                                                    _model.invonlineprt!,
-                                                                                    FFAppState().paperSize,
-                                                                                    tableListAppSettingsRecord!,
-                                                                                  );
-                                                                                  _model.spoutlet = await queryServicePointOutletRecordOnce(
-                                                                                    parent: FFAppState().outletIdRef,
-                                                                                  );
-                                                                                  _shouldSetState = true;
-                                                                                  if (tableListAppSettingsRecord!.settingList.where((e) => e.title == 'printKotWithBill').toList().firstOrNull!.value) {
-                                                                                    await actions.printKOTwithusbkioskhive(
-                                                                                      _model.returnedList2!.toList(),
-                                                                                      _model.device!.toList(),
-                                                                                      FFAppState().isPrinterConnected,
-                                                                                      FFAppState().printerName,
-                                                                                      _model.invonlineprt!,
-                                                                                      FFAppState().paperSize,
-                                                                                      tableListAppSettingsRecord!,
-                                                                                      FFAppState().port,
-                                                                                      FFAppState().ipAddresss,
-                                                                                      _model.spoutlet!.toList(),
-                                                                                    );
-                                                                                  }
-                                                                                  if (tableListAppSettingsRecord!.settingList.where((e) => e.title == 'enableStock').toList().firstOrNull!.value) {
-                                                                                    FFAppState().startLoop = 0;
-                                                                                    while (FFAppState().startLoop < _model.prdlinstnewtx!.length) {
-                                                                                      _model.stockupdateprdprt = await queryProductRecordOnce(
-                                                                                        parent: FFAppState().outletIdRef,
-                                                                                        queryBuilder: (productRecord) => productRecord
-                                                                                            .where(
-                                                                                              'id',
-                                                                                              isEqualTo: (_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.id,
-                                                                                            )
-                                                                                            .where(
-                                                                                              'stockable',
-                                                                                              isEqualTo: true,
-                                                                                            ),
-                                                                                        singleRecord: true,
-                                                                                      ).then((s) => s.firstOrNull);
-                                                                                      _shouldSetState = true;
-                                                                                      if (_model.stockupdateprdprt != null) {
-                                                                                        await _model.stockupdateprdprt!.reference.update({
-                                                                                          ...mapToFirestore(
-                                                                                            {
-                                                                                              'currentStock': FieldValue.increment(-(functions.doubleToInt((_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)),
-                                                                                            },
-                                                                                          ),
-                                                                                        });
-                                                                                        _model.itemprd2 = await actions.hivegetproductbyId(
-                                                                                          _model.stockupdateprdprt?.reference.id,
-                                                                                          _model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop),
-                                                                                          'get',
-                                                                                        );
-                                                                                        _shouldSetState = true;
-                                                                                        FFAppState().updateProductHiveputStruct(
-                                                                                          (e) => e
-                                                                                            ..id = _model.itemprd2?.id
-                                                                                            ..price = _model.itemprd2?.price
-                                                                                            ..category = _model.itemprd2?.category
-                                                                                            ..code = _model.itemprd2?.code
-                                                                                            ..name = _model.itemprd2?.name
-                                                                                            ..sellingPrice = _model.itemprd2?.sellingPrice
-                                                                                            ..mrpPrice = _model.itemprd2?.mrpPrice
-                                                                                            ..purchasePrice = _model.itemprd2?.purchasePrice
-                                                                                            ..categoryId = _model.itemprd2?.categoryId
-                                                                                            ..taxId = _model.itemprd2?.taxId
-                                                                                            ..unitId = _model.itemprd2?.unitId
-                                                                                            ..regionalName = _model.itemprd2?.regionalName
-                                                                                            ..barcode = _model.itemprd2?.barcode
-                                                                                            ..hsncode = _model.itemprd2?.hsncode
-                                                                                            ..reorderLevel = _model.itemprd2?.reorderLevel
-                                                                                            ..searchcode = _model.itemprd2?.searchcode
-                                                                                            ..shortName = _model.itemprd2?.shortName
-                                                                                            ..weightable = _model.itemprd2?.weightable
-                                                                                            ..stockable = _model.itemprd2?.stockable
-                                                                                            ..discountPer = _model.itemprd2?.discountPer
-                                                                                            ..discountAmt = _model.itemprd2?.discountAmt
-                                                                                            ..productMasterId = _model.itemprd2?.productMasterId
-                                                                                            ..recipeRefId = _model.itemprd2?.recipeRefId
-                                                                                            ..imageUrl = _model.itemprd2?.imageUrl
-                                                                                            ..serviceOutletId = _model.itemprd2?.serviceOutletId
-                                                                                            ..type = _model.itemprd2?.type
-                                                                                            ..recipeId = _model.itemprd2?.recipeId
-                                                                                            ..stock = _model.itemprd2!.stock - (functions.doubleToInt((_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)
-                                                                                            ..isDeleted = _model.itemprd2?.isDeleted
-                                                                                            ..keywords = _model.itemprd2!.keywords.toList()
-                                                                                            ..synC = _model.itemprd2?.synC
-                                                                                            ..hivekey = _model.itemprd2?.hivekey
-                                                                                            ..version = _model.itemprd2?.version,
-                                                                                        );
-                                                                                        _model.productupdated2 = await actions.hiveProductCrud(
-                                                                                          FFAppState().productHiveput.hivekey,
-                                                                                          FFAppState().productHiveput,
-                                                                                          'update',
-                                                                                        );
-                                                                                        _shouldSetState = true;
-                                                                                        FFAppState().productHive = [];
-                                                                                        FFAppState().productHiveput = ProductStructStruct();
-                                                                                        _model.newupdatedproductlist22 = await actions.getProductlistHive();
-                                                                                        _shouldSetState = true;
-                                                                                        FFAppState().productHive = _model.newupdatedproductlist22!.toList().cast<ProductStructStruct>();
-                                                                                      }
-                                                                                      FFAppState().startLoop = FFAppState().startLoop + 1;
-                                                                                    }
-                                                                                    await actions.updateProductStocknew(
-                                                                                      _model.prdlinstnewtx!.toList(),
-                                                                                    );
-                                                                                  }
-                                                                                  await actions.removeFromAllBillList(
-                                                                                    FFAppState().selBill,
-                                                                                  );
-                                                                                  safeSetState(() {
-                                                                                    _model.dropDownValueController?.value = 'CASH';
-                                                                                  });
-                                                                                  _model.prdid = null;
-                                                                                  await actions.clearValue();
-                                                                                  FFAppState().subTotal = 0.0;
-                                                                                  FFAppState().delCharges = 0.0;
-                                                                                  FFAppState().oldBalance = 0;
-                                                                                  FFAppState().custCredit = 0;
-                                                                                  FFAppState().custNameRef = null;
-                                                                                  FFAppState().setCustRef = null;
-                                                                                  FFAppState().setCustName = '';
-                                                                                  FFAppState().setCustMobNo = '';
-                                                                                  FFAppState().noOfItems = 0;
-                                                                                  FFAppState().prdid = '';
-                                                                                  FFAppState().finalAmt = 0.0;
-                                                                                  FFAppState().billAmt = 0.0;
-                                                                                  FFAppState().count = FFAppState().billcount;
-                                                                                  FFAppState().tableViewHideShow = true;
-                                                                                  safeSetState(() {});
-                                                                                  if (_shouldSetState) safeSetState(() {});
-                                                                                  return;
-                                                                                } else {
-                                                                                  await showDialog(
-                                                                                    context: context,
-                                                                                    builder: (alertDialogContext) {
-                                                                                      return AlertDialog(
-                                                                                        title: Text('printer connection'),
-                                                                                        content: Text('printer not connected'),
-                                                                                        actions: [
-                                                                                          TextButton(
-                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                            child: Text('Ok'),
-                                                                                          ),
-                                                                                        ],
-                                                                                      );
-                                                                                    },
-                                                                                  );
-                                                                                  if (_shouldSetState) safeSetState(() {});
-                                                                                  return;
-                                                                                }
-
-                                                                                if (_shouldSetState) safeSetState(() {});
-                                                                              },
-                                                                              text: FFLocalizations.of(context).getText(
-                                                                                '9hdy3rfp' /* Print Bill */,
-                                                                              ),
-                                                                              options: FFButtonOptions(
-                                                                                width: 130.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                color: Color(0xFFB60042),
                                                                                 textStyle: FlutterFlowTheme.of(context).headlineSmall.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                       color: FlutterFlowTheme.of(context).primaryBtnText,
@@ -5544,11 +5319,639 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      ).animateOnActionTrigger(
-                                                                              animationsMap['containerOnActionTriggerAnimation9']!,
-                                                                              hasBeenTriggered: hasContainerTriggered9),
-                                                                    ),
-                                                                  ],
+                                                                      ),
+                                                                      Container(
+                                                                        width:
+                                                                            250.0,
+                                                                        height:
+                                                                            50.0,
+                                                                        decoration:
+                                                                            BoxDecoration(),
+                                                                        child:
+                                                                            FFButtonWidget(
+                                                                          onPressed:
+                                                                              () async {
+                                                                            var _shouldSetState =
+                                                                                false;
+                                                                            if (getJsonField(
+                                                                              FFAppState().shiftDetailsJson,
+                                                                              r'''$.shiftExists''',
+                                                                            )) {
+                                                                              FFAppState().count = FFAppState().count + 1;
+                                                                              FFAppState().newcount = FFAppState().newcount + 1;
+                                                                              FFAppState().billcount = FFAppState().billcount + 1;
+                                                                            } else {
+                                                                              FFAppState().count = FFAppState().count + 1;
+                                                                              FFAppState().newcount = FFAppState().newcount + 1;
+                                                                              FFAppState().billcount = FFAppState().billcount + 1;
+                                                                            }
+
+                                                                            _model.prdlinstnewtx =
+                                                                                await actions.filterProductsKot(
+                                                                              FFAppState().selBill,
+                                                                              FFAppState().allBillsList.toList(),
+                                                                              true,
+                                                                            );
+                                                                            _shouldSetState =
+                                                                                true;
+                                                                            if (!isAndroid) {
+                                                                              await actions.newCustomAction5();
+                                                                            }
+                                                                            if (_model.dropDownValue ==
+                                                                                'CREDIT') {
+                                                                              if (FFAppState().setCustRef?.id != null && FFAppState().setCustRef?.id != '') {
+                                                                                if (FFAppState().oldBalance < FFAppState().custCredit) {
+                                                                                  _model.totalcredit = await actions.oldbalanceplusamt(
+                                                                                    FFAppState().oldBalance,
+                                                                                    FFAppState().finalAmt,
+                                                                                  );
+                                                                                  _shouldSetState = true;
+
+                                                                                  await FFAppState().setCustRef!.update(createPartyRecordData(
+                                                                                        credit: true,
+                                                                                        oldBalance: valueOrDefault<int>(
+                                                                                          _model.totalcredit,
+                                                                                          0,
+                                                                                        ),
+                                                                                        lastVisit: getCurrentTimestamp.millisecondsSinceEpoch.toString(),
+                                                                                      ));
+                                                                                } else {
+                                                                                  await showDialog(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        content: Text('Credit Limit Exceeded !'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  );
+                                                                                  if (_shouldSetState) safeSetState(() {});
+                                                                                  return;
+                                                                                }
+                                                                              } else {
+                                                                                await showDialog(
+                                                                                  context: context,
+                                                                                  builder: (alertDialogContext) {
+                                                                                    return AlertDialog(
+                                                                                      content: Text('Select Customer '),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: Text('Ok'),
+                                                                                        ),
+                                                                                      ],
+                                                                                    );
+                                                                                  },
+                                                                                );
+                                                                                scaffoldKey.currentState!.openEndDrawer();
+                                                                                if (_shouldSetState) safeSetState(() {});
+                                                                                return;
+                                                                              }
+                                                                            }
+                                                                            _model.interprd =
+                                                                                await actions.checkInternetConnection();
+                                                                            _shouldSetState =
+                                                                                true;
+                                                                            if (_model.interprd!) {
+                                                                              var invoiceRecordReference = InvoiceRecord.createDoc(FFAppState().outletIdRef!);
+                                                                              await invoiceRecordReference.set({
+                                                                                ...createInvoiceRecordData(
+                                                                                  invoice: functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
+                                                                                  party: valueOrDefault<String>(
+                                                                                    FFAppState().setCustRef?.id,
+                                                                                    'NA',
+                                                                                  ),
+                                                                                  products: '',
+                                                                                  invoiceDate: functions.timestampToMili(getCurrentTimestamp),
+                                                                                  paymentMode: _model.dropDownValue,
+                                                                                  dayId: functions.getDayId(),
+                                                                                  discountAmt: valueOrDefault<double>(
+                                                                                    FFAppState().disAmt,
+                                                                                    0.0,
+                                                                                  ),
+                                                                                  discountPer: valueOrDefault<double>(
+                                                                                    FFAppState().disPer,
+                                                                                    0.0,
+                                                                                  ),
+                                                                                  delliveryChrg: valueOrDefault<double>(
+                                                                                    FFAppState().delCharges,
+                                                                                    0.0,
+                                                                                  ),
+                                                                                  taxAmt: FFAppState().taxamt,
+                                                                                  billAmt: valueOrDefault<double>(
+                                                                                    FFAppState().billAmt,
+                                                                                    0.0,
+                                                                                  ),
+                                                                                  finalBillAmt: valueOrDefault<double>(
+                                                                                    FFAppState().finalAmt,
+                                                                                    0.0,
+                                                                                  ),
+                                                                                  shiftId: getJsonField(
+                                                                                    FFAppState().shiftDetailsJson,
+                                                                                    r'''$.shiftId''',
+                                                                                  ).toString(),
+                                                                                  isDeleted: false,
+                                                                                  count: FFAppState().newcount,
+                                                                                ),
+                                                                                ...mapToFirestore(
+                                                                                  {
+                                                                                    'productList': getSelItemListListFirestoreData(
+                                                                                      _model.prdlinstnewtx,
+                                                                                    ),
+                                                                                  },
+                                                                                ),
+                                                                              });
+                                                                              _model.invonlineprt = InvoiceRecord.getDocumentFromData({
+                                                                                ...createInvoiceRecordData(
+                                                                                  invoice: functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
+                                                                                  party: valueOrDefault<String>(
+                                                                                    FFAppState().setCustRef?.id,
+                                                                                    'NA',
+                                                                                  ),
+                                                                                  products: '',
+                                                                                  invoiceDate: functions.timestampToMili(getCurrentTimestamp),
+                                                                                  paymentMode: _model.dropDownValue,
+                                                                                  dayId: functions.getDayId(),
+                                                                                  discountAmt: valueOrDefault<double>(
+                                                                                    FFAppState().disAmt,
+                                                                                    0.0,
+                                                                                  ),
+                                                                                  discountPer: valueOrDefault<double>(
+                                                                                    FFAppState().disPer,
+                                                                                    0.0,
+                                                                                  ),
+                                                                                  delliveryChrg: valueOrDefault<double>(
+                                                                                    FFAppState().delCharges,
+                                                                                    0.0,
+                                                                                  ),
+                                                                                  taxAmt: FFAppState().taxamt,
+                                                                                  billAmt: valueOrDefault<double>(
+                                                                                    FFAppState().billAmt,
+                                                                                    0.0,
+                                                                                  ),
+                                                                                  finalBillAmt: valueOrDefault<double>(
+                                                                                    FFAppState().finalAmt,
+                                                                                    0.0,
+                                                                                  ),
+                                                                                  shiftId: getJsonField(
+                                                                                    FFAppState().shiftDetailsJson,
+                                                                                    r'''$.shiftId''',
+                                                                                  ).toString(),
+                                                                                  isDeleted: false,
+                                                                                  count: FFAppState().newcount,
+                                                                                ),
+                                                                                ...mapToFirestore(
+                                                                                  {
+                                                                                    'productList': getSelItemListListFirestoreData(
+                                                                                      _model.prdlinstnewtx,
+                                                                                    ),
+                                                                                  },
+                                                                                ),
+                                                                              }, invoiceRecordReference);
+                                                                              _shouldSetState = true;
+
+                                                                              await _model.invonlineprt!.reference.update(createInvoiceRecordData(
+                                                                                id: _model.invonlineprt?.reference.id,
+                                                                              ));
+
+                                                                              await FFAppState().kotDocRef!.update(createTableKotRecordData(
+                                                                                    kotStatus: 'FINAL',
+                                                                                  ));
+                                                                            } else {
+                                                                              await showDialog(
+                                                                                context: context,
+                                                                                builder: (alertDialogContext) {
+                                                                                  return AlertDialog(
+                                                                                    content: Text('Internet Not Available'),
+                                                                                    actions: [
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                        child: Text('Ok'),
+                                                                                      ),
+                                                                                    ],
+                                                                                  );
+                                                                                },
+                                                                              );
+                                                                              if (_shouldSetState)
+                                                                                safeSetState(() {});
+                                                                              return;
+                                                                            }
+
+                                                                            if (getJsonField(
+                                                                              FFAppState().shiftDetailsJson,
+                                                                              r'''$.shiftExists''',
+                                                                            )) {
+                                                                              _model.shiftSummarResultsNew = await actions.calShiftSummary(
+                                                                                _model.invonlineprt!,
+                                                                                FFAppState().shiftDetailsJson,
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              FFAppState().updateShiftDetailsStruct(
+                                                                                (e) => e
+                                                                                  ..billCount = valueOrDefault<int>(
+                                                                                    FFAppState().billcount,
+                                                                                    0,
+                                                                                  )
+                                                                                  ..totalSale = getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.totalSale''',
+                                                                                  )
+                                                                                  ..deliveryCharges = getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.deliveryCharges''',
+                                                                                  )
+                                                                                  ..tax = getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.tax''',
+                                                                                  )
+                                                                                  ..lastBillNo = getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.lastBillNo''',
+                                                                                  ).toString()
+                                                                                  ..discount = getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.discount''',
+                                                                                  )
+                                                                                  ..lastBillTime = functions.timestampToMili(getCurrentTimestamp)
+                                                                                  ..cashSale = getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.cashSale''',
+                                                                                  )
+                                                                                  ..paymentJson = getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.paymentJson''',
+                                                                                  ).toString()
+                                                                                  ..dayId = getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.dayId''',
+                                                                                  ).toString()
+                                                                                  ..shiftId = getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.shiftId''',
+                                                                                  ).toString()
+                                                                                  ..hivekey = FFAppState().shiftDetails.hivekey
+                                                                                  ..newIDShift = FFAppState().shiftDetails.newIDShift
+                                                                                  ..code = FFAppState().shiftDetails.code
+                                                                                  ..endTime = FFAppState().shiftDetails.endTime
+                                                                                  ..advanceAmtTotal = FFAppState().shiftDetails.advanceAmtTotal
+                                                                                  ..customerReciveAmtTotal = FFAppState().shiftDetails.customerReciveAmtTotal
+                                                                                  ..expensesAmtTotal = FFAppState().shiftDetails.expensesAmtTotal
+                                                                                  ..openingAmt = FFAppState().shiftDetails.openingAmt
+                                                                                  ..receiveAmtTotal = FFAppState().shiftDetails.receiveAmtTotal
+                                                                                  ..refoundAmount = FFAppState().shiftDetails.refoundAmount
+                                                                                  ..roundOff = FFAppState().shiftDetails.roundOff
+                                                                                  ..cashInHand = FFAppState().shiftDetails.cashInHand
+                                                                                  ..startTime = FFAppState().shiftDetails.startTime
+                                                                                  ..inActive = FFAppState().shiftDetails.inActive
+                                                                                  ..shiftNo = FFAppState().shiftDetails.shiftNo
+                                                                                  ..subTotalBill = FFAppState().shiftDetails.subTotalBill
+                                                                                  ..version = FFAppState().shiftDetails.version
+                                                                                  ..userId = FFAppState().shiftDetails.userId
+                                                                                  ..deviceId = FFAppState().shiftDetails.deviceId
+                                                                                  ..synC = FFAppState().shiftDetails.synC
+                                                                                  ..id = FFAppState().shiftDetails.id,
+                                                                              );
+                                                                              if (_model.interprd!) {
+                                                                                _model.shiftondataprint = await queryShiftRecordOnce(
+                                                                                  parent: FFAppState().outletIdRef,
+                                                                                  queryBuilder: (shiftRecord) => shiftRecord.where(
+                                                                                    'id',
+                                                                                    isEqualTo: valueOrDefault<String>(
+                                                                                      getJsonField(
+                                                                                        FFAppState().shiftDetailsJson,
+                                                                                        r'''$.ref''',
+                                                                                      )?.toString(),
+                                                                                      'NA',
+                                                                                    ),
+                                                                                  ),
+                                                                                  singleRecord: true,
+                                                                                ).then((s) => s.firstOrNull);
+                                                                                _shouldSetState = true;
+
+                                                                                await _model.shiftondataprint!.reference.update(createShiftRecordData(
+                                                                                  billCount: FFAppState().shiftDetails.billCount,
+                                                                                  dayId: getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.dayId''',
+                                                                                  ).toString(),
+                                                                                  lastBillNo: getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.lastBillNo''',
+                                                                                  ).toString(),
+                                                                                  lastBillTime: functions.timestampToMili(getCurrentTimestamp),
+                                                                                  tax: getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.tax''',
+                                                                                  ),
+                                                                                  deliveryCharges: getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.deliveryCharges''',
+                                                                                  ),
+                                                                                  discount: getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.discount''',
+                                                                                  ),
+                                                                                  totalSale: getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.totalSale''',
+                                                                                  ),
+                                                                                  cashSale: getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.cashSale''',
+                                                                                  ),
+                                                                                  paymentJson: getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.paymentJson''',
+                                                                                  ).toString(),
+                                                                                  code: FFAppState().shiftDetails.code,
+                                                                                  endTime: FFAppState().shiftDetails.endTime,
+                                                                                  advanceAmtTotal: FFAppState().shiftDetails.advanceAmtTotal,
+                                                                                  customerReciveAmtTotal: FFAppState().shiftDetails.customerReciveAmtTotal,
+                                                                                  expensesAmtTotal: FFAppState().shiftDetails.expensesAmtTotal,
+                                                                                  openingAmt: FFAppState().shiftDetails.openingAmt,
+                                                                                  receiveAmtTotal: FFAppState().shiftDetails.receiveAmtTotal,
+                                                                                  refoundAmount: FFAppState().shiftDetails.refoundAmount,
+                                                                                  roundOff: FFAppState().shiftDetails.roundOff,
+                                                                                  cashInHand: getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.cashSale''',
+                                                                                  ),
+                                                                                  startTime: FFAppState().shiftDetails.startTime,
+                                                                                  inActive: FFAppState().shiftDetails.inActive,
+                                                                                  shiftNo: FFAppState().shiftDetails.shiftNo,
+                                                                                  shiftId: getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.shiftId''',
+                                                                                  ).toString(),
+                                                                                ));
+                                                                              } else {
+                                                                                await showDialog(
+                                                                                  context: context,
+                                                                                  builder: (alertDialogContext) {
+                                                                                    return AlertDialog(
+                                                                                      content: Text('Internet Not Available'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: Text('Ok'),
+                                                                                        ),
+                                                                                      ],
+                                                                                    );
+                                                                                  },
+                                                                                );
+                                                                                if (_shouldSetState) safeSetState(() {});
+                                                                                return;
+                                                                              }
+                                                                            } else {
+                                                                              ScaffoldMessenger.of(context).showSnackBar(
+                                                                                SnackBar(
+                                                                                  content: Text(
+                                                                                    'Login again to start Shift ',
+                                                                                    style: TextStyle(
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                    ),
+                                                                                  ),
+                                                                                  duration: Duration(milliseconds: 4000),
+                                                                                  backgroundColor: Color(0x00000000),
+                                                                                ),
+                                                                              );
+                                                                              if (_shouldSetState)
+                                                                                safeSetState(() {});
+                                                                              return;
+                                                                            }
+
+                                                                            if (!functions.isPrinterSelected(FFAppState().printerDevice)!) {
+                                                                              _model.resDevice2 = await actions.scanPrinter(
+                                                                                FFAppState().posMode,
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                            }
+                                                                            _model.isconnected =
+                                                                                await actions.connectDevice(
+                                                                              FFAppState().printerDevice,
+                                                                              FFAppState().printerIndex,
+                                                                            );
+                                                                            _shouldSetState =
+                                                                                true;
+                                                                            if (_model.isconnected!) {
+                                                                              FFAppState().lastBill = FFAppState().finalAmt;
+                                                                              _model.returnedList2 = await actions.selectBillPrint(
+                                                                                FFAppState().selBill.toString(),
+                                                                                FFAppState().allBillsList.toList(),
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              _model.device = await actions.newCustomAction(
+                                                                                FFAppState().printerIndex,
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              await actions.printBillnewhiveNEW(
+                                                                                _model.returnedList2!.toList(),
+                                                                                _model.device!.toList(),
+                                                                                FFAppState().isPrinterConnected,
+                                                                                FFAppState().printerName,
+                                                                                _model.invonlineprt!,
+                                                                                FFAppState().paperSize,
+                                                                                tableListAppSettingsRecord!,
+                                                                              );
+                                                                              _model.spoutlet = await queryServicePointOutletRecordOnce(
+                                                                                parent: FFAppState().outletIdRef,
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              if (tableListAppSettingsRecord!.settingList.where((e) => e.title == 'printKotWithBill').toList().firstOrNull!.value) {
+                                                                                await actions.printKOTwithusbkioskhive(
+                                                                                  _model.returnedList2!.toList(),
+                                                                                  _model.device!.toList(),
+                                                                                  FFAppState().isPrinterConnected,
+                                                                                  FFAppState().printerName,
+                                                                                  _model.invonlineprt!,
+                                                                                  FFAppState().paperSize,
+                                                                                  tableListAppSettingsRecord!,
+                                                                                  FFAppState().port,
+                                                                                  FFAppState().ipAddresss,
+                                                                                  _model.spoutlet!.toList(),
+                                                                                );
+                                                                              }
+                                                                              if (tableListAppSettingsRecord!.settingList.where((e) => e.title == 'enableStock').toList().firstOrNull!.value) {
+                                                                                FFAppState().startLoop = 0;
+                                                                                while (FFAppState().startLoop < _model.prdlinstnewtx!.length) {
+                                                                                  _model.stockupdateprdprt = await queryProductRecordOnce(
+                                                                                    parent: FFAppState().outletIdRef,
+                                                                                    queryBuilder: (productRecord) => productRecord
+                                                                                        .where(
+                                                                                          'id',
+                                                                                          isEqualTo: (_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.id,
+                                                                                        )
+                                                                                        .where(
+                                                                                          'stockable',
+                                                                                          isEqualTo: true,
+                                                                                        ),
+                                                                                    singleRecord: true,
+                                                                                  ).then((s) => s.firstOrNull);
+                                                                                  _shouldSetState = true;
+                                                                                  if (_model.stockupdateprdprt != null) {
+                                                                                    await _model.stockupdateprdprt!.reference.update({
+                                                                                      ...mapToFirestore(
+                                                                                        {
+                                                                                          'currentStock': FieldValue.increment(-(functions.doubleToInt((_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)),
+                                                                                        },
+                                                                                      ),
+                                                                                    });
+                                                                                    _model.itemprd2 = await actions.hivegetproductbyId(
+                                                                                      _model.stockupdateprdprt?.reference.id,
+                                                                                      _model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop),
+                                                                                      'get',
+                                                                                    );
+                                                                                    _shouldSetState = true;
+                                                                                    FFAppState().updateProductHiveputStruct(
+                                                                                      (e) => e
+                                                                                        ..id = _model.itemprd2?.id
+                                                                                        ..price = _model.itemprd2?.price
+                                                                                        ..category = _model.itemprd2?.category
+                                                                                        ..code = _model.itemprd2?.code
+                                                                                        ..name = _model.itemprd2?.name
+                                                                                        ..sellingPrice = _model.itemprd2?.sellingPrice
+                                                                                        ..mrpPrice = _model.itemprd2?.mrpPrice
+                                                                                        ..purchasePrice = _model.itemprd2?.purchasePrice
+                                                                                        ..categoryId = _model.itemprd2?.categoryId
+                                                                                        ..taxId = _model.itemprd2?.taxId
+                                                                                        ..unitId = _model.itemprd2?.unitId
+                                                                                        ..regionalName = _model.itemprd2?.regionalName
+                                                                                        ..barcode = _model.itemprd2?.barcode
+                                                                                        ..hsncode = _model.itemprd2?.hsncode
+                                                                                        ..reorderLevel = _model.itemprd2?.reorderLevel
+                                                                                        ..searchcode = _model.itemprd2?.searchcode
+                                                                                        ..shortName = _model.itemprd2?.shortName
+                                                                                        ..weightable = _model.itemprd2?.weightable
+                                                                                        ..stockable = _model.itemprd2?.stockable
+                                                                                        ..discountPer = _model.itemprd2?.discountPer
+                                                                                        ..discountAmt = _model.itemprd2?.discountAmt
+                                                                                        ..productMasterId = _model.itemprd2?.productMasterId
+                                                                                        ..recipeRefId = _model.itemprd2?.recipeRefId
+                                                                                        ..imageUrl = _model.itemprd2?.imageUrl
+                                                                                        ..serviceOutletId = _model.itemprd2?.serviceOutletId
+                                                                                        ..type = _model.itemprd2?.type
+                                                                                        ..recipeId = _model.itemprd2?.recipeId
+                                                                                        ..stock = _model.itemprd2!.stock - (functions.doubleToInt((_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)
+                                                                                        ..isDeleted = _model.itemprd2?.isDeleted
+                                                                                        ..keywords = _model.itemprd2!.keywords.toList()
+                                                                                        ..synC = _model.itemprd2?.synC
+                                                                                        ..hivekey = _model.itemprd2?.hivekey
+                                                                                        ..version = _model.itemprd2?.version,
+                                                                                    );
+                                                                                    _model.productupdated2 = await actions.hiveProductCrud(
+                                                                                      FFAppState().productHiveput.hivekey,
+                                                                                      FFAppState().productHiveput,
+                                                                                      'update',
+                                                                                    );
+                                                                                    _shouldSetState = true;
+                                                                                    FFAppState().productHive = [];
+                                                                                    FFAppState().productHiveput = ProductStructStruct();
+                                                                                    _model.newupdatedproductlist22 = await actions.getProductlistHive();
+                                                                                    _shouldSetState = true;
+                                                                                    FFAppState().productHive = _model.newupdatedproductlist22!.toList().cast<ProductStructStruct>();
+                                                                                  }
+                                                                                  FFAppState().startLoop = FFAppState().startLoop + 1;
+                                                                                }
+                                                                                await actions.updateProductStocknew(
+                                                                                  _model.prdlinstnewtx!.toList(),
+                                                                                );
+                                                                              }
+                                                                              await actions.removeFromAllBillList(
+                                                                                FFAppState().selBill,
+                                                                              );
+                                                                              safeSetState(() {
+                                                                                _model.dropDownValueController?.value = 'CASH';
+                                                                              });
+                                                                              _model.prdid = null;
+                                                                              await actions.clearValue();
+                                                                              FFAppState().subTotal = 0.0;
+                                                                              FFAppState().delCharges = 0.0;
+                                                                              FFAppState().oldBalance = 0;
+                                                                              FFAppState().custCredit = 0;
+                                                                              FFAppState().custNameRef = null;
+                                                                              FFAppState().setCustRef = null;
+                                                                              FFAppState().setCustName = '';
+                                                                              FFAppState().setCustMobNo = '';
+                                                                              FFAppState().noOfItems = 0;
+                                                                              FFAppState().prdid = '';
+                                                                              FFAppState().finalAmt = 0.0;
+                                                                              FFAppState().billAmt = 0.0;
+                                                                              FFAppState().count = FFAppState().billcount;
+                                                                              FFAppState().tableViewHideShow = true;
+                                                                              safeSetState(() {});
+                                                                              if (_shouldSetState)
+                                                                                safeSetState(() {});
+                                                                              return;
+                                                                            } else {
+                                                                              await showDialog(
+                                                                                context: context,
+                                                                                builder: (alertDialogContext) {
+                                                                                  return AlertDialog(
+                                                                                    title: Text('printer connection'),
+                                                                                    content: Text('printer not connected'),
+                                                                                    actions: [
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                        child: Text('Ok'),
+                                                                                      ),
+                                                                                    ],
+                                                                                  );
+                                                                                },
+                                                                              );
+                                                                              if (_shouldSetState)
+                                                                                safeSetState(() {});
+                                                                              return;
+                                                                            }
+
+                                                                            if (_shouldSetState)
+                                                                              safeSetState(() {});
+                                                                          },
+                                                                          text:
+                                                                              FFLocalizations.of(context).getText(
+                                                                            '9hdy3rfp' /* Settled & Print Bill */,
+                                                                          ),
+                                                                          options:
+                                                                              FFButtonOptions(
+                                                                            width:
+                                                                                250.0,
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            color:
+                                                                                Color(0xFFB60042),
+                                                                            textStyle: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.w600,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
+                                                                                ),
+                                                                            borderSide:
+                                                                                BorderSide(
+                                                                              color: Colors.transparent,
+                                                                              width: 1.0,
+                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            20.0)),
+                                                                  ),
                                                                 ),
                                                               ],
                                                             ),

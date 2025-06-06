@@ -1,4 +1,5 @@
 export 'check_platform.dart' show checkPlatform;
+export 'print_billtable.dart' show printBilltable;
 export 'filter_products_kot.dart' show filterProductsKot;
 export 'print_k_o_twithusbtable.dart' show printKOTwithusbtable;
 export 'print_ethernet_kot.dart' show printEthernetKot;

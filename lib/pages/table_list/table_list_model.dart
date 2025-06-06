@@ -183,6 +183,28 @@ class TableListModel extends FlutterFlowModel<TableListWidget> {
   // Stores action output result for [Custom Action - filterProductsKot] action in Button widget.
   List<SelItemListStruct>? prdlistsavebillkotupdate;
   // Stores action output result for [Custom Action - filterProductsKot] action in Button widget.
+  List<SelItemListStruct>? prdlistsavebillkotCopy;
+  // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.
+  bool? internetconkotCopy;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  TableKotRecord? kotCopyCopy;
+  // Stores action output result for [Custom Action - filterProductsKot] action in Button widget.
+  List<SelItemListStruct>? prdlistsavebillupiCopy;
+  // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.
+  bool? internetconCopyCopy;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  TableKotRecord? kotCopy2;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  TableKotRecord? tablekotCopy;
+  // Stores action output result for [Custom Action - selectBillPrint] action in Button widget.
+  List<dynamic>? returnedListkotCopy;
+  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
+  List<dynamic>? devicekotCopy;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<ServicePointOutletRecord>? spoutletkotCopy;
+  // Stores action output result for [Custom Action - filterProductsKot] action in Button widget.
+  List<SelItemListStruct>? prdlistsavebillkotupdateCopy;
+  // Stores action output result for [Custom Action - filterProductsKot] action in Button widget.
   List<SelItemListStruct>? prdlistsavebill;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
   int? totalcredit2;

@@ -23376,8 +23376,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': 'யுபிஐ',
       'th': 'ยูพีไอ',
     },
-    'l5p8byv1': {
+    '3gebdqgm': {
       'en': 'Save Bill',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    'sse8xp3p': {
+      'en': 'Print Bill',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    'l5p8byv1': {
+      'en': 'Settled & Save Bill',
       'hi': 'बिल बचाओ',
       'kn': 'ಬಿಲ್ ಉಳಿಸಿ',
       'mr': 'बिल वाचवा',
@@ -23385,7 +23401,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': 'บันทึกบิล',
     },
     '9hdy3rfp': {
-      'en': 'Print Bill',
+      'en': 'Settled & Print Bill',
       'hi': 'बिल प्रिंट करें',
       'kn': 'ಬಿಲ್ ಮುದ್ರಿಸಿ',
       'mr': 'बिल प्रिंट करा',
