@@ -141,6 +141,12 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                 r'''$.status''',
                               ).toString()) {
                             return FlutterFlowTheme.of(context).warning;
+                          } else if ('BILLING' ==
+                              getJsonField(
+                                tablelistItem,
+                                r'''$.status''',
+                              ).toString()) {
+                            return FlutterFlowTheme.of(context).primary;
                           } else {
                             return Color(0xFFD1CDCD);
                           }
@@ -172,8 +178,15 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                   children: [
                                     Icon(
                                       Icons.table_bar,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: 'BILLING' ==
+                                              getJsonField(
+                                                tablelistItem,
+                                                r'''$.status''',
+                                              ).toString()
+                                          ? FlutterFlowTheme.of(context)
+                                              .primaryBackground
+                                          : FlutterFlowTheme.of(context)
+                                              .primaryText,
                                       size: 24.0,
                                     ),
                                     if ((FFAppState().tableFlag == true) &&
@@ -640,6 +653,17 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .labelLargeFamily,
+                                                  color: 'BILLING' ==
+                                                          getJsonField(
+                                                            tablelistItem,
+                                                            r'''$.status''',
+                                                          ).toString()
+                                                      ? FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryBackground
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
