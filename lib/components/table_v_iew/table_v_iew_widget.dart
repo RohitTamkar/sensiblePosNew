@@ -92,7 +92,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                     )
                     .where(
                       'kotStatus',
-                      isEqualTo: 'PENDING',
+                      isNotEqualTo: 'FINAL',
                     ),
               ),
               builder: (context, snapshot) {

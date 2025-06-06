@@ -47,6 +47,20 @@
       ]
     },
     {
+      "collectionGroup": "TABLE_KOT",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "tableNo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "kotStatus",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "INVOICE",
       "queryScope": "COLLECTION",
       "fields": [
