@@ -142,10 +142,16 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                               ).toString()) {
                             return FlutterFlowTheme.of(context).warning;
                           } else if ('BILLING' ==
-                              getJsonField(
-                                tablelistItem,
-                                r'''$.status''',
-                              ).toString()) {
+                              containerTableKotRecordList
+                                  .where((e) =>
+                                      e.tableNo ==
+                                      getJsonField(
+                                        tablelistItem,
+                                        r'''$.id''',
+                                      ).toString())
+                                  .toList()
+                                  .firstOrNull
+                                  ?.kotStatus) {
                             return FlutterFlowTheme.of(context).primary;
                           } else {
                             return Color(0xFFD1CDCD);
@@ -179,10 +185,16 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                     Icon(
                                       Icons.table_bar,
                                       color: 'BILLING' ==
-                                              getJsonField(
-                                                tablelistItem,
-                                                r'''$.status''',
-                                              ).toString()
+                                              containerTableKotRecordList
+                                                  .where((e) =>
+                                                      e.tableNo ==
+                                                      getJsonField(
+                                                        tablelistItem,
+                                                        r'''$.id''',
+                                                      ).toString())
+                                                  .toList()
+                                                  .firstOrNull
+                                                  ?.kotStatus
                                           ? FlutterFlowTheme.of(context)
                                               .primaryBackground
                                           : FlutterFlowTheme.of(context)
@@ -654,10 +666,16 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                               context)
                                                           .labelLargeFamily,
                                                   color: 'BILLING' ==
-                                                          getJsonField(
-                                                            tablelistItem,
-                                                            r'''$.status''',
-                                                          ).toString()
+                                                          containerTableKotRecordList
+                                                              .where((e) =>
+                                                                  e.tableNo ==
+                                                                  getJsonField(
+                                                                    tablelistItem,
+                                                                    r'''$.id''',
+                                                                  ).toString())
+                                                              .toList()
+                                                              .firstOrNull
+                                                              ?.kotStatus
                                                       ? FlutterFlowTheme.of(
                                                               context)
                                                           .primaryBackground

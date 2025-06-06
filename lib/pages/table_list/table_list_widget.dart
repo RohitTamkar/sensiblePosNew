@@ -4621,7 +4621,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                         ...createTableKotRecordData(
                                                                                           finalBillAmt: FFAppState().finalAmt,
                                                                                           billAmt: FFAppState().billAmt,
-                                                                                          kotJson: 'BILLING',
+                                                                                          kotStatus: 'BILLING',
                                                                                         ),
                                                                                         ...mapToFirestore(
                                                                                           {
