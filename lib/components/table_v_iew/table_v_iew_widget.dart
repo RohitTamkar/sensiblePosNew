@@ -120,7 +120,19 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                     decoration: BoxDecoration(
                       color: valueOrDefault<Color>(
                         () {
-                          if (containerTableKotRecordList
+                          if ('BILLING' ==
+                              containerTableKotRecordList
+                                  .where((e) =>
+                                      e.tableNo ==
+                                      getJsonField(
+                                        tablelistItem,
+                                        r'''$.id''',
+                                      ).toString())
+                                  .toList()
+                                  .firstOrNull
+                                  ?.kotStatus) {
+                            return FlutterFlowTheme.of(context).primary;
+                          } else if (containerTableKotRecordList
                                   .where((e) =>
                                       e.tableNo ==
                                       getJsonField(
@@ -141,18 +153,6 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                 r'''$.status''',
                               ).toString()) {
                             return FlutterFlowTheme.of(context).warning;
-                          } else if ('BILLING' ==
-                              containerTableKotRecordList
-                                  .where((e) =>
-                                      e.tableNo ==
-                                      getJsonField(
-                                        tablelistItem,
-                                        r'''$.id''',
-                                      ).toString())
-                                  .toList()
-                                  .firstOrNull
-                                  ?.kotStatus) {
-                            return FlutterFlowTheme.of(context).primary;
                           } else {
                             return Color(0xFFD1CDCD);
                           }
