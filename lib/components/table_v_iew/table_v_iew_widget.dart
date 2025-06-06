@@ -120,8 +120,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                     decoration: BoxDecoration(
                       color: valueOrDefault<Color>(
                         () {
-                          if ('BILLING' ==
-                              containerTableKotRecordList
+                          if (containerTableKotRecordList
                                   .where((e) =>
                                       e.tableNo ==
                                       getJsonField(
@@ -130,22 +129,34 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                       ).toString())
                                   .toList()
                                   .firstOrNull
-                                  ?.kotStatus) {
+                                  ?.kotStatus ==
+                              'BILLING') {
                             return FlutterFlowTheme.of(context).primary;
-                          } else if (containerTableKotRecordList
-                                  .where((e) =>
-                                      e.tableNo ==
-                                      getJsonField(
-                                        tablelistItem,
-                                        r'''$.id''',
-                                      ).toString())
-                                  .toList()
-                                  .firstOrNull
-                                  ?.tableNo ==
-                              getJsonField(
-                                tablelistItem,
-                                r'''$.id''',
-                              ).toString()) {
+                          } else if ((containerTableKotRecordList
+                                      .where((e) =>
+                                          e.tableNo ==
+                                          getJsonField(
+                                            tablelistItem,
+                                            r'''$.id''',
+                                          ).toString())
+                                      .toList()
+                                      .firstOrNull
+                                      ?.tableNo ==
+                                  getJsonField(
+                                    tablelistItem,
+                                    r'''$.id''',
+                                  ).toString()) &&
+                              (containerTableKotRecordList
+                                      .where((e) =>
+                                          e.tableNo ==
+                                          getJsonField(
+                                            tablelistItem,
+                                            r'''$.id''',
+                                          ).toString())
+                                      .toList()
+                                      .firstOrNull
+                                      ?.kotStatus ==
+                                  'PENDING')) {
                             return FlutterFlowTheme.of(context).tertiary;
                           } else if ('EMPTY' ==
                               getJsonField(
@@ -184,8 +195,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                   children: [
                                     Icon(
                                       Icons.table_bar,
-                                      color: 'BILLING' ==
-                                              containerTableKotRecordList
+                                      color: containerTableKotRecordList
                                                   .where((e) =>
                                                       e.tableNo ==
                                                       getJsonField(
@@ -194,7 +204,8 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                       ).toString())
                                                   .toList()
                                                   .firstOrNull
-                                                  ?.kotStatus
+                                                  ?.kotStatus ==
+                                              'BILLING'
                                           ? FlutterFlowTheme.of(context)
                                               .primaryBackground
                                           : FlutterFlowTheme.of(context)
@@ -665,23 +676,26 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .labelLargeFamily,
-                                                  color: 'BILLING' ==
-                                                          containerTableKotRecordList
-                                                              .where((e) =>
-                                                                  e.tableNo ==
-                                                                  getJsonField(
-                                                                    tablelistItem,
-                                                                    r'''$.id''',
-                                                                  ).toString())
-                                                              .toList()
-                                                              .firstOrNull
-                                                              ?.kotStatus
-                                                      ? FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground
-                                                      : FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
+                                                  color:
+                                                      containerTableKotRecordList
+                                                                  .where((e) =>
+                                                                      e
+                                                                          .tableNo ==
+                                                                      getJsonField(
+                                                                        tablelistItem,
+                                                                        r'''$.id''',
+                                                                      )
+                                                                          .toString())
+                                                                  .toList()
+                                                                  .firstOrNull
+                                                                  ?.kotStatus ==
+                                                              'BILLING'
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBackground
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
