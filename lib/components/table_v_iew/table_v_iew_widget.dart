@@ -806,7 +806,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                       )
                                                       .where(
                                                         'kotStatus',
-                                                        isEqualTo: 'PENDING',
+                                                        isNotEqualTo: 'FINAL',
                                                       ),
                                               singleRecord: true,
                                             ).then((s) => s.firstOrNull);
