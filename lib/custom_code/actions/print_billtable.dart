@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -252,11 +254,11 @@ Future printBilltable(
               align: PosAlign.center));
       String printLine = '';
 
-      if (FFAppState().tableNo.length > 0) {
-        String printLine = '';
+      // if (FFAppState().tableNo.length > 0) {
+      //  String printLine = '';
 
-        String tableString = 'Table No:#' + FFAppState().tableNo;
-        String serialTemp = 'Serial No: ' + FFAppState().newcount.toString();
+      String tableString = 'Table No:#' + FFAppState().tableNo;
+      /* String serialTemp = 'Serial No: ' + FFAppState().newcount.toString();
 
         printLine = serialTemp;
         for (int i = 1;
@@ -271,12 +273,12 @@ Future printBilltable(
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: true));
+                bold: true));*/
 
-        String dateString = '';
+      /*       String dateString = '';
         // String serialTemp = 'Token no: ' + FFAppState().count.toString();
         final DateTime now =
-            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+            DateTime.fromMillisecondsSinceEpoch(getCurrentTimestamp.millisecondsSinceEpoch);
         final DateFormat formatter = DateFormat('dd-MM-yyyy');
         final String formatted = formatter.format(now);
         dateString = formatted.toString();
@@ -285,40 +287,40 @@ Future printBilltable(
           printLine += " ";
         }
 
-        printLine += dateString;
+        printLine += dateString;*/
 
-        /*    bytes += generator.text(printLine,
+      /*    bytes += generator.text(printLine,
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: true));*/
 
-        printLine = '';
-        final DateTime now1 =
-            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
-        final DateFormat formatter1 = DateFormat('dd-MM-yyyy h:mm a');
-        final String formatted1 = formatter1.format(now1);
+      printLine = '';
+      final DateTime now1 = DateTime.fromMillisecondsSinceEpoch(
+          getCurrentTimestamp.millisecondsSinceEpoch);
+      final DateFormat formatter1 = DateFormat('dd-MM-yyyy h:mm a');
+      final String formatted1 = formatter1.format(now1);
 
-        String dateTimeString = formatted1.toString();
-        String billNo = 'Bill No:' + invoiceDetails.invoice.toString();
-        printLine = billNo;
-        for (int i = 1;
-            i <= (size - (billNo.length + dateTimeString.length));
-            i++) {
-          printLine += " ";
-        }
-        printLine += dateTimeString;
+      String dateTimeString = formatted1.toString();
+      // String billNo = 'Bill No:' + invoiceDetails.invoice.toString();
+      //  printLine = billNo;
+      printLine = tableString;
+      for (int i = 1;
+          i <= (size - (tableString.length + dateTimeString.length));
+          i++) {
+        printLine += " ";
+      }
+      printLine += dateTimeString;
 
-        bytes += generator.text(printLine,
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true));
-      } else {
+      bytes += generator.text(printLine,
+          styles: const PosStyles(
+              height: PosTextSize.size1, width: PosTextSize.size1, bold: true));
+      // }
+      /* else {
         String dateString = '';
         String serialTemp = 'Serial no: ' + FFAppState().newcount.toString();
         final DateTime now =
-            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+            DateTime.fromMillisecondsSinceEpoch(getCurrentTimestamp.millisecondsSinceEpoch);
         final DateFormat formatter = DateFormat('dd-MM-yyyy');
         final String formatted = formatter.format(now);
         dateString = formatted.toString();
@@ -357,7 +359,7 @@ Future printBilltable(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false));
-      }
+      }*/
 
       bytes += generator.text("-----------------------------------------------",
           styles: const PosStyles(
@@ -481,37 +483,6 @@ Future printBilltable(
                 align: PosAlign.center));
       }
 
-      if (invoiceDetails.roundOff != 0) {
-        bytes += generator.row([
-          PosColumn(
-            text: "Round Off:",
-            width: 6,
-            styles: PosStyles(
-                fontType: PosFontType.fontA,
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.left),
-          ),
-          PosColumn(
-            text: invoiceDetails.roundOff.toString(),
-            width: 6,
-            styles: PosStyles(
-                fontType: PosFontType.fontA,
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.right),
-          )
-        ]);
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-      }
       if (FFAppState().billPrintFooter != "KOT" &&
           FFAppState().billPrintFooter != "CUSTOMER") {
         if (invoiceDetails.taxAmt != 0) {
@@ -619,21 +590,21 @@ Future printBilltable(
                 height: PosTextSize.size1,
                 width: PosTextSize.size2,
                 align: PosAlign.right));
-        bytes += generator.text(
+        /*   bytes += generator.text(
             "-----------------------------------------------",
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.center));*/
 
-        bytes += generator.text(
+        /* bytes += generator.text(
             "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.center));*/
       }
       bytes += generator.text("-----------------------------------------------",
           styles: const PosStyles(
@@ -724,13 +695,13 @@ Future printBilltable(
                     height: PosTextSize.size1,
                     width: PosTextSize.size2,
                     align: PosAlign.right));
-            bytes += generator.text(
+            /*   bytes += generator.text(
                 "-----------------------------------------------",
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: false,
-                    align: PosAlign.center));
+                    align: PosAlign.center));*/
           }
         } else {
           if (invoiceDetails.taxAmt != 0) {
@@ -974,7 +945,7 @@ Future printBilltable(
                     bold: true,
                     align: PosAlign.center));
           }
-          if (invoiceDetails.paymentMode.toString() == 'CREDIT') {
+          /*if (invoiceDetails.paymentMode.toString() == 'CREDIT') {
             bytes += generator.text(
                 "New Credit :" + FFAppState().finalAmt.toString(),
                 styles: const PosStyles(
@@ -991,7 +962,7 @@ Future printBilltable(
                     width: PosTextSize.size1,
                     bold: true,
                     align: PosAlign.center));
-          }
+          }*/
         }
         bytes += generator.text(
             "-----------------------------------------------",
@@ -1221,9 +1192,9 @@ Future printBilltable(
         String printLine = '';
 
         String tableString = 'Table No:#' + FFAppState().tableNo;
-        String serialTemp = 'Serial No: ' + FFAppState().newcount.toString();
+        // String serialTemp = 'Serial No: ' + FFAppState().newcount.toString();
 
-        printLine = serialTemp;
+        /*  printLine = serialTemp;
         for (int i = 1;
             i <= (size - (serialTemp.length + tableString.length));
             i++) {
@@ -1236,12 +1207,12 @@ Future printBilltable(
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: true));
+                bold: true));*/
 
-        String dateString = '';
+        // String dateString = '';
         // String serialTemp = 'Token no: ' + FFAppState().count.toString();
-        final DateTime now =
-            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        /* final DateTime now =
+            DateTime.fromMillisecondsSinceEpoch(getCurrentTimestamp.millisecondsSinceEpoch);
         final DateFormat formatter = DateFormat('dd-MM-yyyy');
         final String formatted = formatter.format(now);
         dateString = formatted.toString();
@@ -1250,7 +1221,7 @@ Future printBilltable(
           printLine += " ";
         }
 
-        printLine += dateString;
+        printLine += dateString;*/
 
         /*    bytes += generator.text(printLine,
           styles: const PosStyles(
@@ -1259,16 +1230,17 @@ Future printBilltable(
               bold: true));*/
 
         printLine = '';
-        final DateTime now1 =
-            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        final DateTime now1 = DateTime.fromMillisecondsSinceEpoch(
+            getCurrentTimestamp.millisecondsSinceEpoch);
         final DateFormat formatter1 = DateFormat('dd-MM-yyyy h:mm a');
         final String formatted1 = formatter1.format(now1);
 
         String dateTimeString = formatted1.toString();
-        String billNo = 'Bill No:' + invoiceDetails.invoice.toString();
-        printLine = billNo;
+        /*  String billNo = 'Bill No:' + invoiceDetails.invoice.toString();
+        printLine = billNo;*/
+        printLine = tableString;
         for (int i = 1;
-            i <= (size - (billNo.length + dateTimeString.length));
+            i <= (size - (tableString.length + dateTimeString.length));
             i++) {
           printLine += " ";
         }
@@ -1279,49 +1251,6 @@ Future printBilltable(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: true));
-      } else {
-        String dateString = '';
-        String serialTemp = 'Serial no: ' + FFAppState().newcount.toString();
-        final DateTime now =
-            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
-        final DateFormat formatter = DateFormat('dd-MM-yyyy');
-        final String formatted = formatter.format(now);
-        dateString = formatted.toString();
-        printLine = serialTemp;
-        for (int i = 1;
-            i <= (size - (serialTemp.length + dateString.length));
-            i++) {
-          printLine += " ";
-        }
-
-        printLine += dateString;
-
-        bytes += generator.text(printLine,
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false));
-        printLine = '';
-        final DateTime now1 =
-            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
-        final DateFormat formatter1 = DateFormat('h:mm:ss');
-        final String formatted1 = formatter1.format(now1);
-
-        String dateTimeString = formatted1.toString();
-        String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
-        printLine = billNo;
-        for (int i = 1;
-            i <= (size - (billNo.length + dateTimeString.length));
-            i++) {
-          printLine += " ";
-        }
-        printLine += dateTimeString;
-
-        bytes += generator.text(printLine,
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false));
       }
 
       bytes += generator.text("--------------------------------",
@@ -1442,7 +1371,7 @@ Future printBilltable(
                 align: PosAlign.center));
       }
 
-      if (invoiceDetails.roundOff != 0) {
+      /*   if (invoiceDetails.roundOff != 0) {
         bytes += generator.row([
           PosColumn(
             text: "Round Off:",
@@ -1471,7 +1400,7 @@ Future printBilltable(
                 width: PosTextSize.size1,
                 bold: false,
                 align: PosAlign.center));
-      }
+      }*/
 
       if (invoiceDetails.taxAmt != 0) {
         bytes += generator.row([
@@ -1576,20 +1505,20 @@ Future printBilltable(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 align: PosAlign.center));
-        bytes += generator.text("--------------------------------",
+        /*    bytes += generator.text("--------------------------------",
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.center));*/
 
-        bytes += generator.text(
+        /*    bytes += generator.text(
             "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.center));*/
       }
 
       bytes += generator.text("--------------------------------",
@@ -1908,7 +1837,7 @@ Future printBilltable(
                     bold: true,
                     align: PosAlign.center));
           }
-          if (invoiceDetails.paymentMode.toString() == 'CREDIT') {
+          /* if (invoiceDetails.paymentMode.toString() == 'CREDIT') {
             bytes += generator.text(
                 "New Credit :" + FFAppState().finalAmt.toString(),
                 styles: const PosStyles(
@@ -1925,7 +1854,7 @@ Future printBilltable(
                     width: PosTextSize.size1,
                     bold: true,
                     align: PosAlign.center));
-          }
+          }*/
         }
         bytes += generator.text("--------------------------------",
             styles: const PosStyles(

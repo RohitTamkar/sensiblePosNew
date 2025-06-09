@@ -627,16 +627,35 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                         child: Container(
                           width: 100.0,
                           decoration: BoxDecoration(),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 3.0, 0.0),
-                                child: Text(
+                          child: Visibility(
+                            visible: false,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 3.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'kuepccr8' /* Bill No. : */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleSmallIsCustom,
+                                        ),
+                                  ),
+                                ),
+                                Text(
                                   FFLocalizations.of(context).getText(
-                                    'kuepccr8' /* Bill No. : */,
+                                    'ydtt4sps' /* 54569883 */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
@@ -649,23 +668,8 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                                 .titleSmallIsCustom,
                                       ),
                                 ),
-                              ),
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'ydtt4sps' /* 54569883 */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .titleSmallFamily,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts:
-                                          !FlutterFlowTheme.of(context)
-                                              .titleSmallIsCustom,
-                                    ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),

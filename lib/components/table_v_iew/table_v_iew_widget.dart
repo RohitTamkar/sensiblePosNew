@@ -69,10 +69,10 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
         return GridView.builder(
           padding: EdgeInsets.zero,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 9,
+            crossAxisCount: 10,
             crossAxisSpacing: 12.0,
             mainAxisSpacing: 12.0,
-            childAspectRatio: 1.1,
+            childAspectRatio: 0.95,
           ),
           shrinkWrap: true,
           scrollDirection: Axis.vertical,
@@ -172,7 +172,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                       ),
                       borderRadius: BorderRadius.circular(15.0),
                       border: Border.all(
-                        color: FlutterFlowTheme.of(context).alternate,
+                        color: FlutterFlowTheme.of(context).primaryBtnText,
                         width: 2.0,
                       ),
                     ),
@@ -180,44 +180,62 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          width: double.infinity,
-                          decoration: BoxDecoration(),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 9.0, 0.0, 5.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(
-                                      Icons.table_bar,
-                                      color: containerTableKotRecordList
-                                                  .where((e) =>
-                                                      e.tableNo ==
-                                                      getJsonField(
-                                                        tablelistItem,
-                                                        r'''$.id''',
-                                                      ).toString())
-                                                  .toList()
-                                                  .firstOrNull
-                                                  ?.kotStatus ==
-                                              'BILLING'
-                                          ? FlutterFlowTheme.of(context)
-                                              .primaryBackground
-                                          : FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                      size: 24.0,
-                                    ),
-                                    if ((FFAppState().tableFlag == true) &&
-                                        ('${FFAppState().tableNo}' !=
+                        if (FFAppState()
+                                        .postableList
+                                        .where((e) =>
+                                            e ==
                                             getJsonField(
                                               tablelistItem,
                                               r'''$.id''',
-                                            ).toString()))
+                                            ).toString())
+                                        .toList()
+                                        .firstOrNull !=
+                                    null &&
+                                FFAppState()
+                                        .postableList
+                                        .where((e) =>
+                                            e ==
+                                            getJsonField(
+                                              tablelistItem,
+                                              r'''$.id''',
+                                            ).toString())
+                                        .toList()
+                                        .firstOrNull !=
+                                    ''
+                            ? true
+                            : false)
+                          Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 5.0, 0.0, 3.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'vkcwkq0q' /* Select Table */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
+                                            ),
+                                      ),
                                       Theme(
                                         data: ThemeData(
                                           checkboxTheme: CheckboxThemeData(
@@ -302,20 +320,20 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                   .primaryBackground,
                                         ),
                                       ),
-                                  ],
+                                    ].divide(SizedBox(width: 3.0)),
+                                  ),
                                 ),
-                              ),
-                              Container(
-                                width: double.infinity,
-                                height: 1.5,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBtnText,
+                                Container(
+                                  width: double.infinity,
+                                  height: 1.5,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
                         Expanded(
                           child: Container(
                             width: double.infinity,
@@ -533,12 +551,11 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                     },
                                     child: Container(
                                       width: double.infinity,
-                                      height: 100.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                            MainAxisAlignment.center,
                                         children: [
                                           if (false)
                                             Padding(
@@ -670,39 +687,18 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                             ).toString(),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
-                                                .labelLarge
+                                                .labelSmall
                                                 .override(
                                                   fontFamily:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelLargeFamily,
-                                                  color:
-                                                      containerTableKotRecordList
-                                                                  .where((e) =>
-                                                                      e
-                                                                          .tableNo ==
-                                                                      getJsonField(
-                                                                        tablelistItem,
-                                                                        r'''$.id''',
-                                                                      )
-                                                                          .toString())
-                                                                  .toList()
-                                                                  .firstOrNull
-                                                                  ?.kotStatus ==
-                                                              'BILLING'
-                                                          ? FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryBackground
-                                                          : FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                  fontSize: 16.0,
+                                                          .labelSmallFamily,
                                                   letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.bold,
+                                                  fontWeight: FontWeight.w600,
                                                   useGoogleFonts:
                                                       !FlutterFlowTheme.of(
                                                               context)
-                                                          .labelLargeIsCustom,
+                                                          .labelSmallIsCustom,
                                                 ),
                                           ),
                                           if (getJsonField(
@@ -734,7 +730,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                             .labelLargeIsCustom,
                                                   ),
                                             ),
-                                        ],
+                                        ].divide(SizedBox(height: 3.0)),
                                       ),
                                     ),
                                   ),

@@ -5279,6 +5279,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                     FFAppState().finalAmt = 0.0;
                                                                                     FFAppState().billAmt = 0.0;
                                                                                     FFAppState().tableViewHideShow = true;
+                                                                                    FFAppState().kotDocRef = null;
                                                                                     safeSetState(() {});
                                                                                     if (_shouldSetState) safeSetState(() {});
                                                                                     return;
@@ -5889,6 +5890,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                               FFAppState().setCustMobNo = '';
                                                                               FFAppState().noOfItems = 0;
                                                                               FFAppState().prdid = '';
+                                                                              FFAppState().kotDocRef = null;
                                                                               FFAppState().finalAmt = 0.0;
                                                                               FFAppState().billAmt = 0.0;
                                                                               FFAppState().count = FFAppState().billcount;

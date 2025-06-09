@@ -29767,6 +29767,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // TableVIew
   {
+    'vkcwkq0q': {
+      'en': 'Select Table',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
     'rrjrzvc9': {
       'en': '45',
       'hi': '',
