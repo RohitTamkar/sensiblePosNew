@@ -69,7 +69,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
         return GridView.builder(
           padding: EdgeInsets.zero,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 10,
+            crossAxisCount: 11,
             crossAxisSpacing: 12.0,
             mainAxisSpacing: 12.0,
             childAspectRatio: 0.95,
