@@ -180,30 +180,12 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        if (FFAppState()
-                                        .postableList
-                                        .where((e) =>
-                                            e ==
-                                            getJsonField(
-                                              tablelistItem,
-                                              r'''$.id''',
-                                            ).toString())
-                                        .toList()
-                                        .firstOrNull !=
-                                    null &&
-                                FFAppState()
-                                        .postableList
-                                        .where((e) =>
-                                            e ==
-                                            getJsonField(
-                                              tablelistItem,
-                                              r'''$.id''',
-                                            ).toString())
-                                        .toList()
-                                        .firstOrNull !=
-                                    ''
-                            ? true
-                            : false)
+                        if ((FFAppState().tableFlag == true) &&
+                            ('${FFAppState().tableNo}' !=
+                                getJsonField(
+                                  tablelistItem,
+                                  r'''$.id''',
+                                ).toString()))
                           Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
