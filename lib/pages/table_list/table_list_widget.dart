@@ -380,7 +380,13 @@ class _TableListWidgetState extends State<TableListWidget>
                     child: wrapWithModel(
                       model: _model.menuDrawerModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: MenuDrawerWidget(),
+                      child: MenuDrawerWidget(
+                        billdetails: null,
+                        doc: widget!.doc,
+                        shiftDetails: widget!.shiftDetails,
+                        tax: widget!.taxcollection,
+                        appSettings23: tableListAppSettingsRecord,
+                      ),
                     ),
                   ),
                 ),
