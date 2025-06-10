@@ -1367,6 +1367,40 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                             widget!.taxDetails,
                                                       },
                                                     );
+                                                  } else if (containerAppSettingsRecord!
+                                                      .settingList
+                                                      .where((e) =>
+                                                          e.title ==
+                                                          'enableTables')
+                                                      .toList()
+                                                      .firstOrNull!
+                                                      .value) {
+                                                    context.pushNamed(
+                                                      TableListWidget.routeName,
+                                                      queryParameters: {
+                                                        'shiftDetails':
+                                                            serializeParam(
+                                                          FFAppState()
+                                                              .shiftDetailsJson,
+                                                          ParamType.JSON,
+                                                        ),
+                                                        'taxcollection':
+                                                            serializeParam(
+                                                          widget!.taxDetails,
+                                                          ParamType.Document,
+                                                          isList: true,
+                                                        ),
+                                                        'doc': serializeParam(
+                                                          widget!.userref,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        'taxcollection':
+                                                            widget!.taxDetails,
+                                                      },
+                                                    );
                                                   } else {
                                                     context.pushNamed(
                                                       ProductAndListNewWidget

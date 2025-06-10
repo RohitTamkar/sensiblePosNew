@@ -1077,9 +1077,6 @@ class _ProductAndListlaundrybillingWidgetState
                                                 fillColor:
                                                     FlutterFlowTheme.of(context)
                                                         .tertiary,
-                                                disabledColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
                                                 icon: Icon(
                                                   Icons.add,
                                                   color: FlutterFlowTheme.of(
@@ -1087,14 +1084,10 @@ class _ProductAndListlaundrybillingWidgetState
                                                       .primaryText,
                                                   size: 16.0,
                                                 ),
-                                                onPressed:
-                                                    !productAndListlaundrybillingAppSettingsRecord!
-                                                            .showHoldListButton
-                                                        ? null
-                                                        : () {
-                                                            print(
-                                                                'IconButton pressed ...');
-                                                          },
+                                                onPressed: () {
+                                                  print(
+                                                      'IconButton pressed ...');
+                                                },
                                               ),
                                             ),
                                           ),
@@ -2316,9 +2309,14 @@ class _ProductAndListlaundrybillingWidgetState
                                                                       parameter5:
                                                                           widget!
                                                                               .taxcollection!,
-                                                                      parameter6:
-                                                                          productAndListlaundrybillingAppSettingsRecord
-                                                                              ?.inclusiveTax,
+                                                                      parameter6: productAndListlaundrybillingAppSettingsRecord
+                                                                          ?.settingList
+                                                                          ?.where((e) =>
+                                                                              e.title ==
+                                                                              'enableInclusiveTax')
+                                                                          .toList()
+                                                                          ?.firstOrNull
+                                                                          ?.value,
                                                                       parameter7: productAndListlaundrybillingAppSettingsRecord
                                                                           ?.settingList
                                                                           ?.where((e) =>
@@ -3405,9 +3403,7 @@ class _ProductAndListlaundrybillingWidgetState
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                if (productAndListlaundrybillingAppSettingsRecord
-                                                        ?.couponSaveBill ??
-                                                    true)
+                                                if (false)
                                                   Expanded(
                                                     flex: 8,
                                                     child: Padding(
@@ -3508,9 +3504,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                               hasContainerTriggered7),
                                                     ),
                                                   ),
-                                                if (productAndListlaundrybillingAppSettingsRecord
-                                                        ?.upiButton ??
-                                                    true)
+                                                if (false)
                                                   Expanded(
                                                     flex: 8,
                                                     child: Padding(

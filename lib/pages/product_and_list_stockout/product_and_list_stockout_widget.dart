@@ -297,33 +297,166 @@ class _ProductAndListStockoutWidgetState
                                         await actions.removeFromAllBillList(
                                           FFAppState().selBill,
                                         );
+                                        _model.paymentmode =
+                                            await queryPaymentModeRecordOnce();
+                                        _model.taxcollection23 =
+                                            await queryTaxMasterRecordOnce();
+                                        if (FFAppState().navigate ==
+                                            'GROCERY') {
+                                          context.goNamed(
+                                            BillingGroceryNewWidget.routeName,
+                                            queryParameters: {
+                                              'shiftdetail': serializeParam(
+                                                FFAppState().shiftDetailsNEw,
+                                                ParamType.JSON,
+                                              ),
+                                              'taxDetails': serializeParam(
+                                                _model.taxcollection23,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                              'userref': serializeParam(
+                                                FFAppState().userdoc,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'paymentMode': serializeParam(
+                                                _model.paymentmode,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'taxDetails':
+                                                  _model.taxcollection23,
+                                              'paymentMode': _model.paymentmode,
+                                            },
+                                          );
+                                        } else if (productAndListStockoutAppSettingsRecord!
+                                            .settingList
+                                            .where((e) =>
+                                                e.title == 'enableweightScale')
+                                            .toList()
+                                            .firstOrNull!
+                                            .value) {
+                                          context.pushNamed(
+                                            ProductAndListlaundrybillingWidget
+                                                .routeName,
+                                            queryParameters: {
+                                              'billDetails': serializeParam(
+                                                widget!.billDetails,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'doc': serializeParam(
+                                                FFAppState().userdoc,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'shiftDetails': serializeParam(
+                                                FFAppState().shiftDetailsNEw,
+                                                ParamType.JSON,
+                                              ),
+                                              'taxcollection': serializeParam(
+                                                _model.taxcollection23,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'taxcollection':
+                                                  _model.taxcollection23,
+                                            },
+                                          );
+                                        } else if (productAndListStockoutAppSettingsRecord!
+                                            .settingList
+                                            .where(
+                                                (e) => e.title == 'enableCombo')
+                                            .toList()
+                                            .firstOrNull!
+                                            .value) {
+                                          context.pushNamed(
+                                            ProductComboBillingWidget.routeName,
+                                            queryParameters: {
+                                              'taxcollection': serializeParam(
+                                                _model.taxcollection23,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                              'billDetails': serializeParam(
+                                                widget!.billDetails,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'doc': serializeParam(
+                                                FFAppState().userdoc,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'shiftDetails': serializeParam(
+                                                FFAppState().shiftDetailsNEw,
+                                                ParamType.JSON,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'taxcollection':
+                                                  _model.taxcollection23,
+                                            },
+                                          );
+                                        } else if (productAndListStockoutAppSettingsRecord!
+                                            .settingList
+                                            .where((e) =>
+                                                e.title == 'enableTables')
+                                            .toList()
+                                            .firstOrNull!
+                                            .value) {
+                                          context.pushNamed(
+                                            TableListWidget.routeName,
+                                            queryParameters: {
+                                              'shiftDetails': serializeParam(
+                                                FFAppState().shiftDetailsJson,
+                                                ParamType.JSON,
+                                              ),
+                                              'taxcollection': serializeParam(
+                                                _model.taxcollection23,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                              'doc': serializeParam(
+                                                widget!.doc,
+                                                ParamType.DocumentReference,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'taxcollection':
+                                                  _model.taxcollection23,
+                                            },
+                                          );
+                                        } else {
+                                          context.pushNamed(
+                                            ProductAndListNewWidget.routeName,
+                                            queryParameters: {
+                                              'billDetails': serializeParam(
+                                                widget!.billDetails,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'doc': serializeParam(
+                                                FFAppState().userdoc,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'shiftDetails': serializeParam(
+                                                FFAppState().shiftDetailsNEw,
+                                                ParamType.JSON,
+                                              ),
+                                              'taxcollection': serializeParam(
+                                                _model.taxcollection23,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'taxcollection':
+                                                  _model.taxcollection23,
+                                            },
+                                          );
+                                        }
 
-                                        context.pushNamed(
-                                          ProductAndListNewWidget.routeName,
-                                          queryParameters: {
-                                            'billDetails': serializeParam(
-                                              widget!.billDetails,
-                                              ParamType.DocumentReference,
-                                            ),
-                                            'doc': serializeParam(
-                                              widget!.doc,
-                                              ParamType.DocumentReference,
-                                            ),
-                                            'shiftDetails': serializeParam(
-                                              FFAppState().shiftDetailsNEw,
-                                              ParamType.JSON,
-                                            ),
-                                            'taxcollection': serializeParam(
-                                              widget!.taxcollection,
-                                              ParamType.Document,
-                                              isList: true,
-                                            ),
-                                          }.withoutNulls,
-                                          extra: <String, dynamic>{
-                                            'taxcollection':
-                                                widget!.taxcollection,
-                                          },
-                                        );
+                                        safeSetState(() {});
                                       },
                                       child: Icon(
                                         Icons.arrow_back,
@@ -760,10 +893,6 @@ class _ProductAndListStockoutWidgetState
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .tertiary,
-                                                      disabledColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryBackground,
                                                       icon: Icon(
                                                         Icons.add,
                                                         color:
@@ -772,14 +901,10 @@ class _ProductAndListStockoutWidgetState
                                                                 .primaryText,
                                                         size: 16.0,
                                                       ),
-                                                      onPressed:
-                                                          !productAndListStockoutAppSettingsRecord!
-                                                                  .showHoldListButton
-                                                              ? null
-                                                              : () {
-                                                                  print(
-                                                                      'IconButton pressed ...');
-                                                                },
+                                                      onPressed: () {
+                                                        print(
+                                                            'IconButton pressed ...');
+                                                      },
                                                     ),
                                                   ),
                                                 ),

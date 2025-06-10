@@ -341,6 +341,39 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                         widget!.taxDetails,
                                                   },
                                                 );
+                                              } else if (containerAppSettingsRecord!
+                                                  .settingList
+                                                  .where((e) =>
+                                                      e.title == 'enableTables')
+                                                  .toList()
+                                                  .firstOrNull!
+                                                  .value) {
+                                                context.pushNamed(
+                                                  TableListWidget.routeName,
+                                                  queryParameters: {
+                                                    'shiftDetails':
+                                                        serializeParam(
+                                                      FFAppState()
+                                                          .shiftDetailsJson,
+                                                      ParamType.JSON,
+                                                    ),
+                                                    'taxcollection':
+                                                        serializeParam(
+                                                      widget!.taxDetails,
+                                                      ParamType.Document,
+                                                      isList: true,
+                                                    ),
+                                                    'doc': serializeParam(
+                                                      FFAppState().userdoc,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    'taxcollection':
+                                                        widget!.taxDetails,
+                                                  },
+                                                );
                                               } else {
                                                 context.pushNamed(
                                                   ProductAndListNewWidget

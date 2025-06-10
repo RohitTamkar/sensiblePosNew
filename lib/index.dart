@@ -13,8 +13,6 @@ export '/pages/subscription_new/subscription_new_widget.dart'
 export '/pages/shift_end_new/shift_end_new_widget.dart' show ShiftEndNewWidget;
 export '/pages/report_screen/bill_report_new/bill_report_new_widget.dart'
     show BillReportNewWidget;
-export '/pages/setting_screen/app_setting/app_setting_widget.dart'
-    show AppSettingWidget;
 export '/pages/report_screen/report_screen_new/report_screen_new_widget.dart'
     show ReportScreenNewWidget;
 export '/pages/g_s_t_report/g_s_t_report_widget.dart' show GSTReportWidget;
@@ -59,8 +57,6 @@ export '/pages/ims_inward_outward/ims_inward_outward_widget.dart'
     show ImsInwardOutwardWidget;
 export '/pages/ims_production/ims_production_widget.dart'
     show ImsProductionWidget;
-export '/pages/product_and_list/product_and_list_widget.dart'
-    show ProductAndListWidget;
 export '/pages/ims_service/ims_service_widget.dart' show ImsServiceWidget;
 export '/pages/goods_received/goods_received_widget.dart'
     show GoodsReceivedWidget;

@@ -69,7 +69,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
   var hasContainerTriggered7 = false;
   var hasContainerTriggered8 = false;
   var hasContainerTriggered9 = false;
-  var hasContainerTriggered10 = false;
   final animationsMap = <String, AnimationInfo>{};
 
   @override
@@ -283,26 +282,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
         ],
       ),
       'containerOnActionTriggerAnimation9': AnimationInfo(
-        trigger: AnimationTrigger.onActionTrigger,
-        applyInitialState: false,
-        effectsBuilder: () => [
-          ScaleEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 100.0.ms,
-            begin: Offset(0.92, 0.92),
-            end: Offset(1.0, 1.0),
-          ),
-          SaturateEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-        ],
-      ),
-      'containerOnActionTriggerAnimation10': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: false,
         effectsBuilder: () => [
@@ -2763,10 +2742,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .tertiary,
-                                                              disabledColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
                                                               icon: Icon(
                                                                 Icons.add,
                                                                 color: FlutterFlowTheme.of(
@@ -2774,14 +2749,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     .primaryText,
                                                                 size: 16.0,
                                                               ),
-                                                              onPressed:
-                                                                  !productAndListNewAppSettingsRecord!
-                                                                          .showHoldListButton
-                                                                      ? null
-                                                                      : () {
-                                                                          print(
-                                                                              'IconButton pressed ...');
-                                                                        },
+                                                              onPressed: () {
+                                                                print(
+                                                                    'IconButton pressed ...');
+                                                              },
                                                             ),
                                                           ),
                                                         ),
@@ -5481,85 +5452,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 MainAxisAlignment
                                                                     .center,
                                                             children: [
-                                                              if (productAndListNewAppSettingsRecord
-                                                                      ?.couponSaveBill ??
-                                                                  true)
-                                                                Expanded(
-                                                                  flex: 8,
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            1.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        if (animationsMap['containerOnActionTriggerAnimation7'] !=
-                                                                            null) {
-                                                                          safeSetState(() =>
-                                                                              hasContainerTriggered7 = true);
-                                                                          SchedulerBinding
-                                                                              .instance
-                                                                              .addPostFrameCallback((_) async => await animationsMap['containerOnActionTriggerAnimation7']!.controller.forward(from: 0.0));
-                                                                        }
-                                                                      },
-                                                                      child:
-                                                                          Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            0.15,
-                                                                        height: MediaQuery.sizeOf(context).height *
-                                                                            0.085,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primary,
-                                                                        ),
-                                                                        child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                '2gu6bd6e' /* Coupon */,
-                                                                              ),
-                                                                              textAlign: TextAlign.center,
-                                                                              style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                                    color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ),
-                                                                    ).animateOnActionTrigger(
-                                                                            animationsMap[
-                                                                                'containerOnActionTriggerAnimation7']!,
-                                                                            hasBeenTriggered:
-                                                                                hasContainerTriggered7),
-                                                                  ),
-                                                                ),
                                                               if (false)
                                                                 Expanded(
                                                                   flex: 8,
@@ -6101,9 +5993,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       ),
                                                                     ).animateOnActionTrigger(
                                                                             animationsMap[
-                                                                                'containerOnActionTriggerAnimation8']!,
+                                                                                'containerOnActionTriggerAnimation7']!,
                                                                             hasBeenTriggered:
-                                                                                hasContainerTriggered8),
+                                                                                hasContainerTriggered7),
                                                                   ),
                                                                 ),
                                                               if (productAndListNewAppSettingsRecord
@@ -6650,9 +6542,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       ),
                                                                     ).animateOnActionTrigger(
                                                                             animationsMap[
-                                                                                'containerOnActionTriggerAnimation9']!,
+                                                                                'containerOnActionTriggerAnimation8']!,
                                                                             hasBeenTriggered:
-                                                                                hasContainerTriggered9),
+                                                                                hasContainerTriggered8),
                                                                   ),
                                                                 ),
                                                               Expanded(
@@ -6671,14 +6563,14 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   onTap:
                                                                       () async {
                                                                     if (animationsMap[
-                                                                            'containerOnActionTriggerAnimation10'] !=
+                                                                            'containerOnActionTriggerAnimation9'] !=
                                                                         null) {
                                                                       safeSetState(() =>
-                                                                          hasContainerTriggered10 =
+                                                                          hasContainerTriggered9 =
                                                                               true);
                                                                       SchedulerBinding
                                                                           .instance
-                                                                          .addPostFrameCallback((_) async => await animationsMap['containerOnActionTriggerAnimation10']!
+                                                                          .addPostFrameCallback((_) async => await animationsMap['containerOnActionTriggerAnimation9']!
                                                                               .controller
                                                                               .forward(from: 0.0));
                                                                     }
@@ -7379,9 +7271,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   ),
                                                                 ).animateOnActionTrigger(
                                                                     animationsMap[
-                                                                        'containerOnActionTriggerAnimation10']!,
+                                                                        'containerOnActionTriggerAnimation9']!,
                                                                     hasBeenTriggered:
-                                                                        hasContainerTriggered10),
+                                                                        hasContainerTriggered9),
                                                               ),
                                                             ],
                                                           ),

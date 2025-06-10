@@ -1,4 +1,3 @@
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -24,10 +23,6 @@ class OpeningBalModel extends FlutterFlowModel<OpeningBalWidget> {
   String? platform;
   // Stores action output result for [Custom Action - appSettingExists] action in Button widget.
   bool? isAppSetExists;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  AppSettingsRecord? doc;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  ShiftRecord? shiftDoc1;
 
   @override
   void initState(BuildContext context) {}

@@ -400,11 +400,12 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                     onPressed: () async {
                                       FFAppState().port = FFAppState().port;
                                       safeSetState(() {});
-                                      _model.paymentmode =
-                                          await queryPaymentModeRecordOnce();
                                       _model.taxcollection23 =
                                           await queryTaxMasterRecordOnce();
                                       if (FFAppState().navigate == 'GROCERY') {
+                                        _model.paymentmode =
+                                            await queryPaymentModeRecordOnce();
+
                                         context.goNamed(
                                           BillingGroceryNewWidget.routeName,
                                           queryParameters: {
@@ -491,6 +492,34 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                             'shiftDetails': serializeParam(
                                               FFAppState().shiftDetailsNEw,
                                               ParamType.JSON,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            'taxcollection':
+                                                _model.taxcollection23,
+                                          },
+                                        );
+                                      } else if (_model.aappsetting!.settingList
+                                          .where(
+                                              (e) => e.title == 'enableTables')
+                                          .toList()
+                                          .firstOrNull!
+                                          .value) {
+                                        context.pushNamed(
+                                          TableListWidget.routeName,
+                                          queryParameters: {
+                                            'shiftDetails': serializeParam(
+                                              FFAppState().shiftDetailsNEw,
+                                              ParamType.JSON,
+                                            ),
+                                            'taxcollection': serializeParam(
+                                              _model.taxcollection23,
+                                              ParamType.Document,
+                                              isList: true,
+                                            ),
+                                            'doc': serializeParam(
+                                              _model.userdoc,
+                                              ParamType.DocumentReference,
                                             ),
                                           }.withoutNulls,
                                           extra: <String, dynamic>{

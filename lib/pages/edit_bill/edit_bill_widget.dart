@@ -398,6 +398,38 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       _model.taxcollection23,
                                                 },
                                               );
+                                            } else if (containerAppSettingsRecord!
+                                                .settingList
+                                                .where((e) =>
+                                                    e.title == 'enableTables')
+                                                .toList()
+                                                .firstOrNull!
+                                                .value) {
+                                              context.pushNamed(
+                                                TableListWidget.routeName,
+                                                queryParameters: {
+                                                  'shiftDetails':
+                                                      serializeParam(
+                                                    FFAppState()
+                                                        .shiftDetailsJson,
+                                                    ParamType.JSON,
+                                                  ),
+                                                  'taxcollection':
+                                                      serializeParam(
+                                                    _model.taxcollection23,
+                                                    ParamType.Document,
+                                                    isList: true,
+                                                  ),
+                                                  'doc': serializeParam(
+                                                    FFAppState().userdoc,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  'taxcollection':
+                                                      _model.taxcollection23,
+                                                },
+                                              );
                                             } else {
                                               context.pushNamed(
                                                 ProductAndListNewWidget

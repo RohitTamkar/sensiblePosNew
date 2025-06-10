@@ -91,11 +91,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => BillReportNewWidget(),
             ),
             FFRoute(
-              name: AppSettingWidget.routeName,
-              path: AppSettingWidget.routePath,
-              builder: (context, params) => AppSettingWidget(),
-            ),
-            FFRoute(
               name: ReportScreenNewWidget.routeName,
               path: ReportScreenNewWidget.routePath,
               asyncParams: {
@@ -345,28 +340,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: ImsProductionWidget.routeName,
               path: ImsProductionWidget.routePath,
               builder: (context, params) => ImsProductionWidget(),
-            ),
-            FFRoute(
-              name: ProductAndListWidget.routeName,
-              path: ProductAndListWidget.routePath,
-              builder: (context, params) => ProductAndListWidget(
-                billDetails: params.getParam(
-                  'billDetails',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['OUTLET', 'INVOICE'],
-                ),
-                doc: params.getParam(
-                  'doc',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['USER_PROFILE'],
-                ),
-                shiftDetails: params.getParam(
-                  'shiftDetails',
-                  ParamType.JSON,
-                ),
-              ),
             ),
             FFRoute(
               name: ImsServiceWidget.routeName,
