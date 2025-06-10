@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom widgets
 
+import 'index.dart'; // Imports other custom widgets
+
 import 'package:flutter/scheduler.dart';
 import '/custom_code/actions/index.dart' as actions;
 
@@ -135,8 +137,9 @@ class _SearchHiveprd2State extends State<SearchHiveprd2> {
               document,
               FFAppState().selBill,
               widget.taxcollection!.toList(),
-              functions
-                  .enabletaxinclusive(widget.appSettingsRecord.inclusiveTax),
+              functions.enabletaxinclusive(widget.appSettingsRecord.settingList
+                  .any((setting) =>
+                      setting.title == 'enableInclusiveTax' && setting.value)),
             );
             _model.calculateResult = await actions.calSubTotalForHoldList(
               FFAppState().selBill.toString(),
