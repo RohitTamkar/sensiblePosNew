@@ -6457,22 +6457,14 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                     r'''$.paymentJson''',
                                                                                   ).toString(),
                                                                                   code: FFAppState().shiftDetails.code,
-                                                                                  endTime: FFAppState().shiftDetails.endTime,
                                                                                   advanceAmtTotal: FFAppState().shiftDetails.advanceAmtTotal,
                                                                                   customerReciveAmtTotal: FFAppState().shiftDetails.customerReciveAmtTotal,
                                                                                   expensesAmtTotal: FFAppState().shiftDetails.expensesAmtTotal,
-                                                                                  openingAmt: FFAppState().shiftDetails.openingAmt,
                                                                                   receiveAmtTotal: FFAppState().shiftDetails.receiveAmtTotal,
                                                                                   refoundAmount: FFAppState().shiftDetails.refoundAmount,
                                                                                   roundOff: FFAppState().shiftDetails.roundOff,
                                                                                   cashInHand: FFAppState().shiftDetails.cashInHand,
-                                                                                  startTime: FFAppState().shiftDetails.startTime,
                                                                                   inActive: FFAppState().shiftDetails.inActive,
-                                                                                  shiftNo: FFAppState().shiftDetails.shiftNo,
-                                                                                  shiftId: getJsonField(
-                                                                                    _model.shiftSummarResultsNew2,
-                                                                                    r'''$.shiftId''',
-                                                                                  ).toString(),
                                                                                 ));
                                                                               } else {
                                                                                 if (_shouldSetState) safeSetState(() {});
@@ -7105,7 +7097,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                       r'''$.paymentJson''',
                                                                                     ).toString(),
                                                                                     code: FFAppState().shiftDetails.code,
-                                                                                    endTime: FFAppState().shiftDetails.endTime,
                                                                                     advanceAmtTotal: FFAppState().shiftDetails.advanceAmtTotal,
                                                                                     customerReciveAmtTotal: FFAppState().shiftDetails.customerReciveAmtTotal,
                                                                                     expensesAmtTotal: FFAppState().shiftDetails.expensesAmtTotal,
@@ -7117,13 +7108,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                       _model.shiftSummarResultsNew,
                                                                                       r'''$.cashSale''',
                                                                                     ),
-                                                                                    startTime: FFAppState().shiftDetails.startTime,
                                                                                     inActive: FFAppState().shiftDetails.inActive,
-                                                                                    shiftNo: FFAppState().shiftDetails.shiftNo,
-                                                                                    shiftId: getJsonField(
-                                                                                      _model.shiftSummarResultsNew,
-                                                                                      r'''$.shiftId''',
-                                                                                    ).toString(),
                                                                                   ));
                                                                                   _model.updatedShiftDetails = await actions.hiveShiftCrud(
                                                                                     FFAppState().shiftDetails.newIDShift,
