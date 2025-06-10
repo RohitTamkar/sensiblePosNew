@@ -122,19 +122,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                     decoration: BoxDecoration(
                       color: valueOrDefault<Color>(
                         () {
-                          if (containerTableKotRecordList
-                                  .where((e) =>
-                                      e.tableNo ==
-                                      getJsonField(
-                                        tablelistItem,
-                                        r'''$.id''',
-                                      ).toString())
-                                  .toList()
-                                  .firstOrNull
-                                  ?.kotStatus ==
-                              'BILLING') {
-                            return FlutterFlowTheme.of(context).primary;
-                          } else if ((containerTableKotRecordList
+                          if ((containerTableKotRecordList
                                       .where((e) =>
                                           e.tableNo ==
                                           getJsonField(
@@ -160,6 +148,18 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                       ?.kotStatus ==
                                   'PENDING')) {
                             return FlutterFlowTheme.of(context).tertiary;
+                          } else if (containerTableKotRecordList
+                                  .where((e) =>
+                                      e.tableNo ==
+                                      getJsonField(
+                                        tablelistItem,
+                                        r'''$.id''',
+                                      ).toString())
+                                  .toList()
+                                  .firstOrNull
+                                  ?.kotStatus ==
+                              'BILLING') {
+                            return FlutterFlowTheme.of(context).primary;
                           } else if ('EMPTY' ==
                               getJsonField(
                                 tablelistItem,
