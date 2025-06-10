@@ -5149,7 +5149,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                           r'''$.paymentJson''',
                                                                                         ).toString(),
                                                                                         code: FFAppState().shiftDetails.code,
-                                                                                        endTime: FFAppState().shiftDetails.endTime,
                                                                                         advanceAmtTotal: FFAppState().shiftDetails.advanceAmtTotal,
                                                                                         customerReciveAmtTotal: FFAppState().shiftDetails.customerReciveAmtTotal,
                                                                                         expensesAmtTotal: FFAppState().shiftDetails.expensesAmtTotal,
@@ -5158,9 +5157,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                         refoundAmount: FFAppState().shiftDetails.refoundAmount,
                                                                                         roundOff: FFAppState().shiftDetails.roundOff,
                                                                                         cashInHand: FFAppState().shiftDetails.cashInHand,
-                                                                                        startTime: FFAppState().shiftDetails.startTime,
                                                                                         inActive: FFAppState().shiftDetails.inActive,
-                                                                                        shiftNo: FFAppState().shiftDetails.shiftNo,
                                                                                         shiftId: getJsonField(
                                                                                           _model.shiftSummarResultsNew2,
                                                                                           r'''$.shiftId''',
@@ -5694,7 +5691,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                     r'''$.cashSale''',
                                                                                   ),
                                                                                   inActive: FFAppState().shiftDetails.inActive,
-                                                                                  shiftNo: FFAppState().shiftDetails.shiftNo,
                                                                                   shiftId: getJsonField(
                                                                                     _model.shiftSummarResultsNew,
                                                                                     r'''$.shiftId''',
