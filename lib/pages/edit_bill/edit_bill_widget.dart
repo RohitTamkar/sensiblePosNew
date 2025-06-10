@@ -228,101 +228,236 @@ class _EditBillWidgetState extends State<EditBillWidget>
                           children: [
                             Expanded(
                               flex: 1,
-                              child: Container(
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).primary,
+                              child: StreamBuilder<List<AppSettingsRecord>>(
+                                stream: queryAppSettingsRecord(
+                                  parent: FFAppState().outletIdRef,
+                                  queryBuilder: (appSettingsRecord) =>
+                                      appSettingsRecord.where(
+                                    'deviceId',
+                                    isEqualTo: FFAppState().dId,
+                                  ),
+                                  singleRecord: true,
                                 ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      buttonSize: 50.0,
-                                      icon: Icon(
-                                        Icons.chevron_left,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBtnText,
-                                        size: 25.0,
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 40.0,
+                                        height: 40.0,
+                                        child: SpinKitFadingCircle(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 40.0,
+                                        ),
                                       ),
-                                      onPressed: () async {
-                                        if (widget!.appsetting!.settingList
-                                            .where(
-                                                (e) => e.title == 'enableCombo')
-                                            .toList()
-                                            .firstOrNull!
-                                            .value) {
-                                          context.pushNamed(
-                                            ProductComboBillingWidget.routeName,
-                                            queryParameters: {
-                                              'billDetails': serializeParam(
-                                                widget!.billRef,
-                                                ParamType.DocumentReference,
-                                              ),
-                                              'shiftDetails': serializeParam(
-                                                FFAppState().shiftdetails,
-                                                ParamType.JSON,
-                                              ),
-                                              'taxcollection': serializeParam(
-                                                widget!.tax,
-                                                ParamType.Document,
-                                                isList: true,
-                                              ),
-                                            }.withoutNulls,
-                                            extra: <String, dynamic>{
-                                              'taxcollection': widget!.tax,
-                                            },
-                                          );
-                                        } else {
-                                          context.pushNamed(
-                                            ProductAndListNewWidget.routeName,
-                                            queryParameters: {
-                                              'billDetails': serializeParam(
-                                                widget!.billRef,
-                                                ParamType.DocumentReference,
-                                              ),
-                                              'doc': serializeParam(
-                                                FFAppState().userdoc,
-                                                ParamType.DocumentReference,
-                                              ),
-                                              'shiftDetails': serializeParam(
-                                                FFAppState().shiftdetails,
-                                                ParamType.JSON,
-                                              ),
-                                              'taxcollection': serializeParam(
-                                                widget!.tax,
-                                                ParamType.Document,
-                                                isList: true,
-                                              ),
-                                            }.withoutNulls,
-                                            extra: <String, dynamic>{
-                                              'taxcollection': widget!.tax,
-                                            },
-                                          );
-                                        }
-                                      },
+                                    );
+                                  }
+                                  List<AppSettingsRecord>
+                                      containerAppSettingsRecordList =
+                                      snapshot.data!;
+                                  // Return an empty Container when the item does not exist.
+                                  if (snapshot.data!.isEmpty) {
+                                    return Container();
+                                  }
+                                  final containerAppSettingsRecord =
+                                      containerAppSettingsRecordList.isNotEmpty
+                                          ? containerAppSettingsRecordList.first
+                                          : null;
+
+                                  return Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    height: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                     ),
-                                    AutoSizeText(
-                                      FFLocalizations.of(context).getText(
-                                        '6re8b54s' /* Edit Bill */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineMediumFamily,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        FlutterFlowIconButton(
+                                          borderColor: Colors.transparent,
+                                          buttonSize: 50.0,
+                                          icon: Icon(
+                                            Icons.chevron_left,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts:
-                                                !FlutterFlowTheme.of(context)
-                                                    .headlineMediumIsCustom,
+                                            size: 25.0,
                                           ),
+                                          onPressed: () async {
+                                            _model.paymentmode =
+                                                await queryPaymentModeRecordOnce();
+                                            _model.taxcollection23 =
+                                                await queryTaxMasterRecordOnce();
+                                            if (FFAppState().navigate ==
+                                                'GROCERY') {
+                                              context.goNamed(
+                                                BillingGroceryNewWidget
+                                                    .routeName,
+                                                queryParameters: {
+                                                  'shiftdetail': serializeParam(
+                                                    FFAppState()
+                                                        .shiftDetailsNEw,
+                                                    ParamType.JSON,
+                                                  ),
+                                                  'taxDetails': serializeParam(
+                                                    _model.taxcollection23,
+                                                    ParamType.Document,
+                                                    isList: true,
+                                                  ),
+                                                  'userref': serializeParam(
+                                                    FFAppState().userdoc,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                  'paymentMode': serializeParam(
+                                                    _model.paymentmode,
+                                                    ParamType.Document,
+                                                    isList: true,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  'taxDetails':
+                                                      _model.taxcollection23,
+                                                  'paymentMode':
+                                                      _model.paymentmode,
+                                                },
+                                              );
+                                            } else if (containerAppSettingsRecord!
+                                                .settingList
+                                                .where((e) =>
+                                                    e.title ==
+                                                    'enableweightScale')
+                                                .toList()
+                                                .firstOrNull!
+                                                .value) {
+                                              context.pushNamed(
+                                                ProductAndListlaundrybillingWidget
+                                                    .routeName,
+                                                queryParameters: {
+                                                  'billDetails': serializeParam(
+                                                    widget!.billRef,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                  'doc': serializeParam(
+                                                    FFAppState().userdoc,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                  'shiftDetails':
+                                                      serializeParam(
+                                                    FFAppState()
+                                                        .shiftDetailsNEw,
+                                                    ParamType.JSON,
+                                                  ),
+                                                  'taxcollection':
+                                                      serializeParam(
+                                                    _model.taxcollection23,
+                                                    ParamType.Document,
+                                                    isList: true,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  'taxcollection':
+                                                      _model.taxcollection23,
+                                                },
+                                              );
+                                            } else if (containerAppSettingsRecord!
+                                                .settingList
+                                                .where((e) =>
+                                                    e.title == 'enableCombo')
+                                                .toList()
+                                                .firstOrNull!
+                                                .value) {
+                                              context.pushNamed(
+                                                ProductComboBillingWidget
+                                                    .routeName,
+                                                queryParameters: {
+                                                  'taxcollection':
+                                                      serializeParam(
+                                                    _model.taxcollection23,
+                                                    ParamType.Document,
+                                                    isList: true,
+                                                  ),
+                                                  'billDetails': serializeParam(
+                                                    widget!.billRef,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                  'doc': serializeParam(
+                                                    FFAppState().userdoc,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                  'shiftDetails':
+                                                      serializeParam(
+                                                    FFAppState()
+                                                        .shiftDetailsNEw,
+                                                    ParamType.JSON,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  'taxcollection':
+                                                      _model.taxcollection23,
+                                                },
+                                              );
+                                            } else {
+                                              context.pushNamed(
+                                                ProductAndListNewWidget
+                                                    .routeName,
+                                                queryParameters: {
+                                                  'billDetails': serializeParam(
+                                                    widget!.billRef,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                  'doc': serializeParam(
+                                                    FFAppState().userdoc,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                  'shiftDetails':
+                                                      serializeParam(
+                                                    FFAppState()
+                                                        .shiftDetailsNEw,
+                                                    ParamType.JSON,
+                                                  ),
+                                                  'taxcollection':
+                                                      serializeParam(
+                                                    _model.taxcollection23,
+                                                    ParamType.Document,
+                                                    isList: true,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  'taxcollection':
+                                                      _model.taxcollection23,
+                                                },
+                                              );
+                                            }
+
+                                            safeSetState(() {});
+                                          },
+                                        ),
+                                        AutoSizeText(
+                                          FFLocalizations.of(context).getText(
+                                            '6re8b54s' /* Edit Bill */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBtnText,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineMediumIsCustom,
+                                              ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
+                                  );
+                                },
                               ),
                             ),
                             Expanded(

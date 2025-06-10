@@ -47,6 +47,10 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Firestore Query - Query a collection] action in IconButton widget.
+  List<PaymentModeRecord>? paymentmode;
+  // Stores action output result for [Firestore Query - Query a collection] action in IconButton widget.
+  List<TaxMasterRecord>? taxcollection23;
   // Model for Header component.
   late HeaderModel headerModel;
   // Stores action output result for [Custom Action - docToJson] action in Container widget.
