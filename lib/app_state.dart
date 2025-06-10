@@ -3749,6 +3749,21 @@ class FFAppState extends ChangeNotifier {
   void clearPremiseCache() => _premiseManager.clear();
   void clearPremiseCacheKey(String? uniqueKey) =>
       _premiseManager.clearRequest(uniqueKey);
+
+  final _tkotManager = StreamRequestManager<List<TableKotRecord>>();
+  Stream<List<TableKotRecord>> tkot({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Stream<List<TableKotRecord>> Function() requestFn,
+  }) =>
+      _tkotManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearTkotCache() => _tkotManager.clear();
+  void clearTkotCacheKey(String? uniqueKey) =>
+      _tkotManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {
