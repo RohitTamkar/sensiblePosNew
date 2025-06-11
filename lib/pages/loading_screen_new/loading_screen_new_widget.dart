@@ -262,7 +262,8 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
             singleRecord: true,
           ).then((s) => s.firstOrNull);
           if (_model.tablekot != null) {
-            if (!functions.checkmergedtables(FFAppState().table.toList())) {
+            if (!functions.checkmergedtables(
+                functions.stringToJson(_model.tablekot!.tableJson).toList())) {
               await _model.tablekot!.reference.update(createTableJsonRecordData(
                 tableJson: functions.jsonToString(functions
                     .generatePremiseTablesjson(_model.premises!.toList())
