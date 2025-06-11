@@ -456,7 +456,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                           FFAppState().table.toList())) {
                                         FFAppState().table = functions
                                             .generatePremiseTablesjson(
-                                                _model.premiseDoc!.toList())
+                                                _model.premiseDocCopy!.toList())
                                             .toList()
                                             .cast<dynamic>();
                                       }

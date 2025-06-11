@@ -1524,5 +1524,5 @@ List<dynamic> stringToJson(String stringJson) {
 }
 
 String jsonToString(List<dynamic> json) {
-  return "${json}";
+  return jsonEncode(json);
 }
