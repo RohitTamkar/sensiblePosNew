@@ -55,6 +55,14 @@ class LoadingScreenNewModel extends FlutterFlowModel<LoadingScreenNewWidget> {
   // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
   AppSettingsRecord? devicew;
   InstantTimer? instantTimer;
+  // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
+  List<PremisesRecord>? premises;
+  // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
+  TableJsonRecord? tablekot;
+  // Stores action output result for [Backend Call - Create Document] action in loadingScreenNew widget.
+  TableJsonRecord? doctoable;
+  // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
+  TableJsonRecord? tablekotupdated;
 
   @override
   void initState(BuildContext context) {}

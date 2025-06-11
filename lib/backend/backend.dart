@@ -49,6 +49,7 @@ import 'schema/stock_summary_record.dart';
 import 'schema/monthly_pass_record.dart';
 import 'schema/table_kot_record.dart';
 import 'schema/coupons_code_record.dart';
+import 'schema/table_json_record.dart';
 import 'dart:async';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -105,6 +106,7 @@ export 'schema/stock_summary_record.dart';
 export 'schema/monthly_pass_record.dart';
 export 'schema/table_kot_record.dart';
 export 'schema/coupons_code_record.dart';
+export 'schema/table_json_record.dart';
 
 /// Functions to query DeviceRecords (as a Stream and as a Future).
 Future<int> queryDeviceRecordCount({
@@ -3794,6 +3796,88 @@ Future<FFFirestorePage<CouponsCodeRecord>> queryCouponsCodeRecordPage({
       if (isStream) {
         final streamSubscription =
             (page.dataStream)?.listen((List<CouponsCodeRecord> data) {
+          data.forEach((item) {
+            final itemIndexes = controller.itemList!
+                .asMap()
+                .map((k, v) => MapEntry(v.reference.id, k));
+            final index = itemIndexes[item.reference.id];
+            final items = controller.itemList!;
+            if (index != null) {
+              items.replaceRange(index, index + 1, [item]);
+              controller.itemList = {
+                for (var item in items) item.reference: item
+              }.values.toList();
+            }
+          });
+        });
+        streamSubscriptions?.add(streamSubscription);
+      }
+      return page;
+    });
+
+/// Functions to query TableJsonRecords (as a Stream and as a Future).
+Future<int> queryTableJsonRecordCount({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      TableJsonRecord.collection(parent),
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<TableJsonRecord>> queryTableJsonRecord({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      TableJsonRecord.collection(parent),
+      TableJsonRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<TableJsonRecord>> queryTableJsonRecordOnce({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      TableJsonRecord.collection(parent),
+      TableJsonRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+Future<FFFirestorePage<TableJsonRecord>> queryTableJsonRecordPage({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+  required PagingController<DocumentSnapshot?, TableJsonRecord> controller,
+  List<StreamSubscription?>? streamSubscriptions,
+}) =>
+    queryCollectionPage(
+      TableJsonRecord.collection(parent),
+      TableJsonRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    ).then((page) {
+      controller.appendPage(
+        page.data,
+        page.nextPageMarker,
+      );
+      if (isStream) {
+        final streamSubscription =
+            (page.dataStream)?.listen((List<TableJsonRecord> data) {
           data.forEach((item) {
             final itemIndexes = controller.itemList!
                 .asMap()

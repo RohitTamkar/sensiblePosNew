@@ -953,6 +953,15 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                         false;
                                                                     safeSetState(
                                                                         () {});
+
+                                                                    await FFAppState()
+                                                                        .docrefTable!
+                                                                        .update(
+                                                                            createTableJsonRecordData(
+                                                                          tableJson: functions.jsonToString(FFAppState()
+                                                                              .table
+                                                                              .toList()),
+                                                                        ));
                                                                   } else {
                                                                     FFAppState()
                                                                         .tableNo = '';

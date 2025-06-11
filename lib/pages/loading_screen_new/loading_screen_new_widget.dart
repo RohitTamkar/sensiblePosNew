@@ -249,6 +249,57 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
             startImmediately: true,
           );
         }
+        if (_model.devicew!.settingList
+            .where((e) => e.title == 'enableTables')
+            .toList()
+            .firstOrNull!
+            .value) {
+          _model.premises = await queryPremisesRecordOnce(
+            parent: FFAppState().outletIdRef,
+          );
+          _model.tablekot = await queryTableJsonRecordOnce(
+            parent: FFAppState().outletIdRef,
+            singleRecord: true,
+          ).then((s) => s.firstOrNull);
+          if (_model.tablekot != null) {
+            if (!functions.checkmergedtables(FFAppState().table.toList())) {
+              await _model.tablekot!.reference.update(createTableJsonRecordData(
+                tableJson: functions.jsonToString(functions
+                    .generatePremiseTablesjson(_model.premises!.toList())
+                    .toList()),
+              ));
+            }
+            FFAppState().docrefTable = _model.tablekot?.reference;
+            safeSetState(() {});
+          } else {
+            var tableJsonRecordReference =
+                TableJsonRecord.createDoc(FFAppState().outletIdRef!);
+            await tableJsonRecordReference.set(createTableJsonRecordData(
+              tableJson: functions.jsonToString(functions
+                  .generatePremiseTablesjson(_model.premises!.toList())
+                  .toList()),
+            ));
+            _model.doctoable = TableJsonRecord.getDocumentFromData(
+                createTableJsonRecordData(
+                  tableJson: functions.jsonToString(functions
+                      .generatePremiseTablesjson(_model.premises!.toList())
+                      .toList()),
+                ),
+                tableJsonRecordReference);
+            FFAppState().docrefTable = _model.doctoable?.reference;
+            safeSetState(() {});
+          }
+
+          _model.tablekotupdated = await queryTableJsonRecordOnce(
+            parent: FFAppState().outletIdRef,
+            singleRecord: true,
+          ).then((s) => s.firstOrNull);
+          FFAppState().table = functions
+              .stringToJson(_model.tablekotupdated!.tableJson)
+              .toList()
+              .cast<dynamic>();
+          safeSetState(() {});
+        }
         await showModalBottomSheet(
           isScrollControlled: true,
           backgroundColor: Colors.transparent,

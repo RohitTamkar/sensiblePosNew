@@ -620,37 +620,6 @@ List<dynamic> filterBillList(
   return itemList;
 }
 
-dynamic generatePremiseTables(
-  PremisesRecord doc,
-  String? selectedPremise,
-) {
-  List<dynamic> list1 = [];
-  List<dynamic> list2 = [];
-  List<dynamic> returnData = [];
-
-  int noOfTables = doc.tables!;
-  for (int i = 1; i <= noOfTables; i++) {
-    var typeName = doc.type! + " $i";
-    var id = "${doc.name} $typeName"; // e.g., "AC TABLE 1"
-    list1.add({
-      "typeName": typeName,
-      "id": id,
-      "status": 'AVAILABLE',
-    });
-  }
-
-  list2.add({"premise": doc.name, "type": list1});
-
-  for (int x = 0; x < list2.length; x++) {
-    if (list2[x]["premise"] == selectedPremise!) {
-      returnData.add(list2[x]);
-      break;
-    }
-  }
-
-  return returnData[0];
-}
-
 String dateToTime(int? date) {
   // Add your function code here!
   DateTime time = DateTime.fromMillisecondsSinceEpoch(date!);
@@ -1548,4 +1517,12 @@ String totalDuration(int starttimemillis) {
   } else {
     return '${duration.inSeconds}s';
   }
+}
+
+List<dynamic> stringToJson(String stringJson) {
+  return jsonDecode(stringJson);
+}
+
+String jsonToString(List<dynamic> json) {
+  return "${json}";
 }

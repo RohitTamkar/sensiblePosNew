@@ -452,5 +452,17 @@ service cloud.firestore {
       allow read: if true;
     }
 
+
+    match /OUTLET/{parent}/TABLE_JSON/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/TABLE_JSON/{document} {
+      allow read: if true;
+    }
+
   }
 }

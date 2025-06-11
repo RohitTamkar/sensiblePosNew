@@ -658,6 +658,9 @@ class FFAppState extends ChangeNotifier {
           }).toList() ??
           _table;
     });
+    _safeInit(() {
+      _docrefTable = prefs.getString('ff_docrefTable')?.ref ?? _docrefTable;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3718,6 +3721,15 @@ class FFAppState extends ChangeNotifier {
   String get prmiseupdate => _prmiseupdate;
   set prmiseupdate(String value) {
     _prmiseupdate = value;
+  }
+
+  DocumentReference? _docrefTable;
+  DocumentReference? get docrefTable => _docrefTable;
+  set docrefTable(DocumentReference? value) {
+    _docrefTable = value;
+    value != null
+        ? prefs.setString('ff_docrefTable', value.path)
+        : prefs.remove('ff_docrefTable');
   }
 
   final _appsdettingManager = StreamRequestManager<List<AppSettingsRecord>>();

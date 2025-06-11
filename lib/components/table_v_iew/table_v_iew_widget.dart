@@ -528,6 +528,15 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                               .toList()
                                               .cast<dynamic>();
                                           FFAppState().update(() {});
+
+                                          await FFAppState()
+                                              .docrefTable!
+                                              .update(createTableJsonRecordData(
+                                                tableJson: functions
+                                                    .jsonToString(FFAppState()
+                                                        .table
+                                                        .toList()),
+                                              ));
                                         }
                                       }
                                     },
