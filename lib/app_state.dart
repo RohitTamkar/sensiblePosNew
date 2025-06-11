@@ -3296,7 +3296,7 @@ class FFAppState extends ChangeNotifier {
     _kioskAmt = value;
   }
 
-  String _version = '1.0.18';
+  String _version = '1.0.43';
   String get version => _version;
   set version(String value) {
     _version = value;

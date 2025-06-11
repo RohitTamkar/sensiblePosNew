@@ -1449,11 +1449,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => AddStockbyCategoryWidget(),
             ),
             FFRoute(
-              name: Product5ShoeWidget.routeName,
-              path: Product5ShoeWidget.routePath,
-              builder: (context, params) => Product5ShoeWidget(),
-            ),
-            FFRoute(
               name: PieceCountingWidget.routeName,
               path: PieceCountingWidget.routePath,
               builder: (context, params) => PieceCountingWidget(),
@@ -1557,6 +1552,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 purchase: params.getParam(
                   'purchase',
                   ParamType.bool,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: TableListMobileWidget.routeName,
+              path: TableListMobileWidget.routePath,
+              asyncParams: {
+                'taxcollection':
+                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+              },
+              builder: (context, params) => TableListMobileWidget(
+                shiftDetails: params.getParam(
+                  'shiftDetails',
+                  ParamType.JSON,
+                ),
+                taxcollection: params.getParam<TaxMasterRecord>(
+                  'taxcollection',
+                  ParamType.Document,
+                  isList: true,
+                ),
+                doc: params.getParam(
+                  'doc',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['USER_PROFILE'],
                 ),
               ),
             )

@@ -189,7 +189,6 @@ export '/pages/report_screen/outstock_report/outstock_report_widget.dart'
     show OutstockReportWidget;
 export '/pages/screens/add_stockby_category/add_stockby_category_widget.dart'
     show AddStockbyCategoryWidget;
-export '/product5_shoe/product5_shoe_widget.dart' show Product5ShoeWidget;
 export '/pages/billing_style/piece_counting/piece_counting_widget.dart'
     show PieceCountingWidget;
 export '/pages/table_list/table_list_widget.dart' show TableListWidget;
@@ -201,3 +200,5 @@ export '/pages/product_and_list_stockout/product_and_list_stockout_widget.dart'
     show ProductAndListStockoutWidget;
 export '/grocery_windows/barcode_print_new/barcode_print_new_widget.dart'
     show BarcodePrintNewWidget;
+export '/pages/table_list_mobile/table_list_mobile_widget.dart'
+    show TableListMobileWidget;

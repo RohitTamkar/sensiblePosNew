@@ -1,0 +1,7821 @@
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
+import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget.dart';
+import '/components/menu_drawer/menu_drawer_widget.dart';
+import '/components/mix_payment_mode/mix_payment_mode_widget.dart';
+import '/components/qty_edit_widget.dart';
+import '/components/table_details/table_details_widget.dart';
+import '/components/table_v_iew_mobile/table_v_iew_mobile_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
+import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
+import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'table_list_mobile_model.dart';
+export 'table_list_mobile_model.dart';
+
+class TableListMobileWidget extends StatefulWidget {
+  const TableListMobileWidget({
+    super.key,
+    this.shiftDetails,
+    this.taxcollection,
+    this.doc,
+  });
+
+  final dynamic shiftDetails;
+  final List<TaxMasterRecord>? taxcollection;
+  final DocumentReference? doc;
+
+  static String routeName = 'TableListMobile';
+  static String routePath = 'tableListMobile';
+
+  @override
+  State<TableListMobileWidget> createState() => _TableListMobileWidgetState();
+}
+
+class _TableListMobileWidgetState extends State<TableListMobileWidget>
+    with TickerProviderStateMixin {
+  late TableListMobileModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  var hasContainerTriggered1 = false;
+  var hasContainerTriggered2 = false;
+  var hasContainerTriggered3 = false;
+  var hasContainerTriggered4 = false;
+  var hasContainerTriggered5 = false;
+  var hasContainerTriggered6 = false;
+  var hasContainerTriggered7 = false;
+  var hasContainerTriggered8 = false;
+  var hasContainerTriggered9 = false;
+  final animationsMap = <String, AnimationInfo>{};
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => TableListMobileModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      FFAppState().tableViewHideShow = true;
+      safeSetState(() {});
+      FFAppState().shiftDocExists = getJsonField(
+        widget!.shiftDetails,
+        r'''$.shiftExists''',
+      );
+      FFAppState().update(() {});
+      FFAppState().shiftDetailsNEw = widget!.shiftDetails!;
+      safeSetState(() {});
+      FFAppState().shiftDetailsJson = widget!.shiftDetails!;
+      FFAppState().shiftdetails = widget!.shiftDetails!;
+      safeSetState(() {});
+      _model.hiveProductList = await actions.getProductlistHive();
+      _model.categoryListHive = await actions.getCategorylistHive();
+      _model.premiseDoc = await queryPremisesRecordOnce(
+        parent: FFAppState().outletIdRef,
+      );
+      FFAppState().productHive =
+          _model.hiveProductList!.toList().cast<ProductStructStruct>();
+      if (!functions.checkmergedtables(FFAppState().table.toList())) {
+        FFAppState().table = functions
+            .generatePremiseTablesjson(_model.premiseDoc!.toList())
+            .toList()
+            .cast<dynamic>();
+      }
+      FFAppState().categoryHive =
+          _model.categoryListHive!.toList().cast<CategoryStructStruct>();
+      safeSetState(() {});
+      if (!functions.isPrinterSelected(FFAppState().printerDevice)!) {
+        _model.resDevice2Copy = await actions.scanPrinter(
+          FFAppState().posMode,
+        );
+      }
+      _model.isConnected = await actions.connectDevice(
+        FFAppState().printerDevice,
+        FFAppState().printerIndex,
+      );
+    });
+
+    _model.textController1 ??= TextEditingController();
+    _model.textFieldFocusNode1 ??= FocusNode();
+
+    _model.textController2 ??= TextEditingController();
+    _model.textFieldFocusNode2 ??= FocusNode();
+
+    _model.textController3 ??= TextEditingController();
+    _model.textFieldFocusNode3 ??= FocusNode();
+
+    animationsMap.addAll({
+      'containerOnActionTriggerAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 180.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 180.0.ms,
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 180.0.ms,
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
+          ),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 180.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation3': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 180.0.ms,
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
+          ),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 180.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation4': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: Offset(0.92, 0.92),
+            end: Offset(1.0, 1.0),
+          ),
+          SaturateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation5': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 120.0.ms,
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
+          ),
+          SaturateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 120.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation6': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: Offset(0.92, 0.92),
+            end: Offset(1.0, 1.0),
+          ),
+          SaturateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation7': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: Offset(0.92, 0.92),
+            end: Offset(1.0, 1.0),
+          ),
+          SaturateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation8': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: Offset(0.92, 0.92),
+            end: Offset(1.0, 1.0),
+          ),
+          SaturateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation9': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: Offset(0.92, 0.92),
+            end: Offset(1.0, 1.0),
+          ),
+          SaturateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
+    setupAnimations(
+      animationsMap.values.where((anim) =>
+          anim.trigger == AnimationTrigger.onActionTrigger ||
+          !anim.applyInitialState),
+      this,
+    );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
+    return StreamBuilder<List<AppSettingsRecord>>(
+      stream: FFAppState().appsdetting(
+        requestFn: () => queryAppSettingsRecord(
+          parent: FFAppState().outletIdRef,
+          queryBuilder: (appSettingsRecord) => appSettingsRecord.where(
+            'deviceId',
+            isEqualTo: FFAppState().dId,
+          ),
+          singleRecord: true,
+        ),
+      ),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Scaffold(
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            body: Center(
+              child: SizedBox(
+                width: 40.0,
+                height: 40.0,
+                child: SpinKitFadingCircle(
+                  color: FlutterFlowTheme.of(context).primary,
+                  size: 40.0,
+                ),
+              ),
+            ),
+          );
+        }
+        List<AppSettingsRecord> tableListMobileAppSettingsRecordList =
+            snapshot.data!;
+        // Return an empty Container when the item does not exist.
+        if (snapshot.data!.isEmpty) {
+          return Container();
+        }
+        final tableListMobileAppSettingsRecord =
+            tableListMobileAppSettingsRecordList.isNotEmpty
+                ? tableListMobileAppSettingsRecordList.first
+                : null;
+
+        return Title(
+            title: 'TableListMobile',
+            color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+            child: GestureDetector(
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
+              child: Scaffold(
+                key: scaffoldKey,
+                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+                drawer: Container(
+                  width: MediaQuery.sizeOf(context).width * 0.11,
+                  child: Drawer(
+                    elevation: 16.0,
+                    child: wrapWithModel(
+                      model: _model.menuDrawerModel,
+                      updateCallback: () => safeSetState(() {}),
+                      child: MenuDrawerWidget(
+                        billdetails: null,
+                        doc: widget!.doc,
+                        shiftDetails: widget!.shiftDetails,
+                        tax: widget!.taxcollection,
+                        appSettings23: tableListMobileAppSettingsRecord,
+                      ),
+                    ),
+                  ),
+                ),
+                body: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Container(
+                            width: 100.0,
+                            height: MediaQuery.sizeOf(context).height * 0.1,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).primary,
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    FFAppState().tableViewHideShow = true;
+                                    FFAppState().shiftDocExists = getJsonField(
+                                      widget!.shiftDetails,
+                                      r'''$.shiftExists''',
+                                    );
+                                    FFAppState().shiftDetailsNEw =
+                                        widget!.shiftDetails!;
+                                    FFAppState().shiftDetailsJson =
+                                        widget!.shiftDetails!;
+                                    FFAppState().shiftdetails =
+                                        widget!.shiftDetails!;
+                                    _model.allprdrefresh =
+                                        await queryProductRecordOnce(
+                                      parent: FFAppState().outletIdRef,
+                                    );
+                                    _model.prdlist =
+                                        await actions.addFirebasetoHiveProduct(
+                                      _model.allprdrefresh!.toList(),
+                                    );
+                                    _model.listcategory =
+                                        await queryCategoryRecordOnce(
+                                      parent: FFAppState().outletIdRef,
+                                    );
+                                    _model.cat =
+                                        await actions.addFirebasetoHiveCategory(
+                                      _model.listcategory!.toList(),
+                                    );
+                                    _model.hiveProductList25 =
+                                        await actions.getProductlistHive();
+                                    _model.categoryListHive25 =
+                                        await actions.getCategorylistHive();
+                                    FFAppState().productHive = _model
+                                        .hiveProductList25!
+                                        .toList()
+                                        .cast<ProductStructStruct>();
+                                    _model.premiseDocCopy =
+                                        await queryPremisesRecordOnce(
+                                      parent: FFAppState().outletIdRef,
+                                    );
+                                    if (!functions.checkmergedtables(
+                                        FFAppState().table.toList())) {
+                                      FFAppState().table = functions
+                                          .generatePremiseTablesjson(
+                                              _model.premiseDoc!.toList())
+                                          .toList()
+                                          .cast<dynamic>();
+                                    }
+                                    FFAppState().categoryHive = _model
+                                        .categoryListHive25!
+                                        .toList()
+                                        .cast<CategoryStructStruct>();
+                                    FFAppState().update(() {});
+
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'u7hsna4c' /*  */,
+                                  ),
+                                  icon: Icon(
+                                    Icons.replay_sharp,
+                                    size: 20.0,
+                                  ),
+                                  options: FFButtonOptions(
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleSmallIsCustom,
+                                        ),
+                                    elevation: 0.0,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 3.0, 0.0),
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      FFAppState().outletName,
+                                      'SENSIBLE',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBtnText,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleSmallIsCustom,
+                                        ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 6.0, 0.0),
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      FFAppState().userName,
+                                      'SK',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmallFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodySmallIsCustom,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: MediaQuery.sizeOf(context).width * 0.05,
+                          height: MediaQuery.sizeOf(context).height * 0.1,
+                          decoration: BoxDecoration(),
+                          child: Image.asset(
+                            'assets/images/IMG_20220412_140945.png',
+                            width: 100.0,
+                            height: 100.0,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Expanded(
+                      flex: 10,
+                      child: StreamBuilder<List<PremisesRecord>>(
+                        stream: FFAppState().premise(
+                          requestFn: () => queryPremisesRecord(
+                            parent: FFAppState().outletIdRef,
+                          ),
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 40.0,
+                                height: 40.0,
+                                child: SpinKitFadingCircle(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 40.0,
+                                ),
+                              ),
+                            );
+                          }
+                          List<PremisesRecord> containerPremisesRecordList =
+                              snapshot.data!;
+
+                          return Container(
+                            width: double.infinity,
+                            height: double.infinity,
+                            decoration: BoxDecoration(),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 3.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          scaffoldKey.currentState!
+                                              .openDrawer();
+                                        },
+                                        child: Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.05,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.06,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.menu_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .lineColor,
+                                                size: 18.0,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 3.0, 0.0),
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                0.14,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.06,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(0.0),
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Flexible(
+                                                  child: FFButtonWidget(
+                                                    onPressed: () async {
+                                                      FFAppState()
+                                                              .tableViewHideShow =
+                                                          false;
+                                                      safeSetState(() {});
+                                                    },
+                                                    text: FFLocalizations.of(
+                                                            context)
+                                                        .getText(
+                                                      '5ci5jxsd' /* Load Menu */,
+                                                    ),
+                                                    options: FFButtonOptions(
+                                                      height: 40.0,
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallIsCustom,
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 3.0, 0.0),
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                0.14,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.06,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(0.0),
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Flexible(
+                                                  child: FFButtonWidget(
+                                                    onPressed: () async {
+                                                      await actions
+                                                          .removeFromAllBillList(
+                                                        FFAppState().selBill,
+                                                      );
+                                                      await actions
+                                                          .clearValue();
+                                                      FFAppState().delCharges =
+                                                          0.0;
+                                                      FFAppState().kotDocRef =
+                                                          null;
+                                                      FFAppState()
+                                                              .tableViewHideShow =
+                                                          true;
+                                                      FFAppState().prdid = '';
+                                                      FFAppState()
+                                                              .tableViewHideShow =
+                                                          true;
+                                                      safeSetState(() {});
+                                                    },
+                                                    text: FFLocalizations.of(
+                                                            context)
+                                                        .getText(
+                                                      'tcxqvgrv' /* Load Tables */,
+                                                    ),
+                                                    options: FFButtonOptions(
+                                                      height: 40.0,
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallIsCustom,
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 3.0, 0.0),
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                0.14,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.06,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(0.0),
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                if (FFAppState().tableFlag)
+                                                  Flexible(
+                                                    child: FFButtonWidget(
+                                                      onPressed: () async {
+                                                        var confirmDialogResponse =
+                                                            await showDialog<
+                                                                    bool>(
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (alertDialogContext) {
+                                                                    return AlertDialog(
+                                                                      content: Text(
+                                                                          'Are You Sure To Merge Tables ?'),
+                                                                      actions: [
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              false),
+                                                                          child:
+                                                                              Text('Cancel'),
+                                                                        ),
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              true),
+                                                                          child:
+                                                                              Text('Confirm'),
+                                                                        ),
+                                                                      ],
+                                                                    );
+                                                                  },
+                                                                ) ??
+                                                                false;
+                                                        if (confirmDialogResponse) {
+                                                          FFAppState().table = functions
+                                                              .generateMergeTables(
+                                                                  containerPremisesRecordList
+                                                                      .toList(),
+                                                                  FFAppState()
+                                                                      .tableNo,
+                                                                  FFAppState()
+                                                                      .selectedPremise,
+                                                                  FFAppState()
+                                                                      .postableList
+                                                                      .toList(),
+                                                                  FFAppState()
+                                                                      .table
+                                                                      .toList())
+                                                              .toList()
+                                                              .cast<dynamic>();
+                                                          FFAppState().tableNo =
+                                                              '';
+                                                          FFAppState()
+                                                              .postableList = [];
+                                                          FFAppState()
+                                                                  .tableFlag =
+                                                              false;
+                                                          safeSetState(() {});
+                                                        } else {
+                                                          FFAppState().tableNo =
+                                                              '';
+                                                          FFAppState()
+                                                              .postableList = [];
+                                                          FFAppState()
+                                                                  .tableFlag =
+                                                              false;
+                                                          safeSetState(() {});
+                                                        }
+                                                      },
+                                                      text: FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '1io45k9h' /* Merge Tables */,
+                                                      ),
+                                                      icon: FaIcon(
+                                                        FontAwesomeIcons.mixer,
+                                                        size: 30.0,
+                                                      ),
+                                                      options: FFButtonOptions(
+                                                        height: 40.0,
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    0.0),
+                                                        iconPadding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmallIsCustom,
+                                                                ),
+                                                        elevation: 0.0,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(18.0),
+                                                      ),
+                                                    ),
+                                                  ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 3.0, 0.0),
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                0.14,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.06,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(0.0),
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                if (FFAppState().tableFlag)
+                                                  Flexible(
+                                                    child: FFButtonWidget(
+                                                      onPressed: () async {
+                                                        if (FFAppState()
+                                                                .kotDocRef !=
+                                                            null) {
+                                                          if (FFAppState()
+                                                                  .postableList
+                                                                  .length ==
+                                                              1) {
+                                                            var confirmDialogResponse =
+                                                                await showDialog<
+                                                                        bool>(
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (alertDialogContext) {
+                                                                        return AlertDialog(
+                                                                          content:
+                                                                              Text('Are You Sure To Move Table Kot Orders?'),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                              child: Text('Cancel'),
+                                                                            ),
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                              child: Text('Confirm'),
+                                                                            ),
+                                                                          ],
+                                                                        );
+                                                                      },
+                                                                    ) ??
+                                                                    false;
+                                                            if (confirmDialogResponse) {
+                                                              await FFAppState()
+                                                                  .kotDocRef!
+                                                                  .update(
+                                                                      createTableKotRecordData(
+                                                                    tableNo: FFAppState()
+                                                                        .postableList
+                                                                        .firstOrNull,
+                                                                    premiseName:
+                                                                        FFAppState()
+                                                                            .prmiseupdate,
+                                                                  ));
+                                                              FFAppState()
+                                                                  .tableNo = '';
+                                                              FFAppState()
+                                                                  .postableList = [];
+                                                              FFAppState()
+                                                                      .tableFlag =
+                                                                  false;
+                                                              FFAppState()
+                                                                      .kotDocRef =
+                                                                  null;
+                                                              safeSetState(
+                                                                  () {});
+                                                              ScaffoldMessenger
+                                                                      .of(context)
+                                                                  .showSnackBar(
+                                                                SnackBar(
+                                                                  content: Text(
+                                                                    'Table Kot Move Successfully !',
+                                                                    style:
+                                                                        TextStyle(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                  ),
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          4000),
+                                                                  backgroundColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                ),
+                                                              );
+                                                            } else {
+                                                              FFAppState()
+                                                                  .tableNo = '';
+                                                              FFAppState()
+                                                                  .postableList = [];
+                                                              FFAppState()
+                                                                      .tableFlag =
+                                                                  false;
+                                                              FFAppState()
+                                                                      .kotDocRef =
+                                                                  null;
+                                                              FFAppState()
+                                                                  .update(
+                                                                      () {});
+                                                            }
+                                                          } else {
+                                                            await showDialog(
+                                                              context: context,
+                                                              builder:
+                                                                  (alertDialogContext) {
+                                                                return AlertDialog(
+                                                                  content: Text(
+                                                                      'Choose Single Table Only !'),
+                                                                  actions: [
+                                                                    TextButton(
+                                                                      onPressed:
+                                                                          () =>
+                                                                              Navigator.pop(alertDialogContext),
+                                                                      child: Text(
+                                                                          'Ok'),
+                                                                    ),
+                                                                  ],
+                                                                );
+                                                              },
+                                                            );
+                                                          }
+                                                        } else {
+                                                          await showDialog(
+                                                            context: context,
+                                                            builder:
+                                                                (alertDialogContext) {
+                                                              return AlertDialog(
+                                                                content: Text(
+                                                                    'Table Is Empty !'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              );
+                                                            },
+                                                          );
+                                                        }
+                                                      },
+                                                      text: FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'pzy7q28j' /* Move Kot */,
+                                                      ),
+                                                      icon: Icon(
+                                                        Icons.move_down,
+                                                        size: 30.0,
+                                                      ),
+                                                      options: FFButtonOptions(
+                                                        height: 40.0,
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    0.0),
+                                                        iconPadding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        color:
+                                                            Color(0xFFA79DFF),
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmallIsCustom,
+                                                                ),
+                                                        elevation: 0.0,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(18.0),
+                                                      ),
+                                                    ),
+                                                  ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 3.0, 0.0),
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                0.14,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.06,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(0.0),
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                if (FFAppState().kotDocRef !=
+                                                    null)
+                                                  Flexible(
+                                                    child: FFButtonWidget(
+                                                      onPressed: () async {
+                                                        _model.tkot =
+                                                            await TableKotRecord
+                                                                .getDocumentOnce(
+                                                                    FFAppState()
+                                                                        .kotDocRef!);
+                                                        if (_model.tkot !=
+                                                            null) {
+                                                          await showModalBottomSheet(
+                                                            isScrollControlled:
+                                                                true,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            enableDrag: false,
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return GestureDetector(
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      TableDetailsWidget(
+                                                                    tablekot:
+                                                                        _model
+                                                                            .tkot,
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          ).then((value) =>
+                                                              safeSetState(
+                                                                  () {}));
+                                                        } else {
+                                                          ScaffoldMessenger.of(
+                                                                  context)
+                                                              .showSnackBar(
+                                                            SnackBar(
+                                                              content: Text(
+                                                                'Table Is Empty !',
+                                                                style:
+                                                                    TextStyle(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                ),
+                                                              ),
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      4000),
+                                                              backgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondary,
+                                                            ),
+                                                          );
+                                                        }
+
+                                                        safeSetState(() {});
+                                                      },
+                                                      text: FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'aegv77yr' /* Show Kot */,
+                                                      ),
+                                                      icon: Icon(
+                                                        Icons.restaurant_menu,
+                                                        size: 30.0,
+                                                      ),
+                                                      options: FFButtonOptions(
+                                                        height: 40.0,
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    0.0),
+                                                        iconPadding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        color:
+                                                            Color(0xFF9DFFDA),
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmallIsCustom,
+                                                                ),
+                                                        elevation: 0.0,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(18.0),
+                                                      ),
+                                                    ),
+                                                  ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 3.0, 0.0),
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                0.14,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.06,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(0.0),
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                if (FFAppState().tableFlag)
+                                                  Flexible(
+                                                    child: FFButtonWidget(
+                                                      onPressed: () async {
+                                                        FFAppState().tableNo =
+                                                            '';
+                                                        FFAppState()
+                                                            .postableList = [];
+                                                        FFAppState().tableFlag =
+                                                            false;
+                                                        FFAppState().kotDocRef =
+                                                            null;
+                                                        safeSetState(() {});
+                                                      },
+                                                      text: FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'f4pqpfvb' /* Cancel */,
+                                                      ),
+                                                      icon: Icon(
+                                                        Icons.cancel_rounded,
+                                                        size: 30.0,
+                                                      ),
+                                                      options: FFButtonOptions(
+                                                        height: 40.0,
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    0.0),
+                                                        iconPadding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        iconColor: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmallIsCustom,
+                                                                ),
+                                                        elevation: 0.0,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(18.0),
+                                                      ),
+                                                    ),
+                                                  ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.12,
+                                        height:
+                                            MediaQuery.sizeOf(context).height *
+                                                0.06,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                        ),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Expanded(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onLongPress: () async {
+                                                  context.pushNamed(
+                                                      DigitalOrderWidget
+                                                          .routeName);
+                                                },
+                                                child: Container(
+                                                  width: 100.0,
+                                                  height: 100.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    border: Border.all(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .info,
+                                                      width: 0.5,
+                                                    ),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Icon(
+                                                        Icons.dining,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        size: 30.0,
+                                                      ),
+                                                      Icon(
+                                                        Icons.sync_alt,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        size: 25.0,
+                                                      ),
+                                                      Icon(
+                                                        Icons.table_bar_sharp,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .customColor1,
+                                                        size: 30.0,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            if (!FFAppState().tableViewHideShow)
+                                              Flexible(
+                                                child: Container(
+                                                  height: 100.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Text(
+                                                    FFAppState().tableNo,
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .info,
+                                                          fontSize: 20.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                if (FFAppState().tableViewHideShow)
+                                  Expanded(
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                      ),
+                                      child: Builder(
+                                        builder: (context) {
+                                          final json =
+                                              FFAppState().table.toList();
+
+                                          return ListView.separated(
+                                            padding: EdgeInsets.zero,
+                                            shrinkWrap: true,
+                                            scrollDirection: Axis.vertical,
+                                            itemCount: json.length,
+                                            separatorBuilder: (_, __) =>
+                                                SizedBox(height: 25.0),
+                                            itemBuilder: (context, jsonIndex) {
+                                              final jsonItem = json[jsonIndex];
+                                              return Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10.0),
+                                                  border: Border.all(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .customColor2,
+                                                    width: 2.0,
+                                                  ),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(12.0),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Container(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color:
+                                                              Color(0xFFFFECCD),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      5.0),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      5.0,
+                                                                      10.0,
+                                                                      5.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Text(
+                                                                getJsonField(
+                                                                  jsonItem,
+                                                                  r'''$.premise''',
+                                                                ).toString(),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleMediumIsCustom,
+                                                                    ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      TableVIewMobileWidget(
+                                                        key: Key(
+                                                            'Keyoyg_${jsonIndex}_of_${json.length}'),
+                                                      ),
+                                                    ].divide(
+                                                        SizedBox(height: 10.0)),
+                                                  ),
+                                                ),
+                                              );
+                                            },
+                                            controller:
+                                                _model.listViewController1,
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                if (!FFAppState().tableViewHideShow)
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 3.0, 0.0, 0.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Expanded(
+                                            flex: 18,
+                                            child: StreamBuilder<
+                                                List<UnitTypeRecord>>(
+                                              stream: queryUnitTypeRecord(),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 40.0,
+                                                      height: 40.0,
+                                                      child:
+                                                          SpinKitFadingCircle(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        size: 40.0,
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                List<UnitTypeRecord>
+                                                    containerUnitTypeRecordList =
+                                                    snapshot.data!;
+
+                                                return Container(
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  decoration: BoxDecoration(),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    3.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width:
+                                                              double.infinity,
+                                                          height: 50.0,
+                                                          decoration:
+                                                              BoxDecoration(),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
+                                                            children: [
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await actions
+                                                                      .hideAppbar();
+                                                                  FFAppState()
+                                                                      .categoryColor = '';
+                                                                  FFAppState()
+                                                                      .update(
+                                                                          () {});
+                                                                  FFAppState()
+                                                                          .outletCatRef =
+                                                                      FFAppState()
+                                                                          .catRef;
+                                                                  FFAppState()
+                                                                      .update(
+                                                                          () {});
+                                                                  FFAppState()
+                                                                      .catAllColor = FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary;
+                                                                  FFAppState()
+                                                                      .update(
+                                                                          () {});
+                                                                  FFAppState()
+                                                                      .categoryID = '';
+                                                                  safeSetState(
+                                                                      () {});
+                                                                  _model.prdhiveall =
+                                                                      await actions
+                                                                          .getProductlistHive();
+                                                                  FFAppState().productHive = _model
+                                                                      .prdhiveall!
+                                                                      .toList()
+                                                                      .cast<
+                                                                          ProductStructStruct>();
+                                                                  safeSetState(
+                                                                      () {});
+
+                                                                  safeSetState(
+                                                                      () {});
+                                                                },
+                                                                child:
+                                                                    Container(
+                                                                  width: 70.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      FFAppState()
+                                                                          .catAllColor,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                    ),
+                                                                  ),
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            3.0,
+                                                                            12.0,
+                                                                            3.0,
+                                                                            12.0),
+                                                                        child:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'p8aex3th' /* All */,
+                                                                          ),
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                color: FlutterFlowTheme.of(context).lineColor,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              Expanded(
+                                                                child: Builder(
+                                                                  builder:
+                                                                      (context) {
+                                                                    final categoryList = (tableListMobileAppSettingsRecord!.settingList.where((e) => e.title == 'sortCategoryByCode').toList().firstOrNull!.value
+                                                                            ? FFAppState().categoryHive.sortedList(
+                                                                                keyOf: (e) => e.code,
+                                                                                desc: false)
+                                                                            : FFAppState().categoryHive.sortedList(keyOf: (e) => e.name, desc: false))
+                                                                        .toList();
+
+                                                                    return ListView
+                                                                        .separated(
+                                                                      padding:
+                                                                          EdgeInsets
+                                                                              .zero,
+                                                                      scrollDirection:
+                                                                          Axis.horizontal,
+                                                                      itemCount:
+                                                                          categoryList
+                                                                              .length,
+                                                                      separatorBuilder: (_,
+                                                                              __) =>
+                                                                          SizedBox(
+                                                                              width: 2.0),
+                                                                      itemBuilder:
+                                                                          (context,
+                                                                              categoryListIndex) {
+                                                                        final categoryListItem =
+                                                                            categoryList[categoryListIndex];
+                                                                        return InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            FFAppState().catAllColor =
+                                                                                Color(4292855973);
+                                                                            safeSetState(() {});
+                                                                            FFAppState().categoryColor =
+                                                                                categoryListItem.id;
+                                                                            FFAppState().update(() {});
+                                                                            _model.prdhive =
+                                                                                await actions.getProductlistHive();
+                                                                            FFAppState().categoryID =
+                                                                                categoryListItem.id;
+                                                                            safeSetState(() {});
+                                                                            FFAppState().productHive =
+                                                                                _model.prdhive!.where((e) => e.categoryId == categoryListItem.id).toList().cast<ProductStructStruct>();
+                                                                            safeSetState(() {});
+
+                                                                            safeSetState(() {});
+                                                                          },
+                                                                          child:
+                                                                              Container(
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FFAppState().categoryColor == categoryListItem.id ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                            ),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 12.0, 10.0, 12.0),
+                                                                              child: Column(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                children: [
+                                                                                  Text(
+                                                                                    categoryListItem.name,
+                                                                                    textAlign: TextAlign.center,
+                                                                                    style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                          color: FlutterFlowTheme.of(context).lineColor,
+                                                                                          fontSize: 14.0,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
+                                                                                        ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        );
+                                                                      },
+                                                                      controller:
+                                                                          _model
+                                                                              .listViewController2,
+                                                                    );
+                                                                  },
+                                                                ),
+                                                              ),
+                                                            ].divide(SizedBox(
+                                                                width: 2.0)),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 19,
+                                                        child: Container(
+                                                          width:
+                                                              double.infinity,
+                                                          height:
+                                                              double.infinity,
+                                                          decoration:
+                                                              BoxDecoration(),
+                                                          child: Builder(
+                                                            builder: (context) {
+                                                              final productList = (tableListMobileAppSettingsRecord!
+                                                                          .settingList
+                                                                          .where((e) =>
+                                                                              e.title ==
+                                                                              'sortProductByCode')
+                                                                          .toList()
+                                                                          .firstOrNull!
+                                                                          .value
+                                                                      ? FFAppState().productHive.sortedList(
+                                                                          keyOf: (e) => e
+                                                                              .code,
+                                                                          desc:
+                                                                              false)
+                                                                      : FFAppState()
+                                                                          .productHive
+                                                                          .sortedList(
+                                                                              keyOf: (e) => e.name,
+                                                                              desc: false))
+                                                                  .toList();
+                                                              if (productList
+                                                                  .isEmpty) {
+                                                                return Center(
+                                                                  child: Image
+                                                                      .asset(
+                                                                    'assets/images/9091-empty-sad-shopping-bag.gif',
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        0.28,
+                                                                  ),
+                                                                );
+                                                              }
+
+                                                              return GridView
+                                                                  .builder(
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .zero,
+                                                                gridDelegate:
+                                                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                                                  crossAxisCount:
+                                                                      3,
+                                                                  crossAxisSpacing:
+                                                                      3.0,
+                                                                  mainAxisSpacing:
+                                                                      7.0,
+                                                                  childAspectRatio:
+                                                                      1.0,
+                                                                ),
+                                                                scrollDirection:
+                                                                    Axis.vertical,
+                                                                itemCount:
+                                                                    productList
+                                                                        .length,
+                                                                itemBuilder:
+                                                                    (context,
+                                                                        productListIndex) {
+                                                                  final productListItem =
+                                                                      productList[
+                                                                          productListIndex];
+                                                                  return Container(
+                                                                    width:
+                                                                        113.0,
+                                                                    height:
+                                                                        100.0,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryBackground,
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              5.0),
+                                                                      border:
+                                                                          Border
+                                                                              .all(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .customColor2,
+                                                                        width:
+                                                                            1.0,
+                                                                      ),
+                                                                    ),
+                                                                    child:
+                                                                        Stack(
+                                                                      children: [
+                                                                        if (!tableListMobileAppSettingsRecord!
+                                                                            .settingList
+                                                                            .where((e) =>
+                                                                                e.title ==
+                                                                                'showProductImage')
+                                                                            .toList()
+                                                                            .firstOrNull!
+                                                                            .value)
+                                                                          InkWell(
+                                                                            splashColor:
+                                                                                Colors.transparent,
+                                                                            focusColor:
+                                                                                Colors.transparent,
+                                                                            hoverColor:
+                                                                                Colors.transparent,
+                                                                            highlightColor:
+                                                                                Colors.transparent,
+                                                                            onTap:
+                                                                                () async {
+                                                                              var _shouldSetState = false;
+                                                                              FFAppState().groceryshow = false;
+                                                                              safeSetState(() {});
+                                                                              if (productListItem.stockable) {
+                                                                                if (productListItem.stock > 0) {
+                                                                                  if (FFAppState().prdid != productListItem.id) {
+                                                                                    if (FFAppState().holdBillCount == 0) {
+                                                                                      FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                      FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                      FFAppState().selBill = 1;
+                                                                                    }
+                                                                                    FFAppState().prdid = productListItem.id;
+                                                                                    safeSetState(() {});
+                                                                                  } else {
+                                                                                    if (productListItem.stock >
+                                                                                        functions.doubleToInt(valueOrDefault<double>(
+                                                                                          getJsonField(
+                                                                                            functions
+                                                                                                .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                                .where((e) =>
+                                                                                                    productListItem.id ==
+                                                                                                    valueOrDefault<String>(
+                                                                                                      getJsonField(
+                                                                                                        e,
+                                                                                                        r'''$.id''',
+                                                                                                      )?.toString(),
+                                                                                                      '0',
+                                                                                                    ))
+                                                                                                .toList()
+                                                                                                .firstOrNull,
+                                                                                            r'''$.quantity''',
+                                                                                          ),
+                                                                                          0.0,
+                                                                                        ))!) {
+                                                                                      if (FFAppState().holdBillCount == 0) {
+                                                                                        FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                        FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                        FFAppState().selBill = 1;
+                                                                                      }
+                                                                                    } else {
+                                                                                      await showDialog(
+                                                                                        context: context,
+                                                                                        builder: (alertDialogContext) {
+                                                                                          return AlertDialog(
+                                                                                            content: Text('Item Out Of  Stock'),
+                                                                                            actions: [
+                                                                                              TextButton(
+                                                                                                onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                child: Text('Ok'),
+                                                                                              ),
+                                                                                            ],
+                                                                                          );
+                                                                                        },
+                                                                                      );
+                                                                                      if (_shouldSetState) safeSetState(() {});
+                                                                                      return;
+                                                                                    }
+                                                                                  }
+                                                                                } else {
+                                                                                  await showDialog(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        content: Text('Item Out Of Stock'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  );
+                                                                                  if (_shouldSetState) safeSetState(() {});
+                                                                                  return;
+                                                                                }
+                                                                              } else {
+                                                                                if (FFAppState().holdBillCount == 0) {
+                                                                                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                  FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                  FFAppState().selBill = 1;
+                                                                                }
+                                                                              }
+
+                                                                              _model.qtyunitresult = await actions.addToHoldListprdtable(
+                                                                                productListItem,
+                                                                                FFAppState().selBill,
+                                                                                widget!.taxcollection!.toList(),
+                                                                                functions.enabletaxinclusive(tableListMobileAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                containerUnitTypeRecordList.toList(),
+                                                                                false,
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              _model.calculateResult23 = await actions.calSubTotalForHoldListkiosk(
+                                                                                FFAppState().selBill.toString(),
+                                                                                FFAppState().allBillsList.toList(),
+                                                                                functions.enabletaxinclusive(tableListMobileAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              _model.calbillAmt3 = await actions.calBillAmt(
+                                                                                FFAppState().disAmt,
+                                                                                FFAppState().delCharges,
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              await _model.listViewprd?.animateTo(
+                                                                                _model.listViewprd!.position.maxScrollExtent,
+                                                                                duration: Duration(milliseconds: 100),
+                                                                                curve: Curves.ease,
+                                                                              );
+                                                                              await _model.listViewprd?.animateTo(
+                                                                                _model.listViewprd!.position.maxScrollExtent,
+                                                                                duration: Duration(milliseconds: 100),
+                                                                                curve: Curves.ease,
+                                                                              );
+                                                                              if (_shouldSetState)
+                                                                                safeSetState(() {});
+                                                                            },
+                                                                            child:
+                                                                                Container(
+                                                                              decoration: BoxDecoration(
+                                                                                color: FFAppState().productColor == productListItem.id ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                borderRadius: BorderRadius.circular(5.0),
+                                                                              ),
+                                                                              child: Padding(
+                                                                                padding: EdgeInsets.all(5.0),
+                                                                                child: Column(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  mainAxisAlignment: MainAxisAlignment.end,
+                                                                                  children: [
+                                                                                    Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                                                      child: Text(
+                                                                                        productListItem.name.maybeHandleOverflow(
+                                                                                          maxChars: 25,
+                                                                                        ),
+                                                                                        textAlign: TextAlign.center,
+                                                                                        style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                              fontSize: 14.0,
+                                                                                              letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                    Flexible(
+                                                                                      child: Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                        child: Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                                                          children: [
+                                                                                            Text(
+                                                                                              FFLocalizations.of(context).getText(
+                                                                                                'bxg7m5cs' /* ₹  */,
+                                                                                              ),
+                                                                                              textAlign: TextAlign.center,
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                                  ),
+                                                                                            ),
+                                                                                            Flexible(
+                                                                                              child: Text(
+                                                                                                productListItem.sellingPrice.toString(),
+                                                                                                textAlign: TextAlign.center,
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                    if (productListItem.stockable)
+                                                                                      Flexible(
+                                                                                        child: Text(
+                                                                                          'Stock :${productListItem.stock.toString()}',
+                                                                                          textAlign: TextAlign.justify,
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
+                                                                                  ],
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ).animateOnActionTrigger(
+                                                                              animationsMap['containerOnActionTriggerAnimation2']!,
+                                                                              hasBeenTriggered: hasContainerTriggered2),
+                                                                        if (tableListMobileAppSettingsRecord?.settingList?.where((e) => e.title == 'showProductImage').toList()?.firstOrNull?.value ??
+                                                                            true)
+                                                                          InkWell(
+                                                                            splashColor:
+                                                                                Colors.transparent,
+                                                                            focusColor:
+                                                                                Colors.transparent,
+                                                                            hoverColor:
+                                                                                Colors.transparent,
+                                                                            highlightColor:
+                                                                                Colors.transparent,
+                                                                            onTap:
+                                                                                () async {
+                                                                              var _shouldSetState = false;
+                                                                              FFAppState().groceryshow = false;
+                                                                              safeSetState(() {});
+                                                                              if (productListItem.stockable) {
+                                                                                if (productListItem.stock > 0) {
+                                                                                  if (FFAppState().prdid != productListItem.id) {
+                                                                                    if (FFAppState().holdBillCount == 0) {
+                                                                                      FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                      FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                      FFAppState().selBill = 1;
+                                                                                    }
+                                                                                    FFAppState().prdid = productListItem.id;
+                                                                                    safeSetState(() {});
+                                                                                  } else {
+                                                                                    if (productListItem.stock >
+                                                                                        functions.doubleToInt(valueOrDefault<double>(
+                                                                                          getJsonField(
+                                                                                            functions
+                                                                                                .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                                .where((e) =>
+                                                                                                    productListItem.id ==
+                                                                                                    valueOrDefault<String>(
+                                                                                                      getJsonField(
+                                                                                                        e,
+                                                                                                        r'''$.id''',
+                                                                                                      )?.toString(),
+                                                                                                      '0',
+                                                                                                    ))
+                                                                                                .toList()
+                                                                                                .firstOrNull,
+                                                                                            r'''$.quantity''',
+                                                                                          ),
+                                                                                          0.0,
+                                                                                        ))!) {
+                                                                                      if (FFAppState().holdBillCount == 0) {
+                                                                                        FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                        FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                        FFAppState().selBill = 1;
+                                                                                      }
+                                                                                    } else {
+                                                                                      await showDialog(
+                                                                                        context: context,
+                                                                                        builder: (alertDialogContext) {
+                                                                                          return AlertDialog(
+                                                                                            content: Text('Item Out Of  Stock'),
+                                                                                            actions: [
+                                                                                              TextButton(
+                                                                                                onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                child: Text('Ok'),
+                                                                                              ),
+                                                                                            ],
+                                                                                          );
+                                                                                        },
+                                                                                      );
+                                                                                      if (_shouldSetState) safeSetState(() {});
+                                                                                      return;
+                                                                                    }
+                                                                                  }
+                                                                                } else {
+                                                                                  await showDialog(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        content: Text('Item Out Of Stock'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  );
+                                                                                  if (_shouldSetState) safeSetState(() {});
+                                                                                  return;
+                                                                                }
+                                                                              } else {
+                                                                                if (FFAppState().holdBillCount == 0) {
+                                                                                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                  FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                  FFAppState().selBill = 1;
+                                                                                }
+                                                                              }
+
+                                                                              _model.qtyunitresult23 = await actions.addToHoldListprdtable(
+                                                                                productListItem,
+                                                                                FFAppState().selBill,
+                                                                                widget!.taxcollection!.toList(),
+                                                                                functions.enabletaxinclusive(tableListMobileAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                containerUnitTypeRecordList.toList(),
+                                                                                false,
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              _model.calculateResult23Copy = await actions.calSubTotalForHoldListkiosk(
+                                                                                FFAppState().selBill.toString(),
+                                                                                FFAppState().allBillsList.toList(),
+                                                                                functions.enabletaxinclusive(tableListMobileAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              _model.calbillAmt3img = await actions.calBillAmt(
+                                                                                FFAppState().disAmt,
+                                                                                FFAppState().delCharges,
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              await _model.listViewprd?.animateTo(
+                                                                                _model.listViewprd!.position.maxScrollExtent,
+                                                                                duration: Duration(milliseconds: 100),
+                                                                                curve: Curves.ease,
+                                                                              );
+                                                                              if (_shouldSetState)
+                                                                                safeSetState(() {});
+                                                                            },
+                                                                            onDoubleTap:
+                                                                                () async {},
+                                                                            onLongPress:
+                                                                                () async {},
+                                                                            child:
+                                                                                Container(
+                                                                              decoration: BoxDecoration(
+                                                                                color: FFAppState().productColor == productListItem.id ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                borderRadius: BorderRadius.circular(5.0),
+                                                                              ),
+                                                                              child: Column(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                children: [
+                                                                                  Expanded(
+                                                                                    child: Container(
+                                                                                      width: double.infinity,
+                                                                                      height: MediaQuery.sizeOf(context).height * 0.14,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: Color(0x1A000000),
+                                                                                        image: DecorationImage(
+                                                                                          fit: BoxFit.cover,
+                                                                                          image: CachedNetworkImageProvider(
+                                                                                            functions.imageurltostring(productListItem.imageUrl),
+                                                                                          ),
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(5.0),
+                                                                                      ),
+                                                                                      child: Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.end,
+                                                                                        crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                        children: [
+                                                                                          Expanded(
+                                                                                            child: Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                                                                                              child: Container(
+                                                                                                width: double.infinity,
+                                                                                                height: MediaQuery.sizeOf(context).height * 0.15,
+                                                                                                decoration: BoxDecoration(
+                                                                                                  image: DecorationImage(
+                                                                                                    fit: BoxFit.cover,
+                                                                                                    image: Image.network(
+                                                                                                      '',
+                                                                                                    ).image,
+                                                                                                  ),
+                                                                                                  gradient: LinearGradient(
+                                                                                                    colors: [
+                                                                                                      Colors.transparent,
+                                                                                                      Color(0xA7000000)
+                                                                                                    ],
+                                                                                                    stops: [0.0, 1.0],
+                                                                                                    begin: AlignmentDirectional(0.0, -1.0),
+                                                                                                    end: AlignmentDirectional(0, 1.0),
+                                                                                                  ),
+                                                                                                  borderRadius: BorderRadius.circular(5.0),
+                                                                                                ),
+                                                                                                child: Padding(
+                                                                                                  padding: EdgeInsets.all(5.0),
+                                                                                                  child: Column(
+                                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                                    mainAxisAlignment: MainAxisAlignment.end,
+                                                                                                    children: [
+                                                                                                      Flexible(
+                                                                                                        child: Padding(
+                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                          child: Text(
+                                                                                                            productListItem.name,
+                                                                                                            textAlign: TextAlign.center,
+                                                                                                            style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                                  color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  fontWeight: FontWeight.w600,
+                                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Padding(
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                        child: Row(
+                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                          children: [
+                                                                                                            Padding(
+                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                                              child: Text(
+                                                                                                                FFLocalizations.of(context).getText(
+                                                                                                                  'kxj87tvr' /* ₹ */,
+                                                                                                                ),
+                                                                                                                style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                                      color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                      letterSpacing: 0.0,
+                                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                                                                    ),
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                            Flexible(
+                                                                                                              child: Text(
+                                                                                                                valueOrDefault<String>(
+                                                                                                                  productListItem.sellingPrice.toString(),
+                                                                                                                  '120',
+                                                                                                                ),
+                                                                                                                style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                                      color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                      letterSpacing: 0.0,
+                                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                                                                    ),
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ],
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      if (productListItem.stockable)
+                                                                                                        Flexible(
+                                                                                                          child: Text(
+                                                                                                            'Stock :${productListItem.stock.toString()}',
+                                                                                                            textAlign: TextAlign.justify,
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                  color: FlutterFlowTheme.of(context).parkingPrimary,
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                    ],
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                          ).animateOnActionTrigger(
+                                                                              animationsMap['containerOnActionTriggerAnimation3']!,
+                                                                              hasBeenTriggered: hasContainerTriggered3),
+                                                                      ],
+                                                                    ),
+                                                                  ).animateOnActionTrigger(
+                                                                      animationsMap[
+                                                                          'containerOnActionTriggerAnimation1']!,
+                                                                      hasBeenTriggered:
+                                                                          hasContainerTriggered1);
+                                                                },
+                                                                controller: _model
+                                                                    .gridViewController,
+                                                              );
+                                                            },
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ].divide(
+                                                        SizedBox(height: 5.0)),
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                          Expanded(
+                                            flex: 10,
+                                            child: Container(
+                                              width: double.infinity,
+                                              height: double.infinity,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 5.0, 0.0, 0.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    if (FFAppState()
+                                                        .fabButtonHide)
+                                                      Container(
+                                                        width: double.infinity,
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height *
+                                                                0.045,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                        ),
+                                                        child: Stack(
+                                                          children: [
+                                                            Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      0.0, 0.0),
+                                                              child: Container(
+                                                                width: double
+                                                                    .infinity,
+                                                                height: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .height *
+                                                                    0.003,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .tertiary,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceEvenly,
+                                                              children: [
+                                                                Material(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  elevation:
+                                                                      1.0,
+                                                                  child:
+                                                                      Container(
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        0.09,
+                                                                    height: MediaQuery.sizeOf(context)
+                                                                            .height *
+                                                                        0.045,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                    child:
+                                                                        TextFormField(
+                                                                      controller:
+                                                                          _model
+                                                                              .textController1,
+                                                                      focusNode:
+                                                                          _model
+                                                                              .textFieldFocusNode1,
+                                                                      onChanged:
+                                                                          (_) =>
+                                                                              EasyDebounce.debounce(
+                                                                        '_model.textController1',
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                2000),
+                                                                        () => safeSetState(
+                                                                            () {}),
+                                                                      ),
+                                                                      autofocus:
+                                                                          false,
+                                                                      obscureText:
+                                                                          false,
+                                                                      decoration:
+                                                                          InputDecoration(
+                                                                        isDense:
+                                                                            true,
+                                                                        hintText:
+                                                                            FFLocalizations.of(context).getText(
+                                                                          'zxatnlmn' /* Amt. */,
+                                                                        ),
+                                                                        hintStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                            ),
+                                                                        enabledBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                        errorBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                        focusedErrorBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
+                                                                          ),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      validator: _model
+                                                                          .textController1Validator
+                                                                          .asValidator(
+                                                                              context),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Material(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  elevation:
+                                                                      1.0,
+                                                                  child:
+                                                                      Container(
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        0.09,
+                                                                    height: MediaQuery.sizeOf(context)
+                                                                            .height *
+                                                                        0.045,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                    child:
+                                                                        TextFormField(
+                                                                      controller:
+                                                                          _model
+                                                                              .textController2,
+                                                                      focusNode:
+                                                                          _model
+                                                                              .textFieldFocusNode2,
+                                                                      onChanged:
+                                                                          (_) =>
+                                                                              EasyDebounce.debounce(
+                                                                        '_model.textController2',
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                2000),
+                                                                        () => safeSetState(
+                                                                            () {}),
+                                                                      ),
+                                                                      autofocus:
+                                                                          false,
+                                                                      obscureText:
+                                                                          false,
+                                                                      decoration:
+                                                                          InputDecoration(
+                                                                        isDense:
+                                                                            true,
+                                                                        hintText:
+                                                                            FFLocalizations.of(context).getText(
+                                                                          'gb0xk0gf' /* Qty */,
+                                                                        ),
+                                                                        hintStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                            ),
+                                                                        enabledBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                        errorBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                        focusedErrorBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                          ),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      validator: _model
+                                                                          .textController2Validator
+                                                                          .asValidator(
+                                                                              context),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Material(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  elevation:
+                                                                      1.0,
+                                                                  child:
+                                                                      Container(
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        0.09,
+                                                                    height: MediaQuery.sizeOf(context)
+                                                                            .height *
+                                                                        0.045,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                    child:
+                                                                        TextFormField(
+                                                                      controller:
+                                                                          _model
+                                                                              .textController3,
+                                                                      focusNode:
+                                                                          _model
+                                                                              .textFieldFocusNode3,
+                                                                      onChanged:
+                                                                          (_) =>
+                                                                              EasyDebounce.debounce(
+                                                                        '_model.textController3',
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                2000),
+                                                                        () => safeSetState(
+                                                                            () {}),
+                                                                      ),
+                                                                      autofocus:
+                                                                          false,
+                                                                      obscureText:
+                                                                          false,
+                                                                      decoration:
+                                                                          InputDecoration(
+                                                                        isDense:
+                                                                            true,
+                                                                        hintText:
+                                                                            FFLocalizations.of(context).getText(
+                                                                          'nlvsyjw7' /* Price */,
+                                                                        ),
+                                                                        hintStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                            ),
+                                                                        enabledBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                        focusedBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                        errorBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                        focusedErrorBorder:
+                                                                            OutlineInputBorder(
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Color(0x00000000),
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              const BorderRadius.only(
+                                                                            topLeft:
+                                                                                Radius.circular(4.0),
+                                                                            topRight:
+                                                                                Radius.circular(4.0),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                          ),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      validator: _model
+                                                                          .textController3Validator
+                                                                          .asValidator(
+                                                                              context),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  1.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Container(
+                                                              width: 100.0,
+                                                              height: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .height *
+                                                                  0.03,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                              ),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Expanded(
+                                                                    flex: 28,
+                                                                    child:
+                                                                        Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.12,
+                                                                      height:
+                                                                          100.0,
+                                                                      decoration:
+                                                                          BoxDecoration(),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.center,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children: [
+                                                                            Text(
+                                                                              FFLocalizations.of(context).getText(
+                                                                                'apktl4j7' /* Item Name */,
+                                                                              ),
+                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                                  ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    flex: 15,
+                                                                    child:
+                                                                        Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.08,
+                                                                      height:
+                                                                          100.0,
+                                                                      decoration:
+                                                                          BoxDecoration(),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        children: [
+                                                                          Text(
+                                                                            FFLocalizations.of(context).getText(
+                                                                              'ecozwikl' /* Qty */,
+                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                  letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                                ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    flex: 10,
+                                                                    child:
+                                                                        Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.08,
+                                                                      height:
+                                                                          100.0,
+                                                                      decoration:
+                                                                          BoxDecoration(),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        children: [
+                                                                          Text(
+                                                                            FFLocalizations.of(context).getText(
+                                                                              'f4wo10j0' /* Amt */,
+                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                  letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                                ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    flex: 5,
+                                                                    child:
+                                                                        Container(
+                                                                      width:
+                                                                          100.0,
+                                                                      height:
+                                                                          100.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Expanded(
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    2.0),
+                                                        child: Container(
+                                                          width:
+                                                              double.infinity,
+                                                          height: 100.0,
+                                                          decoration:
+                                                              BoxDecoration(),
+                                                          child: Builder(
+                                                            builder: (context) {
+                                                              final bill = functions
+                                                                  .filterBillList(
+                                                                      FFAppState()
+                                                                          .selBill,
+                                                                      FFAppState()
+                                                                          .allBillsList
+                                                                          .toList())
+                                                                  .toList();
+
+                                                              return ListView
+                                                                  .builder(
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .zero,
+                                                                scrollDirection:
+                                                                    Axis.vertical,
+                                                                itemCount:
+                                                                    bill.length,
+                                                                itemBuilder:
+                                                                    (context,
+                                                                        billIndex) {
+                                                                  final billItem =
+                                                                      bill[
+                                                                          billIndex];
+                                                                  return Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            4.0),
+                                                                    child:
+                                                                        Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.49,
+                                                                      height: MediaQuery.sizeOf(context)
+                                                                              .height *
+                                                                          0.07,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            5.0),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.spaceBetween,
+                                                                          children: [
+                                                                            Expanded(
+                                                                              flex: 28,
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                                child: Container(
+                                                                                  width: MediaQuery.sizeOf(context).width * 0.25,
+                                                                                  decoration: BoxDecoration(),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                                    child: Column(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                      children: [
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                          child: Text(
+                                                                                            getJsonField(
+                                                                                              billItem,
+                                                                                              r'''$.name''',
+                                                                                            ).toString().maybeHandleOverflow(
+                                                                                                  maxChars: 15,
+                                                                                                  replacement: '…',
+                                                                                                ),
+                                                                                            textAlign: TextAlign.start,
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                  color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                  fontSize: 15.0,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                                ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          children: [
+                                                                                            Text(
+                                                                                              FFLocalizations.of(context).getText(
+                                                                                                '316ijnlw' /* ₹  */,
+                                                                                              ),
+                                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                    fontSize: 13.0,
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                                                  ),
+                                                                                            ),
+                                                                                            Text(
+                                                                                              getJsonField(
+                                                                                                billItem,
+                                                                                                r'''$.price''',
+                                                                                              ).toString(),
+                                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                    fontSize: 13.0,
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            Expanded(
+                                                                              flex: 14,
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 1.0, 0.0),
+                                                                                child: Container(
+                                                                                  width: MediaQuery.sizeOf(context).width * 0.08,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    borderRadius: BorderRadius.circular(5.0),
+                                                                                  ),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsets.all(1.0),
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                                                      children: [
+                                                                                        Expanded(
+                                                                                          flex: 7,
+                                                                                          child: InkWell(
+                                                                                            splashColor: Colors.transparent,
+                                                                                            focusColor: Colors.transparent,
+                                                                                            hoverColor: Colors.transparent,
+                                                                                            highlightColor: Colors.transparent,
+                                                                                            onTap: () async {
+                                                                                              FFAppState().groceryshow = false;
+                                                                                              safeSetState(() {});
+                                                                                              _model.resultminus = await actions.addToHoldListprdminus(
+                                                                                                ProductStructStruct.maybeFromMap(billItem)!,
+                                                                                                FFAppState().selBill,
+                                                                                                widget!.taxcollection!.toList(),
+                                                                                                functions.enabletaxinclusive(tableListMobileAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                              );
+                                                                                              await actions.calSubTotalForHoldListkiosk(
+                                                                                                FFAppState().selBill.toString(),
+                                                                                                _model.resultminus!.toList(),
+                                                                                                functions.enabletaxinclusive(tableListMobileAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                              );
+                                                                                              _model.reu34 = await actions.calBillAmt(
+                                                                                                valueOrDefault<double>(
+                                                                                                  FFAppState().disAmt,
+                                                                                                  0.0,
+                                                                                                ),
+                                                                                                FFAppState().delCharges,
+                                                                                              );
+
+                                                                                              safeSetState(() {});
+                                                                                            },
+                                                                                            child: Container(
+                                                                                              width: MediaQuery.sizeOf(context).width * 0.03,
+                                                                                              height: double.infinity,
+                                                                                              decoration: BoxDecoration(
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                boxShadow: [
+                                                                                                  BoxShadow(
+                                                                                                    blurRadius: 5.0,
+                                                                                                    color: Color(0x27000000),
+                                                                                                    offset: Offset(
+                                                                                                      -4.0,
+                                                                                                      1.0,
+                                                                                                    ),
+                                                                                                    spreadRadius: 1.0,
+                                                                                                  )
+                                                                                                ],
+                                                                                                borderRadius: BorderRadius.only(
+                                                                                                  bottomLeft: Radius.circular(5.0),
+                                                                                                  bottomRight: Radius.circular(0.0),
+                                                                                                  topLeft: Radius.circular(5.0),
+                                                                                                  topRight: Radius.circular(0.0),
+                                                                                                ),
+                                                                                              ),
+                                                                                              child: Icon(
+                                                                                                Icons.remove,
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                size: 20.0,
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Expanded(
+                                                                                          flex: 13,
+                                                                                          child: Container(
+                                                                                            width: MediaQuery.sizeOf(context).width * 0.02,
+                                                                                            height: double.infinity,
+                                                                                            decoration: BoxDecoration(
+                                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                            ),
+                                                                                            alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                            child: QtyEditWidget(
+                                                                                              key: Key('Key4vu_${billIndex}_of_${bill.length}'),
+                                                                                              parameter1: getJsonField(
+                                                                                                billItem,
+                                                                                                r'''$.quantity''',
+                                                                                              ),
+                                                                                              parameter2: !_model.qtyCheck,
+                                                                                              parameter3: getJsonField(
+                                                                                                billItem,
+                                                                                                r'''$.stockable''',
+                                                                                              ),
+                                                                                              parameter4: getJsonField(
+                                                                                                billItem,
+                                                                                                r'''$.currentStock''',
+                                                                                              ),
+                                                                                              parameter5: ProductStructStruct.maybeFromMap(billItem),
+                                                                                              parameter6: widget!.taxcollection!,
+                                                                                              parameter7: tableListMobileAppSettingsRecord?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Expanded(
+                                                                                          flex: 7,
+                                                                                          child: InkWell(
+                                                                                            splashColor: Colors.transparent,
+                                                                                            focusColor: Colors.transparent,
+                                                                                            hoverColor: Colors.transparent,
+                                                                                            highlightColor: Colors.transparent,
+                                                                                            onTap: () async {
+                                                                                              var _shouldSetState = false;
+                                                                                              FFAppState().groceryshow = false;
+                                                                                              safeSetState(() {});
+                                                                                              if (getJsonField(
+                                                                                                billItem,
+                                                                                                r'''$.stockable''',
+                                                                                              )) {
+                                                                                                if (!functions.greatethanlesskiosk(
+                                                                                                    functions.jsontoint(getJsonField(
+                                                                                                      billItem,
+                                                                                                      r'''$.currentStock''',
+                                                                                                    )),
+                                                                                                    functions.jsontoint(getJsonField(
+                                                                                                      billItem,
+                                                                                                      r'''$.quantity''',
+                                                                                                    )))) {
+                                                                                                  await showDialog(
+                                                                                                    context: context,
+                                                                                                    builder: (alertDialogContext) {
+                                                                                                      return AlertDialog(
+                                                                                                        content: Text('Item Out Of Stock !'),
+                                                                                                        actions: [
+                                                                                                          TextButton(
+                                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                            child: Text('Ok'),
+                                                                                                          ),
+                                                                                                        ],
+                                                                                                      );
+                                                                                                    },
+                                                                                                  );
+                                                                                                  if (_shouldSetState) safeSetState(() {});
+                                                                                                  return;
+                                                                                                }
+                                                                                              }
+                                                                                              _model.resultplus = await actions.addToHoldListprdplus(
+                                                                                                ProductStructStruct.maybeFromMap(billItem)!,
+                                                                                                FFAppState().selBill,
+                                                                                                widget!.taxcollection!.toList(),
+                                                                                                functions.enabletaxinclusive(tableListMobileAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                              );
+                                                                                              _shouldSetState = true;
+                                                                                              await actions.calSubTotalForHoldListkiosk(
+                                                                                                FFAppState().selBill.toString(),
+                                                                                                _model.resultplus!.toList(),
+                                                                                                functions.enabletaxinclusive(tableListMobileAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                              );
+                                                                                              _model.reuslt12 = await actions.calBillAmt(
+                                                                                                valueOrDefault<double>(
+                                                                                                  FFAppState().disAmt,
+                                                                                                  0.0,
+                                                                                                ),
+                                                                                                FFAppState().delCharges,
+                                                                                              );
+                                                                                              _shouldSetState = true;
+                                                                                              if (_shouldSetState) safeSetState(() {});
+                                                                                            },
+                                                                                            child: Container(
+                                                                                              width: MediaQuery.sizeOf(context).width * 0.03,
+                                                                                              height: double.infinity,
+                                                                                              decoration: BoxDecoration(
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                boxShadow: [
+                                                                                                  BoxShadow(
+                                                                                                    blurRadius: 5.0,
+                                                                                                    color: Color(0x25000000),
+                                                                                                    offset: Offset(
+                                                                                                      4.0,
+                                                                                                      1.0,
+                                                                                                    ),
+                                                                                                    spreadRadius: 1.0,
+                                                                                                  )
+                                                                                                ],
+                                                                                                borderRadius: BorderRadius.only(
+                                                                                                  bottomLeft: Radius.circular(0.0),
+                                                                                                  bottomRight: Radius.circular(5.0),
+                                                                                                  topLeft: Radius.circular(0.0),
+                                                                                                  topRight: Radius.circular(5.0),
+                                                                                                ),
+                                                                                              ),
+                                                                                              child: Icon(
+                                                                                                Icons.add,
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                size: 20.0,
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            Expanded(
+                                                                              flex: 9,
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 1.0, 0.0),
+                                                                                child: Container(
+                                                                                  width: MediaQuery.sizeOf(context).width * 0.042,
+                                                                                  height: MediaQuery.sizeOf(context).height * 0.08,
+                                                                                  decoration: BoxDecoration(),
+                                                                                  child: Align(
+                                                                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                    child: Text(
+                                                                                      functions
+                                                                                          .getTotal(
+                                                                                              valueOrDefault<double>(
+                                                                                                getJsonField(
+                                                                                                  billItem,
+                                                                                                  r'''$.quantity''',
+                                                                                                ),
+                                                                                                0.0,
+                                                                                              ),
+                                                                                              valueOrDefault<double>(
+                                                                                                getJsonField(
+                                                                                                  billItem,
+                                                                                                  r'''$.price''',
+                                                                                                ),
+                                                                                                0.0,
+                                                                                              ))
+                                                                                          .toString(),
+                                                                                      textAlign: TextAlign.center,
+                                                                                      style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                            fontSize: 13.0,
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            Expanded(
+                                                                              flex: 5,
+                                                                              child: Container(
+                                                                                width: MediaQuery.sizeOf(context).width * 0.03,
+                                                                                decoration: BoxDecoration(),
+                                                                                child: InkWell(
+                                                                                  splashColor: Colors.transparent,
+                                                                                  focusColor: Colors.transparent,
+                                                                                  hoverColor: Colors.transparent,
+                                                                                  highlightColor: Colors.transparent,
+                                                                                  onTap: () async {
+                                                                                    FFAppState().groceryshow = false;
+                                                                                    safeSetState(() {});
+                                                                                    _model.res20 = await actions.removeHoldListItem(
+                                                                                      getJsonField(
+                                                                                        billItem,
+                                                                                        r'''$''',
+                                                                                      ),
+                                                                                      FFAppState().selBill,
+                                                                                    );
+                                                                                    _model.ddddd = await actions.calSubTotalForHoldListkiosk(
+                                                                                      FFAppState().selBill.toString(),
+                                                                                      FFAppState().allBillsList.toList(),
+                                                                                      functions.enabletaxinclusive(tableListMobileAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                    );
+                                                                                    _model.reuslt22 = await actions.calBillAmt(
+                                                                                      valueOrDefault<double>(
+                                                                                        FFAppState().disAmt,
+                                                                                        0.0,
+                                                                                      ),
+                                                                                      FFAppState().delCharges,
+                                                                                    );
+                                                                                    FFAppState().prdid = '';
+                                                                                    safeSetState(() {});
+
+                                                                                    safeSetState(() {});
+                                                                                  },
+                                                                                  child: Icon(
+                                                                                    Icons.delete,
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    size: 30.0,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  );
+                                                                },
+                                                                controller: _model
+                                                                    .listViewprd,
+                                                              );
+                                                            },
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: double.infinity,
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.07,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            blurRadius: 15.0,
+                                                            color: Color(
+                                                                0x40000000),
+                                                            offset: Offset(
+                                                              2.0,
+                                                              -2.0,
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    12.0,
+                                                                    0.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            if (tableListMobileAppSettingsRecord
+                                                                    ?.settingList
+                                                                    ?.where((e) =>
+                                                                        e.title ==
+                                                                        'enableCustomer')
+                                                                    .toList()
+                                                                    ?.firstOrNull
+                                                                    ?.value ??
+                                                                true)
+                                                              Expanded(
+                                                                flex: 11,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      scaffoldKey
+                                                                          .currentState!
+                                                                          .openEndDrawer();
+                                                                    },
+                                                                    child:
+                                                                        Container(
+                                                                      width: double
+                                                                          .infinity,
+                                                                      height: MediaQuery.sizeOf(context)
+                                                                              .height *
+                                                                          0.075,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(0.0),
+                                                                      ),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                3.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Container(
+                                                                              width: MediaQuery.sizeOf(context).width * 0.03,
+                                                                              height: MediaQuery.sizeOf(context).width * 0.03,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                shape: BoxShape.circle,
+                                                                                border: Border.all(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  width: 0.5,
+                                                                                ),
+                                                                              ),
+                                                                              child: Icon(
+                                                                                Icons.person,
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                                size: 17.0,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                          Expanded(
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 0.0, 0.0),
+                                                                              child: Column(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                children: [
+                                                                                  Text(
+                                                                                    valueOrDefault<String>(
+                                                                                      FFAppState().setCustName,
+                                                                                      'Customer Name',
+                                                                                    ),
+                                                                                    textAlign: TextAlign.center,
+                                                                                    style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                        ),
+                                                                                  ),
+                                                                                  Text(
+                                                                                    valueOrDefault<String>(
+                                                                                      FFAppState().setCustMobNo,
+                                                                                      'Mobile Number',
+                                                                                    ),
+                                                                                    textAlign: TextAlign.center,
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                        ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            Expanded(
+                                                              flex: 3,
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'o5m9sirg' /* Item */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                        ),
+                                                                  ),
+                                                                  Text(
+                                                                    FFAppState()
+                                                                        .noOfItems
+                                                                        .toString(),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
+                                                                        ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              flex: 3,
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'k9n7cpyn' /* Qty */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                        ),
+                                                                  ),
+                                                                  Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      FFAppState()
+                                                                          .totalQuantity
+                                                                          .toString(),
+                                                                      '0',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
+                                                                        ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              flex: 6,
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0,
+                                                                            0.0),
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .end,
+                                                                  children: [
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'u1shamis' /* Sub Total */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                          ),
+                                                                    ),
+                                                                    Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .end,
+                                                                      children: [
+                                                                        Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'iyvcfmb7' /* ₹  */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyLargeIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        Text(
+                                                                          FFAppState()
+                                                                              .billAmt
+                                                                              .toString(),
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyLargeIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: double.infinity,
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.085,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondary,
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    12.0,
+                                                                    0.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    barrierColor:
+                                                                        Color(
+                                                                            0x00000000),
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              Container(
+                                                                            height:
+                                                                                360.0,
+                                                                            child:
+                                                                                DiscountAndDeliveryCopyWidget(
+                                                                              appsetting: tableListMobileAppSettingsRecord,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+
+                                                                  if (animationsMap[
+                                                                          'containerOnActionTriggerAnimation4'] !=
+                                                                      null) {
+                                                                    safeSetState(() =>
+                                                                        hasContainerTriggered4 =
+                                                                            true);
+                                                                    SchedulerBinding.instance.addPostFrameCallback((_) async => await animationsMap[
+                                                                            'containerOnActionTriggerAnimation4']!
+                                                                        .controller
+                                                                        .forward(
+                                                                            from:
+                                                                                0.0));
+                                                                  }
+                                                                },
+                                                                child:
+                                                                    Container(
+                                                                  width: MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .width *
+                                                                      0.032,
+                                                                  height: MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .width *
+                                                                      0.032,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .lineColor,
+                                                                      width:
+                                                                          0.5,
+                                                                    ),
+                                                                  ),
+                                                                  child: Align(
+                                                                    alignment:
+                                                                        AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        FaIcon(
+                                                                      FontAwesomeIcons
+                                                                          .receipt,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .lineColor,
+                                                                      size:
+                                                                          16.0,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ).animateOnActionTrigger(
+                                                                  animationsMap[
+                                                                      'containerOnActionTriggerAnimation4']!,
+                                                                  hasBeenTriggered:
+                                                                      hasContainerTriggered4),
+                                                            ),
+                                                            Expanded(
+                                                              flex: 3,
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    if (animationsMap[
+                                                                            'containerOnActionTriggerAnimation5'] !=
+                                                                        null) {
+                                                                      safeSetState(() =>
+                                                                          hasContainerTriggered5 =
+                                                                              true);
+                                                                      SchedulerBinding
+                                                                          .instance
+                                                                          .addPostFrameCallback((_) async => await animationsMap['containerOnActionTriggerAnimation5']!
+                                                                              .controller
+                                                                              .forward(from: 0.0));
+                                                                    }
+                                                                  },
+                                                                  child:
+                                                                      Container(
+                                                                    width:
+                                                                        100.0,
+                                                                    height: MediaQuery.sizeOf(context)
+                                                                            .height *
+                                                                        0.085,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                      boxShadow: [
+                                                                        BoxShadow(
+                                                                          blurRadius:
+                                                                              3.0,
+                                                                          color:
+                                                                              Color(0x33000000),
+                                                                          offset:
+                                                                              Offset(
+                                                                            1.0,
+                                                                            1.0,
+                                                                          ),
+                                                                          spreadRadius:
+                                                                              2.0,
+                                                                        )
+                                                                      ],
+                                                                    ),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding:
+                                                                          EdgeInsets.all(
+                                                                              2.0),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.center,
+                                                                        children: [
+                                                                          Text(
+                                                                            FFLocalizations.of(context).getText(
+                                                                              'gu2lk02t' /* Last Bill */,
+                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                  color: FlutterFlowTheme.of(context).lineColor,
+                                                                                  letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                ),
+                                                                          ),
+                                                                          Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.center,
+                                                                            children: [
+                                                                              Text(
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  'lgtkzasf' /* ₹ */,
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      color: FlutterFlowTheme.of(context).lineColor,
+                                                                                      letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                    ),
+                                                                              ),
+                                                                              Text(
+                                                                                valueOrDefault<String>(
+                                                                                  FFAppState().lastBill.toString(),
+                                                                                  '00.00',
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      color: FlutterFlowTheme.of(context).lineColor,
+                                                                                      letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                    ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ).animateOnActionTrigger(
+                                                                    animationsMap[
+                                                                        'containerOnActionTriggerAnimation5']!,
+                                                                    hasBeenTriggered:
+                                                                        hasContainerTriggered5),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              flex: 4,
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .width *
+                                                                      0.02,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondary,
+                                                                    boxShadow: [
+                                                                      BoxShadow(
+                                                                        blurRadius:
+                                                                            3.0,
+                                                                        color: Color(
+                                                                            0x33000000),
+                                                                        offset:
+                                                                            Offset(
+                                                                          1.0,
+                                                                          1.0,
+                                                                        ),
+                                                                        spreadRadius:
+                                                                            2.0,
+                                                                      )
+                                                                    ],
+                                                                  ),
+                                                                  child:
+                                                                      FlutterFlowDropDown<
+                                                                          String>(
+                                                                    controller: _model
+                                                                            .dropDownValueController ??=
+                                                                        FormFieldController<
+                                                                            String>(
+                                                                      _model.dropDownValue ??=
+                                                                          FFAppState()
+                                                                              .defPayMode,
+                                                                    ),
+                                                                    options:
+                                                                        FFAppState()
+                                                                            .paymentmodenew,
+                                                                    onChanged:
+                                                                        (val) async {
+                                                                      safeSetState(() =>
+                                                                          _model.dropDownValue =
+                                                                              val);
+                                                                      FFAppState()
+                                                                              .PayMode =
+                                                                          _model
+                                                                              .dropDownValue!;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                      _model.returntrue =
+                                                                          await actions
+                                                                              .paymentmodemix(
+                                                                        FFAppState()
+                                                                            .PayMode,
+                                                                      );
+                                                                      if (_model
+                                                                          .returntrue!) {
+                                                                        await showModalBottomSheet(
+                                                                          isScrollControlled:
+                                                                              true,
+                                                                          backgroundColor:
+                                                                              Colors.transparent,
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (context) {
+                                                                            return GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: Container(
+                                                                                  height: 360.0,
+                                                                                  child: MixPaymentModeWidget(
+                                                                                    appsetting: tableListMobileAppSettingsRecord,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            );
+                                                                          },
+                                                                        ).then((value) =>
+                                                                            safeSetState(() {}));
+                                                                      }
+
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    },
+                                                                    width: double
+                                                                        .infinity,
+                                                                    height: double
+                                                                        .infinity,
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).lineColor,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                        ),
+                                                                    hintText: FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '25qp0u7j' /* Pay Mode */,
+                                                                    ),
+                                                                    icon: Icon(
+                                                                      Icons
+                                                                          .keyboard_arrow_down,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .lineColor,
+                                                                      size:
+                                                                          22.0,
+                                                                    ),
+                                                                    elevation:
+                                                                        2.0,
+                                                                    borderColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    borderWidth:
+                                                                        0.0,
+                                                                    borderRadius:
+                                                                        0.0,
+                                                                    margin: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            7.0,
+                                                                            4.0,
+                                                                            5.0,
+                                                                            4.0),
+                                                                    hidesUnderline:
+                                                                        true,
+                                                                    isSearchable:
+                                                                        false,
+                                                                    isMultiSelect:
+                                                                        false,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              flex: 4,
+                                                              child: Container(
+                                                                width: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width *
+                                                                    0.125,
+                                                                height: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .height *
+                                                                    0.085,
+                                                                decoration:
+                                                                    BoxDecoration(),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .end,
+                                                                  children: [
+                                                                    Expanded(
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.end,
+                                                                        children: [
+                                                                          Text(
+                                                                            FFLocalizations.of(context).getText(
+                                                                              'bmhfewbd' /* Final Amt */,
+                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                  color: FlutterFlowTheme.of(context).lineColor,
+                                                                                  letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                ),
+                                                                          ),
+                                                                          Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.end,
+                                                                            children: [
+                                                                              Text(
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  'xmfyc7vi' /* ₹  */,
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      color: FlutterFlowTheme.of(context).lineColor,
+                                                                                      letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                    ),
+                                                                              ),
+                                                                              Text(
+                                                                                FFAppState().finalAmt.toString(),
+                                                                                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
+                                                                                      color: FlutterFlowTheme.of(context).lineColor,
+                                                                                      fontSize: 26.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.w600,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).headlineMediumIsCustom,
+                                                                                    ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Expanded(
+                                                          flex: 8,
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                if (animationsMap[
+                                                                        'containerOnActionTriggerAnimation6'] !=
+                                                                    null) {
+                                                                  safeSetState(() =>
+                                                                      hasContainerTriggered6 =
+                                                                          true);
+                                                                  SchedulerBinding
+                                                                      .instance
+                                                                      .addPostFrameCallback((_) async => await animationsMap[
+                                                                              'containerOnActionTriggerAnimation6']!
+                                                                          .controller
+                                                                          .forward(
+                                                                              from: 0.0));
+                                                                }
+                                                              },
+                                                              child: Container(
+                                                                width: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width *
+                                                                    0.15,
+                                                                height: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .height *
+                                                                    0.085,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                ),
+                                                                child:
+                                                                    FFButtonWidget(
+                                                                  onPressed:
+                                                                      () async {
+                                                                    var _shouldSetState =
+                                                                        false;
+                                                                    if (functions
+                                                                            .filterBillList(FFAppState().selBill,
+                                                                                FFAppState().allBillsList.toList())
+                                                                            .length >
+                                                                        0) {
+                                                                      _model.prdlistsavebillkot =
+                                                                          await actions
+                                                                              .filterProductsKot(
+                                                                        FFAppState()
+                                                                            .selBill,
+                                                                        FFAppState()
+                                                                            .allBillsList
+                                                                            .toList(),
+                                                                        true,
+                                                                      );
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      _model.internetconkot =
+                                                                          await actions
+                                                                              .checkInternetConnection();
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      if (_model
+                                                                          .internetconkot!) {
+                                                                        if (FFAppState().kotDocRef !=
+                                                                            null) {
+                                                                          await FFAppState()
+                                                                              .kotDocRef!
+                                                                              .update({
+                                                                            ...createTableKotRecordData(
+                                                                              finalBillAmt: FFAppState().finalAmt,
+                                                                              id: '',
+                                                                            ),
+                                                                            ...mapToFirestore(
+                                                                              {
+                                                                                'productList': getSelItemListListFirestoreData(
+                                                                                  _model.prdlistsavebillkot,
+                                                                                ),
+                                                                              },
+                                                                            ),
+                                                                          });
+                                                                        } else {
+                                                                          var tableKotRecordReference =
+                                                                              TableKotRecord.createDoc(FFAppState().outletIdRef!);
+                                                                          await tableKotRecordReference
+                                                                              .set({
+                                                                            ...createTableKotRecordData(
+                                                                              dayId: functions.getDayId(),
+                                                                              createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                              checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                              orderType: 'TABLE_KOT',
+                                                                              kotStatus: 'PENDING',
+                                                                              tableNo: FFAppState().tableNo,
+                                                                              premiseName: FFAppState().selectedPremise,
+                                                                              finalBillAmt: FFAppState().finalAmt,
+                                                                              billAmt: FFAppState().billAmt,
+                                                                            ),
+                                                                            ...mapToFirestore(
+                                                                              {
+                                                                                'productList': getSelItemListListFirestoreData(
+                                                                                  _model.prdlistsavebillkot,
+                                                                                ),
+                                                                              },
+                                                                            ),
+                                                                          });
+                                                                          _model.kotCopy =
+                                                                              TableKotRecord.getDocumentFromData({
+                                                                            ...createTableKotRecordData(
+                                                                              dayId: functions.getDayId(),
+                                                                              createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                              checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                              orderType: 'TABLE_KOT',
+                                                                              kotStatus: 'PENDING',
+                                                                              tableNo: FFAppState().tableNo,
+                                                                              premiseName: FFAppState().selectedPremise,
+                                                                              finalBillAmt: FFAppState().finalAmt,
+                                                                              billAmt: FFAppState().billAmt,
+                                                                            ),
+                                                                            ...mapToFirestore(
+                                                                              {
+                                                                                'productList': getSelItemListListFirestoreData(
+                                                                                  _model.prdlistsavebillkot,
+                                                                                ),
+                                                                              },
+                                                                            ),
+                                                                          }, tableKotRecordReference);
+                                                                          _shouldSetState =
+                                                                              true;
+
+                                                                          await _model
+                                                                              .kotCopy!
+                                                                              .reference
+                                                                              .update(createTableKotRecordData(
+                                                                            id: _model.kotCopy?.reference.id,
+                                                                          ));
+                                                                        }
+                                                                      } else {
+                                                                        await showDialog(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              content: Text('Internet Not Available'),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                  child: Text('Ok'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        );
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
+                                                                      }
+
+                                                                      await actions
+                                                                          .removeFromAllBillList(
+                                                                        FFAppState()
+                                                                            .selBill,
+                                                                      );
+                                                                      safeSetState(
+                                                                          () {
+                                                                        _model
+                                                                            .dropDownValueController
+                                                                            ?.value = 'CASH';
+                                                                      });
+                                                                      _model.prdid =
+                                                                          null;
+                                                                      await actions
+                                                                          .clearValue();
+                                                                      FFAppState()
+                                                                          .noOfItems = 0;
+                                                                      FFAppState()
+                                                                              .subTotal =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                              .delCharges =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                              .kotDocRef =
+                                                                          null;
+                                                                      FFAppState()
+                                                                          .prdid = '';
+                                                                      FFAppState()
+                                                                              .finalAmt =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                              .billAmt =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                              .tableViewHideShow =
+                                                                          true;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    } else {
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    }
+
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                  },
+                                                                  text: FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'hitkux1k' /* Save Kot */,
+                                                                  ),
+                                                                  options:
+                                                                      FFButtonOptions(
+                                                                    height:
+                                                                        40.0,
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            16.0,
+                                                                            0.0,
+                                                                            16.0,
+                                                                            0.0),
+                                                                    iconPadding:
+                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          color:
+                                                                              Colors.white,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                        ),
+                                                                    elevation:
+                                                                        0.0,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ).animateOnActionTrigger(
+                                                                animationsMap[
+                                                                    'containerOnActionTriggerAnimation6']!,
+                                                                hasBeenTriggered:
+                                                                    hasContainerTriggered6),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          flex: 8,
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0),
+                                                            child: Container(
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width *
+                                                                  0.15,
+                                                              height: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .height *
+                                                                  0.085,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
+                                                              child:
+                                                                  FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  var _shouldSetState =
+                                                                      false;
+                                                                  if (functions
+                                                                          .filterBillList(
+                                                                              FFAppState().selBill,
+                                                                              FFAppState().allBillsList.toList())
+                                                                          .length >
+                                                                      0) {
+                                                                    _model.prdlistsavebillupi =
+                                                                        await actions
+                                                                            .filterProductsKot(
+                                                                      FFAppState()
+                                                                          .selBill,
+                                                                      FFAppState()
+                                                                          .allBillsList
+                                                                          .toList(),
+                                                                      false,
+                                                                    );
+                                                                    _shouldSetState =
+                                                                        true;
+                                                                    _model.internetconCopy =
+                                                                        await actions
+                                                                            .checkInternetConnection();
+                                                                    _shouldSetState =
+                                                                        true;
+                                                                    if (_model
+                                                                        .internetconCopy!) {
+                                                                      if (FFAppState()
+                                                                              .kotDocRef !=
+                                                                          null) {
+                                                                        await FFAppState()
+                                                                            .kotDocRef!
+                                                                            .update({
+                                                                          ...createTableKotRecordData(
+                                                                            finalBillAmt:
+                                                                                FFAppState().finalAmt,
+                                                                            billAmt:
+                                                                                FFAppState().billAmt,
+                                                                          ),
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'productList': getSelItemListListFirestoreData(
+                                                                                _model.prdlistsavebillupi,
+                                                                              ),
+                                                                            },
+                                                                          ),
+                                                                        });
+                                                                      } else {
+                                                                        var tableKotRecordReference =
+                                                                            TableKotRecord.createDoc(FFAppState().outletIdRef!);
+                                                                        await tableKotRecordReference
+                                                                            .set({
+                                                                          ...createTableKotRecordData(
+                                                                            dayId:
+                                                                                functions.getDayId(),
+                                                                            createdDate:
+                                                                                getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                            checkInTime:
+                                                                                getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                            orderType:
+                                                                                'TABLE_KOT',
+                                                                            kotStatus:
+                                                                                'PENDING',
+                                                                            tableNo:
+                                                                                FFAppState().tableNo,
+                                                                            premiseName:
+                                                                                FFAppState().selectedPremise,
+                                                                            finalBillAmt:
+                                                                                FFAppState().finalAmt,
+                                                                            billAmt:
+                                                                                FFAppState().billAmt,
+                                                                          ),
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'productList': getSelItemListListFirestoreData(
+                                                                                _model.prdlistsavebillupi,
+                                                                              ),
+                                                                            },
+                                                                          ),
+                                                                        });
+                                                                        _model.kot =
+                                                                            TableKotRecord.getDocumentFromData({
+                                                                          ...createTableKotRecordData(
+                                                                            dayId:
+                                                                                functions.getDayId(),
+                                                                            createdDate:
+                                                                                getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                            checkInTime:
+                                                                                getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                            orderType:
+                                                                                'TABLE_KOT',
+                                                                            kotStatus:
+                                                                                'PENDING',
+                                                                            tableNo:
+                                                                                FFAppState().tableNo,
+                                                                            premiseName:
+                                                                                FFAppState().selectedPremise,
+                                                                            finalBillAmt:
+                                                                                FFAppState().finalAmt,
+                                                                            billAmt:
+                                                                                FFAppState().billAmt,
+                                                                          ),
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'productList': getSelItemListListFirestoreData(
+                                                                                _model.prdlistsavebillupi,
+                                                                              ),
+                                                                            },
+                                                                          ),
+                                                                        }, tableKotRecordReference);
+                                                                        _shouldSetState =
+                                                                            true;
+
+                                                                        await _model
+                                                                            .kot!
+                                                                            .reference
+                                                                            .update(createTableKotRecordData(
+                                                                          id: _model
+                                                                              .kot
+                                                                              ?.reference
+                                                                              .id,
+                                                                        ));
+                                                                        FFAppState().kotDocRef = _model
+                                                                            .kot
+                                                                            ?.reference;
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      }
+
+                                                                      _model.tablekot =
+                                                                          await queryTableKotRecordOnce(
+                                                                        parent:
+                                                                            FFAppState().outletIdRef,
+                                                                        queryBuilder:
+                                                                            (tableKotRecord) =>
+                                                                                tableKotRecord.where(
+                                                                          'id',
+                                                                          isEqualTo: FFAppState()
+                                                                              .kotDocRef
+                                                                              ?.id,
+                                                                        ),
+                                                                        singleRecord:
+                                                                            true,
+                                                                      ).then((s) =>
+                                                                              s.firstOrNull);
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      _model.returnedListkot =
+                                                                          await actions
+                                                                              .selectBillPrint(
+                                                                        FFAppState()
+                                                                            .selBill
+                                                                            .toString(),
+                                                                        FFAppState()
+                                                                            .allBillsList
+                                                                            .toList(),
+                                                                      );
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      _model.devicekot =
+                                                                          await actions
+                                                                              .newCustomAction(
+                                                                        FFAppState()
+                                                                            .printerIndex,
+                                                                      );
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      _model.spoutletkot =
+                                                                          await queryServicePointOutletRecordOnce(
+                                                                        parent:
+                                                                            FFAppState().outletIdRef,
+                                                                      );
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      if (tableListMobileAppSettingsRecord!
+                                                                          .settingList
+                                                                          .where((e) =>
+                                                                              e.title ==
+                                                                              'printTableKotwithUsb')
+                                                                          .toList()
+                                                                          .firstOrNull!
+                                                                          .value) {
+                                                                        await actions
+                                                                            .printKOTwithusbtable(
+                                                                          _model
+                                                                              .returnedListkot!
+                                                                              .toList(),
+                                                                          _model
+                                                                              .devicekot!
+                                                                              .toList(),
+                                                                          FFAppState()
+                                                                              .isPrinterConnected,
+                                                                          FFAppState()
+                                                                              .printerName,
+                                                                          _model
+                                                                              .tablekot!,
+                                                                          FFAppState()
+                                                                              .paperSize,
+                                                                          tableListMobileAppSettingsRecord!,
+                                                                          _model
+                                                                              .spoutletkot!
+                                                                              .toList(),
+                                                                        );
+                                                                      }
+                                                                      if (tableListMobileAppSettingsRecord!
+                                                                          .settingList
+                                                                          .where((e) =>
+                                                                              e.title ==
+                                                                              'enableEthernetPrint')
+                                                                          .toList()
+                                                                          .firstOrNull!
+                                                                          .value) {
+                                                                        await actions
+                                                                            .printEthernetKot(
+                                                                          _model
+                                                                              .returnedListkot!
+                                                                              .toList(),
+                                                                          _model
+                                                                              .devicekot!
+                                                                              .toList(),
+                                                                          FFAppState()
+                                                                              .isPrinterConnected,
+                                                                          FFAppState()
+                                                                              .printerName,
+                                                                          _model
+                                                                              .tablekot!,
+                                                                          FFAppState()
+                                                                              .paperSize,
+                                                                          _model
+                                                                              .spoutletkot!
+                                                                              .toList(),
+                                                                          tableListMobileAppSettingsRecord!,
+                                                                        );
+                                                                      }
+                                                                      _model.prdlistsavebillkotupdate =
+                                                                          await actions
+                                                                              .filterProductsKot(
+                                                                        FFAppState()
+                                                                            .selBill,
+                                                                        FFAppState()
+                                                                            .allBillsList
+                                                                            .toList(),
+                                                                        true,
+                                                                      );
+                                                                      _shouldSetState =
+                                                                          true;
+
+                                                                      await FFAppState()
+                                                                          .kotDocRef!
+                                                                          .update({
+                                                                        ...mapToFirestore(
+                                                                          {
+                                                                            'productList':
+                                                                                getSelItemListListFirestoreData(
+                                                                              _model.prdlistsavebillkotupdate,
+                                                                            ),
+                                                                          },
+                                                                        ),
+                                                                      });
+                                                                      await actions
+                                                                          .removeFromAllBillList(
+                                                                        FFAppState()
+                                                                            .selBill,
+                                                                      );
+                                                                      safeSetState(
+                                                                          () {
+                                                                        _model
+                                                                            .dropDownValueController
+                                                                            ?.value = 'CASH';
+                                                                      });
+                                                                      _model.prdid =
+                                                                          null;
+                                                                      await actions
+                                                                          .clearValue();
+                                                                      FFAppState()
+                                                                          .noOfItems = 0;
+                                                                      FFAppState()
+                                                                              .subTotal =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                              .delCharges =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                              .kotDocRef =
+                                                                          null;
+                                                                      FFAppState()
+                                                                          .prdid = '';
+                                                                      FFAppState()
+                                                                              .finalAmt =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                              .billAmt =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                              .tableViewHideShow =
+                                                                          true;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    } else {
+                                                                      await showDialog(
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (alertDialogContext) {
+                                                                          return AlertDialog(
+                                                                            content:
+                                                                                Text('Internet Not Available'),
+                                                                            actions: [
+                                                                              TextButton(
+                                                                                onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                child: Text('Ok'),
+                                                                              ),
+                                                                            ],
+                                                                          );
+                                                                        },
+                                                                      );
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    }
+                                                                  } else {
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
+                                                                  }
+
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                },
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'j06by6j5' /* Print Kot */,
+                                                                ),
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  height: 40.0,
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                                  iconPadding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: Colors
+                                                                            .white,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w800,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                      ),
+                                                                  elevation:
+                                                                      0.0,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              8.0),
+                                                                ),
+                                                              ),
+                                                            ).animateOnActionTrigger(
+                                                                animationsMap[
+                                                                    'containerOnActionTriggerAnimation7']!,
+                                                                hasBeenTriggered:
+                                                                    hasContainerTriggered7),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          flex: 8,
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0),
+                                                            child: Container(
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width *
+                                                                  0.15,
+                                                              height: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .height *
+                                                                  0.085,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
+                                                              child:
+                                                                  FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  var _shouldSetState =
+                                                                      false;
+                                                                  if (functions
+                                                                          .filterBillList(
+                                                                              FFAppState().selBill,
+                                                                              FFAppState().allBillsList.toList())
+                                                                          .length >
+                                                                      0) {
+                                                                    _model.prdlistsavebillkotCopy =
+                                                                        await actions
+                                                                            .filterProductsKot(
+                                                                      FFAppState()
+                                                                          .selBill,
+                                                                      FFAppState()
+                                                                          .allBillsList
+                                                                          .toList(),
+                                                                      true,
+                                                                    );
+                                                                    _shouldSetState =
+                                                                        true;
+                                                                    _model.internetconkotCopy =
+                                                                        await actions
+                                                                            .checkInternetConnection();
+                                                                    _shouldSetState =
+                                                                        true;
+                                                                    if (_model
+                                                                        .internetconkotCopy!) {
+                                                                      if (FFAppState()
+                                                                              .kotDocRef !=
+                                                                          null) {
+                                                                        await FFAppState()
+                                                                            .kotDocRef!
+                                                                            .update({
+                                                                          ...createTableKotRecordData(
+                                                                            finalBillAmt:
+                                                                                FFAppState().finalAmt,
+                                                                            billAmt:
+                                                                                FFAppState().billAmt,
+                                                                            kotStatus:
+                                                                                'BILLING',
+                                                                          ),
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'productList': getSelItemListListFirestoreData(
+                                                                                _model.prdlistsavebillkotCopy,
+                                                                              ),
+                                                                            },
+                                                                          ),
+                                                                        });
+                                                                      } else {
+                                                                        var tableKotRecordReference =
+                                                                            TableKotRecord.createDoc(FFAppState().outletIdRef!);
+                                                                        await tableKotRecordReference
+                                                                            .set({
+                                                                          ...createTableKotRecordData(
+                                                                            dayId:
+                                                                                functions.getDayId(),
+                                                                            createdDate:
+                                                                                getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                            checkInTime:
+                                                                                getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                            orderType:
+                                                                                'TABLE_KOT',
+                                                                            kotStatus:
+                                                                                'BILLING',
+                                                                            tableNo:
+                                                                                FFAppState().tableNo,
+                                                                            premiseName:
+                                                                                FFAppState().selectedPremise,
+                                                                            finalBillAmt:
+                                                                                FFAppState().finalAmt,
+                                                                            billAmt:
+                                                                                FFAppState().billAmt,
+                                                                          ),
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'productList': getSelItemListListFirestoreData(
+                                                                                _model.prdlistsavebillkotCopy,
+                                                                              ),
+                                                                            },
+                                                                          ),
+                                                                        });
+                                                                        _model.kotCopyCopy =
+                                                                            TableKotRecord.getDocumentFromData({
+                                                                          ...createTableKotRecordData(
+                                                                            dayId:
+                                                                                functions.getDayId(),
+                                                                            createdDate:
+                                                                                getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                            checkInTime:
+                                                                                getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                            orderType:
+                                                                                'TABLE_KOT',
+                                                                            kotStatus:
+                                                                                'BILLING',
+                                                                            tableNo:
+                                                                                FFAppState().tableNo,
+                                                                            premiseName:
+                                                                                FFAppState().selectedPremise,
+                                                                            finalBillAmt:
+                                                                                FFAppState().finalAmt,
+                                                                            billAmt:
+                                                                                FFAppState().billAmt,
+                                                                          ),
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'productList': getSelItemListListFirestoreData(
+                                                                                _model.prdlistsavebillkotCopy,
+                                                                              ),
+                                                                            },
+                                                                          ),
+                                                                        }, tableKotRecordReference);
+                                                                        _shouldSetState =
+                                                                            true;
+
+                                                                        await _model
+                                                                            .kotCopyCopy!
+                                                                            .reference
+                                                                            .update(createTableKotRecordData(
+                                                                          id: _model
+                                                                              .kotCopyCopy
+                                                                              ?.reference
+                                                                              .id,
+                                                                        ));
+                                                                      }
+                                                                    } else {
+                                                                      await showDialog(
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (alertDialogContext) {
+                                                                          return AlertDialog(
+                                                                            content:
+                                                                                Text('Internet Not Available'),
+                                                                            actions: [
+                                                                              TextButton(
+                                                                                onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                child: Text('Ok'),
+                                                                              ),
+                                                                            ],
+                                                                          );
+                                                                        },
+                                                                      );
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    }
+
+                                                                    await actions
+                                                                        .removeFromAllBillList(
+                                                                      FFAppState()
+                                                                          .selBill,
+                                                                    );
+                                                                    safeSetState(
+                                                                        () {
+                                                                      _model.dropDownValueController
+                                                                              ?.value =
+                                                                          'CASH';
+                                                                    });
+                                                                    _model.prdid =
+                                                                        null;
+                                                                    await actions
+                                                                        .clearValue();
+                                                                    FFAppState()
+                                                                        .noOfItems = 0;
+                                                                    FFAppState()
+                                                                            .subTotal =
+                                                                        0.0;
+                                                                    FFAppState()
+                                                                            .delCharges =
+                                                                        0.0;
+                                                                    FFAppState()
+                                                                            .kotDocRef =
+                                                                        null;
+                                                                    FFAppState()
+                                                                        .prdid = '';
+                                                                    FFAppState()
+                                                                            .finalAmt =
+                                                                        0.0;
+                                                                    FFAppState()
+                                                                            .billAmt =
+                                                                        0.0;
+                                                                    FFAppState()
+                                                                            .tableViewHideShow =
+                                                                        true;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
+                                                                  } else {
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
+                                                                  }
+
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                },
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'zciyvhge' /* Save Bill */,
+                                                                ),
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  height: 40.0,
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                                  iconPadding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: Colors
+                                                                            .white,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                      ),
+                                                                  elevation:
+                                                                      0.0,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              8.0),
+                                                                ),
+                                                              ),
+                                                            ).animateOnActionTrigger(
+                                                                animationsMap[
+                                                                    'containerOnActionTriggerAnimation8']!,
+                                                                hasBeenTriggered:
+                                                                    hasContainerTriggered8),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          flex: 8,
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              if (animationsMap[
+                                                                      'containerOnActionTriggerAnimation9'] !=
+                                                                  null) {
+                                                                safeSetState(() =>
+                                                                    hasContainerTriggered9 =
+                                                                        true);
+                                                                SchedulerBinding
+                                                                    .instance
+                                                                    .addPostFrameCallback((_) async => await animationsMap[
+                                                                            'containerOnActionTriggerAnimation9']!
+                                                                        .controller
+                                                                        .forward(
+                                                                            from:
+                                                                                0.0));
+                                                              }
+                                                            },
+                                                            child: ClipRRect(
+                                                              child: Container(
+                                                                width: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width *
+                                                                    0.15,
+                                                                height: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .height *
+                                                                    0.085,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                ),
+                                                                child:
+                                                                    FFButtonWidget(
+                                                                  onPressed:
+                                                                      () async {
+                                                                    var _shouldSetState =
+                                                                        false;
+                                                                    if (functions
+                                                                            .filterBillList(FFAppState().selBill,
+                                                                                FFAppState().allBillsList.toList())
+                                                                            .length >
+                                                                        0) {
+                                                                      _model.prdlistsavebillupiCopy =
+                                                                          await actions
+                                                                              .filterProductsKot(
+                                                                        FFAppState()
+                                                                            .selBill,
+                                                                        FFAppState()
+                                                                            .allBillsList
+                                                                            .toList(),
+                                                                        false,
+                                                                      );
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      _model.internetconCopyCopy =
+                                                                          await actions
+                                                                              .checkInternetConnection();
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      if (_model
+                                                                          .internetconCopyCopy!) {
+                                                                        if (FFAppState().kotDocRef !=
+                                                                            null) {
+                                                                          await FFAppState()
+                                                                              .kotDocRef!
+                                                                              .update({
+                                                                            ...createTableKotRecordData(
+                                                                              finalBillAmt: FFAppState().finalAmt,
+                                                                              billAmt: FFAppState().billAmt,
+                                                                              kotStatus: 'BILLING',
+                                                                            ),
+                                                                            ...mapToFirestore(
+                                                                              {
+                                                                                'productList': getSelItemListListFirestoreData(
+                                                                                  _model.prdlistsavebillupiCopy,
+                                                                                ),
+                                                                              },
+                                                                            ),
+                                                                          });
+                                                                        } else {
+                                                                          var tableKotRecordReference =
+                                                                              TableKotRecord.createDoc(FFAppState().outletIdRef!);
+                                                                          await tableKotRecordReference
+                                                                              .set({
+                                                                            ...createTableKotRecordData(
+                                                                              dayId: functions.getDayId(),
+                                                                              createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                              checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                              orderType: 'TABLE_KOT',
+                                                                              kotStatus: 'BILLING',
+                                                                              tableNo: FFAppState().tableNo,
+                                                                              premiseName: FFAppState().selectedPremise,
+                                                                              finalBillAmt: FFAppState().finalAmt,
+                                                                              billAmt: FFAppState().billAmt,
+                                                                            ),
+                                                                            ...mapToFirestore(
+                                                                              {
+                                                                                'productList': getSelItemListListFirestoreData(
+                                                                                  _model.prdlistsavebillupiCopy,
+                                                                                ),
+                                                                              },
+                                                                            ),
+                                                                          });
+                                                                          _model.kotCopy2 =
+                                                                              TableKotRecord.getDocumentFromData({
+                                                                            ...createTableKotRecordData(
+                                                                              dayId: functions.getDayId(),
+                                                                              createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                              checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                              orderType: 'TABLE_KOT',
+                                                                              kotStatus: 'BILLING',
+                                                                              tableNo: FFAppState().tableNo,
+                                                                              premiseName: FFAppState().selectedPremise,
+                                                                              finalBillAmt: FFAppState().finalAmt,
+                                                                              billAmt: FFAppState().billAmt,
+                                                                            ),
+                                                                            ...mapToFirestore(
+                                                                              {
+                                                                                'productList': getSelItemListListFirestoreData(
+                                                                                  _model.prdlistsavebillupiCopy,
+                                                                                ),
+                                                                              },
+                                                                            ),
+                                                                          }, tableKotRecordReference);
+                                                                          _shouldSetState =
+                                                                              true;
+
+                                                                          await _model
+                                                                              .kotCopy!
+                                                                              .reference
+                                                                              .update(createTableKotRecordData(
+                                                                            id: _model.kotCopy?.reference.id,
+                                                                          ));
+                                                                          FFAppState().kotDocRef = _model
+                                                                              .kotCopy
+                                                                              ?.reference;
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        }
+
+                                                                        _model.tablekotCopy =
+                                                                            await queryTableKotRecordOnce(
+                                                                          parent:
+                                                                              FFAppState().outletIdRef,
+                                                                          queryBuilder: (tableKotRecord) =>
+                                                                              tableKotRecord.where(
+                                                                            'id',
+                                                                            isEqualTo:
+                                                                                FFAppState().kotDocRef?.id,
+                                                                          ),
+                                                                          singleRecord:
+                                                                              true,
+                                                                        ).then((s) =>
+                                                                                s.firstOrNull);
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        _model.returnedListkotCopy =
+                                                                            await actions.selectBillPrint(
+                                                                          FFAppState()
+                                                                              .selBill
+                                                                              .toString(),
+                                                                          FFAppState()
+                                                                              .allBillsList
+                                                                              .toList(),
+                                                                        );
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        _model.devicekotCopy =
+                                                                            await actions.newCustomAction(
+                                                                          FFAppState()
+                                                                              .printerIndex,
+                                                                        );
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        _model.spoutletkotCopy =
+                                                                            await queryServicePointOutletRecordOnce(
+                                                                          parent:
+                                                                              FFAppState().outletIdRef,
+                                                                        );
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        await actions
+                                                                            .printBilltable(
+                                                                          _model
+                                                                              .returnedListkotCopy!
+                                                                              .toList(),
+                                                                          _model
+                                                                              .devicekotCopy!
+                                                                              .toList(),
+                                                                          FFAppState()
+                                                                              .isPrinterConnected,
+                                                                          FFAppState()
+                                                                              .printerName,
+                                                                          _model
+                                                                              .tablekotCopy!,
+                                                                          FFAppState()
+                                                                              .paperSize,
+                                                                          tableListMobileAppSettingsRecord!,
+                                                                        );
+                                                                        _model.prdlistsavebillkotupdateCopy =
+                                                                            await actions.filterProductsKot(
+                                                                          FFAppState()
+                                                                              .selBill,
+                                                                          FFAppState()
+                                                                              .allBillsList
+                                                                              .toList(),
+                                                                          true,
+                                                                        );
+                                                                        _shouldSetState =
+                                                                            true;
+
+                                                                        await FFAppState()
+                                                                            .kotDocRef!
+                                                                            .update({
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'productList': getSelItemListListFirestoreData(
+                                                                                _model.prdlistsavebillkotupdateCopy,
+                                                                              ),
+                                                                            },
+                                                                          ),
+                                                                        });
+                                                                        await actions
+                                                                            .removeFromAllBillList(
+                                                                          FFAppState()
+                                                                              .selBill,
+                                                                        );
+                                                                        safeSetState(
+                                                                            () {
+                                                                          _model
+                                                                              .dropDownValueController
+                                                                              ?.value = 'CASH';
+                                                                        });
+                                                                        _model.prdid =
+                                                                            null;
+                                                                        await actions
+                                                                            .clearValue();
+                                                                        FFAppState()
+                                                                            .noOfItems = 0;
+                                                                        FFAppState().subTotal =
+                                                                            0.0;
+                                                                        FFAppState().delCharges =
+                                                                            0.0;
+                                                                        FFAppState().kotDocRef =
+                                                                            null;
+                                                                        FFAppState().prdid =
+                                                                            '';
+                                                                        FFAppState().finalAmt =
+                                                                            0.0;
+                                                                        FFAppState().billAmt =
+                                                                            0.0;
+                                                                        FFAppState().tableViewHideShow =
+                                                                            true;
+                                                                        safeSetState(
+                                                                            () {});
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
+                                                                      } else {
+                                                                        await showDialog(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              content: Text('Internet Not Available'),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                  child: Text('Ok'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        );
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
+                                                                      }
+                                                                    } else {
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    }
+
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                  },
+                                                                  text: FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '7df9dufm' /* Print Bill */,
+                                                                  ),
+                                                                  options:
+                                                                      FFButtonOptions(
+                                                                    height:
+                                                                        40.0,
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            16.0,
+                                                                            0.0,
+                                                                            16.0,
+                                                                            0.0),
+                                                                    iconPadding:
+                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          color:
+                                                                              Colors.white,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                        ),
+                                                                    elevation:
+                                                                        0.0,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ).animateOnActionTrigger(
+                                                              animationsMap[
+                                                                  'containerOnActionTriggerAnimation9']!,
+                                                              hasBeenTriggered:
+                                                                  hasContainerTriggered9),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(16.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Container(
+                                                              width: 250.0,
+                                                              height: 50.0,
+                                                              decoration:
+                                                                  BoxDecoration(),
+                                                              child: Visibility(
+                                                                visible: tableListMobileAppSettingsRecord
+                                                                        ?.settingList
+                                                                        ?.where((e) =>
+                                                                            e.title ==
+                                                                            'enableSaveBill')
+                                                                        .toList()
+                                                                        ?.firstOrNull
+                                                                        ?.value ??
+                                                                    true,
+                                                                child:
+                                                                    FFButtonWidget(
+                                                                  onPressed:
+                                                                      () async {
+                                                                    var _shouldSetState =
+                                                                        false;
+                                                                    if (functions
+                                                                            .filterBillList(FFAppState().selBill,
+                                                                                FFAppState().allBillsList.toList())
+                                                                            .length >
+                                                                        0) {
+                                                                      if (getJsonField(
+                                                                        FFAppState()
+                                                                            .shiftDetailsJson,
+                                                                        r'''$.shiftExists''',
+                                                                      )) {
+                                                                        FFAppState()
+                                                                            .count = FFAppState()
+                                                                                .count +
+                                                                            1;
+                                                                        FFAppState()
+                                                                            .newcount = FFAppState()
+                                                                                .newcount +
+                                                                            1;
+                                                                        FFAppState()
+                                                                            .billcount = FFAppState()
+                                                                                .billcount +
+                                                                            1;
+                                                                      } else {
+                                                                        FFAppState()
+                                                                            .count = FFAppState()
+                                                                                .count +
+                                                                            1;
+                                                                        FFAppState()
+                                                                            .newcount = FFAppState()
+                                                                                .newcount +
+                                                                            1;
+                                                                        FFAppState()
+                                                                            .billcount = FFAppState()
+                                                                                .billcount +
+                                                                            1;
+                                                                      }
+
+                                                                      _model.prdlistsavebill =
+                                                                          await actions
+                                                                              .filterProductsKot(
+                                                                        FFAppState()
+                                                                            .selBill,
+                                                                        FFAppState()
+                                                                            .allBillsList
+                                                                            .toList(),
+                                                                        true,
+                                                                      );
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      if (FFAppState()
+                                                                              .setCustRef !=
+                                                                          null) {
+                                                                        if (_model.dropDownValue ==
+                                                                            'CREDIT') {
+                                                                          if (FFAppState().oldBalance <
+                                                                              FFAppState().custCredit) {
+                                                                            _model.totalcredit2 =
+                                                                                await actions.oldbalanceplusamt(
+                                                                              FFAppState().oldBalance,
+                                                                              FFAppState().finalAmt,
+                                                                            );
+                                                                            _shouldSetState =
+                                                                                true;
+
+                                                                            await FFAppState().setCustRef!.update(createPartyRecordData(
+                                                                                  credit: true,
+                                                                                  oldBalance: valueOrDefault<int>(
+                                                                                    _model.totalcredit2,
+                                                                                    0,
+                                                                                  ),
+                                                                                  lastVisit: getCurrentTimestamp.millisecondsSinceEpoch.toString(),
+                                                                                ));
+                                                                          } else {
+                                                                            await showDialog(
+                                                                              context: context,
+                                                                              builder: (alertDialogContext) {
+                                                                                return AlertDialog(
+                                                                                  content: Text('Credit Limit Exceeded !'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                      child: Text('Ok'),
+                                                                                    ),
+                                                                                  ],
+                                                                                );
+                                                                              },
+                                                                            );
+                                                                            if (_shouldSetState)
+                                                                              safeSetState(() {});
+                                                                            return;
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                      _model.internetcon =
+                                                                          await actions
+                                                                              .checkInternetConnection();
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      if (_model
+                                                                          .internetcon!) {
+                                                                        var invoiceRecordReference =
+                                                                            InvoiceRecord.createDoc(FFAppState().outletIdRef!);
+                                                                        await invoiceRecordReference
+                                                                            .set({
+                                                                          ...createInvoiceRecordData(
+                                                                            invoice:
+                                                                                functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
+                                                                            party:
+                                                                                valueOrDefault<String>(
+                                                                              FFAppState().setCustRef?.id,
+                                                                              'NA',
+                                                                            ),
+                                                                            products:
+                                                                                '',
+                                                                            invoiceDate:
+                                                                                functions.timestampToMili(getCurrentTimestamp),
+                                                                            paymentMode:
+                                                                                _model.dropDownValue,
+                                                                            dayId:
+                                                                                functions.getDayId(),
+                                                                            discountAmt:
+                                                                                valueOrDefault<double>(
+                                                                              FFAppState().disAmt,
+                                                                              0.0,
+                                                                            ),
+                                                                            discountPer:
+                                                                                valueOrDefault<double>(
+                                                                              FFAppState().disPer,
+                                                                              0.0,
+                                                                            ),
+                                                                            delliveryChrg:
+                                                                                valueOrDefault<double>(
+                                                                              FFAppState().delCharges,
+                                                                              0.0,
+                                                                            ),
+                                                                            taxAmt:
+                                                                                FFAppState().taxamt,
+                                                                            billAmt:
+                                                                                valueOrDefault<double>(
+                                                                              FFAppState().billAmt,
+                                                                              0.0,
+                                                                            ),
+                                                                            finalBillAmt:
+                                                                                valueOrDefault<double>(
+                                                                              FFAppState().finalAmt,
+                                                                              0.0,
+                                                                            ),
+                                                                            shiftId:
+                                                                                getJsonField(
+                                                                              FFAppState().shiftDetailsJson,
+                                                                              r'''$.shiftId''',
+                                                                            ).toString(),
+                                                                            isDeleted:
+                                                                                false,
+                                                                            count:
+                                                                                FFAppState().newcount,
+                                                                          ),
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'productList': getSelItemListListFirestoreData(
+                                                                                _model.prdlistsavebill,
+                                                                              ),
+                                                                            },
+                                                                          ),
+                                                                        });
+                                                                        _model.invonline =
+                                                                            InvoiceRecord.getDocumentFromData({
+                                                                          ...createInvoiceRecordData(
+                                                                            invoice:
+                                                                                functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
+                                                                            party:
+                                                                                valueOrDefault<String>(
+                                                                              FFAppState().setCustRef?.id,
+                                                                              'NA',
+                                                                            ),
+                                                                            products:
+                                                                                '',
+                                                                            invoiceDate:
+                                                                                functions.timestampToMili(getCurrentTimestamp),
+                                                                            paymentMode:
+                                                                                _model.dropDownValue,
+                                                                            dayId:
+                                                                                functions.getDayId(),
+                                                                            discountAmt:
+                                                                                valueOrDefault<double>(
+                                                                              FFAppState().disAmt,
+                                                                              0.0,
+                                                                            ),
+                                                                            discountPer:
+                                                                                valueOrDefault<double>(
+                                                                              FFAppState().disPer,
+                                                                              0.0,
+                                                                            ),
+                                                                            delliveryChrg:
+                                                                                valueOrDefault<double>(
+                                                                              FFAppState().delCharges,
+                                                                              0.0,
+                                                                            ),
+                                                                            taxAmt:
+                                                                                FFAppState().taxamt,
+                                                                            billAmt:
+                                                                                valueOrDefault<double>(
+                                                                              FFAppState().billAmt,
+                                                                              0.0,
+                                                                            ),
+                                                                            finalBillAmt:
+                                                                                valueOrDefault<double>(
+                                                                              FFAppState().finalAmt,
+                                                                              0.0,
+                                                                            ),
+                                                                            shiftId:
+                                                                                getJsonField(
+                                                                              FFAppState().shiftDetailsJson,
+                                                                              r'''$.shiftId''',
+                                                                            ).toString(),
+                                                                            isDeleted:
+                                                                                false,
+                                                                            count:
+                                                                                FFAppState().newcount,
+                                                                          ),
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'productList': getSelItemListListFirestoreData(
+                                                                                _model.prdlistsavebill,
+                                                                              ),
+                                                                            },
+                                                                          ),
+                                                                        }, invoiceRecordReference);
+                                                                        _shouldSetState =
+                                                                            true;
+
+                                                                        await _model
+                                                                            .invonline!
+                                                                            .reference
+                                                                            .update(createInvoiceRecordData(
+                                                                          id: _model
+                                                                              .invonline
+                                                                              ?.reference
+                                                                              .id,
+                                                                        ));
+
+                                                                        await FFAppState()
+                                                                            .kotDocRef!
+                                                                            .update(createTableKotRecordData(
+                                                                              kotStatus: 'FINAL',
+                                                                            ));
+                                                                      } else {
+                                                                        await showDialog(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              content: Text('Internet Not Available'),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                  child: Text('Ok'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        );
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
+                                                                      }
+
+                                                                      if (getJsonField(
+                                                                        FFAppState()
+                                                                            .shiftDetailsJson,
+                                                                        r'''$.shiftExists''',
+                                                                      )) {
+                                                                        _model.shiftSummarResultsNew2 =
+                                                                            await actions.calShiftSummary(
+                                                                          _model
+                                                                              .invonline!,
+                                                                          FFAppState()
+                                                                              .shiftDetailsJson,
+                                                                        );
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        FFAppState()
+                                                                            .updateShiftDetailsStruct(
+                                                                          (e) => e
+                                                                            ..billCount =
+                                                                                valueOrDefault<int>(
+                                                                              FFAppState().billcount,
+                                                                              0,
+                                                                            )
+                                                                            ..totalSale =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.totalSale''',
+                                                                            )
+                                                                            ..deliveryCharges =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.deliveryCharges''',
+                                                                            )
+                                                                            ..tax =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.tax''',
+                                                                            )
+                                                                            ..lastBillNo =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.lastBillNo''',
+                                                                            ).toString()
+                                                                            ..discount =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.discount''',
+                                                                            )
+                                                                            ..lastBillTime =
+                                                                                functions.timestampToMili(getCurrentTimestamp)
+                                                                            ..cashSale =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.cashSale''',
+                                                                            )
+                                                                            ..paymentJson =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.paymentJson''',
+                                                                            ).toString()
+                                                                            ..dayId =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.dayId''',
+                                                                            ).toString()
+                                                                            ..code =
+                                                                                FFAppState().shiftDetails.code
+                                                                            ..endTime =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.endTime''',
+                                                                            )
+                                                                            ..advanceAmtTotal =
+                                                                                FFAppState().shiftDetails.advanceAmtTotal
+                                                                            ..customerReciveAmtTotal =
+                                                                                FFAppState().shiftDetails.customerReciveAmtTotal
+                                                                            ..expensesAmtTotal =
+                                                                                FFAppState().shiftDetails.expensesAmtTotal
+                                                                            ..openingAmt =
+                                                                                FFAppState().shiftDetails.openingAmt
+                                                                            ..receiveAmtTotal =
+                                                                                FFAppState().shiftDetails.receiveAmtTotal
+                                                                            ..refoundAmount =
+                                                                                FFAppState().shiftDetails.refoundAmount
+                                                                            ..roundOff =
+                                                                                FFAppState().shiftDetails.roundOff
+                                                                            ..cashInHand =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.cashSale''',
+                                                                            )
+                                                                            ..startTime =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.startTime''',
+                                                                            )
+                                                                            ..inActive =
+                                                                                FFAppState().shiftDetails.inActive
+                                                                            ..shiftNo =
+                                                                                FFAppState().shiftDetails.shiftNo
+                                                                            ..subTotalBill =
+                                                                                FFAppState().shiftDetails.subTotalBill
+                                                                            ..userId =
+                                                                                FFAppState().shiftDetails.userId
+                                                                            ..deviceId =
+                                                                                FFAppState().shiftDetails.deviceId
+                                                                            ..version =
+                                                                                FFAppState().shiftDetails.version
+                                                                            ..shiftId =
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.shiftId''',
+                                                                            ).toString()
+                                                                            ..synC =
+                                                                                FFAppState().shiftDetails.synC
+                                                                            ..newIDShift =
+                                                                                FFAppState().shiftDetails.newIDShift
+                                                                            ..hivekey =
+                                                                                FFAppState().shiftDetails.hivekey
+                                                                            ..id = FFAppState().shiftDetails.id,
+                                                                        );
+                                                                        if (_model
+                                                                            .internetcon!) {
+                                                                          _model.shiftondata =
+                                                                              await queryShiftRecordOnce(
+                                                                            parent:
+                                                                                FFAppState().outletIdRef,
+                                                                            queryBuilder: (shiftRecord) =>
+                                                                                shiftRecord.where(
+                                                                              'id',
+                                                                              isEqualTo: valueOrDefault<String>(
+                                                                                getJsonField(
+                                                                                  FFAppState().shiftDetailsJson,
+                                                                                  r'''$.ref''',
+                                                                                )?.toString(),
+                                                                                'NA',
+                                                                              ),
+                                                                            ),
+                                                                            singleRecord:
+                                                                                true,
+                                                                          ).then((s) => s.firstOrNull);
+                                                                          _shouldSetState =
+                                                                              true;
+
+                                                                          await _model
+                                                                              .shiftondata!
+                                                                              .reference
+                                                                              .update(createShiftRecordData(
+                                                                            billCount:
+                                                                                FFAppState().shiftDetails.billCount,
+                                                                            dayId:
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.dayId''',
+                                                                            ).toString(),
+                                                                            lastBillNo:
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.lastBillNo''',
+                                                                            ).toString(),
+                                                                            lastBillTime:
+                                                                                functions.timestampToMili(getCurrentTimestamp),
+                                                                            tax:
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.tax''',
+                                                                            ),
+                                                                            deliveryCharges:
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.deliveryCharges''',
+                                                                            ),
+                                                                            discount:
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.discount''',
+                                                                            ),
+                                                                            totalSale:
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.totalSale''',
+                                                                            ),
+                                                                            cashSale:
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.cashSale''',
+                                                                            ),
+                                                                            paymentJson:
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.paymentJson''',
+                                                                            ).toString(),
+                                                                            code:
+                                                                                FFAppState().shiftDetails.code,
+                                                                            advanceAmtTotal:
+                                                                                FFAppState().shiftDetails.advanceAmtTotal,
+                                                                            customerReciveAmtTotal:
+                                                                                FFAppState().shiftDetails.customerReciveAmtTotal,
+                                                                            expensesAmtTotal:
+                                                                                FFAppState().shiftDetails.expensesAmtTotal,
+                                                                            openingAmt:
+                                                                                FFAppState().shiftDetails.openingAmt,
+                                                                            receiveAmtTotal:
+                                                                                FFAppState().shiftDetails.receiveAmtTotal,
+                                                                            refoundAmount:
+                                                                                FFAppState().shiftDetails.refoundAmount,
+                                                                            roundOff:
+                                                                                FFAppState().shiftDetails.roundOff,
+                                                                            cashInHand:
+                                                                                FFAppState().shiftDetails.cashInHand,
+                                                                            inActive:
+                                                                                FFAppState().shiftDetails.inActive,
+                                                                            shiftId:
+                                                                                getJsonField(
+                                                                              _model.shiftSummarResultsNew2,
+                                                                              r'''$.shiftId''',
+                                                                            ).toString(),
+                                                                          ));
+                                                                        } else {
+                                                                          if (_shouldSetState)
+                                                                            safeSetState(() {});
+                                                                          return;
+                                                                        }
+
+                                                                        if (tableListMobileAppSettingsRecord!
+                                                                            .settingList
+                                                                            .where((e) =>
+                                                                                e.title ==
+                                                                                'enableStock')
+                                                                            .toList()
+                                                                            .firstOrNull!
+                                                                            .value) {
+                                                                          FFAppState().startLoop =
+                                                                              0;
+                                                                          while (FFAppState().startLoop <
+                                                                              _model.prdlistsavebill!.length) {
+                                                                            _model.stockupdateprd =
+                                                                                await queryProductRecordOnce(
+                                                                              parent: FFAppState().outletIdRef,
+                                                                              queryBuilder: (productRecord) => productRecord
+                                                                                  .where(
+                                                                                    'id',
+                                                                                    isEqualTo: (_model.prdlistsavebill?.elementAtOrNull(FFAppState().startLoop))?.id,
+                                                                                  )
+                                                                                  .where(
+                                                                                    'stockable',
+                                                                                    isEqualTo: true,
+                                                                                  ),
+                                                                              singleRecord: true,
+                                                                            ).then((s) => s.firstOrNull);
+                                                                            _shouldSetState =
+                                                                                true;
+                                                                            if (_model.stockupdateprd !=
+                                                                                null) {
+                                                                              await _model.stockupdateprd!.reference.update({
+                                                                                ...mapToFirestore(
+                                                                                  {
+                                                                                    'currentStock': FieldValue.increment(-(functions.doubleToInt((_model.prdlistsavebill?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)),
+                                                                                  },
+                                                                                ),
+                                                                              });
+                                                                              _model.itemprd = await actions.hivegetproductbyId(
+                                                                                _model.stockupdateprd?.reference.id,
+                                                                                _model.prdlistsavebill?.elementAtOrNull(FFAppState().startLoop),
+                                                                                'get',
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              FFAppState().updateProductHiveputStruct(
+                                                                                (e) => e
+                                                                                  ..id = _model.itemprd?.id
+                                                                                  ..price = _model.itemprd?.price
+                                                                                  ..category = _model.itemprd?.category
+                                                                                  ..code = _model.itemprd?.code
+                                                                                  ..name = _model.itemprd?.name
+                                                                                  ..sellingPrice = _model.itemprd?.sellingPrice
+                                                                                  ..mrpPrice = _model.itemprd?.mrpPrice
+                                                                                  ..purchasePrice = _model.itemprd?.purchasePrice
+                                                                                  ..categoryId = _model.itemprd?.categoryId
+                                                                                  ..taxId = _model.itemprd?.taxId
+                                                                                  ..unitId = _model.itemprd?.unitId
+                                                                                  ..regionalName = _model.itemprd?.regionalName
+                                                                                  ..barcode = _model.itemprd?.barcode
+                                                                                  ..hsncode = _model.itemprd?.hsncode
+                                                                                  ..reorderLevel = _model.itemprd?.reorderLevel
+                                                                                  ..searchcode = _model.itemprd?.searchcode
+                                                                                  ..shortName = _model.itemprd?.shortName
+                                                                                  ..weightable = _model.itemprd?.weightable
+                                                                                  ..stockable = _model.itemprd?.stockable
+                                                                                  ..discountPer = _model.itemprd?.discountPer
+                                                                                  ..discountAmt = _model.itemprd?.discountAmt
+                                                                                  ..productMasterId = _model.itemprd?.productMasterId
+                                                                                  ..recipeRefId = _model.itemprd?.recipeRefId
+                                                                                  ..imageUrl = _model.itemprd?.imageUrl
+                                                                                  ..serviceOutletId = _model.itemprd?.serviceOutletId
+                                                                                  ..type = _model.itemprd?.type
+                                                                                  ..recipeId = _model.itemprd?.recipeId
+                                                                                  ..stock = _model.itemprd!.stock - (functions.doubleToInt((_model.prdlistsavebill?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)
+                                                                                  ..isDeleted = _model.itemprd?.isDeleted
+                                                                                  ..keywords = _model.itemprd!.keywords.toList()
+                                                                                  ..synC = _model.itemprd?.synC
+                                                                                  ..hivekey = _model.itemprd?.hivekey
+                                                                                  ..version = _model.itemprd?.version,
+                                                                              );
+                                                                              _model.productupdated = await actions.hiveProductCrud(
+                                                                                FFAppState().productHiveput.hivekey,
+                                                                                FFAppState().productHiveput,
+                                                                                'update',
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              FFAppState().productHive = [];
+                                                                              FFAppState().productHiveput = ProductStructStruct();
+                                                                              _model.newupdatedproductlist2 = await actions.getProductlistHive();
+                                                                              _shouldSetState = true;
+                                                                              FFAppState().productHive = _model.newupdatedproductlist2!.toList().cast<ProductStructStruct>();
+                                                                            }
+                                                                            FFAppState().startLoop =
+                                                                                FFAppState().startLoop + 1;
+                                                                          }
+                                                                          await actions
+                                                                              .updateProductStocknew(
+                                                                            _model.prdlistsavebill!.toList(),
+                                                                          );
+                                                                        }
+                                                                        await actions
+                                                                            .removeFromAllBillList(
+                                                                          FFAppState()
+                                                                              .selBill,
+                                                                        );
+                                                                        safeSetState(
+                                                                            () {
+                                                                          _model
+                                                                              .dropDownValueController
+                                                                              ?.value = 'CASH';
+                                                                        });
+                                                                        FFAppState().lastBill =
+                                                                            FFAppState().finalAmt;
+                                                                        _model.prdid =
+                                                                            null;
+                                                                        await actions
+                                                                            .clearValue();
+                                                                        FFAppState()
+                                                                            .noOfItems = 0;
+                                                                        FFAppState().subTotal =
+                                                                            0.0;
+                                                                        FFAppState().count =
+                                                                            FFAppState().billcount;
+                                                                        FFAppState().delCharges =
+                                                                            0.0;
+                                                                        FFAppState()
+                                                                            .oldBalance = 0;
+                                                                        FFAppState()
+                                                                            .custCredit = 0;
+                                                                        FFAppState().custNameRef =
+                                                                            null;
+                                                                        FFAppState().setCustRef =
+                                                                            null;
+                                                                        FFAppState().setCustName =
+                                                                            '';
+                                                                        FFAppState().setCustMobNo =
+                                                                            '';
+                                                                        FFAppState().prdid =
+                                                                            '';
+                                                                        FFAppState().finalAmt =
+                                                                            0.0;
+                                                                        FFAppState().billAmt =
+                                                                            0.0;
+                                                                        FFAppState().tableViewHideShow =
+                                                                            true;
+                                                                        FFAppState().kotDocRef =
+                                                                            null;
+                                                                        safeSetState(
+                                                                            () {});
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
+                                                                      } else {
+                                                                        ScaffoldMessenger.of(context)
+                                                                            .showSnackBar(
+                                                                          SnackBar(
+                                                                            content:
+                                                                                Text(
+                                                                              'Login again to start Shift ',
+                                                                              style: TextStyle(
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
+                                                                            ),
+                                                                            duration:
+                                                                                Duration(milliseconds: 4000),
+                                                                            backgroundColor:
+                                                                                Color(0x00000000),
+                                                                          ),
+                                                                        );
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
+                                                                      }
+                                                                    } else {
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    }
+
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                  },
+                                                                  text: FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'xv9vqfhw' /* Settled & Save Bill */,
+                                                                  ),
+                                                                  options:
+                                                                      FFButtonOptions(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    iconPadding:
+                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    color: Color(
+                                                                        0xFFB60042),
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryBtnText,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).headlineSmallIsCustom,
+                                                                        ),
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: Colors
+                                                                          .transparent,
+                                                                      width:
+                                                                          1.0,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Container(
+                                                            width: 250.0,
+                                                            height: 50.0,
+                                                            decoration:
+                                                                BoxDecoration(),
+                                                            child:
+                                                                FFButtonWidget(
+                                                              onPressed:
+                                                                  () async {
+                                                                var _shouldSetState =
+                                                                    false;
+                                                                if (getJsonField(
+                                                                  FFAppState()
+                                                                      .shiftDetailsJson,
+                                                                  r'''$.shiftExists''',
+                                                                )) {
+                                                                  FFAppState()
+                                                                          .count =
+                                                                      FFAppState()
+                                                                              .count +
+                                                                          1;
+                                                                  FFAppState()
+                                                                          .newcount =
+                                                                      FFAppState()
+                                                                              .newcount +
+                                                                          1;
+                                                                  FFAppState()
+                                                                          .billcount =
+                                                                      FFAppState()
+                                                                              .billcount +
+                                                                          1;
+                                                                } else {
+                                                                  FFAppState()
+                                                                          .count =
+                                                                      FFAppState()
+                                                                              .count +
+                                                                          1;
+                                                                  FFAppState()
+                                                                          .newcount =
+                                                                      FFAppState()
+                                                                              .newcount +
+                                                                          1;
+                                                                  FFAppState()
+                                                                          .billcount =
+                                                                      FFAppState()
+                                                                              .billcount +
+                                                                          1;
+                                                                }
+
+                                                                _model.prdlinstnewtx =
+                                                                    await actions
+                                                                        .filterProductsKot(
+                                                                  FFAppState()
+                                                                      .selBill,
+                                                                  FFAppState()
+                                                                      .allBillsList
+                                                                      .toList(),
+                                                                  true,
+                                                                );
+                                                                _shouldSetState =
+                                                                    true;
+                                                                if (!isAndroid) {
+                                                                  await actions
+                                                                      .newCustomAction5();
+                                                                }
+                                                                if (_model
+                                                                        .dropDownValue ==
+                                                                    'CREDIT') {
+                                                                  if (FFAppState()
+                                                                              .setCustRef
+                                                                              ?.id !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .setCustRef
+                                                                              ?.id !=
+                                                                          '') {
+                                                                    if (FFAppState()
+                                                                            .oldBalance <
+                                                                        FFAppState()
+                                                                            .custCredit) {
+                                                                      _model.totalcredit =
+                                                                          await actions
+                                                                              .oldbalanceplusamt(
+                                                                        FFAppState()
+                                                                            .oldBalance,
+                                                                        FFAppState()
+                                                                            .finalAmt,
+                                                                      );
+                                                                      _shouldSetState =
+                                                                          true;
+
+                                                                      await FFAppState()
+                                                                          .setCustRef!
+                                                                          .update(
+                                                                              createPartyRecordData(
+                                                                            credit:
+                                                                                true,
+                                                                            oldBalance:
+                                                                                valueOrDefault<int>(
+                                                                              _model.totalcredit,
+                                                                              0,
+                                                                            ),
+                                                                            lastVisit:
+                                                                                getCurrentTimestamp.millisecondsSinceEpoch.toString(),
+                                                                          ));
+                                                                    } else {
+                                                                      await showDialog(
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (alertDialogContext) {
+                                                                          return AlertDialog(
+                                                                            content:
+                                                                                Text('Credit Limit Exceeded !'),
+                                                                            actions: [
+                                                                              TextButton(
+                                                                                onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                child: Text('Ok'),
+                                                                              ),
+                                                                            ],
+                                                                          );
+                                                                        },
+                                                                      );
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    }
+                                                                  } else {
+                                                                    await showDialog(
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (alertDialogContext) {
+                                                                        return AlertDialog(
+                                                                          content:
+                                                                              Text('Select Customer '),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                              child: Text('Ok'),
+                                                                            ),
+                                                                          ],
+                                                                        );
+                                                                      },
+                                                                    );
+                                                                    scaffoldKey
+                                                                        .currentState!
+                                                                        .openEndDrawer();
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
+                                                                  }
+                                                                }
+                                                                _model.interprd =
+                                                                    await actions
+                                                                        .checkInternetConnection();
+                                                                _shouldSetState =
+                                                                    true;
+                                                                if (_model
+                                                                    .interprd!) {
+                                                                  var invoiceRecordReference =
+                                                                      InvoiceRecord.createDoc(
+                                                                          FFAppState()
+                                                                              .outletIdRef!);
+                                                                  await invoiceRecordReference
+                                                                      .set({
+                                                                    ...createInvoiceRecordData(
+                                                                      invoice: functions.genInvoiceNum(
+                                                                          FFAppState()
+                                                                              .newcount,
+                                                                          FFAppState()
+                                                                              .shiftDetails
+                                                                              .shiftNo),
+                                                                      party: valueOrDefault<
+                                                                          String>(
+                                                                        FFAppState()
+                                                                            .setCustRef
+                                                                            ?.id,
+                                                                        'NA',
+                                                                      ),
+                                                                      products:
+                                                                          '',
+                                                                      invoiceDate:
+                                                                          functions
+                                                                              .timestampToMili(getCurrentTimestamp),
+                                                                      paymentMode:
+                                                                          _model
+                                                                              .dropDownValue,
+                                                                      dayId: functions
+                                                                          .getDayId(),
+                                                                      discountAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .disAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      discountPer:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .disPer,
+                                                                        0.0,
+                                                                      ),
+                                                                      delliveryChrg:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .delCharges,
+                                                                        0.0,
+                                                                      ),
+                                                                      taxAmt: FFAppState()
+                                                                          .taxamt,
+                                                                      billAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .billAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      finalBillAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .finalAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      shiftId:
+                                                                          getJsonField(
+                                                                        FFAppState()
+                                                                            .shiftDetailsJson,
+                                                                        r'''$.shiftId''',
+                                                                      ).toString(),
+                                                                      isDeleted:
+                                                                          false,
+                                                                      count: FFAppState()
+                                                                          .newcount,
+                                                                    ),
+                                                                    ...mapToFirestore(
+                                                                      {
+                                                                        'productList':
+                                                                            getSelItemListListFirestoreData(
+                                                                          _model
+                                                                              .prdlinstnewtx,
+                                                                        ),
+                                                                      },
+                                                                    ),
+                                                                  });
+                                                                  _model.invonlineprt =
+                                                                      InvoiceRecord
+                                                                          .getDocumentFromData({
+                                                                    ...createInvoiceRecordData(
+                                                                      invoice: functions.genInvoiceNum(
+                                                                          FFAppState()
+                                                                              .newcount,
+                                                                          FFAppState()
+                                                                              .shiftDetails
+                                                                              .shiftNo),
+                                                                      party: valueOrDefault<
+                                                                          String>(
+                                                                        FFAppState()
+                                                                            .setCustRef
+                                                                            ?.id,
+                                                                        'NA',
+                                                                      ),
+                                                                      products:
+                                                                          '',
+                                                                      invoiceDate:
+                                                                          functions
+                                                                              .timestampToMili(getCurrentTimestamp),
+                                                                      paymentMode:
+                                                                          _model
+                                                                              .dropDownValue,
+                                                                      dayId: functions
+                                                                          .getDayId(),
+                                                                      discountAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .disAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      discountPer:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .disPer,
+                                                                        0.0,
+                                                                      ),
+                                                                      delliveryChrg:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .delCharges,
+                                                                        0.0,
+                                                                      ),
+                                                                      taxAmt: FFAppState()
+                                                                          .taxamt,
+                                                                      billAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .billAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      finalBillAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .finalAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      shiftId:
+                                                                          getJsonField(
+                                                                        FFAppState()
+                                                                            .shiftDetailsJson,
+                                                                        r'''$.shiftId''',
+                                                                      ).toString(),
+                                                                      isDeleted:
+                                                                          false,
+                                                                      count: FFAppState()
+                                                                          .newcount,
+                                                                    ),
+                                                                    ...mapToFirestore(
+                                                                      {
+                                                                        'productList':
+                                                                            getSelItemListListFirestoreData(
+                                                                          _model
+                                                                              .prdlinstnewtx,
+                                                                        ),
+                                                                      },
+                                                                    ),
+                                                                  }, invoiceRecordReference);
+                                                                  _shouldSetState =
+                                                                      true;
+
+                                                                  await _model
+                                                                      .invonlineprt!
+                                                                      .reference
+                                                                      .update(
+                                                                          createInvoiceRecordData(
+                                                                    id: _model
+                                                                        .invonlineprt
+                                                                        ?.reference
+                                                                        .id,
+                                                                  ));
+
+                                                                  await FFAppState()
+                                                                      .kotDocRef!
+                                                                      .update(
+                                                                          createTableKotRecordData(
+                                                                        kotStatus:
+                                                                            'FINAL',
+                                                                      ));
+                                                                } else {
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        content:
+                                                                            Text('Internet Not Available'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
+                                                                }
+
+                                                                if (getJsonField(
+                                                                  FFAppState()
+                                                                      .shiftDetailsJson,
+                                                                  r'''$.shiftExists''',
+                                                                )) {
+                                                                  _model.shiftSummarResultsNew =
+                                                                      await actions
+                                                                          .calShiftSummary(
+                                                                    _model
+                                                                        .invonlineprt!,
+                                                                    FFAppState()
+                                                                        .shiftDetailsJson,
+                                                                  );
+                                                                  _shouldSetState =
+                                                                      true;
+                                                                  FFAppState()
+                                                                      .updateShiftDetailsStruct(
+                                                                    (e) => e
+                                                                      ..billCount =
+                                                                          valueOrDefault<
+                                                                              int>(
+                                                                        FFAppState()
+                                                                            .billcount,
+                                                                        0,
+                                                                      )
+                                                                      ..totalSale =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.totalSale''',
+                                                                      )
+                                                                      ..deliveryCharges =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.deliveryCharges''',
+                                                                      )
+                                                                      ..tax =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.tax''',
+                                                                      )
+                                                                      ..lastBillNo =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.lastBillNo''',
+                                                                      ).toString()
+                                                                      ..discount =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.discount''',
+                                                                      )
+                                                                      ..lastBillTime =
+                                                                          functions
+                                                                              .timestampToMili(getCurrentTimestamp)
+                                                                      ..cashSale =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.cashSale''',
+                                                                      )
+                                                                      ..paymentJson =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.paymentJson''',
+                                                                      ).toString()
+                                                                      ..dayId =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.dayId''',
+                                                                      ).toString()
+                                                                      ..shiftId =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.shiftId''',
+                                                                      ).toString()
+                                                                      ..hivekey = FFAppState()
+                                                                          .shiftDetails
+                                                                          .hivekey
+                                                                      ..newIDShift = FFAppState()
+                                                                          .shiftDetails
+                                                                          .newIDShift
+                                                                      ..code = FFAppState()
+                                                                          .shiftDetails
+                                                                          .code
+                                                                      ..endTime = FFAppState()
+                                                                          .shiftDetails
+                                                                          .endTime
+                                                                      ..advanceAmtTotal = FFAppState()
+                                                                          .shiftDetails
+                                                                          .advanceAmtTotal
+                                                                      ..customerReciveAmtTotal = FFAppState()
+                                                                          .shiftDetails
+                                                                          .customerReciveAmtTotal
+                                                                      ..expensesAmtTotal = FFAppState()
+                                                                          .shiftDetails
+                                                                          .expensesAmtTotal
+                                                                      ..openingAmt = FFAppState()
+                                                                          .shiftDetails
+                                                                          .openingAmt
+                                                                      ..receiveAmtTotal = FFAppState()
+                                                                          .shiftDetails
+                                                                          .receiveAmtTotal
+                                                                      ..refoundAmount = FFAppState()
+                                                                          .shiftDetails
+                                                                          .refoundAmount
+                                                                      ..roundOff = FFAppState()
+                                                                          .shiftDetails
+                                                                          .roundOff
+                                                                      ..cashInHand = FFAppState()
+                                                                          .shiftDetails
+                                                                          .cashInHand
+                                                                      ..startTime =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.startTime''',
+                                                                      )
+                                                                      ..inActive = FFAppState()
+                                                                          .shiftDetails
+                                                                          .inActive
+                                                                      ..shiftNo = FFAppState()
+                                                                          .shiftDetails
+                                                                          .shiftNo
+                                                                      ..subTotalBill = FFAppState()
+                                                                          .shiftDetails
+                                                                          .subTotalBill
+                                                                      ..version = FFAppState()
+                                                                          .shiftDetails
+                                                                          .version
+                                                                      ..userId = FFAppState()
+                                                                          .shiftDetails
+                                                                          .userId
+                                                                      ..deviceId = FFAppState()
+                                                                          .shiftDetails
+                                                                          .deviceId
+                                                                      ..synC = FFAppState()
+                                                                          .shiftDetails
+                                                                          .synC
+                                                                      ..id = FFAppState()
+                                                                          .shiftDetails
+                                                                          .id,
+                                                                  );
+                                                                  if (_model
+                                                                      .interprd!) {
+                                                                    _model.shiftondataprint =
+                                                                        await queryShiftRecordOnce(
+                                                                      parent: FFAppState()
+                                                                          .outletIdRef,
+                                                                      queryBuilder:
+                                                                          (shiftRecord) =>
+                                                                              shiftRecord.where(
+                                                                        'id',
+                                                                        isEqualTo:
+                                                                            valueOrDefault<String>(
+                                                                          getJsonField(
+                                                                            FFAppState().shiftDetailsJson,
+                                                                            r'''$.ref''',
+                                                                          )?.toString(),
+                                                                          'NA',
+                                                                        ),
+                                                                      ),
+                                                                      singleRecord:
+                                                                          true,
+                                                                    ).then((s) =>
+                                                                            s.firstOrNull);
+                                                                    _shouldSetState =
+                                                                        true;
+
+                                                                    await _model
+                                                                        .shiftondataprint!
+                                                                        .reference
+                                                                        .update(
+                                                                            createShiftRecordData(
+                                                                      billCount: FFAppState()
+                                                                          .shiftDetails
+                                                                          .billCount,
+                                                                      dayId:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.dayId''',
+                                                                      ).toString(),
+                                                                      lastBillNo:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.lastBillNo''',
+                                                                      ).toString(),
+                                                                      lastBillTime:
+                                                                          functions
+                                                                              .timestampToMili(getCurrentTimestamp),
+                                                                      tax:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.tax''',
+                                                                      ),
+                                                                      deliveryCharges:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.deliveryCharges''',
+                                                                      ),
+                                                                      discount:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.discount''',
+                                                                      ),
+                                                                      totalSale:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.totalSale''',
+                                                                      ),
+                                                                      cashSale:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.cashSale''',
+                                                                      ),
+                                                                      paymentJson:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.paymentJson''',
+                                                                      ).toString(),
+                                                                      code: FFAppState()
+                                                                          .shiftDetails
+                                                                          .code,
+                                                                      advanceAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .advanceAmtTotal,
+                                                                      customerReciveAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .customerReciveAmtTotal,
+                                                                      expensesAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .expensesAmtTotal,
+                                                                      openingAmt: FFAppState()
+                                                                          .shiftDetails
+                                                                          .openingAmt,
+                                                                      receiveAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .receiveAmtTotal,
+                                                                      refoundAmount: FFAppState()
+                                                                          .shiftDetails
+                                                                          .refoundAmount,
+                                                                      roundOff: FFAppState()
+                                                                          .shiftDetails
+                                                                          .roundOff,
+                                                                      cashInHand:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.cashSale''',
+                                                                      ),
+                                                                      inActive: FFAppState()
+                                                                          .shiftDetails
+                                                                          .inActive,
+                                                                      shiftId:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.shiftId''',
+                                                                      ).toString(),
+                                                                    ));
+                                                                  } else {
+                                                                    await showDialog(
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (alertDialogContext) {
+                                                                        return AlertDialog(
+                                                                          content:
+                                                                              Text('Internet Not Available'),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                              child: Text('Ok'),
+                                                                            ),
+                                                                          ],
+                                                                        );
+                                                                      },
+                                                                    );
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
+                                                                  }
+                                                                } else {
+                                                                  ScaffoldMessenger.of(
+                                                                          context)
+                                                                      .showSnackBar(
+                                                                    SnackBar(
+                                                                      content:
+                                                                          Text(
+                                                                        'Login again to start Shift ',
+                                                                        style:
+                                                                            TextStyle(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                        ),
+                                                                      ),
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              4000),
+                                                                      backgroundColor:
+                                                                          Color(
+                                                                              0x00000000),
+                                                                    ),
+                                                                  );
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
+                                                                }
+
+                                                                if (!functions
+                                                                    .isPrinterSelected(
+                                                                        FFAppState()
+                                                                            .printerDevice)!) {
+                                                                  _model.resDevice2 =
+                                                                      await actions
+                                                                          .scanPrinter(
+                                                                    FFAppState()
+                                                                        .posMode,
+                                                                  );
+                                                                  _shouldSetState =
+                                                                      true;
+                                                                }
+                                                                _model.isconnected =
+                                                                    await actions
+                                                                        .connectDevice(
+                                                                  FFAppState()
+                                                                      .printerDevice,
+                                                                  FFAppState()
+                                                                      .printerIndex,
+                                                                );
+                                                                _shouldSetState =
+                                                                    true;
+                                                                if (_model
+                                                                    .isconnected!) {
+                                                                  FFAppState()
+                                                                          .lastBill =
+                                                                      FFAppState()
+                                                                          .finalAmt;
+                                                                  _model.returnedList2 =
+                                                                      await actions
+                                                                          .selectBillPrint(
+                                                                    FFAppState()
+                                                                        .selBill
+                                                                        .toString(),
+                                                                    FFAppState()
+                                                                        .allBillsList
+                                                                        .toList(),
+                                                                  );
+                                                                  _shouldSetState =
+                                                                      true;
+                                                                  _model.device =
+                                                                      await actions
+                                                                          .newCustomAction(
+                                                                    FFAppState()
+                                                                        .printerIndex,
+                                                                  );
+                                                                  _shouldSetState =
+                                                                      true;
+                                                                  await actions
+                                                                      .printBillnewhiveNEW(
+                                                                    _model
+                                                                        .returnedList2!
+                                                                        .toList(),
+                                                                    _model
+                                                                        .device!
+                                                                        .toList(),
+                                                                    FFAppState()
+                                                                        .isPrinterConnected,
+                                                                    FFAppState()
+                                                                        .printerName,
+                                                                    _model
+                                                                        .invonlineprt!,
+                                                                    FFAppState()
+                                                                        .paperSize,
+                                                                    tableListMobileAppSettingsRecord!,
+                                                                  );
+                                                                  _model.spoutlet =
+                                                                      await queryServicePointOutletRecordOnce(
+                                                                    parent: FFAppState()
+                                                                        .outletIdRef,
+                                                                  );
+                                                                  _shouldSetState =
+                                                                      true;
+                                                                  if (tableListMobileAppSettingsRecord!
+                                                                      .settingList
+                                                                      .where((e) =>
+                                                                          e.title ==
+                                                                          'printKotWithBill')
+                                                                      .toList()
+                                                                      .firstOrNull!
+                                                                      .value) {
+                                                                    await actions
+                                                                        .printKOTwithusbkioskhive(
+                                                                      _model
+                                                                          .returnedList2!
+                                                                          .toList(),
+                                                                      _model
+                                                                          .device!
+                                                                          .toList(),
+                                                                      FFAppState()
+                                                                          .isPrinterConnected,
+                                                                      FFAppState()
+                                                                          .printerName,
+                                                                      _model
+                                                                          .invonlineprt!,
+                                                                      FFAppState()
+                                                                          .paperSize,
+                                                                      tableListMobileAppSettingsRecord!,
+                                                                      FFAppState()
+                                                                          .port,
+                                                                      FFAppState()
+                                                                          .ipAddresss,
+                                                                      _model
+                                                                          .spoutlet!
+                                                                          .toList(),
+                                                                    );
+                                                                  }
+                                                                  if (tableListMobileAppSettingsRecord!
+                                                                      .settingList
+                                                                      .where((e) =>
+                                                                          e.title ==
+                                                                          'enableStock')
+                                                                      .toList()
+                                                                      .firstOrNull!
+                                                                      .value) {
+                                                                    FFAppState()
+                                                                        .startLoop = 0;
+                                                                    while (FFAppState()
+                                                                            .startLoop <
+                                                                        _model
+                                                                            .prdlinstnewtx!
+                                                                            .length) {
+                                                                      _model.stockupdateprdprt =
+                                                                          await queryProductRecordOnce(
+                                                                        parent:
+                                                                            FFAppState().outletIdRef,
+                                                                        queryBuilder: (productRecord) => productRecord
+                                                                            .where(
+                                                                              'id',
+                                                                              isEqualTo: (_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.id,
+                                                                            )
+                                                                            .where(
+                                                                              'stockable',
+                                                                              isEqualTo: true,
+                                                                            ),
+                                                                        singleRecord:
+                                                                            true,
+                                                                      ).then((s) =>
+                                                                              s.firstOrNull);
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      if (_model
+                                                                              .stockupdateprdprt !=
+                                                                          null) {
+                                                                        await _model
+                                                                            .stockupdateprdprt!
+                                                                            .reference
+                                                                            .update({
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'currentStock': FieldValue.increment(-(functions.doubleToInt((_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)),
+                                                                            },
+                                                                          ),
+                                                                        });
+                                                                        _model.itemprd2 =
+                                                                            await actions.hivegetproductbyId(
+                                                                          _model
+                                                                              .stockupdateprdprt
+                                                                              ?.reference
+                                                                              .id,
+                                                                          _model
+                                                                              .prdlinstnewtx
+                                                                              ?.elementAtOrNull(FFAppState().startLoop),
+                                                                          'get',
+                                                                        );
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        FFAppState()
+                                                                            .updateProductHiveputStruct(
+                                                                          (e) => e
+                                                                            ..id =
+                                                                                _model.itemprd2?.id
+                                                                            ..price =
+                                                                                _model.itemprd2?.price
+                                                                            ..category =
+                                                                                _model.itemprd2?.category
+                                                                            ..code =
+                                                                                _model.itemprd2?.code
+                                                                            ..name =
+                                                                                _model.itemprd2?.name
+                                                                            ..sellingPrice =
+                                                                                _model.itemprd2?.sellingPrice
+                                                                            ..mrpPrice =
+                                                                                _model.itemprd2?.mrpPrice
+                                                                            ..purchasePrice =
+                                                                                _model.itemprd2?.purchasePrice
+                                                                            ..categoryId =
+                                                                                _model.itemprd2?.categoryId
+                                                                            ..taxId =
+                                                                                _model.itemprd2?.taxId
+                                                                            ..unitId =
+                                                                                _model.itemprd2?.unitId
+                                                                            ..regionalName =
+                                                                                _model.itemprd2?.regionalName
+                                                                            ..barcode =
+                                                                                _model.itemprd2?.barcode
+                                                                            ..hsncode =
+                                                                                _model.itemprd2?.hsncode
+                                                                            ..reorderLevel =
+                                                                                _model.itemprd2?.reorderLevel
+                                                                            ..searchcode =
+                                                                                _model.itemprd2?.searchcode
+                                                                            ..shortName =
+                                                                                _model.itemprd2?.shortName
+                                                                            ..weightable =
+                                                                                _model.itemprd2?.weightable
+                                                                            ..stockable =
+                                                                                _model.itemprd2?.stockable
+                                                                            ..discountPer =
+                                                                                _model.itemprd2?.discountPer
+                                                                            ..discountAmt =
+                                                                                _model.itemprd2?.discountAmt
+                                                                            ..productMasterId =
+                                                                                _model.itemprd2?.productMasterId
+                                                                            ..recipeRefId =
+                                                                                _model.itemprd2?.recipeRefId
+                                                                            ..imageUrl =
+                                                                                _model.itemprd2?.imageUrl
+                                                                            ..serviceOutletId =
+                                                                                _model.itemprd2?.serviceOutletId
+                                                                            ..type =
+                                                                                _model.itemprd2?.type
+                                                                            ..recipeId =
+                                                                                _model.itemprd2?.recipeId
+                                                                            ..stock =
+                                                                                _model.itemprd2!.stock - (functions.doubleToInt((_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)
+                                                                            ..isDeleted =
+                                                                                _model.itemprd2?.isDeleted
+                                                                            ..keywords =
+                                                                                _model.itemprd2!.keywords.toList()
+                                                                            ..synC =
+                                                                                _model.itemprd2?.synC
+                                                                            ..hivekey =
+                                                                                _model.itemprd2?.hivekey
+                                                                            ..version = _model.itemprd2?.version,
+                                                                        );
+                                                                        _model.productupdated2 =
+                                                                            await actions.hiveProductCrud(
+                                                                          FFAppState()
+                                                                              .productHiveput
+                                                                              .hivekey,
+                                                                          FFAppState()
+                                                                              .productHiveput,
+                                                                          'update',
+                                                                        );
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        FFAppState().productHive =
+                                                                            [];
+                                                                        FFAppState().productHiveput =
+                                                                            ProductStructStruct();
+                                                                        _model.newupdatedproductlist22 =
+                                                                            await actions.getProductlistHive();
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        FFAppState().productHive = _model
+                                                                            .newupdatedproductlist22!
+                                                                            .toList()
+                                                                            .cast<ProductStructStruct>();
+                                                                      }
+                                                                      FFAppState()
+                                                                              .startLoop =
+                                                                          FFAppState().startLoop +
+                                                                              1;
+                                                                    }
+                                                                    await actions
+                                                                        .updateProductStocknew(
+                                                                      _model
+                                                                          .prdlinstnewtx!
+                                                                          .toList(),
+                                                                    );
+                                                                  }
+                                                                  await actions
+                                                                      .removeFromAllBillList(
+                                                                    FFAppState()
+                                                                        .selBill,
+                                                                  );
+                                                                  safeSetState(
+                                                                      () {
+                                                                    _model.dropDownValueController
+                                                                            ?.value =
+                                                                        'CASH';
+                                                                  });
+                                                                  _model.prdid =
+                                                                      null;
+                                                                  await actions
+                                                                      .clearValue();
+                                                                  FFAppState()
+                                                                          .subTotal =
+                                                                      0.0;
+                                                                  FFAppState()
+                                                                          .delCharges =
+                                                                      0.0;
+                                                                  FFAppState()
+                                                                      .oldBalance = 0;
+                                                                  FFAppState()
+                                                                      .custCredit = 0;
+                                                                  FFAppState()
+                                                                          .custNameRef =
+                                                                      null;
+                                                                  FFAppState()
+                                                                          .setCustRef =
+                                                                      null;
+                                                                  FFAppState()
+                                                                      .setCustName = '';
+                                                                  FFAppState()
+                                                                      .setCustMobNo = '';
+                                                                  FFAppState()
+                                                                      .noOfItems = 0;
+                                                                  FFAppState()
+                                                                      .prdid = '';
+                                                                  FFAppState()
+                                                                          .kotDocRef =
+                                                                      null;
+                                                                  FFAppState()
+                                                                          .finalAmt =
+                                                                      0.0;
+                                                                  FFAppState()
+                                                                          .billAmt =
+                                                                      0.0;
+                                                                  FFAppState()
+                                                                          .count =
+                                                                      FFAppState()
+                                                                          .billcount;
+                                                                  FFAppState()
+                                                                          .tableViewHideShow =
+                                                                      true;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
+                                                                } else {
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        title: Text(
+                                                                            'printer connection'),
+                                                                        content:
+                                                                            Text('printer not connected'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
+                                                                }
+
+                                                                if (_shouldSetState)
+                                                                  safeSetState(
+                                                                      () {});
+                                                              },
+                                                              text: FFLocalizations
+                                                                      .of(context)
+                                                                  .getText(
+                                                                'dg1rb1wy' /* Settled & Print Bill */,
+                                                              ),
+                                                              options:
+                                                                  FFButtonOptions(
+                                                                width: 250.0,
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                iconPadding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                color: Color(
+                                                                    0xFFB60042),
+                                                                textStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBtnText,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
+                                                                    ),
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  width: 1.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ].divide(SizedBox(
+                                                            width: 20.0)),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ));
+      },
+    );
+  }
+}

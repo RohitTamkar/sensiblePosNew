@@ -11,11 +11,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'table_v_iew_model.dart';
-export 'table_v_iew_model.dart';
+import 'table_v_iew_mobile_model.dart';
+export 'table_v_iew_mobile_model.dart';
 
-class TableVIewWidget extends StatefulWidget {
-  const TableVIewWidget({
+class TableVIewMobileWidget extends StatefulWidget {
+  const TableVIewMobileWidget({
     super.key,
     this.parameter3,
     this.taxcollection,
@@ -31,11 +31,11 @@ class TableVIewWidget extends StatefulWidget {
   final List<PremisesRecord>? premisedoc;
 
   @override
-  State<TableVIewWidget> createState() => _TableVIewWidgetState();
+  State<TableVIewMobileWidget> createState() => _TableVIewMobileWidgetState();
 }
 
-class _TableVIewWidgetState extends State<TableVIewWidget> {
-  late TableVIewModel _model;
+class _TableVIewMobileWidgetState extends State<TableVIewMobileWidget> {
+  late TableVIewMobileModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -46,7 +46,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TableVIewModel());
+    _model = createModel(context, () => TableVIewMobileModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -69,7 +69,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
         return GridView.builder(
           padding: EdgeInsets.zero,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 10,
+            crossAxisCount: 3,
             crossAxisSpacing: 12.0,
             mainAxisSpacing: 12.0,
             childAspectRatio: 0.97,
@@ -204,7 +204,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'vkcwkq0q' /* Select Table */,
+                                          'qt4myge0' /* Select Table */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -557,7 +557,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'rrjrzvc9' /* 45 */,
+                                                        'e3a4y04e' /* 45 */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -584,7 +584,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'rzxnfl70' /* Mins */,
+                                                      'uaxyhfet' /* Mins */,
                                                     ),
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
@@ -620,7 +620,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'bsswx6co' /* ₹  */,
+                                                      '1y6ri0te' /* ₹  */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -640,7 +640,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'ir8cwke0' /* 70 */,
+                                                      '2o1h0096' /* 70 */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -675,26 +675,6 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .labelSmallFamily,
-                                                  color:
-                                                      containerTableKotRecordList
-                                                                  .where((e) =>
-                                                                      e
-                                                                          .tableNo ==
-                                                                      getJsonField(
-                                                                        tablelistItem,
-                                                                        r'''$.id''',
-                                                                      )
-                                                                          .toString())
-                                                                  .toList()
-                                                                  .firstOrNull
-                                                                  ?.kotStatus ==
-                                                              'BILLING'
-                                                          ? FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryBtnText
-                                                          : FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                   useGoogleFonts:
@@ -722,9 +702,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                         FlutterFlowTheme.of(
                                                                 context)
                                                             .labelLargeFamily,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .success,
+                                                    color: Color(0xAD5000B6),
                                                     fontSize: 12.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
@@ -753,7 +731,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'usclusxa' /*  */,
+                                            '3cgj4eoh' /*  */,
                                           ),
                                           icon: Icon(
                                             Icons.print_sharp,
@@ -903,7 +881,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'ya7prppr' /*  */,
+                                            'hnkvya6y' /*  */,
                                           ),
                                           icon: Icon(
                                             Icons.remove_red_eye_outlined,
