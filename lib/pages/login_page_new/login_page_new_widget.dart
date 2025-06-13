@@ -1375,6 +1375,24 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                         ),
                                       ),
                                     ),
+                                    Text(
+                                      valueOrDefault<String>(
+                                        FFAppState().version,
+                                        '1.0.43',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
+                                            fontSize: 15.0,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
+                                          ),
+                                    ),
                                     StreamBuilder<List<OutletRecord>>(
                                       stream: queryOutletRecord(
                                         queryBuilder: (outletRecord) =>
