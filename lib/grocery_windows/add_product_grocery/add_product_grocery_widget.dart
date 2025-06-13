@@ -2740,90 +2740,14 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           _model.dropDowncatValue,
                           false,
                           _model.taxref?.reference,
-                          _model.unitref!.reference,
-                          _model.catref!.reference,
+                          _model.unitref?.reference,
+                          _model.catref?.reference,
                           _model.textController12.text,
                           _model.textController12.text,
                           true,
                           0,
                           _model.checkboxListTileValue3,
                         );
-
-                        var productRecordReference =
-                            ProductRecord.createDoc(FFAppState().outletIdRef!);
-                        await productRecordReference
-                            .set(createProductRecordData(
-                          name: _model.textController1.text,
-                          regionalName: _model.textController2.text,
-                          searchcode: int.tryParse(_model.textController4.text),
-                          shortName: _model.textController5.text,
-                          hsncode: int.tryParse(_model.textController6.text),
-                          price: double.tryParse(_model.textController9.text),
-                          sellingPrice:
-                              double.tryParse(_model.textController7.text),
-                          purchasePrice:
-                              double.tryParse(_model.textController8.text),
-                          mrpPrice:
-                              double.tryParse(_model.textController9.text),
-                          discountPer:
-                              double.tryParse(_model.textController10.text),
-                          discountAmt:
-                              double.tryParse(_model.textController11.text),
-                          stockable: _model.checkboxListTileValue1,
-                          weightable: _model.checkboxListTileValue2,
-                          code: int.tryParse(_model.textController4.text),
-                          barcode: _model.textController3.text,
-                          category: _model.dropDowncatValue,
-                          isDeleted: false,
-                          taxRef: _model.taxref?.reference,
-                          unitRef: _model.unitref?.reference,
-                          categoryRef: _model.catref?.reference,
-                          stock: int.tryParse(_model.textController12.text),
-                          currentStock:
-                              int.tryParse(_model.textController12.text),
-                          isEnable: true,
-                          type: 0,
-                          purchasable: _model.checkboxListTileValue3,
-                        ));
-                        _model.proDoc = ProductRecord.getDocumentFromData(
-                            createProductRecordData(
-                              name: _model.textController1.text,
-                              regionalName: _model.textController2.text,
-                              searchcode:
-                                  int.tryParse(_model.textController4.text),
-                              shortName: _model.textController5.text,
-                              hsncode:
-                                  int.tryParse(_model.textController6.text),
-                              price:
-                                  double.tryParse(_model.textController9.text),
-                              sellingPrice:
-                                  double.tryParse(_model.textController7.text),
-                              purchasePrice:
-                                  double.tryParse(_model.textController8.text),
-                              mrpPrice:
-                                  double.tryParse(_model.textController9.text),
-                              discountPer:
-                                  double.tryParse(_model.textController10.text),
-                              discountAmt:
-                                  double.tryParse(_model.textController11.text),
-                              stockable: _model.checkboxListTileValue1,
-                              weightable: _model.checkboxListTileValue2,
-                              code: int.tryParse(_model.textController4.text),
-                              barcode: _model.textController3.text,
-                              category: _model.dropDowncatValue,
-                              isDeleted: false,
-                              taxRef: _model.taxref?.reference,
-                              unitRef: _model.unitref?.reference,
-                              categoryRef: _model.catref?.reference,
-                              stock: int.tryParse(_model.textController12.text),
-                              currentStock:
-                                  int.tryParse(_model.textController12.text),
-                              isEnable: true,
-                              type: 0,
-                              purchasable: _model.checkboxListTileValue3,
-                            ),
-                            productRecordReference);
-                        _shouldSetState = true;
                         Navigator.pop(context);
                       } else {
                         if (_shouldSetState) safeSetState(() {});

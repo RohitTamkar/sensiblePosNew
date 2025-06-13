@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-Future addProduct(
+Future<void> addProduct(
   String? name,
   String? regionalName,
   String? searchcode,
@@ -28,13 +28,51 @@ Future addProduct(
   String? category,
   bool? isDeleted,
   DocumentReference? taxRef,
-  DocumentReference unitRef,
-  DocumentReference categoryRef,
+  DocumentReference? unitRef,
+  DocumentReference? categoryRef,
   String? stock,
   String? currentStock,
   bool? isEnable,
   int? type,
   bool? purchasable,
 ) async {
-  // Add your function code here!
+  try {
+    // Create a new document reference under the desired outlet collection
+    var productRecordReference =
+        ProductRecord.createDoc(FFAppState().outletIdRef!);
+
+    // Set the document with the given data
+    await productRecordReference.set(
+      createProductRecordData(
+        name: name,
+        regionalName: regionalName,
+        searchcode: int.tryParse(searchcode ?? ''),
+        shortName: shortName,
+        hsncode: int.tryParse(hsncode ?? ''),
+        price: double.tryParse(price ?? ''),
+        sellingPrice: double.tryParse(sellingPrice ?? ''),
+        purchasePrice: double.tryParse(purchasePrice ?? ''),
+        mrpPrice: double.tryParse(mrpPrice ?? ''),
+        discountPer: double.tryParse(discountPer ?? ''),
+        discountAmt: double.tryParse(discountAmt ?? ''),
+        stockable: stockable,
+        weightable: weightable,
+        code: int.tryParse(code ?? ''),
+        barcode: barcode,
+        category: category,
+        isDeleted: isDeleted ?? false,
+        taxRef: taxRef,
+        unitRef: unitRef,
+        categoryRef: categoryRef,
+        stock: int.tryParse(stock ?? ''),
+        currentStock: int.tryParse(currentStock ?? ''),
+        isEnable: isEnable ?? true,
+        type: type ?? 0,
+        purchasable: purchasable,
+      ),
+    );
+  } catch (e) {
+    // Optional: handle error
+    print('Error adding product: $e');
+  }
 }
