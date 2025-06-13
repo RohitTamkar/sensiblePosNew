@@ -6140,6 +6140,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   ).toString(),
                                                                                   isDeleted: false,
                                                                                   count: FFAppState().newcount,
+                                                                                  kotStatus: 'PENDING',
                                                                                 ),
                                                                                 ...mapToFirestore(
                                                                                   {
@@ -6187,6 +6188,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   ).toString(),
                                                                                   isDeleted: false,
                                                                                   count: FFAppState().newcount,
+                                                                                  kotStatus: 'PENDING',
                                                                                 ),
                                                                                 ...mapToFirestore(
                                                                                   {
@@ -6737,6 +6739,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                     ).toString(),
                                                                                     isDeleted: false,
                                                                                     count: FFAppState().newcount,
+                                                                                    kotStatus: 'PENDING',
                                                                                   ),
                                                                                   ...mapToFirestore(
                                                                                     {
@@ -6784,6 +6787,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                     ).toString(),
                                                                                     isDeleted: false,
                                                                                     count: FFAppState().newcount,
+                                                                                    kotStatus: 'PENDING',
                                                                                   ),
                                                                                   ...mapToFirestore(
                                                                                     {

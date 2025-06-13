@@ -121,6 +121,9 @@ class _TableListMobileWidgetState extends State<TableListMobileWidget>
     _model.textController3 ??= TextEditingController();
     _model.textFieldFocusNode3 ??= FocusNode();
 
+    _model.textController4 ??= TextEditingController();
+    _model.textFieldFocusNode4 ??= FocusNode();
+
     animationsMap.addAll({
       'containerOnActionTriggerAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
@@ -1698,18 +1701,107 @@ class _TableListMobileWidgetState extends State<TableListMobileWidget>
                                       ),
                                     ),
                                   ),
+                                Container(
+                                  width: double.infinity,
+                                  child: TextFormField(
+                                    controller: _model.textController1,
+                                    focusNode: _model.textFieldFocusNode1,
+                                    autofocus: false,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      isDense: true,
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelMediumIsCustom,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'smj4sy0x' /* TextField */,
+                                      ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelMediumIsCustom,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
+                                        ),
+                                    cursorColor: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    validator: _model.textController1Validator
+                                        .asValidator(context),
+                                  ),
+                                ),
                                 if (!FFAppState().tableViewHideShow)
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 3.0, 0.0, 0.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            flex: 18,
-                                            child: StreamBuilder<
-                                                List<UnitTypeRecord>>(
+                                      child: SingleChildScrollView(
+                                        controller: _model.columnController,
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            StreamBuilder<List<UnitTypeRecord>>(
                                               stream: queryUnitTypeRecord(),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
@@ -1735,7 +1827,7 @@ class _TableListMobileWidgetState extends State<TableListMobileWidget>
 
                                                 return Container(
                                                   width: double.infinity,
-                                                  height: double.infinity,
+                                                  height: 500.0,
                                                   decoration: BoxDecoration(),
                                                   child: Column(
                                                     mainAxisSize:
@@ -2564,12 +2656,9 @@ class _TableListMobileWidgetState extends State<TableListMobileWidget>
                                                 );
                                               },
                                             ),
-                                          ),
-                                          Expanded(
-                                            flex: 10,
-                                            child: Container(
+                                            Container(
                                               width: double.infinity,
-                                              height: double.infinity,
+                                              height: 550.0,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -2650,14 +2739,14 @@ class _TableListMobileWidgetState extends State<TableListMobileWidget>
                                                                         TextFormField(
                                                                       controller:
                                                                           _model
-                                                                              .textController1,
+                                                                              .textController2,
                                                                       focusNode:
                                                                           _model
-                                                                              .textFieldFocusNode1,
+                                                                              .textFieldFocusNode2,
                                                                       onChanged:
                                                                           (_) =>
                                                                               EasyDebounce.debounce(
-                                                                        '_model.textController1',
+                                                                        '_model.textController2',
                                                                         Duration(
                                                                             milliseconds:
                                                                                 2000),
@@ -2767,7 +2856,7 @@ class _TableListMobileWidgetState extends State<TableListMobileWidget>
                                                                           TextAlign
                                                                               .center,
                                                                       validator: _model
-                                                                          .textController1Validator
+                                                                          .textController2Validator
                                                                           .asValidator(
                                                                               context),
                                                                     ),
@@ -2796,14 +2885,14 @@ class _TableListMobileWidgetState extends State<TableListMobileWidget>
                                                                         TextFormField(
                                                                       controller:
                                                                           _model
-                                                                              .textController2,
+                                                                              .textController3,
                                                                       focusNode:
                                                                           _model
-                                                                              .textFieldFocusNode2,
+                                                                              .textFieldFocusNode3,
                                                                       onChanged:
                                                                           (_) =>
                                                                               EasyDebounce.debounce(
-                                                                        '_model.textController2',
+                                                                        '_model.textController3',
                                                                         Duration(
                                                                             milliseconds:
                                                                                 2000),
@@ -2913,7 +3002,7 @@ class _TableListMobileWidgetState extends State<TableListMobileWidget>
                                                                           TextAlign
                                                                               .center,
                                                                       validator: _model
-                                                                          .textController2Validator
+                                                                          .textController3Validator
                                                                           .asValidator(
                                                                               context),
                                                                     ),
@@ -2942,14 +3031,14 @@ class _TableListMobileWidgetState extends State<TableListMobileWidget>
                                                                         TextFormField(
                                                                       controller:
                                                                           _model
-                                                                              .textController3,
+                                                                              .textController4,
                                                                       focusNode:
                                                                           _model
-                                                                              .textFieldFocusNode3,
+                                                                              .textFieldFocusNode4,
                                                                       onChanged:
                                                                           (_) =>
                                                                               EasyDebounce.debounce(
-                                                                        '_model.textController3',
+                                                                        '_model.textController4',
                                                                         Duration(
                                                                             milliseconds:
                                                                                 2000),
@@ -3059,7 +3148,7 @@ class _TableListMobileWidgetState extends State<TableListMobileWidget>
                                                                           TextAlign
                                                                               .center,
                                                                       validator: _model
-                                                                          .textController3Validator
+                                                                          .textController4Validator
                                                                           .asValidator(
                                                                               context),
                                                                     ),
@@ -7800,8 +7889,8 @@ class _TableListMobileWidgetState extends State<TableListMobileWidget>
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),

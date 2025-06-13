@@ -107,6 +107,12 @@ class TableListMobileModel extends FlutterFlowModel<TableListMobileWidget> {
   TableKotRecord? tkot;
   // State field(s) for ListView widget.
   ScrollController? listViewController1;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode1;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
+  // State field(s) for Column widget.
+  ScrollController? columnController;
   // Stores action output result for [Custom Action - getProductlistHive] action in Container widget.
   List<ProductStructStruct>? prdhiveall;
   // State field(s) for ListView widget.
@@ -128,10 +134,6 @@ class TableListMobileModel extends FlutterFlowModel<TableListMobileWidget> {
   // Stores action output result for [Custom Action - calBillAmt] action in productimage widget.
   double? calbillAmt3img;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
@@ -139,6 +141,10 @@ class TableListMobileModel extends FlutterFlowModel<TableListMobileWidget> {
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode4;
+  TextEditingController? textController4;
+  String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for ListViewprd widget.
   ScrollController? listViewprd;
   // Stores action output result for [Custom Action - addToHoldListprdminus] action in Minus widget.
@@ -259,6 +265,7 @@ class TableListMobileModel extends FlutterFlowModel<TableListMobileWidget> {
   void initState(BuildContext context) {
     menuDrawerModel = createModel(context, () => MenuDrawerModel());
     listViewController1 = ScrollController();
+    columnController = ScrollController();
     listViewController2 = ScrollController();
     gridViewController = ScrollController();
     listViewprd = ScrollController();
@@ -268,16 +275,20 @@ class TableListMobileModel extends FlutterFlowModel<TableListMobileWidget> {
   void dispose() {
     menuDrawerModel.dispose();
     listViewController1?.dispose();
-    listViewController2?.dispose();
-    gridViewController?.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();
 
+    columnController?.dispose();
+    listViewController2?.dispose();
+    gridViewController?.dispose();
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
 
     textFieldFocusNode3?.dispose();
     textController3?.dispose();
+
+    textFieldFocusNode4?.dispose();
+    textController4?.dispose();
 
     listViewprd?.dispose();
   }
