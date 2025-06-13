@@ -1530,7 +1530,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                               Builder(
                                                                             builder:
                                                                                 (context) {
-                                                                              final categoryList = FFAppState().categoryHive.sortedList(keyOf: (e) => e.name, desc: false).toList();
+                                                                              final categoryList = (productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'sortCategoryByCode').toList().firstOrNull!.value ? FFAppState().categoryHive.sortedList(keyOf: (e) => e.code, desc: false) : FFAppState().categoryHive.sortedList(keyOf: (e) => e.name, desc: false)).toList();
 
                                                                               return ListView.builder(
                                                                                 padding: EdgeInsets.zero,
@@ -1563,28 +1563,22 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                         decoration: BoxDecoration(
                                                                                           color: FFAppState().categoryColor == categoryListItem.id ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
                                                                                         ),
-                                                                                        child: Column(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          children: [
-                                                                                            Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
-                                                                                              child: Text(
-                                                                                                categoryListItem.name.maybeHandleOverflow(
-                                                                                                  maxChars: 9,
-                                                                                                  replacement: '…',
-                                                                                                ),
-                                                                                                textAlign: TextAlign.center,
-                                                                                                style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                                                      color: FlutterFlowTheme.of(context).lineColor,
-                                                                                                      fontSize: 15.0,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
-                                                                                                    ),
-                                                                                              ),
+                                                                                        child: Container(
+                                                                                          decoration: BoxDecoration(),
+                                                                                          child: Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
+                                                                                            child: Text(
+                                                                                              categoryListItem.name,
+                                                                                              textAlign: TextAlign.center,
+                                                                                              style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                                    color: FlutterFlowTheme.of(context).lineColor,
+                                                                                                    fontSize: 15.0,
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
+                                                                                                  ),
                                                                                             ),
-                                                                                          ],
+                                                                                          ),
                                                                                         ),
                                                                                       ),
                                                                                     ),
