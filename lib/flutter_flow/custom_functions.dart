@@ -141,29 +141,6 @@ List<dynamic> generateMergeTables(
   return returnData;
 }
 
-int? outwardItemsqty(
-  List<StockSummaryRecord>? stockDocList,
-  String? productId,
-) {
-  if (stockDocList == null || productId == null) {
-    return null;
-  }
-
-  int totalQty = 0;
-
-  for (var StockSummaryRecord in stockDocList) {
-    if (StockSummaryRecord.productListMap != null) {
-      for (var product in StockSummaryRecord.productListMap!) {
-        if (product.id == productId) {
-          totalQty += product.reqStock.toInt() ?? 0;
-        }
-      }
-    }
-  }
-
-  return totalQty;
-}
-
 List<dynamic> generatePremiseTablesjson(List<PremisesRecord> doc) {
   List<dynamic> returnData = [];
 
@@ -424,15 +401,6 @@ String getDayIdDDMMYYYY() {
   return invNum.toString();
 }
 
-bool setFlag(bool? value) {
-  // Add your function code here!
-  if (value == true) {
-    return false;
-  } else {
-    return true;
-  }
-}
-
 String getDayId() {
   // Add your function code here!
 
@@ -640,15 +608,6 @@ int lastBillCount(int data) {
   return x;
 }
 
-DocumentReference genShidtDocRefById(
-  String shiftId,
-  String outletId,
-) {
-  // Add your function code here!
-  return FirebaseFirestore.instance
-      .doc('/OUTLET/' + outletId + '/SHIFT/$shiftId');
-}
-
 String getyesterday() {
   // Add your function code here!
   final DateTime now = DateTime.now();
@@ -780,17 +739,6 @@ double tenderCash(
   return ReturnAmt;
 }
 
-double roundOff(double? number) {
-  // Add your function code here!
-
-  double output;
-  double number = 0.0;
-
-  output = number.roundToDouble();
-  print(output);
-  return output;
-}
-
 dynamic outletDocToJson(OutletRecord doc) {
   // Add your function code here!
 
@@ -895,10 +843,6 @@ bool? isPrinterSelected(List<dynamic>? selectedPrinter) {
   }
 }
 
-dynamic listToJson(List<dynamic> list) {
-  return list[0];
-}
-
 DocumentReference shiftRef(
   dynamic obj,
   String outletId,
@@ -922,10 +866,6 @@ List<dynamic> getProList(
     }
   }
   return tempList;
-}
-
-String? toUpperCase(String? value) {
-  return (value!.toUpperCase());
 }
 
 List<dynamic> filterProductsCatWise(
@@ -961,14 +901,6 @@ List<SelItemListStruct> returnProductlist(InvoiceStructStruct hiveinv) {
   return sellitemliststruct;
 }
 
-DocumentReference genInvoiceDocRefById(
-  String invoiceId,
-  String outletId,
-) {
-  return FirebaseFirestore.instance
-      .doc('/OUTLET/' + outletId + '/INVOICE/$invoiceId');
-}
-
 String enabletaxinclusive(bool enable) {
   if (enable == true) {
     return "inclusive";
@@ -980,26 +912,6 @@ String enabletaxinclusive(bool enable) {
 String urltostring(String string) {
   // convert url to string
   return Uri.decodeFull(string);
-}
-
-double totalAmountAmeyaFunction(List<dynamic> allBillList) {
-  double total = 0.00;
-  int i;
-  for (i = 0; i < allBillList.length; i++) {
-    print("quantity: " + allBillList[i]);
-    //print("price: " + allBillList[i]["price"]);
-    print(
-        "----------------==========================-----------------++++++++++++++++++++++");
-    // total += getTotal(allBillList[i]["quantity"], allBillList[i]["total"]);
-    total += getTotal(0, 0);
-  }
-  print(total);
-  return total;
-}
-
-DocumentReference getref(String ref) {
-  // convert string to ref
-  return FirebaseFirestore.instance.doc(ref);
 }
 
 DocumentReference? returnidRef(
@@ -1018,13 +930,6 @@ DocumentReference? returnidRef(
 
 String toCapitalLetter1(String? value) {
   return (value!.toUpperCase());
-}
-
-int getcreatedDate() {
-  // Add your function code here!
-  int timestamp = DateTime.now().millisecondsSinceEpoch;
-  print(timestamp);
-  return timestamp;
 }
 
 int setRenewalDateInMili(DateTime? dateParameter) {
@@ -1091,36 +996,10 @@ String? editAccess(int? value) {
   return res;
 }
 
-double? calculateremAmt(
-  double? total,
-  double? advance,
-) {
-  return total! - advance!;
-}
-
-String? toCapitalLetter(String? letter) {
-  return (letter!.toUpperCase());
-}
-
 String toDecimal(double amount) {
   String result = amount.toStringAsFixed(2);
 
   print(result); // Output: 123.46
-  return result;
-}
-
-bool returnStatus(dynamic jsonData) {
-  bool result = false;
-  print(jsonData);
-  String status = jsonData["body"]["resultInfo"]["resultStatus"];
-  if (status == "TXN_SUCCESS") {
-    result = true;
-  } else if (status == "PENDING") {
-    result = false;
-  } else {
-    result = false;
-  }
-
   return result;
 }
 
@@ -1264,19 +1143,6 @@ double? returnpaymentjson(String jsonString) {
   return amt ?? 0.00;
 }
 
-int getTodayint(DateTime dateTime) {
-  var day, month;
-  day = dateTime.day.toString();
-  month = dateTime.month.toString();
-
-  var invNum = dateTime.year.toString() +
-      "-" +
-      (month.length < 2 ? "0" + month : month).toString() +
-      "-" +
-      (day.length < 2 ? "0" + day : day).toString();
-  return invNum.hashCode;
-}
-
 String genInvoiceNumyear(int? count) {
   // Get the current date
   DateTime now = DateTime.now();
@@ -1333,11 +1199,6 @@ DateTime returnDateNextday(DateTime date) {
   return date.add(Duration(days: 1));
 }
 
-String newCustomFunction(String link) {
-  Uri uri = Uri.parse(link);
-  return '${uri.scheme}://${uri.host}/';
-}
-
 List<ProductStructStruct> returnrecipeprd(
   List<RecipeRecord> recipeProductStruct,
   ProductStructStruct productStruct,
@@ -1388,29 +1249,6 @@ String? returnTotalQtybyWeight(
   } catch (e) {
     return "0"; // Return null if parsing fails (invalid input)
   }
-}
-
-int? inwardItemsqty(
-  List<PurchaseRecord>? purchasedDocList,
-  String? productId,
-) {
-  if (purchasedDocList == null || productId == null) {
-    return null;
-  }
-
-  int totalQty = 0;
-
-  for (var purchaseRecord in purchasedDocList) {
-    if (purchaseRecord.productList != null) {
-      for (var product in purchaseRecord.productList!) {
-        if (product.id == productId) {
-          totalQty += product.quantity.toInt() ?? 0;
-        }
-      }
-    }
-  }
-
-  return totalQty;
 }
 
 double? returnTotaljason(
