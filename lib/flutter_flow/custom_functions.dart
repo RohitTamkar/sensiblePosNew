@@ -1364,3 +1364,19 @@ List<dynamic> stringToJson(String stringJson) {
 String jsonToString(List<dynamic> json) {
   return jsonEncode(json);
 }
+
+DocumentReference genInvoiceDocRefById(
+  String invoiceId,
+  String outletId,
+) {
+  return FirebaseFirestore.instance
+      .doc('/OUTLET/' + outletId + '/INVOICE/$invoiceId');
+}
+
+DocumentReference genShidtDocRefById(
+  String shiftId,
+  String outletId,
+) {
+  return FirebaseFirestore.instance
+      .doc('/OUTLET/' + outletId + '/SHIFT/$shiftId');
+}
