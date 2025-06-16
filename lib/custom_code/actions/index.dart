@@ -2,6 +2,7 @@ export 'check_platform.dart' show checkPlatform;
 export 'print_billtable.dart' show printBilltable;
 export 'filter_products_kot.dart' show filterProductsKot;
 export 'print_k_o_twithusbtable.dart' show printKOTwithusbtable;
+export 'dineinparcelparcel.dart' show dineinparcelparcel;
 export 'print_ethernet_kot.dart' show printEthernetKot;
 export 'add_to_hold_listprd_k_o_t.dart' show addToHoldListprdKOT;
 export 'print_barcode_label.dart' show printBarcodeLabel;

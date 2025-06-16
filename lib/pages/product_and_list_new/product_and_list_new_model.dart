@@ -11,6 +11,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/pages/kiosk/dine_inparcelkds/dine_inparcelkds_widget.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
@@ -164,18 +165,6 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   double? calculateResult23Copy;
   // Stores action output result for [Custom Action - calBillAmt] action in productimage widget.
   double? calbillAmt3img;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
   // State field(s) for ListViewprd widget.
   ScrollController? listViewprd;
   // Stores action output result for [Custom Action - addToHoldListprdminus] action in Minus widget.
@@ -300,15 +289,6 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
     listViewController1?.dispose();
     listViewController2?.dispose();
     gridViewController?.dispose();
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
-
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
-
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
-
     listViewprd?.dispose();
     textFieldsearchFocusNode?.dispose();
     textFieldsearchTextController?.dispose();

@@ -13215,29 +13215,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '₹',
       'th': '฿',
     },
-    'uh5njzqo': {
-      'en': 'Amt.',
-      'hi': 'राशि',
-      'kn': 'ಆಮ್ಟ್.',
-      'mr': 'अमृत.',
-      'ta': 'ஆம்ட்.',
-      'th': 'จำนวน',
-    },
-    'c1cqo6ap': {
-      'en': 'Qty',
-      'hi': 'मात्रा',
-      'kn': 'ಪ್ರಮಾಣ',
-      'mr': 'प्रमाण',
-      'ta': 'அளவு',
-      'th': 'ปริมาณ',
-    },
-    'avti8mvm': {
-      'en': 'Price',
-      'hi': 'कीमत',
-      'kn': 'ಬೆಲೆ',
-      'mr': 'किंमत',
-      'ta': 'விலை',
-      'th': 'ราคา',
+    '47y7jthr': {
+      'en': 'View Orders',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
     },
     'wc8s1ov8': {
       'en': 'Item Name',
@@ -29005,6 +28989,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
       'th': '',
+    },
+  },
+  // dineInparcelkds
+  {
+    '28wvidem': {
+      'en': 'DINE IN',
+      'hi': 'में भोजन',
+      'kn': 'ಊಟ ಮಾಡಿ',
+      'mr': 'जेवण करा',
+      'ta': 'சாப்பிடுங்கள்',
+      'th': 'รับประทานอาหารในร้าน',
+    },
+    'bd6c6j0v': {
+      'en': 'PARCEL',
+      'hi': 'पार्सल',
+      'kn': 'ಪಾರ್ಸೆಲ್',
+      'mr': 'पार्सल',
+      'ta': 'பார்சல்',
+      'th': 'พัสดุ',
     },
   },
   // Miscellaneous

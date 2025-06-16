@@ -11,6 +11,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/pages/kiosk/dine_inparcelkds/dine_inparcelkds_widget.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
@@ -107,15 +108,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
         FFAppState().printerIndex,
       );
     });
-
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
-
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
-
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
 
     _model.textFieldsearchTextController ??= TextEditingController();
     _model.textFieldsearchFocusNode ??= FocusNode();
@@ -3788,8 +3780,15 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          if (FFAppState()
-                                                              .fabButtonHide)
+                                                          if (productAndListNewAppSettingsRecord
+                                                                  ?.settingList
+                                                                  ?.where((e) =>
+                                                                      e.title ==
+                                                                      'enableKitchenDisplay')
+                                                                  .toList()
+                                                                  ?.firstOrNull
+                                                                  ?.value ??
+                                                              true)
                                                             Container(
                                                               width: double
                                                                   .infinity,
@@ -3840,8 +3839,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             1.0,
                                                                         child:
                                                                             Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.09,
                                                                           height:
                                                                               MediaQuery.sizeOf(context).height * 0.045,
                                                                           decoration:
@@ -3850,274 +3847,46 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                           ),
                                                                           child:
-                                                                              TextFormField(
-                                                                            controller:
-                                                                                _model.textController1,
-                                                                            focusNode:
-                                                                                _model.textFieldFocusNode1,
-                                                                            onChanged: (_) =>
-                                                                                EasyDebounce.debounce(
-                                                                              '_model.textController1',
-                                                                              Duration(milliseconds: 2000),
-                                                                              () => safeSetState(() {}),
-                                                                            ),
-                                                                            autofocus:
-                                                                                false,
-                                                                            obscureText:
-                                                                                false,
-                                                                            decoration:
-                                                                                InputDecoration(
-                                                                              isDense: true,
-                                                                              hintText: FFLocalizations.of(context).getText(
-                                                                                'uh5njzqo' /* Amt. */,
-                                                                              ),
-                                                                              hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                              FFButtonWidget(
+                                                                            onPressed:
+                                                                                () async {
+                                                                              context.pushNamed(
+                                                                                KotOrderScreenWidget.routeName,
+                                                                                queryParameters: {
+                                                                                  'appsetting': serializeParam(
+                                                                                    productAndListNewAppSettingsRecord,
+                                                                                    ParamType.Document,
                                                                                   ),
-                                                                              enabledBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
-                                                                              focusedBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
-                                                                              errorBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
-                                                                              focusedErrorBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
+                                                                                }.withoutNulls,
+                                                                                extra: <String, dynamic>{
+                                                                                  'appsetting': productAndListNewAppSettingsRecord,
+                                                                                },
+                                                                              );
+                                                                            },
+                                                                            text:
+                                                                                FFLocalizations.of(context).getText(
+                                                                              '47y7jthr' /* View Orders */,
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
-                                                                                ),
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            validator:
-                                                                                _model.textController1Validator.asValidator(context),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      Material(
-                                                                        color: Colors
-                                                                            .transparent,
-                                                                        elevation:
-                                                                            1.0,
-                                                                        child:
-                                                                            Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.09,
-                                                                          height:
-                                                                              MediaQuery.sizeOf(context).height * 0.045,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                          ),
-                                                                          child:
-                                                                              TextFormField(
-                                                                            controller:
-                                                                                _model.textController2,
-                                                                            focusNode:
-                                                                                _model.textFieldFocusNode2,
-                                                                            onChanged: (_) =>
-                                                                                EasyDebounce.debounce(
-                                                                              '_model.textController2',
-                                                                              Duration(milliseconds: 2000),
-                                                                              () => safeSetState(() {}),
+                                                                            icon:
+                                                                                FaIcon(
+                                                                              FontAwesomeIcons.desktop,
+                                                                              size: 15.0,
                                                                             ),
-                                                                            autofocus:
-                                                                                false,
-                                                                            obscureText:
-                                                                                false,
-                                                                            decoration:
-                                                                                InputDecoration(
-                                                                              isDense: true,
-                                                                              hintText: FFLocalizations.of(context).getText(
-                                                                                'c1cqo6ap' /* Qty */,
-                                                                              ),
-                                                                              hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                            options:
+                                                                                FFButtonOptions(
+                                                                              height: 40.0,
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              color: FlutterFlowTheme.of(context).parkingPrimary,
+                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
-                                                                              enabledBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
-                                                                              focusedBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
-                                                                              errorBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
-                                                                              focusedErrorBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
+                                                                              elevation: 0.0,
+                                                                              borderRadius: BorderRadius.circular(8.0),
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
-                                                                                ),
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            validator:
-                                                                                _model.textController2Validator.asValidator(context),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      Material(
-                                                                        color: Colors
-                                                                            .transparent,
-                                                                        elevation:
-                                                                            1.0,
-                                                                        child:
-                                                                            Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.09,
-                                                                          height:
-                                                                              MediaQuery.sizeOf(context).height * 0.045,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                          ),
-                                                                          child:
-                                                                              TextFormField(
-                                                                            controller:
-                                                                                _model.textController3,
-                                                                            focusNode:
-                                                                                _model.textFieldFocusNode3,
-                                                                            onChanged: (_) =>
-                                                                                EasyDebounce.debounce(
-                                                                              '_model.textController3',
-                                                                              Duration(milliseconds: 2000),
-                                                                              () => safeSetState(() {}),
-                                                                            ),
-                                                                            autofocus:
-                                                                                false,
-                                                                            obscureText:
-                                                                                false,
-                                                                            decoration:
-                                                                                InputDecoration(
-                                                                              isDense: true,
-                                                                              hintText: FFLocalizations.of(context).getText(
-                                                                                'avti8mvm' /* Price */,
-                                                                              ),
-                                                                              hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                                                                                  ),
-                                                                              enabledBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
-                                                                              focusedBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
-                                                                              errorBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
-                                                                              focusedErrorBorder: OutlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: const BorderRadius.only(
-                                                                                  topLeft: Radius.circular(4.0),
-                                                                                  topRight: Radius.circular(4.0),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
-                                                                                ),
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            validator:
-                                                                                _model.textController3Validator.asValidator(context),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -4395,6 +4164,16 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                           useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                         ),
                                                                                                   ),
+                                                                                                  if (productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'qtyWiseParcelCharges').toList()?.firstOrNull?.value ?? true)
+                                                                                                    Expanded(
+                                                                                                      child: DineInparcelkdsWidget(
+                                                                                                        key: Key('Keyi9x_${billIndex}_of_${bill.length}'),
+                                                                                                        parameter2: e.title == 'enableInclusiveTax',
+                                                                                                        parameter3: false,
+                                                                                                        parameter5: 0.0,
+                                                                                                        parameter4: billItem,
+                                                                                                      ),
+                                                                                                    ),
                                                                                                 ],
                                                                                               ),
                                                                                             ],
@@ -6141,6 +5920,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   isDeleted: false,
                                                                                   count: FFAppState().newcount,
                                                                                   kotStatus: 'PENDING',
+                                                                                  orderType: 'DINE IN',
                                                                                 ),
                                                                                 ...mapToFirestore(
                                                                                   {
@@ -6189,6 +5969,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   isDeleted: false,
                                                                                   count: FFAppState().newcount,
                                                                                   kotStatus: 'PENDING',
+                                                                                  orderType: 'DINE IN',
                                                                                 ),
                                                                                 ...mapToFirestore(
                                                                                   {
@@ -6740,6 +6521,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                     isDeleted: false,
                                                                                     count: FFAppState().newcount,
                                                                                     kotStatus: 'PENDING',
+                                                                                    orderType: 'DINE IN',
                                                                                   ),
                                                                                   ...mapToFirestore(
                                                                                     {
@@ -6788,6 +6570,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                     isDeleted: false,
                                                                                     count: FFAppState().newcount,
                                                                                     kotStatus: 'PENDING',
+                                                                                    orderType: 'DINE IN',
                                                                                   ),
                                                                                   ...mapToFirestore(
                                                                                     {

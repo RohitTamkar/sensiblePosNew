@@ -42,6 +42,7 @@ Future<List<SelItemListStruct>> filterProducts2(
               disPer: itemList[j]["disPer"],
               disAmt: itemList[j]["disAmt"],
               qtystring: itemList[j]["qtystring"].toString(),
+              ordertype: itemList[j]["ordertype"],
               isDeletedItem: false,
             );
 
