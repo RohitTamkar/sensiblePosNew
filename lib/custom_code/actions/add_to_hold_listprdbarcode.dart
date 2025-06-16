@@ -112,7 +112,7 @@ Future<List<dynamic>> addToHoldListprdbarcode(
       "stockable": document.stockable,
       "currentStock": document.stock,
       "kotPrint": false,
-      "orderType": "DINE IN",
+      "ordertype": "DINE IN",
     };
 
     // Add or update item in the bill list
