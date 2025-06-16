@@ -4168,7 +4168,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                     Expanded(
                                                                                                       child: DineInparcelkdsWidget(
                                                                                                         key: Key('Keyi9x_${billIndex}_of_${bill.length}'),
-                                                                                                        parameter2: e.title == 'enableInclusiveTax',
+                                                                                                        parameter2: productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                                         parameter3: false,
                                                                                                         parameter5: 0.0,
                                                                                                         parameter4: billItem,
