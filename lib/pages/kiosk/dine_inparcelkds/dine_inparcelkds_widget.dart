@@ -68,8 +68,6 @@ class _DineInparcelkdsWidgetState extends State<DineInparcelkdsWidget> {
       ],
       onChanged: (val) async {
         safeSetState(() => _model.choiceChipsValue = val?.firstOrNull);
-        FFAppState().orderType = _model.choiceChipsValue!;
-        safeSetState(() {});
         if ('PARCEL' == _model.choiceChipsValue) {
           FFAppState().delCharges = widget!.parameter5!;
           _model.updatePage(() {});
@@ -85,8 +83,6 @@ class _DineInparcelkdsWidgetState extends State<DineInparcelkdsWidget> {
             ),
           );
         } else {
-          FFAppState().orderType = _model.choiceChipsValue!;
-          _model.updatePage(() {});
           await actions.dineinparcelparcel(
             FFAppState().selBill.toString(),
             FFAppState().allBillsList.toList(),
