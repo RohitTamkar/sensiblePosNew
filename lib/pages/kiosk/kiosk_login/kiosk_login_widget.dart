@@ -1160,6 +1160,10 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                               if (containerDeviceRecord?.billingType == 'KOT') {
                                                                                                 _model.appsettingkot = await queryAppSettingsRecordOnce(
                                                                                                   parent: FFAppState().outletIdRef,
+                                                                                                  queryBuilder: (appSettingsRecord) => appSettingsRecord.where(
+                                                                                                    'deviceId',
+                                                                                                    isEqualTo: FFAppState().dId,
+                                                                                                  ),
                                                                                                   singleRecord: true,
                                                                                                 ).then((s) => s.firstOrNull);
                                                                                                 _shouldSetState = true;
