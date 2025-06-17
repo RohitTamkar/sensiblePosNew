@@ -19,6 +19,7 @@ class CategoryStructStruct extends FFFirebaseStruct {
     bool? isDeleted,
     bool? synC,
     int? version,
+    String? regionalName,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _categoryNo = categoryNo,
         _id = id,
@@ -29,6 +30,7 @@ class CategoryStructStruct extends FFFirebaseStruct {
         _isDeleted = isDeleted,
         _synC = synC,
         _version = version,
+        _regionalName = regionalName,
         super(firestoreUtilData);
 
   // "categoryNo" field.
@@ -102,6 +104,13 @@ class CategoryStructStruct extends FFFirebaseStruct {
 
   bool hasVersion() => _version != null;
 
+  // "regionalName" field.
+  String? _regionalName;
+  String get regionalName => _regionalName ?? '';
+  set regionalName(String? val) => _regionalName = val;
+
+  bool hasRegionalName() => _regionalName != null;
+
   static CategoryStructStruct fromMap(Map<String, dynamic> data) =>
       CategoryStructStruct(
         categoryNo: castToType<int>(data['categoryNo']),
@@ -113,6 +122,7 @@ class CategoryStructStruct extends FFFirebaseStruct {
         isDeleted: data['isDeleted'] as bool?,
         synC: data['synC'] as bool?,
         version: castToType<int>(data['version']),
+        regionalName: data['regionalName'] as String?,
       );
 
   static CategoryStructStruct? maybeFromMap(dynamic data) => data is Map
@@ -129,6 +139,7 @@ class CategoryStructStruct extends FFFirebaseStruct {
         'isDeleted': _isDeleted,
         'synC': _synC,
         'version': _version,
+        'regionalName': _regionalName,
       }.withoutNulls;
 
   @override
@@ -168,6 +179,10 @@ class CategoryStructStruct extends FFFirebaseStruct {
         'version': serializeParam(
           _version,
           ParamType.int,
+        ),
+        'regionalName': serializeParam(
+          _regionalName,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -218,6 +233,11 @@ class CategoryStructStruct extends FFFirebaseStruct {
           ParamType.int,
           false,
         ),
+        regionalName: deserializeParam(
+          data['regionalName'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -234,12 +254,23 @@ class CategoryStructStruct extends FFFirebaseStruct {
         type == other.type &&
         isDeleted == other.isDeleted &&
         synC == other.synC &&
-        version == other.version;
+        version == other.version &&
+        regionalName == other.regionalName;
   }
 
   @override
-  int get hashCode => const ListEquality().hash(
-      [categoryNo, id, name, code, categoryId, type, isDeleted, synC, version]);
+  int get hashCode => const ListEquality().hash([
+        categoryNo,
+        id,
+        name,
+        code,
+        categoryId,
+        type,
+        isDeleted,
+        synC,
+        version,
+        regionalName
+      ]);
 }
 
 CategoryStructStruct createCategoryStructStruct({
@@ -252,6 +283,7 @@ CategoryStructStruct createCategoryStructStruct({
   bool? isDeleted,
   bool? synC,
   int? version,
+  String? regionalName,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -267,6 +299,7 @@ CategoryStructStruct createCategoryStructStruct({
       isDeleted: isDeleted,
       synC: synC,
       version: version,
+      regionalName: regionalName,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

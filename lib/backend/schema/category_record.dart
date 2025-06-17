@@ -56,6 +56,11 @@ class CategoryRecord extends FirestoreRecord {
   String get catImageUrl => _catImageUrl ?? '';
   bool hasCatImageUrl() => _catImageUrl != null;
 
+  // "regionalName" field.
+  String? _regionalName;
+  String get regionalName => _regionalName ?? '';
+  bool hasRegionalName() => _regionalName != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -67,6 +72,7 @@ class CategoryRecord extends FirestoreRecord {
     _type = castToType<int>(snapshotData['type']);
     _isDeleted = snapshotData['isDeleted'] as bool?;
     _catImageUrl = snapshotData['catImageUrl'] as String?;
+    _regionalName = snapshotData['regionalName'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -117,6 +123,7 @@ Map<String, dynamic> createCategoryRecordData({
   int? type,
   bool? isDeleted,
   String? catImageUrl,
+  String? regionalName,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -128,6 +135,7 @@ Map<String, dynamic> createCategoryRecordData({
       'type': type,
       'isDeleted': isDeleted,
       'catImageUrl': catImageUrl,
+      'regionalName': regionalName,
     }.withoutNulls,
   );
 
@@ -146,7 +154,8 @@ class CategoryRecordDocumentEquality implements Equality<CategoryRecord> {
         e1?.categoryRf == e2?.categoryRf &&
         e1?.type == e2?.type &&
         e1?.isDeleted == e2?.isDeleted &&
-        e1?.catImageUrl == e2?.catImageUrl;
+        e1?.catImageUrl == e2?.catImageUrl &&
+        e1?.regionalName == e2?.regionalName;
   }
 
   @override
@@ -158,7 +167,8 @@ class CategoryRecordDocumentEquality implements Equality<CategoryRecord> {
         e?.categoryRf,
         e?.type,
         e?.isDeleted,
-        e?.catImageUrl
+        e?.catImageUrl,
+        e?.regionalName
       ]);
 
   @override
