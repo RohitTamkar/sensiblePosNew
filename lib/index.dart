@@ -200,5 +200,7 @@ export '/pages/product_and_list_stockout/product_and_list_stockout_widget.dart'
     show ProductAndListStockoutWidget;
 export '/grocery_windows/barcode_print_new/barcode_print_new_widget.dart'
     show BarcodePrintNewWidget;
-export '/pages/table_list_mobile/table_list_mobile_widget.dart'
-    show TableListMobileWidget;
+export '/pages/captain_table_list/captain_table_list_widget.dart'
+    show CaptainTableListWidget;
+export '/pages/captain_product_cart/captain_product_cart_widget.dart'
+    show CaptainProductCartWidget;

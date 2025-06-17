@@ -18,7 +18,6 @@ import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -3401,21 +3400,37 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                                               mainAxisAlignment: MainAxisAlignment.end,
                                                                                                               children: [
-                                                                                                                Padding(
-                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
-                                                                                                                  child: Text(
-                                                                                                                    productListItem.name.maybeHandleOverflow(
-                                                                                                                      maxChars: 25,
+                                                                                                                if (!productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableRegionallanguage').toList().firstOrNull!.value)
+                                                                                                                  Padding(
+                                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                                                                                    child: Text(
+                                                                                                                      productListItem.name,
+                                                                                                                      textAlign: TextAlign.center,
+                                                                                                                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                                                            fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                                            fontSize: 14.0,
+                                                                                                                            letterSpacing: 0.0,
+                                                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
+                                                                                                                          ),
                                                                                                                     ),
-                                                                                                                    textAlign: TextAlign.center,
-                                                                                                                    style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
-                                                                                                                          fontSize: 14.0,
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
-                                                                                                                        ),
                                                                                                                   ),
-                                                                                                                ),
+                                                                                                                if (productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'enableRegionallanguage').toList()?.firstOrNull?.value ?? true)
+                                                                                                                  Padding(
+                                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                                                                                    child: Text(
+                                                                                                                      valueOrDefault<String>(
+                                                                                                                        productListItem.regionalName,
+                                                                                                                        'NOT AV',
+                                                                                                                      ),
+                                                                                                                      textAlign: TextAlign.center,
+                                                                                                                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                                                            fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                                            fontSize: 14.0,
+                                                                                                                            letterSpacing: 0.0,
+                                                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
+                                                                                                                          ),
+                                                                                                                    ),
+                                                                                                                  ),
                                                                                                                 Flexible(
                                                                                                                   child: Padding(
                                                                                                                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
@@ -3593,135 +3608,126 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                             borderRadius: BorderRadius.circular(5.0),
                                                                                                           ),
                                                                                                           child: Padding(
-                                                                                                            padding: EdgeInsets.all(0.5),
-                                                                                                            child: Column(
-                                                                                                              mainAxisSize: MainAxisSize.max,
-                                                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                                              crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                                              children: [
-                                                                                                                Expanded(
-                                                                                                                  child: Container(
-                                                                                                                    width: double.infinity,
-                                                                                                                    height: MediaQuery.sizeOf(context).height * 0.14,
-                                                                                                                    decoration: BoxDecoration(
-                                                                                                                      color: Color(0x1A000000),
-                                                                                                                      image: DecorationImage(
-                                                                                                                        fit: BoxFit.cover,
-                                                                                                                        image: CachedNetworkImageProvider(
-                                                                                                                          functions.imageurltostring(productListItem.imageUrl),
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                      borderRadius: BorderRadius.circular(5.0),
-                                                                                                                    ),
-                                                                                                                    child: Column(
-                                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                                      mainAxisAlignment: MainAxisAlignment.end,
-                                                                                                                      crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                                                      children: [
-                                                                                                                        Expanded(
-                                                                                                                          child: Padding(
-                                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                                                                                                                            child: Container(
-                                                                                                                              width: double.infinity,
-                                                                                                                              height: MediaQuery.sizeOf(context).height * 0.15,
-                                                                                                                              decoration: BoxDecoration(
-                                                                                                                                image: DecorationImage(
-                                                                                                                                  fit: BoxFit.cover,
-                                                                                                                                  image: Image.network(
-                                                                                                                                    '',
-                                                                                                                                  ).image,
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                                                                                                            child: Container(
+                                                                                                              width: double.infinity,
+                                                                                                              height: MediaQuery.sizeOf(context).height * 0.15,
+                                                                                                              decoration: BoxDecoration(
+                                                                                                                image: DecorationImage(
+                                                                                                                  fit: BoxFit.cover,
+                                                                                                                  image: Image.network(
+                                                                                                                    '',
+                                                                                                                  ).image,
+                                                                                                                ),
+                                                                                                                gradient: LinearGradient(
+                                                                                                                  colors: [
+                                                                                                                    Colors.transparent,
+                                                                                                                    Color(0xA7000000)
+                                                                                                                  ],
+                                                                                                                  stops: [0.0, 1.0],
+                                                                                                                  begin: AlignmentDirectional(0.0, -1.0),
+                                                                                                                  end: AlignmentDirectional(0, 1.0),
+                                                                                                                ),
+                                                                                                                borderRadius: BorderRadius.circular(5.0),
+                                                                                                              ),
+                                                                                                              child: Padding(
+                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 3.0),
+                                                                                                                child: Column(
+                                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                                  mainAxisAlignment: MainAxisAlignment.end,
+                                                                                                                  children: [
+                                                                                                                    if (!productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableRegionallanguage').toList().firstOrNull!.value)
+                                                                                                                      Flexible(
+                                                                                                                        child: Padding(
+                                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                                          child: Text(
+                                                                                                                            productListItem.name,
+                                                                                                                            textAlign: TextAlign.center,
+                                                                                                                            style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                                                  color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                                  fontSize: 14.0,
+                                                                                                                                  letterSpacing: 0.0,
+                                                                                                                                  fontWeight: FontWeight.w600,
+                                                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                                                 ),
-                                                                                                                                gradient: LinearGradient(
-                                                                                                                                  colors: [Colors.transparent, Color(0xA7000000)],
-                                                                                                                                  stops: [0.0, 1.0],
-                                                                                                                                  begin: AlignmentDirectional(0.0, -1.0),
-                                                                                                                                  end: AlignmentDirectional(0, 1.0),
-                                                                                                                                ),
-                                                                                                                                borderRadius: BorderRadius.circular(5.0),
-                                                                                                                              ),
-                                                                                                                              child: Padding(
-                                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 3.0),
-                                                                                                                                child: Column(
-                                                                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                                                                  mainAxisAlignment: MainAxisAlignment.end,
-                                                                                                                                  children: [
-                                                                                                                                    Flexible(
-                                                                                                                                      child: Padding(
-                                                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
-                                                                                                                                        child: Text(
-                                                                                                                                          productListItem.name,
-                                                                                                                                          textAlign: TextAlign.center,
-                                                                                                                                          style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                                                                                color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                                                                                letterSpacing: 0.0,
-                                                                                                                                                fontWeight: FontWeight.w600,
-                                                                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
-                                                                                                                                              ),
-                                                                                                                                        ),
-                                                                                                                                      ),
-                                                                                                                                    ),
-                                                                                                                                    Padding(
-                                                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
-                                                                                                                                      child: Row(
-                                                                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                                        children: [
-                                                                                                                                          Padding(
-                                                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
-                                                                                                                                            child: Text(
-                                                                                                                                              FFLocalizations.of(context).getText(
-                                                                                                                                                'br0aspwl' /* ₹ */,
-                                                                                                                                              ),
-                                                                                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                                                                                    color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                                                                                    letterSpacing: 0.0,
-                                                                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
-                                                                                                                                                  ),
-                                                                                                                                            ),
-                                                                                                                                          ),
-                                                                                                                                          Flexible(
-                                                                                                                                            child: Text(
-                                                                                                                                              valueOrDefault<String>(
-                                                                                                                                                productListItem.sellingPrice.toString(),
-                                                                                                                                                '120',
-                                                                                                                                              ),
-                                                                                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                                                                                    color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                                                                                    letterSpacing: 0.0,
-                                                                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
-                                                                                                                                                  ),
-                                                                                                                                            ),
-                                                                                                                                          ),
-                                                                                                                                        ],
-                                                                                                                                      ),
-                                                                                                                                    ),
-                                                                                                                                    if (productListItem.stockable)
-                                                                                                                                      Flexible(
-                                                                                                                                        child: Text(
-                                                                                                                                          'Stock :${productListItem.stock.toString()}',
-                                                                                                                                          textAlign: TextAlign.justify,
-                                                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                                                                color: FlutterFlowTheme.of(context).parkingPrimary,
-                                                                                                                                                letterSpacing: 0.0,
-                                                                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                                                                                                                                              ),
-                                                                                                                                        ),
-                                                                                                                                      ),
-                                                                                                                                  ],
-                                                                                                                                ),
-                                                                                                                              ),
-                                                                                                                            ),
                                                                                                                           ),
                                                                                                                         ),
-                                                                                                                      ],
+                                                                                                                      ),
+                                                                                                                    if (productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'enableRegionallanguage').toList()?.firstOrNull?.value ?? true)
+                                                                                                                      Flexible(
+                                                                                                                        child: Padding(
+                                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                                          child: Text(
+                                                                                                                            valueOrDefault<String>(
+                                                                                                                              productListItem.regionalName,
+                                                                                                                              'Not AV',
+                                                                                                                            ),
+                                                                                                                            textAlign: TextAlign.center,
+                                                                                                                            style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                                                  color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                                  fontSize: 14.0,
+                                                                                                                                  letterSpacing: 0.0,
+                                                                                                                                  fontWeight: FontWeight.w600,
+                                                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                                                                ),
+                                                                                                                          ),
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    Padding(
+                                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                                      child: Row(
+                                                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                                        children: [
+                                                                                                                          Padding(
+                                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                                                            child: Text(
+                                                                                                                              FFLocalizations.of(context).getText(
+                                                                                                                                'br0aspwl' /* ₹ */,
+                                                                                                                              ),
+                                                                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                                                    color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                                    letterSpacing: 0.0,
+                                                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                                                                                  ),
+                                                                                                                            ),
+                                                                                                                          ),
+                                                                                                                          Flexible(
+                                                                                                                            child: Text(
+                                                                                                                              valueOrDefault<String>(
+                                                                                                                                productListItem.sellingPrice.toString(),
+                                                                                                                                '120',
+                                                                                                                              ),
+                                                                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                                                    color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                                    letterSpacing: 0.0,
+                                                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
+                                                                                                                                  ),
+                                                                                                                            ),
+                                                                                                                          ),
+                                                                                                                        ],
+                                                                                                                      ),
                                                                                                                     ),
-                                                                                                                  ),
+                                                                                                                    if (productListItem.stockable)
+                                                                                                                      Flexible(
+                                                                                                                        child: Text(
+                                                                                                                          'Stock :${productListItem.stock.toString()}',
+                                                                                                                          textAlign: TextAlign.justify,
+                                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                                color: FlutterFlowTheme.of(context).parkingPrimary,
+                                                                                                                                letterSpacing: 0.0,
+                                                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                                                              ),
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                  ],
                                                                                                                 ),
-                                                                                                              ],
+                                                                                                              ),
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),

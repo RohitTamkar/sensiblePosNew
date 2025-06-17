@@ -1556,13 +1556,38 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: TableListMobileWidget.routeName,
-              path: TableListMobileWidget.routePath,
+              name: CaptainTableListWidget.routeName,
+              path: CaptainTableListWidget.routePath,
               asyncParams: {
                 'taxcollection':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
               },
-              builder: (context, params) => TableListMobileWidget(
+              builder: (context, params) => CaptainTableListWidget(
+                shiftDetails: params.getParam(
+                  'shiftDetails',
+                  ParamType.JSON,
+                ),
+                taxcollection: params.getParam<TaxMasterRecord>(
+                  'taxcollection',
+                  ParamType.Document,
+                  isList: true,
+                ),
+                doc: params.getParam(
+                  'doc',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['USER_PROFILE'],
+                ),
+              ),
+            ),
+            FFRoute(
+              name: CaptainProductCartWidget.routeName,
+              path: CaptainProductCartWidget.routePath,
+              asyncParams: {
+                'taxcollection':
+                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+              },
+              builder: (context, params) => CaptainProductCartWidget(
                 shiftDetails: params.getParam(
                   'shiftDetails',
                   ParamType.JSON,

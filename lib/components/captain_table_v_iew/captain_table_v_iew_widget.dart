@@ -11,11 +11,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'table_v_iew_mobile_model.dart';
-export 'table_v_iew_mobile_model.dart';
+import 'captain_table_v_iew_model.dart';
+export 'captain_table_v_iew_model.dart';
 
-class TableVIewMobileWidget extends StatefulWidget {
-  const TableVIewMobileWidget({
+class CaptainTableVIewWidget extends StatefulWidget {
+  const CaptainTableVIewWidget({
     super.key,
     this.parameter3,
     this.taxcollection,
@@ -31,11 +31,11 @@ class TableVIewMobileWidget extends StatefulWidget {
   final List<PremisesRecord>? premisedoc;
 
   @override
-  State<TableVIewMobileWidget> createState() => _TableVIewMobileWidgetState();
+  State<CaptainTableVIewWidget> createState() => _CaptainTableVIewWidgetState();
 }
 
-class _TableVIewMobileWidgetState extends State<TableVIewMobileWidget> {
-  late TableVIewMobileModel _model;
+class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
+  late CaptainTableVIewModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -46,7 +46,7 @@ class _TableVIewMobileWidgetState extends State<TableVIewMobileWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TableVIewMobileModel());
+    _model = createModel(context, () => CaptainTableVIewModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
