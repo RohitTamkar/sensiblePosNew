@@ -4124,26 +4124,45 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                             mainAxisAlignment: MainAxisAlignment.center,
                                                                                             crossAxisAlignment: CrossAxisAlignment.start,
                                                                                             children: [
-                                                                                              Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
-                                                                                                child: Text(
-                                                                                                  getJsonField(
-                                                                                                    billItem,
-                                                                                                    r'''$.name''',
-                                                                                                  ).toString().maybeHandleOverflow(
-                                                                                                        maxChars: 15,
-                                                                                                        replacement: '…',
-                                                                                                      ),
-                                                                                                  textAlign: TextAlign.start,
-                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                        color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                        fontSize: 15.0,
-                                                                                                        letterSpacing: 0.0,
-                                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                                                                                                      ),
+                                                                                              if (!productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableRegionallanguage').toList().firstOrNull!.value)
+                                                                                                Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                  child: Text(
+                                                                                                    getJsonField(
+                                                                                                      billItem,
+                                                                                                      r'''$.name''',
+                                                                                                    ).toString().maybeHandleOverflow(
+                                                                                                          maxChars: 20,
+                                                                                                          replacement: '…',
+                                                                                                        ),
+                                                                                                    textAlign: TextAlign.start,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                          fontSize: 15.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                                        ),
+                                                                                                  ),
                                                                                                 ),
-                                                                                              ),
+                                                                                              if (productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'enableRegionallanguage').toList()?.firstOrNull?.value ?? true)
+                                                                                                Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                  child: Text(
+                                                                                                    getJsonField(
+                                                                                                      billItem,
+                                                                                                      r'''$.regionallang''',
+                                                                                                    ).toString(),
+                                                                                                    textAlign: TextAlign.start,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                          fontSize: 15.0,
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ),
                                                                                               Row(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 children: [
