@@ -61,11 +61,11 @@ Future<Uint8List> createMarathiTextImage(String text) async {
     textDirection: ui.TextDirection.ltr, // also valid if using dart:ui only
   );
   textPainter.layout(maxWidth: 540);
-  textPainter.paint(canvas, Offset(8, 10));
+  textPainter.paint(canvas, Offset(0, 0));
 
   // 4️⃣ End recording
   final picture = recorder.endRecording();
-  final img = await picture.toImage(540, 40);
+  final img = await picture.toImage(540, 45);
   final byteData = await img.toByteData(format: ui.ImageByteFormat.png);
   return byteData!.buffer.asUint8List();
 }

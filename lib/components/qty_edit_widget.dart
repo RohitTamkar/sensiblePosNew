@@ -79,7 +79,8 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
             highlightColor: Colors.transparent,
             onTap: () async {
               safeSetState(() {
-                _model.textFieldqty2TextController?.text = '';
+                _model.textFieldqty2TextController?.text =
+                    widget!.parameter1!.toString();
               });
               FFAppState().groceryshow = true;
               safeSetState(() {});
