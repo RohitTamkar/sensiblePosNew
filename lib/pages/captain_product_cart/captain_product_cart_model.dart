@@ -2,17 +2,17 @@ import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/qty_edit_widget.dart';
+import '/components/table_details/table_details_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'captain_product_cart_widget.dart' show CaptainProductCartWidget;
 import 'package:badges/badges.dart' as badges;
 import 'package:cached_network_image/cached_network_image.dart';
@@ -100,9 +100,8 @@ class CaptainProductCartModel
   List<CategoryStructStruct>? categoryListHive25;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<PremisesRecord>? premiseDocCopy;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  // Stores action output result for [Backend Call - Read Document] action in Button widget.
+  TableKotRecord? tkot;
   // Stores action output result for [Custom Action - filterProductsKot] action in Button widget.
   List<SelItemListStruct>? prdlistsavebillkot;
   // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.

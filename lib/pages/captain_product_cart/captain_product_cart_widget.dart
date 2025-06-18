@@ -2,17 +2,17 @@ import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/qty_edit_widget.dart';
+import '/components/table_details/table_details_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -333,156 +333,285 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        FFButtonWidget(
-                                          onPressed: () async {
-                                            FFAppState().tableViewHideShow =
-                                                true;
-                                            _model.allprdrefresh =
-                                                await queryProductRecordOnce(
-                                              parent: FFAppState().outletIdRef,
-                                            );
-                                            _model.prdlist = await actions
-                                                .addFirebasetoHiveProduct(
-                                              _model.allprdrefresh!.toList(),
-                                            );
-                                            _model.listcategory =
-                                                await queryCategoryRecordOnce(
-                                              parent: FFAppState().outletIdRef,
-                                            );
-                                            _model.cat = await actions
-                                                .addFirebasetoHiveCategory(
-                                              _model.listcategory!.toList(),
-                                            );
-                                            _model.hiveProductList25 =
-                                                await actions
-                                                    .getProductlistHive();
-                                            _model.categoryListHive25 =
-                                                await actions
-                                                    .getCategorylistHive();
-                                            FFAppState().productHive = _model
-                                                .hiveProductList25!
-                                                .toList()
-                                                .cast<ProductStructStruct>();
-                                            _model.premiseDocCopy =
-                                                await queryPremisesRecordOnce(
-                                              parent: FFAppState().outletIdRef,
-                                            );
-                                            if (!functions.checkmergedtables(
-                                                FFAppState().table.toList())) {
-                                              FFAppState().table = functions
-                                                  .generatePremiseTablesjson(
-                                                      _model.premiseDoc!
-                                                          .toList())
-                                                  .toList()
-                                                  .cast<dynamic>();
-                                            }
-                                            FFAppState().categoryHive = _model
-                                                .categoryListHive25!
-                                                .toList()
-                                                .cast<CategoryStructStruct>();
-                                            FFAppState().update(() {});
-
-                                            safeSetState(() {});
-                                          },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'bz90fpo4' /*  */,
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 5.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              scaffoldKey.currentState!
+                                                  .openDrawer();
+                                            },
+                                            child: Icon(
+                                              Icons.dehaze,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              size: 24.0,
+                                            ),
                                           ),
-                                          icon: Icon(
-                                            Icons.replay_sharp,
-                                            size: 20.0,
-                                          ),
-                                          options: FFButtonOptions(
-                                            height: 40.0,
+                                          Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            iconPadding:
+                                                    0.0, 0.0, 3.0, 0.0),
+                                            child: Text(
+                                              valueOrDefault<String>(
+                                                FFAppState().outletName,
+                                                'SENSIBLE',
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallFamily,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w600,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallIsCustom,
+                                                  ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
+                                                    0.0, 0.0, 6.0, 0.0),
+                                            child: Text(
+                                              valueOrDefault<String>(
+                                                FFAppState().userName,
+                                                'SK',
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodySmall
+                                                  .override(
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondary,
+                                                    letterSpacing: 0.0,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallIsCustom,
+                                                  ),
+                                            ),
+                                          ),
+                                          FFButtonWidget(
+                                            onPressed: () async {
+                                              FFAppState().tableViewHideShow =
+                                                  true;
+                                              _model.allprdrefresh =
+                                                  await queryProductRecordOnce(
+                                                parent:
+                                                    FFAppState().outletIdRef,
+                                              );
+                                              _model.prdlist = await actions
+                                                  .addFirebasetoHiveProduct(
+                                                _model.allprdrefresh!.toList(),
+                                              );
+                                              _model.listcategory =
+                                                  await queryCategoryRecordOnce(
+                                                parent:
+                                                    FFAppState().outletIdRef,
+                                              );
+                                              _model.cat = await actions
+                                                  .addFirebasetoHiveCategory(
+                                                _model.listcategory!.toList(),
+                                              );
+                                              _model.hiveProductList25 =
+                                                  await actions
+                                                      .getProductlistHive();
+                                              _model.categoryListHive25 =
+                                                  await actions
+                                                      .getCategorylistHive();
+                                              FFAppState().productHive = _model
+                                                  .hiveProductList25!
+                                                  .toList()
+                                                  .cast<ProductStructStruct>();
+                                              _model.premiseDocCopy =
+                                                  await queryPremisesRecordOnce(
+                                                parent:
+                                                    FFAppState().outletIdRef,
+                                              );
+                                              if (!functions.checkmergedtables(
+                                                  FFAppState()
+                                                      .table
+                                                      .toList())) {
+                                                FFAppState().table = functions
+                                                    .generatePremiseTablesjson(
+                                                        _model.premiseDoc!
+                                                            .toList())
+                                                    .toList()
+                                                    .cast<dynamic>();
+                                              }
+                                              FFAppState().categoryHive = _model
+                                                  .categoryListHive25!
+                                                  .toList()
+                                                  .cast<CategoryStructStruct>();
+                                              FFAppState().update(() {});
+
+                                              safeSetState(() {});
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'bz90fpo4' /*  */,
+                                            ),
+                                            icon: Icon(
+                                              Icons.replay_sharp,
+                                              size: 20.0,
+                                            ),
+                                            options: FFButtonOptions(
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 16.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleSmallIsCustom,
+                                                      ),
+                                              elevation: 0.0,
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                          ),
+                                          if (FFAppState().kotDocRef != null)
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                _model.tkot =
+                                                    await TableKotRecord
+                                                        .getDocumentOnce(
+                                                            FFAppState()
+                                                                .kotDocRef!);
+                                                if (_model.tkot != null) {
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    enableDrag: false,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return GestureDetector(
+                                                        onTap: () {
+                                                          FocusScope.of(context)
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              TableDetailsWidget(
+                                                            tablekot:
+                                                                _model.tkot,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      safeSetState(() {}));
+                                                } else {
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(
+                                                    SnackBar(
+                                                      content: Text(
+                                                        'Table Is Empty !',
+                                                        style: TextStyle(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                        ),
+                                                      ),
+                                                      duration: Duration(
+                                                          milliseconds: 4000),
+                                                      backgroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary,
+                                                    ),
+                                                  );
+                                                }
+
+                                                safeSetState(() {});
+                                              },
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'mul5e0k4' /* Show Kot */,
+                                              ),
+                                              options: FFButtonOptions(
+                                                height: 40.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
                                                     .titleSmall
                                                     .override(
                                                       fontFamily:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .titleSmallFamily,
-                                                      color: Colors.white,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
                                                       letterSpacing: 0.0,
                                                       useGoogleFonts:
                                                           !FlutterFlowTheme.of(
                                                                   context)
                                                               .titleSmallIsCustom,
                                                     ),
-                                            elevation: 0.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 3.0, 0.0),
-                                          child: Text(
-                                            valueOrDefault<String>(
-                                              FFAppState().outletName,
-                                              'SENSIBLE',
+                                                elevation: 0.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
                                             ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleSmall
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmallFamily,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBtnText,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                  useGoogleFonts:
-                                                      !FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmallIsCustom,
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 6.0, 0.0),
-                                          child: Text(
-                                            valueOrDefault<String>(
-                                              FFAppState().userName,
-                                              'SK',
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodySmall
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodySmallFamily,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondary,
-                                                  letterSpacing: 0.0,
-                                                  useGoogleFonts:
-                                                      !FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodySmallIsCustom,
-                                                ),
-                                          ),
-                                        ),
-                                      ].divide(SizedBox(width: 5.0)),
+                                        ].divide(SizedBox(width: 5.0)),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -526,66 +655,33 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 10.0, 10.0, 10.0),
-                                        child:
-                                            StreamBuilder<List<TableKotRecord>>(
-                                          stream: queryTableKotRecord(
-                                            parent: FFAppState().outletIdRef,
-                                            queryBuilder: (tableKotRecord) =>
-                                                tableKotRecord.where(
-                                              'kotStatus',
-                                              isNotEqualTo: 'FINAL',
-                                            ),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
                                           ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 40.0,
-                                                  height: 40.0,
-                                                  child: SpinKitFadingCircle(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 40.0,
-                                                  ),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(5.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Icon(
+                                                  Icons.table_bar,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .alternate,
+                                                  size: 24.0,
                                                 ),
-                                              );
-                                            }
-                                            List<TableKotRecord>
-                                                containerTableKotRecordList =
-                                                snapshot.data!;
-
-                                            return Container(
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsets.all(5.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.table_bar,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .alternate,
-                                                      size: 24.0,
-                                                    ),
-                                                    Text(
-                                                      FFLocalizations.of(
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'trxrzvyy' /* Selected Table */,
+                                                  ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
                                                               context)
-                                                          .getText(
-                                                        'trxrzvyy' /* Selected Table */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
                                                           .labelSmall
                                                           .override(
                                                             fontFamily:
@@ -598,79 +694,31 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                                         context)
                                                                     .labelSmallIsCustom,
                                                           ),
-                                                    ),
-                                                    Expanded(
-                                                      child:
-                                                          FlutterFlowDropDown<
-                                                              String>(
-                                                        controller: _model
-                                                                .dropDownValueController ??=
-                                                            FormFieldController<
-                                                                String>(
-                                                          _model.dropDownValue ??=
-                                                              FFAppState()
-                                                                  .tableNo,
-                                                        ),
-                                                        options:
-                                                            containerTableKotRecordList
-                                                                .map((e) =>
-                                                                    e.tableNo)
-                                                                .toList(),
-                                                        onChanged: (val) =>
-                                                            safeSetState(() =>
-                                                                _model.dropDownValue =
-                                                                    val),
-                                                        width: 150.0,
-                                                        height: 35.0,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      !FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMediumIsCustom,
-                                                                ),
-                                                        icon: Icon(
-                                                          Icons
-                                                              .keyboard_arrow_down_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
-                                                        ),
-                                                        fillColor:
-                                                            Color(0xFFEEF2FF),
-                                                        elevation: 2.0,
-                                                        borderColor:
-                                                            Colors.transparent,
-                                                        borderWidth: 0.0,
-                                                        borderRadius: 8.0,
-                                                        margin:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    12.0,
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0),
-                                                        hidesUnderline: true,
-                                                        isOverButton: false,
-                                                        isSearchable: false,
-                                                        isMultiSelect: false,
-                                                      ),
-                                                    ),
-                                                  ].divide(
-                                                      SizedBox(width: 10.0)),
                                                 ),
-                                              ),
-                                            );
-                                          },
+                                                Text(
+                                                  FFAppState().tableNo,
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            fontSize: 20.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
+                                                ),
+                                              ].divide(SizedBox(width: 10.0)),
+                                            ),
+                                          ),
                                         ),
                                       ),
                                       Padding(
@@ -949,6 +997,36 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                                   true;
                                                               safeSetState(
                                                                   () {});
+
+                                                              context.pushNamed(
+                                                                CaptainTableListWidget
+                                                                    .routeName,
+                                                                queryParameters:
+                                                                    {
+                                                                  'taxcollection':
+                                                                      serializeParam(
+                                                                    widget!
+                                                                        .taxcollection,
+                                                                    ParamType
+                                                                        .Document,
+                                                                    isList:
+                                                                        true,
+                                                                  ),
+                                                                  'doc':
+                                                                      serializeParam(
+                                                                    widget!.doc,
+                                                                    ParamType
+                                                                        .DocumentReference,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  'taxcollection':
+                                                                      widget!
+                                                                          .taxcollection,
+                                                                },
+                                                              );
+
                                                               if (_shouldSetState)
                                                                 safeSetState(
                                                                     () {});
@@ -1369,6 +1447,36 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                                   true;
                                                               safeSetState(
                                                                   () {});
+
+                                                              context.pushNamed(
+                                                                CaptainTableListWidget
+                                                                    .routeName,
+                                                                queryParameters:
+                                                                    {
+                                                                  'taxcollection':
+                                                                      serializeParam(
+                                                                    widget!
+                                                                        .taxcollection,
+                                                                    ParamType
+                                                                        .Document,
+                                                                    isList:
+                                                                        true,
+                                                                  ),
+                                                                  'doc':
+                                                                      serializeParam(
+                                                                    widget!.doc,
+                                                                    ParamType
+                                                                        .DocumentReference,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  'taxcollection':
+                                                                      widget!
+                                                                          .taxcollection,
+                                                                },
+                                                              );
+
                                                               if (_shouldSetState)
                                                                 safeSetState(
                                                                     () {});
