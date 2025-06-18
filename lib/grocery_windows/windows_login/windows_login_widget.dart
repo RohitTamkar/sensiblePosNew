@@ -482,8 +482,14 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                 controller: _model
                                                                         .dropDownValueController ??=
                                                                     FormFieldController<
-                                                                            String>(
-                                                                        null),
+                                                                        String>(
+                                                                  _model.dropDownValue ??=
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                    '6rn8rnin' /* Please select... */,
+                                                                  ),
+                                                                ),
                                                                 options: pinUserProfileRecordList
                                                                     .map((e) =>
                                                                         e.name)

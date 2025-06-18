@@ -16624,7 +16624,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // WindowsLogin
   {
     '6rn8rnin': {
-      'en': '',
+      'en': 'Please select...',
       'hi': '',
       'kn': '',
       'mr': '',

@@ -11,16 +11,12 @@ import 'package:flutter/material.dart';
 
 import 'dart:io';
 import 'dart:async';
+import 'package:http/http.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 
 Future<bool> checkInternetConnection() async {
-  // Check internet connectionn
-  try {
-    final result = await InternetAddress.lookup('google.com');
-    if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-      return true;
-    }
-  } catch (e) {
-    return false;
-  }
-  return false;
+  // This returns true if the app is connected to the internet (determined by checking access to certain websites) and false if no internet connection can be established
+
+  bool result = await InternetConnection().hasInternetAccess;
+  return result;
 }
