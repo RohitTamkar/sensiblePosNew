@@ -695,26 +695,44 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                                     .labelSmallIsCustom,
                                                           ),
                                                 ),
-                                                Text(
-                                                  FFAppState().tableNo,
-                                                  style:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                            fontSize: 20.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumIsCustom,
-                                                          ),
+                                                Flexible(
+                                                  child: Container(
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent4,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12.0),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsets.all(8.0),
+                                                      child: Text(
+                                                        FFAppState().tableNo,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                              fontSize: 20.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumIsCustom,
+                                                            ),
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ),
                                               ].divide(SizedBox(width: 10.0)),
                                             ),
@@ -1584,28 +1602,34 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                       Flexible(
                                         child: Container(
                                           decoration: BoxDecoration(),
-                                          child: Container(
-                                            width: 750.0,
-                                            height: 50.0,
-                                            child: custom_widgets.SearchHiveprd(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 0.0, 5.0, 0.0),
+                                            child: Container(
                                               width: 750.0,
                                               height: 50.0,
-                                              billno: FFAppState().selBill,
-                                              billnum: FFAppState()
-                                                  .selBill
-                                                  .toString(),
-                                              disAmt: FFAppState().disAmt,
-                                              delChargs:
-                                                  FFAppState().delCharges,
-                                              purchase: false,
-                                              document:
-                                                  FFAppState().productHive,
-                                              taxcollection:
-                                                  widget!.taxcollection!,
-                                              appSettingsRecord:
-                                                  captainProductCartAppSettingsRecord!,
-                                              unitcollection:
-                                                  containerUnitTypeRecordList,
+                                              child:
+                                                  custom_widgets.SearchHiveprd(
+                                                width: 750.0,
+                                                height: 50.0,
+                                                billno: FFAppState().selBill,
+                                                billnum: FFAppState()
+                                                    .selBill
+                                                    .toString(),
+                                                disAmt: FFAppState().disAmt,
+                                                delChargs:
+                                                    FFAppState().delCharges,
+                                                purchase: false,
+                                                document:
+                                                    FFAppState().productHive,
+                                                taxcollection:
+                                                    widget!.taxcollection!,
+                                                appSettingsRecord:
+                                                    captainProductCartAppSettingsRecord!,
+                                                unitcollection:
+                                                    containerUnitTypeRecordList,
+                                              ),
                                             ),
                                           ),
                                         ),
