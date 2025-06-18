@@ -807,6 +807,22 @@ class _CaptainTableListWidgetState extends State<CaptainTableListWidget> {
                                                         CaptainTableVIewWidget(
                                                           key: Key(
                                                               'Keyoyg_${jsonIndex}_of_${json.length}'),
+                                                          parameter3:
+                                                              getJsonField(
+                                                            jsonItem,
+                                                            r'''$.premise''',
+                                                          ).toString(),
+                                                          taxcollection: widget!
+                                                              .taxcollection,
+                                                          apsetting:
+                                                              captainTableListAppSettingsRecord,
+                                                          jsonlist:
+                                                              getJsonField(
+                                                            jsonItem,
+                                                            r'''$.type''',
+                                                          ),
+                                                          premisedoc:
+                                                              containerPremisesRecordList,
                                                         ),
                                                       ].divide(SizedBox(
                                                           height: 10.0)),

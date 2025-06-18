@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -406,6 +407,29 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                               widget!.parameter3!;
                                           FFAppState().kotDocRef = null;
                                           FFAppState().update(() {});
+
+                                          context.pushNamed(
+                                            CaptainProductCartWidget.routeName,
+                                            queryParameters: {
+                                              'shiftDetails': serializeParam(
+                                                FFAppState().shiftDetailsJson,
+                                                ParamType.JSON,
+                                              ),
+                                              'taxcollection': serializeParam(
+                                                widget!.taxcollection,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                              'doc': serializeParam(
+                                                FFAppState().userdoc,
+                                                ParamType.DocumentReference,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'taxcollection':
+                                                  widget!.taxcollection,
+                                            },
+                                          );
                                         }
                                       }
                                     },

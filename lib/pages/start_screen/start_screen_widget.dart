@@ -198,6 +198,116 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                           ),
                         ),
                       ),
+                      Expanded(
+                        child: Builder(
+                          builder: (context) => Padding(
+                            padding: EdgeInsets.all(15.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                FFAppState().navigate = 'CAPTAINAPP';
+                                safeSetState(() {});
+                                if (isAndroid == true) {
+                                  context.pushNamed(
+                                      WelcomeScreenNewWidget.routeName);
+                                } else {
+                                  context.pushNamed(
+                                      SplashScreenWindowsWidget.routeName);
+                                }
+                              },
+                              onLongPress: () async {
+                                await showDialog(
+                                  context: context,
+                                  builder: (dialogContext) {
+                                    return Dialog(
+                                      elevation: 0,
+                                      insetPadding: EdgeInsets.zero,
+                                      backgroundColor: Colors.transparent,
+                                      alignment: AlignmentDirectional(0.0, 0.0)
+                                          .resolve(Directionality.of(context)),
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          FocusScope.of(dialogContext)
+                                              .unfocus();
+                                          FocusManager.instance.primaryFocus
+                                              ?.unfocus();
+                                        },
+                                        child: Container(
+                                          height: 200.0,
+                                          width: 600.0,
+                                          child: DirectorypathWidget(),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                );
+                              },
+                              child: Material(
+                                color: Colors.transparent,
+                                elevation: 2.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(25.0),
+                                ),
+                                child: Container(
+                                  width: 100.0,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 0.4,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    borderRadius: BorderRadius.circular(25.0),
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      width: 10.0,
+                                    ),
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 10.0),
+                                        child: Icon(
+                                          Icons.tablet_mac,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 60.0,
+                                        ),
+                                      ),
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'vkvk3ecj' /* CAPTAIN APP */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineMediumFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              fontSize: 25.0,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .headlineMediumIsCustom,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   Row(

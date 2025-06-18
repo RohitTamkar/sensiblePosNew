@@ -11,8 +11,10 @@ import '/flutter_flow/form_field_controller.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'captain_product_cart_widget.dart' show CaptainProductCartWidget;
+import 'package:badges/badges.dart' as badges;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -123,10 +125,6 @@ class CaptainProductCartModel
   List<ServicePointOutletRecord>? spoutletkot;
   // Stores action output result for [Custom Action - filterProductsKot] action in Button widget.
   List<SelItemListStruct>? prdlistsavebillkotupdate;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
   // State field(s) for Column widget.
   ScrollController? columnController;
   // Stores action output result for [Custom Action - getProductlistHive] action in Container widget.
@@ -150,6 +148,10 @@ class CaptainProductCartModel
   // Stores action output result for [Custom Action - calBillAmt] action in productimage widget.
   double? calbillAmt3img;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode1;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
+  // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
@@ -157,10 +159,6 @@ class CaptainProductCartModel
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for ListViewprd widget.
   ScrollController? listViewprd;
   // Stores action output result for [Custom Action - addToHoldListprdminus] action in Minus widget.
@@ -190,20 +188,17 @@ class CaptainProductCartModel
   @override
   void dispose() {
     menuDrawerModel.dispose();
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
-
     columnController?.dispose();
     listViewController?.dispose();
     gridViewController?.dispose();
+    textFieldFocusNode1?.dispose();
+    textController1?.dispose();
+
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
 
     textFieldFocusNode3?.dispose();
     textController3?.dispose();
-
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
 
     listViewprd?.dispose();
   }

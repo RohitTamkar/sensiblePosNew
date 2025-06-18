@@ -12405,6 +12405,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': 'பிஓஎஸ்',
       'th': 'โพส',
     },
+    'vkvk3ecj': {
+      'en': 'CAPTAIN APP',
+      'hi': 'पीओ',
+      'kn': 'ಪಿಓಎಸ್',
+      'mr': 'पॉस',
+      'ta': 'பிஓஎஸ்',
+      'th': 'โพส',
+    },
     'f8cmpc45': {
       'en': 'Kiosk',
       'hi': 'कीओस्क',
@@ -23150,7 +23158,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     'g8qxhw1u': {
-      'en': 'AC 12',
+      'en': '',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -23204,14 +23212,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': 'यूपीआय',
       'ta': 'யுபிஐ',
       'th': 'ยูพีไอ',
-    },
-    'm8nn4ogv': {
-      'en': 'Search Product',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-      'th': '',
     },
     '970lo5b2': {
       'en': 'All',

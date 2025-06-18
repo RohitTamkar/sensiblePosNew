@@ -301,30 +301,56 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
               .cast<dynamic>();
           safeSetState(() {});
         }
-        await showModalBottomSheet(
-          isScrollControlled: true,
-          backgroundColor: Colors.transparent,
-          barrierColor: Color(0x00000000),
-          context: context,
-          builder: (context) {
-            return GestureDetector(
-              onTap: () {
-                FocusScope.of(context).unfocus();
-                FocusManager.instance.primaryFocus?.unfocus();
-              },
-              child: Padding(
-                padding: MediaQuery.viewInsetsOf(context),
-                child: Container(
-                  height: double.infinity,
-                  child: OpeningBalNewWidget(
-                    doc: widget!.userDoc,
-                    shiftDetails: widget!.shiftDoc,
+        if (FFAppState().navigate == 'CAPTAINAPP') {
+          _model.tacx = await queryTaxMasterRecordOnce();
+
+          context.pushNamed(
+            CaptainTableListWidget.routeName,
+            queryParameters: {
+              'shiftDetails': serializeParam(
+                FFAppState().shiftDetailsJson,
+                ParamType.JSON,
+              ),
+              'taxcollection': serializeParam(
+                _model.tacx,
+                ParamType.Document,
+                isList: true,
+              ),
+              'doc': serializeParam(
+                widget!.userDoc,
+                ParamType.DocumentReference,
+              ),
+            }.withoutNulls,
+            extra: <String, dynamic>{
+              'taxcollection': _model.tacx,
+            },
+          );
+        } else {
+          await showModalBottomSheet(
+            isScrollControlled: true,
+            backgroundColor: Colors.transparent,
+            barrierColor: Color(0x00000000),
+            context: context,
+            builder: (context) {
+              return GestureDetector(
+                onTap: () {
+                  FocusScope.of(context).unfocus();
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
+                child: Padding(
+                  padding: MediaQuery.viewInsetsOf(context),
+                  child: Container(
+                    height: double.infinity,
+                    child: OpeningBalNewWidget(
+                      doc: widget!.userDoc,
+                      shiftDetails: widget!.shiftDoc,
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
-        ).then((value) => safeSetState(() {}));
+              );
+            },
+          ).then((value) => safeSetState(() {}));
+        }
       } else {
         await showDialog(
           context: context,

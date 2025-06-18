@@ -63,6 +63,8 @@ class LoadingScreenNewModel extends FlutterFlowModel<LoadingScreenNewWidget> {
   TableJsonRecord? doctoable;
   // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
   TableJsonRecord? tablekotupdated;
+  // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
+  List<TaxMasterRecord>? tacx;
 
   @override
   void initState(BuildContext context) {}
