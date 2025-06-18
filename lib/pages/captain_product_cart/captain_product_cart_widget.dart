@@ -1020,7 +1020,7 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                               safeSetState(
                                                                   () {});
 
-                                                              context.pushNamed(
+                                                              context.goNamed(
                                                                 CaptainTableListWidget
                                                                     .routeName,
                                                                 queryParameters:
@@ -1470,7 +1470,7 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                               safeSetState(
                                                                   () {});
 
-                                                              context.pushNamed(
+                                                              context.goNamed(
                                                                 CaptainTableListWidget
                                                                     .routeName,
                                                                 queryParameters:
@@ -1606,29 +1606,34 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                       Flexible(
                                         child: Container(
                                           decoration: BoxDecoration(),
-                                          child: Container(
-                                            width: 750.0,
-                                            height: 50.0,
-                                            child: custom_widgets
-                                                .SearchHiveprdtable(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 0.0, 5.0, 0.0),
+                                            child: Container(
                                               width: 750.0,
                                               height: 50.0,
-                                              billno: FFAppState().selBill,
-                                              billnum: FFAppState()
-                                                  .selBill
-                                                  .toString(),
-                                              disAmt: FFAppState().disAmt,
-                                              delChargs:
-                                                  FFAppState().delCharges,
-                                              purchase: false,
-                                              document:
-                                                  FFAppState().productHive,
-                                              taxcollection:
-                                                  widget!.taxcollection!,
-                                              appSettingsRecord:
-                                                  captainProductCartAppSettingsRecord!,
-                                              unitcollection:
-                                                  containerUnitTypeRecordList,
+                                              child: custom_widgets
+                                                  .SearchHiveprdtable(
+                                                width: 750.0,
+                                                height: 50.0,
+                                                billno: FFAppState().selBill,
+                                                billnum: FFAppState()
+                                                    .selBill
+                                                    .toString(),
+                                                disAmt: FFAppState().disAmt,
+                                                delChargs:
+                                                    FFAppState().delCharges,
+                                                purchase: false,
+                                                document:
+                                                    FFAppState().productHive,
+                                                taxcollection:
+                                                    widget!.taxcollection!,
+                                                appSettingsRecord:
+                                                    captainProductCartAppSettingsRecord!,
+                                                unitcollection:
+                                                    containerUnitTypeRecordList,
+                                              ),
                                             ),
                                           ),
                                         ),

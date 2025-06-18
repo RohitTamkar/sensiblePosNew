@@ -874,6 +874,27 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                                   _model.tablekot?.reference;
 
                                               _model.updatePage(() {});
+
+                                              context.goNamed(
+                                                CaptainProductCartWidget
+                                                    .routeName,
+                                                queryParameters: {
+                                                  'taxcollection':
+                                                      serializeParam(
+                                                    widget!.taxcollection,
+                                                    ParamType.Document,
+                                                    isList: true,
+                                                  ),
+                                                  'doc': serializeParam(
+                                                    FFAppState().userdoc,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  'taxcollection':
+                                                      widget!.taxcollection,
+                                                },
+                                              );
                                             } else {
                                               ScaffoldMessenger.of(context)
                                                   .showSnackBar(
