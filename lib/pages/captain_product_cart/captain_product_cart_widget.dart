@@ -575,6 +575,10 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                   .getText(
                                                 'mul5e0k4' /* Show Kot */,
                                               ),
+                                              icon: Icon(
+                                                Icons.restaurant_menu_sharp,
+                                                size: 15.0,
+                                              ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
                                                 padding: EdgeInsetsDirectional
