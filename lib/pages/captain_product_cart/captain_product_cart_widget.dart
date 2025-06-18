@@ -1606,34 +1606,29 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                       Flexible(
                                         child: Container(
                                           decoration: BoxDecoration(),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 5.0, 0.0),
-                                            child: Container(
+                                          child: Container(
+                                            width: 750.0,
+                                            height: 50.0,
+                                            child: custom_widgets
+                                                .SearchHiveprdtable(
                                               width: 750.0,
                                               height: 50.0,
-                                              child:
-                                                  custom_widgets.SearchHiveprd(
-                                                width: 750.0,
-                                                height: 50.0,
-                                                billno: FFAppState().selBill,
-                                                billnum: FFAppState()
-                                                    .selBill
-                                                    .toString(),
-                                                disAmt: FFAppState().disAmt,
-                                                delChargs:
-                                                    FFAppState().delCharges,
-                                                purchase: false,
-                                                document:
-                                                    FFAppState().productHive,
-                                                taxcollection:
-                                                    widget!.taxcollection!,
-                                                appSettingsRecord:
-                                                    captainProductCartAppSettingsRecord!,
-                                                unitcollection:
-                                                    containerUnitTypeRecordList,
-                                              ),
+                                              billno: FFAppState().selBill,
+                                              billnum: FFAppState()
+                                                  .selBill
+                                                  .toString(),
+                                              disAmt: FFAppState().disAmt,
+                                              delChargs:
+                                                  FFAppState().delCharges,
+                                              purchase: false,
+                                              document:
+                                                  FFAppState().productHive,
+                                              taxcollection:
+                                                  widget!.taxcollection!,
+                                              appSettingsRecord:
+                                                  captainProductCartAppSettingsRecord!,
+                                              unitcollection:
+                                                  containerUnitTypeRecordList,
                                             ),
                                           ),
                                         ),

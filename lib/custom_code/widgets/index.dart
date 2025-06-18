@@ -8,6 +8,7 @@ export 'progress_bar.dart' show ProgressBar;
 export 'cust_widget.dart' show CustWidget;
 export 'linear_progress_bar.dart' show LinearProgressBar;
 export 'search_hiveprd.dart' show SearchHiveprd;
+export 'search_hiveprdtable.dart' show SearchHiveprdtable;
 export 'online_sync.dart' show OnlineSync;
 export 'datetimecountdown.dart' show Datetimecountdown;
 export 'search_hiveprd2.dart' show SearchHiveprd2;
