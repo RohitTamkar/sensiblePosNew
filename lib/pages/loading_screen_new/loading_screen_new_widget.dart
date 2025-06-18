@@ -307,10 +307,6 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
           context.pushNamed(
             CaptainTableListWidget.routeName,
             queryParameters: {
-              'shiftDetails': serializeParam(
-                FFAppState().shiftDetailsJson,
-                ParamType.JSON,
-              ),
               'taxcollection': serializeParam(
                 _model.tacx,
                 ParamType.Document,

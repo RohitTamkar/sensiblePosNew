@@ -30,12 +30,10 @@ export 'captain_product_cart_model.dart';
 class CaptainProductCartWidget extends StatefulWidget {
   const CaptainProductCartWidget({
     super.key,
-    this.shiftDetails,
     this.taxcollection,
     this.doc,
   });
 
-  final dynamic shiftDetails;
   final List<TaxMasterRecord>? taxcollection;
   final DocumentReference? doc;
 
@@ -67,16 +65,6 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       FFAppState().tableViewHideShow = true;
-      safeSetState(() {});
-      FFAppState().shiftDocExists = getJsonField(
-        widget!.shiftDetails,
-        r'''$.shiftExists''',
-      );
-      FFAppState().update(() {});
-      FFAppState().shiftDetailsNEw = widget!.shiftDetails!;
-      safeSetState(() {});
-      FFAppState().shiftDetailsJson = widget!.shiftDetails!;
-      FFAppState().shiftdetails = widget!.shiftDetails!;
       safeSetState(() {});
       _model.hiveProductList = await actions.getProductlistHive();
       _model.categoryListHive = await actions.getCategorylistHive();
@@ -297,7 +285,7 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                       child: MenuDrawerWidget(
                         billdetails: null,
                         doc: widget!.doc,
-                        shiftDetails: widget!.shiftDetails,
+                        shiftDetails: FFAppState().shiftDetailsJson,
                         tax: widget!.taxcollection,
                         appSettings23: captainProductCartAppSettingsRecord,
                       ),
@@ -354,17 +342,6 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                           onPressed: () async {
                                             FFAppState().tableViewHideShow =
                                                 true;
-                                            FFAppState().shiftDocExists =
-                                                getJsonField(
-                                              widget!.shiftDetails,
-                                              r'''$.shiftExists''',
-                                            );
-                                            FFAppState().shiftDetailsNEw =
-                                                widget!.shiftDetails!;
-                                            FFAppState().shiftDetailsJson =
-                                                widget!.shiftDetails!;
-                                            FFAppState().shiftdetails =
-                                                widget!.shiftDetails!;
                                             _model.allprdrefresh =
                                                 await queryProductRecordOnce(
                                               parent: FFAppState().outletIdRef,

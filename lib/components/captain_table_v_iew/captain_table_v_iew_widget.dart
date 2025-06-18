@@ -411,10 +411,6 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                           context.pushNamed(
                                             CaptainProductCartWidget.routeName,
                                             queryParameters: {
-                                              'shiftDetails': serializeParam(
-                                                FFAppState().shiftDetailsJson,
-                                                ParamType.JSON,
-                                              ),
                                               'taxcollection': serializeParam(
                                                 widget!.taxcollection,
                                                 ParamType.Document,

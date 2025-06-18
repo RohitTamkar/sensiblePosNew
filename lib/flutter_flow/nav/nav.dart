@@ -1563,10 +1563,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
               },
               builder: (context, params) => CaptainTableListWidget(
-                shiftDetails: params.getParam(
-                  'shiftDetails',
-                  ParamType.JSON,
-                ),
                 taxcollection: params.getParam<TaxMasterRecord>(
                   'taxcollection',
                   ParamType.Document,
@@ -1588,10 +1584,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
               },
               builder: (context, params) => CaptainProductCartWidget(
-                shiftDetails: params.getParam(
-                  'shiftDetails',
-                  ParamType.JSON,
-                ),
                 taxcollection: params.getParam<TaxMasterRecord>(
                   'taxcollection',
                   ParamType.Document,
