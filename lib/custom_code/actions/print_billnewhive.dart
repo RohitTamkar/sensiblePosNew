@@ -19,6 +19,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -32,6 +34,41 @@ import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
 import 'package:flutter_pos_printer_platform_image_3/flutter_pos_printer_platform_image_3.dart';
 import 'package:http/http.dart' as http;
 import 'package:image/image.dart' as im;
+
+import 'dart:ui' as ui;
+import 'dart:typed_data';
+
+Future<Uint8List> createMarathiTextImage(String text) async {
+  // 1️⃣ Create a PictureRecorder
+  final recorder = ui.PictureRecorder();
+  final canvas = Canvas(recorder);
+
+  // 2️⃣ White background
+  final paint = Paint()..color = Colors.white;
+  canvas.drawRect(Rect.fromLTRB(0, 0, 0, 0), paint);
+
+  // 3️⃣ Draw text with a Devanagari-capable font (e.g., default + fallback)
+  final textPainter = TextPainter(
+    text: TextSpan(
+      text: text,
+      style: TextStyle(
+        fontSize: 28,
+        //fontWeight: FontWeight.bold,
+        color: Colors.black,
+      ),
+    ),
+
+    textDirection: ui.TextDirection.ltr, // also valid if using dart:ui only
+  );
+  textPainter.layout(maxWidth: 540);
+  textPainter.paint(canvas, Offset(8, 10));
+
+  // 4️⃣ End recording
+  final picture = recorder.endRecording();
+  final img = await picture.toImage(540, 40);
+  final byteData = await img.toByteData(format: ui.ImageByteFormat.png);
+  return byteData!.buffer.asUint8List();
+}
 
 Future printBillnewhive(
   List<dynamic> data,
@@ -72,14 +109,19 @@ Future printBillnewhive(
   String taxColumn3;
   dynamic obj;
   bool unit = false;
+  bool regional = false;
   if (appSetting.settingList.any((setting) =>
       setting.title == 'printUnitonbill' && setting.value == true)) {
     unit = true;
   }
+  if (appSetting.settingList.any((setting) =>
+      setting.title == 'printRegionalName' && setting.value == true)) {
+    regional = true;
+  }
   // changes according to size
   if (size == 46) {
     billColumn3 =
-        "ITEM_NAME            QTY      RATE      TOTAL "; // 20, 8, 9, 9 (46)
+        "ITEM_NAME           QTY        RATE      TOTAL "; // 20, 8, 9, 9 (46)
     taxColumn3 = "TAX%      TAXABLE     CGST     SGST     TAXAMT";
 
     if (data.length > 0) {
@@ -377,50 +419,60 @@ Future printBillnewhive(
               align: PosAlign.center));
 
       for (int i = 0; i < obj["itemList"].length; i++) {
+        final item = obj["itemList"][i];
+
+        if (regional) {
+          // 👉 1️⃣ Create and print the Marathi image
+          Uint8List marathiImageBytes =
+              await createMarathiTextImage(item["regionallang"].toString());
+          final im.Image decoded = im.decodeImage(marathiImageBytes)!;
+          bytes += generator.image(decoded);
+        }
+
+        // 👉 2️⃣ Then add the row:
         bytes += generator.row([
           PosColumn(
-            text: obj["itemList"][i]["name"].toString(),
+            text: regional
+                ? '' // If regional is true, use image above; so keep this empty
+                : item["name"]
+                    .toString(), // If regional is false, use name here
             width: 5,
             styles: PosStyles(
               fontType: PosFontType.fontA,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              // align: PosAlign.left
             ),
           ),
           PosColumn(
-            text: obj["itemList"][i]["qtystring"].toString() +
+            text: item["qtystring"].toString() +
                 " " +
-                (unit ? obj["itemList"][i]["unit"] : ""),
+                (unit ? item["unit"].toString() : ""),
             width: 3,
             styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              // align: PosAlign.center
             ),
           ),
           PosColumn(
-            text: obj["itemList"][i]["price"].toString(),
+            text: item["price"].toString(),
             width: 2,
             styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              // align: PosAlign.center
             ),
           ),
           PosColumn(
-            text: obj["itemList"][i]["total"].toString(),
+            text: item["total"].toString(),
             width: 2,
             styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              //align: PosAlign.center
             ),
-          )
+          ),
         ]);
       }
 
