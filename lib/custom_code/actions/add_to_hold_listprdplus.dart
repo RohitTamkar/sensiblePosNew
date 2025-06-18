@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> addToHoldListprdplus(
   ProductStructStruct document,
   int billno,
@@ -55,6 +57,7 @@ Future<List<dynamic>> addToHoldListprdplus(
       "name": document!.name,
       "price": (document.price)!.toDouble(),
       "quantity": quantity,
+      "qtystring": quantity,
       "total": total, // Include taxAmt for exclusive tax
       "id": document!.id,
       "catId": document!.categoryId,
@@ -87,8 +90,9 @@ Future<List<dynamic>> addToHoldListprdplus(
 
       if (flag1) {
         for (int j = 0; j < itemList.length; j++) {
-          if (itemList[j]["name"] == data["name"]) {
+          if (itemList[j]["id"] == data["id"]) {
             itemList[j]["quantity"]++;
+            itemList[j]["qtystring"] = itemList[j]["quantity"];
             itemList[j]["taxAmt"] +=
                 taxAmtPerItem; // Update taxAmt for each item
             if (inclusiveorexclusive.toLowerCase() == 'inclusive') {

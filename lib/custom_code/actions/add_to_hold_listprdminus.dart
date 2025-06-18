@@ -55,6 +55,7 @@ Future<List<dynamic>> addToHoldListprdminus(
       "name": document!.name,
       "price": (document.price)!.toDouble(),
       "quantity": quantity,
+      "qtystring": quantity,
       "total": total, // Include taxAmt for exclusive tax
       "id": document!.id,
       "catId": document!.categoryId,
@@ -90,6 +91,7 @@ Future<List<dynamic>> addToHoldListprdminus(
           if (itemList[j]["quantity"] > 1) {
             if (itemList[j]["name"] == data["name"]) {
               itemList[j]["quantity"]--;
+              itemList[j]["qtystring"] = itemList[j]["quantity"];
               itemList[j]["taxAmt"] = itemList[j]["quantity"] *
                   taxAmtPerItem; // Update taxAmt for each item based on the new quantity
               if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
