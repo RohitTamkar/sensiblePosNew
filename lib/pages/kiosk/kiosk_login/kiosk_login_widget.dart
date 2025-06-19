@@ -12,6 +12,7 @@ import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/gestures.dart';
@@ -1351,28 +1352,27 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                           MainAxisAlignment
                                                               .spaceBetween,
                                                       children: [
-                                                        Expanded(
-                                                          child: Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height:
-                                                                double.infinity,
-                                                            child:
-                                                                custom_widgets
-                                                                    .QrCode(
-                                                              width: double
-                                                                  .infinity,
-                                                              height: double
-                                                                  .infinity,
-                                                              data: _model
-                                                                  .platform,
-                                                              size: 250.0,
-                                                              backgroundColor:
-                                                                  Colors.black,
-                                                              foregroundColor:
-                                                                  Colors.white,
-                                                            ),
+                                                        BarcodeWidget(
+                                                          data:
+                                                              FFAppState().dId,
+                                                          barcode:
+                                                              Barcode.qrCode(),
+                                                          width: 250.0,
+                                                          height: 250.0,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          errorBuilder:
+                                                              (_context,
+                                                                      _error) =>
+                                                                  SizedBox(
+                                                            width: 250.0,
+                                                            height: 250.0,
                                                           ),
+                                                          drawText: true,
                                                         ),
                                                         Text(
                                                           FFAppState().dId,

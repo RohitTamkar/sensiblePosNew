@@ -1425,31 +1425,29 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                           MainAxisSize.max,
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
-                                                              .spaceBetween,
+                                                              .center,
                                                       children: [
-                                                        Flexible(
-                                                          child: BarcodeWidget(
-                                                            data: FFAppState()
-                                                                .dId,
-                                                            barcode: Barcode
-                                                                .qrCode(),
+                                                        BarcodeWidget(
+                                                          data:
+                                                              FFAppState().dId,
+                                                          barcode:
+                                                              Barcode.qrCode(),
+                                                          width: 250.0,
+                                                          height: 250.0,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          errorBuilder:
+                                                              (_context,
+                                                                      _error) =>
+                                                                  SizedBox(
                                                             width: 250.0,
                                                             height: 250.0,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                            backgroundColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            errorBuilder:
-                                                                (_context,
-                                                                        _error) =>
-                                                                    SizedBox(
-                                                              width: 250.0,
-                                                              height: 250.0,
-                                                            ),
-                                                            drawText: false,
                                                           ),
+                                                          drawText: false,
                                                         ),
                                                         Text(
                                                           FFAppState().dId,
