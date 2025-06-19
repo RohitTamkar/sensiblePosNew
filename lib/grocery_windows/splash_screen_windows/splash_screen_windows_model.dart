@@ -21,6 +21,8 @@ class SplashScreenWindowsModel
     extends FlutterFlowModel<SplashScreenWindowsWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Custom Action - checkInternetConnection] action in SplashScreenWindows widget.
+  bool? internet;
   // Stores action output result for [Custom Action - getPlatformDetails] action in SplashScreenWindows widget.
   dynamic? docRes;
   // Stores action output result for [Custom Action - checkPlatform] action in SplashScreenWindows widget.

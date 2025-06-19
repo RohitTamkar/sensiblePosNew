@@ -2326,7 +2326,7 @@ class FFAppState extends ChangeNotifier {
         _selectedPurchaceProdJson.map((x) => jsonEncode(x)).toList());
   }
 
-  bool _checkinternetConnection = false;
+  bool _checkinternetConnection = true;
   bool get checkinternetConnection => _checkinternetConnection;
   set checkinternetConnection(bool value) {
     _checkinternetConnection = value;
@@ -3379,7 +3379,7 @@ class FFAppState extends ChangeNotifier {
     prefs.setInt('ff_tokenNo', value);
   }
 
-  bool _internet = false;
+  bool _internet = true;
   bool get internet => _internet;
   set internet(bool value) {
     _internet = value;
