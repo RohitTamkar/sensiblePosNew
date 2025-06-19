@@ -23960,7 +23960,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // TableDetails
   {
     '5qa49c1f': {
-      'en': 'Details of  :',
+      'en': 'Details of :',
       'hi': 'तालिका संख्या का विवरण:',
       'kn': 'ಕೋಷ್ಟಕ ಸಂಖ್ಯೆಯ ವಿವರಗಳು:',
       'mr': 'तक्ता क्रमांकाची माहिती:',

@@ -1757,7 +1757,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                   0.0, 0.0),
                                                           child:
                                                               LinearPercentIndicator(
-                                                            percent: 0.9,
+                                                            percent: 0.25,
                                                             width: MediaQuery
                                                                         .sizeOf(
                                                                             context)

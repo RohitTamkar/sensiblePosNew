@@ -51,6 +51,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
           width: 600.0,
@@ -81,18 +82,17 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                     0.0, 0.0, 3.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '5qa49c1f' /* Details of  : */,
+                                    '5qa49c1f' /* Details of : */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
+                                      .labelLarge
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
                                         useGoogleFonts:
                                             !FlutterFlowTheme.of(context)
-                                                .headlineSmallIsCustom,
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -102,18 +102,16 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                   '0',
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .headlineMedium
+                                    .headlineSmall
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
-                                          .headlineMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 19.0,
+                                          .headlineSmallFamily,
+                                      color: FlutterFlowTheme.of(context).info,
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w600,
                                       useGoogleFonts:
                                           !FlutterFlowTheme.of(context)
-                                              .headlineMediumIsCustom,
+                                              .headlineSmallIsCustom,
                                     ),
                               ),
                             ],
@@ -148,21 +146,6 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 ),
                               ),
                             ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 10.0, 0.0),
-                          child: Container(
-                            width: 100.0,
-                            decoration: BoxDecoration(),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [],
-                            ),
                           ),
                         ),
                       ),
@@ -377,57 +360,113 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                           final list =
                               widget!.tablekot?.productList?.toList() ?? [];
 
-                          return ListView.builder(
+                          return ListView.separated(
                             padding: EdgeInsets.zero,
                             scrollDirection: Axis.vertical,
                             itemCount: list.length,
+                            separatorBuilder: (_, __) => SizedBox(height: 3.0),
                             itemBuilder: (context, listIndex) {
                               final listItem = list[listIndex];
-                              return Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 2.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      flex: 9,
-                                      child: Container(
-                                        width: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                              return Container(
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 3.0, 0.0, 3.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        flex: 9,
+                                        child: Container(
+                                          width: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 0.0, 0.0, 0.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 3.0, 0.0, 3.0),
+                                                  child: Text(
+                                                    listItem.name,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmallFamily,
+                                                          fontSize: 13.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmallIsCustom,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                         ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 0.0, 0.0, 0.0),
+                                      ),
+                                      Expanded(
+                                        flex: 4,
+                                        child: Container(
+                                          width: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 3.0, 0.0, 3.0),
                                                 child: Text(
-                                                  listItem.name,
+                                                  dateTimeFormat(
+                                                    "jm",
+                                                    DateTime
+                                                        .fromMillisecondsSinceEpoch(
+                                                            listItem.kotTime),
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
                                                   style:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .titleMedium
+                                                          .labelSmall
                                                           .override(
                                                             fontFamily:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMediumFamily,
+                                                                    .labelSmallFamily,
+                                                            fontSize: 13.0,
                                                             letterSpacing: 0.0,
                                                             useGoogleFonts:
                                                                 !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMediumIsCustom,
+                                                                    .labelSmallIsCustom,
                                                           ),
                                                 ),
                                               ),
@@ -435,169 +474,41 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                           ),
                                         ),
                                       ),
-                                    ),
-                                    Expanded(
-                                      flex: 4,
-                                      child: Container(
-                                        width: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 3.0, 0.0, 3.0),
-                                              child: Text(
-                                                dateTimeFormat(
-                                                  "jm",
-                                                  DateTime
-                                                      .fromMillisecondsSinceEpoch(
-                                                          listItem.kotTime),
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmallFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleSmallIsCustom,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 2,
-                                      child: Container(
-                                        width: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 3.0, 0.0, 3.0),
-                                              child: Text(
-                                                listItem.quantity.toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmallFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleSmallIsCustom,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Container(
-                                        width: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 3.0, 0.0, 3.0),
-                                              child: Text(
-                                                listItem.price.toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmallFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleSmallIsCustom,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Container(
-                                        width: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 10.0, 0.0),
+                                      Expanded(
+                                        flex: 2,
+                                        child: Container(
+                                          width: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 3.0, 0.0, 3.0),
                                                 child: Text(
-                                                  listItem.total.toString(),
-                                                  textAlign: TextAlign.end,
+                                                  listItem.quantity.toString(),
+                                                  textAlign: TextAlign.center,
                                                   style:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .titleMedium
+                                                          .labelSmall
                                                           .override(
                                                             fontFamily:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMediumFamily,
+                                                                    .labelSmallFamily,
+                                                            fontSize: 13.0,
                                                             letterSpacing: 0.0,
                                                             useGoogleFonts:
                                                                 !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMediumIsCustom,
+                                                                    .labelSmallIsCustom,
                                                           ),
                                                 ),
                                               ),
@@ -605,8 +516,98 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      Expanded(
+                                        flex: 3,
+                                        child: Container(
+                                          width: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 3.0, 0.0, 3.0),
+                                                child: Text(
+                                                  listItem.price.toString(),
+                                                  textAlign: TextAlign.center,
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                            fontSize: 13.0,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallIsCustom,
+                                                          ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        flex: 3,
+                                        child: Container(
+                                          width: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 10.0, 0.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 3.0, 0.0, 3.0),
+                                                  child: Text(
+                                                    listItem.total.toString(),
+                                                    textAlign: TextAlign.end,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmallFamily,
+                                                          fontSize: 13.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmallIsCustom,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ].divide(SizedBox(width: 4.0)),
+                                  ),
                                 ),
                               );
                             },
@@ -618,44 +619,25 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                        child: Container(
-                          width: 100.0,
-                          decoration: BoxDecoration(),
-                          child: Visibility(
-                            visible: false,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 3.0, 0.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'kuepccr8' /* Bill No. : */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts:
-                                              !FlutterFlowTheme.of(context)
-                                                  .titleSmallIsCustom,
-                                        ),
-                                  ),
-                                ),
-                                Text(
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                      child: Container(
+                        decoration: BoxDecoration(),
+                        child: Visibility(
+                          visible: false,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 3.0, 0.0),
+                                child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'ydtt4sps' /* 54569883 */,
+                                    'kuepccr8' /* Bill No. : */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
@@ -668,8 +650,23 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                                 .titleSmallIsCustom,
                                       ),
                                 ),
-                              ],
-                            ),
+                              ),
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'ydtt4sps' /* 54569883 */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .titleSmallIsCustom,
+                                    ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -690,14 +687,14 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                   'jswwo6ja' /* Total Amount : */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
+                                    .titleMedium
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
-                                          .headlineSmallFamily,
+                                          .titleMediumFamily,
                                       letterSpacing: 0.0,
                                       useGoogleFonts:
                                           !FlutterFlowTheme.of(context)
-                                              .headlineSmallIsCustom,
+                                              .titleMediumIsCustom,
                                     ),
                               ),
                             ),
@@ -710,14 +707,15 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 ),
                                 textAlign: TextAlign.end,
                                 style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
+                                    .titleMedium
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
-                                          .headlineSmallFamily,
+                                          .titleMediumFamily,
                                       letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
                                       useGoogleFonts:
                                           !FlutterFlowTheme.of(context)
-                                              .headlineSmallIsCustom,
+                                              .titleMediumIsCustom,
                                     ),
                               ),
                             ),
@@ -728,14 +726,15 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                               ),
                               textAlign: TextAlign.end,
                               style: FlutterFlowTheme.of(context)
-                                  .displayMedium
+                                  .headlineLarge
                                   .override(
                                     fontFamily: FlutterFlowTheme.of(context)
-                                        .displayMediumFamily,
+                                        .headlineLargeFamily,
                                     letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
                                     useGoogleFonts:
                                         !FlutterFlowTheme.of(context)
-                                            .displayMediumIsCustom,
+                                            .headlineLargeIsCustom,
                                   ),
                             ),
                           ],
