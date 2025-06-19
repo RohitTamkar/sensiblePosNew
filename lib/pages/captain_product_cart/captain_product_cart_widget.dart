@@ -730,28 +730,37 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(8.0),
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  6.0,
+                                                                  12.0,
+                                                                  6.0),
                                                       child: Text(
                                                         FFAppState().tableNo,
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  FlutterFlowTheme.of(
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMediumFamily,
-                                                              fontSize: 20.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                              useGoogleFonts:
-                                                                  !FlutterFlowTheme.of(
+                                                                      .headlineSmallFamily,
+                                                                  color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMediumIsCustom,
-                                                            ),
+                                                                      .info,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
+                                                                ),
                                                       ),
                                                     ),
                                                   ),
@@ -1621,38 +1630,29 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                           ),
                                         ),
                                       ),
-                                      Flexible(
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 5.0),
                                         child: Container(
-                                          decoration: BoxDecoration(),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 5.0, 0.0),
-                                            child: Container(
-                                              width: 750.0,
-                                              height: 50.0,
-                                              child: custom_widgets
-                                                  .SearchHiveprdtable(
-                                                width: 750.0,
-                                                height: 50.0,
-                                                billno: FFAppState().selBill,
-                                                billnum: FFAppState()
-                                                    .selBill
-                                                    .toString(),
-                                                disAmt: FFAppState().disAmt,
-                                                delChargs:
-                                                    FFAppState().delCharges,
-                                                purchase: false,
-                                                document:
-                                                    FFAppState().productHive,
-                                                taxcollection:
-                                                    widget!.taxcollection!,
-                                                appSettingsRecord:
-                                                    captainProductCartAppSettingsRecord!,
-                                                unitcollection:
-                                                    containerUnitTypeRecordList,
-                                              ),
-                                            ),
+                                          width: double.infinity,
+                                          height: 45.0,
+                                          child:
+                                              custom_widgets.SearchHiveprdtable(
+                                            width: double.infinity,
+                                            height: 45.0,
+                                            billno: FFAppState().selBill,
+                                            billnum:
+                                                FFAppState().selBill.toString(),
+                                            disAmt: FFAppState().disAmt,
+                                            delChargs: FFAppState().delCharges,
+                                            purchase: false,
+                                            document: FFAppState().productHive,
+                                            taxcollection:
+                                                widget!.taxcollection!,
+                                            appSettingsRecord:
+                                                captainProductCartAppSettingsRecord!,
+                                            unitcollection:
+                                                containerUnitTypeRecordList,
                                           ),
                                         ),
                                       ),
