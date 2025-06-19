@@ -376,36 +376,34 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                               size: 24.0,
                                             ),
                                           ),
-                                          Flexible(
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 3.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  FFAppState().outletName,
-                                                  'SENSIBLE CONNECT SOLUTION',
-                                                ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmallFamily,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryBtnText,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      useGoogleFonts:
-                                                          !FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmallIsCustom,
-                                                    ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 3.0, 0.0),
+                                            child: Text(
+                                              valueOrDefault<String>(
+                                                FFAppState().outletName,
+                                                'SENSIBLE CONNECT SOLUTION',
                                               ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallFamily,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                    fontSize: 14.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w600,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallIsCustom,
+                                                  ),
                                             ),
                                           ),
                                           Flexible(

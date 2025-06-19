@@ -3637,42 +3637,38 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                                                                                   children: [
                                                                                                                     if (!productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableRegionallanguage').toList().firstOrNull!.value)
-                                                                                                                      Flexible(
-                                                                                                                        child: Padding(
-                                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
-                                                                                                                          child: Text(
-                                                                                                                            productListItem.name,
-                                                                                                                            textAlign: TextAlign.center,
-                                                                                                                            style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                                                                  color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                                                                  fontSize: 14.0,
-                                                                                                                                  letterSpacing: 0.0,
-                                                                                                                                  fontWeight: FontWeight.w600,
-                                                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
-                                                                                                                                ),
-                                                                                                                          ),
+                                                                                                                      Padding(
+                                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                                        child: Text(
+                                                                                                                          productListItem.name,
+                                                                                                                          textAlign: TextAlign.center,
+                                                                                                                          style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                                                color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                                fontSize: 14.0,
+                                                                                                                                letterSpacing: 0.0,
+                                                                                                                                fontWeight: FontWeight.w600,
+                                                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                                                              ),
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     if (productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'enableRegionallanguage').toList()?.firstOrNull?.value ?? true)
-                                                                                                                      Flexible(
-                                                                                                                        child: Padding(
-                                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
-                                                                                                                          child: Text(
-                                                                                                                            valueOrDefault<String>(
-                                                                                                                              productListItem.regionalName,
-                                                                                                                              'Not AV',
-                                                                                                                            ),
-                                                                                                                            textAlign: TextAlign.center,
-                                                                                                                            style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                                                                  color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                                                                  fontSize: 14.0,
-                                                                                                                                  letterSpacing: 0.0,
-                                                                                                                                  fontWeight: FontWeight.w600,
-                                                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
-                                                                                                                                ),
+                                                                                                                      Padding(
+                                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                                        child: Text(
+                                                                                                                          valueOrDefault<String>(
+                                                                                                                            productListItem.regionalName,
+                                                                                                                            'Not AV',
                                                                                                                           ),
+                                                                                                                          textAlign: TextAlign.center,
+                                                                                                                          style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                                                color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                                fontSize: 14.0,
+                                                                                                                                letterSpacing: 0.0,
+                                                                                                                                fontWeight: FontWeight.w600,
+                                                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                                                              ),
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                     Padding(
