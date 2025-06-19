@@ -44,7 +44,7 @@ class _SplashScreenWindowsWidgetState extends State<SplashScreenWindowsWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().checkinternetConnection) {
+      if (true) {
         _model.docRes = await actions.getPlatformDetails(
           isWeb.toString(),
         );
