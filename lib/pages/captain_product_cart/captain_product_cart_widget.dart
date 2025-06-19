@@ -347,11 +347,29 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              scaffoldKey.currentState!
-                                                  .openDrawer();
+                                              context.goNamed(
+                                                CaptainTableListWidget
+                                                    .routeName,
+                                                queryParameters: {
+                                                  'taxcollection':
+                                                      serializeParam(
+                                                    widget!.taxcollection,
+                                                    ParamType.Document,
+                                                    isList: true,
+                                                  ),
+                                                  'doc': serializeParam(
+                                                    widget!.doc,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  'taxcollection':
+                                                      widget!.taxcollection,
+                                                },
+                                              );
                                             },
                                             child: Icon(
-                                              Icons.dehaze,
+                                              Icons.chevron_left,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
