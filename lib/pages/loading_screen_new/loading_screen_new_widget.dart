@@ -56,7 +56,7 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.internetconnection = await actions.checkInternetConnection();
-      if (true) {
+      if (_model.internetconnection!) {
         _model.productListCopy = await queryProductRecordOnce(
           parent: FFAppState().outletIdRef,
         );
@@ -353,7 +353,7 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
           builder: (alertDialogContext) {
             return AlertDialog(
               title: Text('Alert'),
-              content: Text('check internet connection !'),
+              content: Text('No Internet Connection !'),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(alertDialogContext),

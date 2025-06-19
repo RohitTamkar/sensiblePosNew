@@ -44,118 +44,135 @@ class _SplashScreenWindowsWidgetState extends State<SplashScreenWindowsWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.docRes = await actions.getPlatformDetails(
-        isWeb.toString(),
-      );
-      _model.platform = await actions.checkPlatform(
-        isWeb.toString(),
-      );
-      _model.deiviceexistnew = await queryDeviceRecordOnce(
-        queryBuilder: (deviceRecord) => deviceRecord.where(
-          'deviceId',
-          isEqualTo: getJsonField(
-            _model.docRes,
-            r'''$.deviceId''',
-          ).toString().toString(),
-        ),
-        singleRecord: true,
-      ).then((s) => s.firstOrNull);
-      if (_model.deiviceexistnew?.deviceId ==
-          getJsonField(
-            _model.docRes,
-            r'''$.deviceId''',
-          ).toString().toString()) {
-      } else {
-        var deviceRecordReference = DeviceRecord.collection.doc();
-        await deviceRecordReference.set(createDeviceRecordData(
-          createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
-          deviceId: valueOrDefault<String>(
+      if (FFAppState().checkinternetConnection) {
+        _model.docRes = await actions.getPlatformDetails(
+          isWeb.toString(),
+        );
+        _model.platform = await actions.checkPlatform(
+          isWeb.toString(),
+        );
+        _model.deiviceexistnew = await queryDeviceRecordOnce(
+          queryBuilder: (deviceRecord) => deviceRecord.where(
+            'deviceId',
+            isEqualTo: getJsonField(
+              _model.docRes,
+              r'''$.deviceId''',
+            ).toString().toString(),
+          ),
+          singleRecord: true,
+        ).then((s) => s.firstOrNull);
+        if (_model.deiviceexistnew?.deviceId ==
             getJsonField(
               _model.docRes,
               r'''$.deviceId''',
-            )?.toString()?.toString(),
-            '0',
-          ),
-          active: false,
-          brand: getJsonField(
-            _model.docRes,
-            r'''$.brand''',
-          ).toString().toString(),
-          manufacture: getJsonField(
-            _model.docRes,
-            r'''$.manufacturer''',
-          ).toString().toString(),
-          model: getJsonField(
-            _model.docRes,
-            r'''$.model''',
-          ).toString().toString(),
-          outletName: '',
-          outletId: '',
-          board: '',
-          serial: getJsonField(
-            _model.docRes,
-            r'''$.deviceId''',
-          ).toString().toString(),
-          branch: '',
-          billingType: FFAppState().navigate == 'GROCERY'
-              ? 'REGULAR'
-              : FFAppState().navigate,
-        ));
-        _model.refnew = DeviceRecord.getDocumentFromData(
-            createDeviceRecordData(
-              createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
-              deviceId: valueOrDefault<String>(
-                getJsonField(
-                  _model.docRes,
-                  r'''$.deviceId''',
-                )?.toString()?.toString(),
-                '0',
-              ),
-              active: false,
-              brand: getJsonField(
-                _model.docRes,
-                r'''$.brand''',
-              ).toString().toString(),
-              manufacture: getJsonField(
-                _model.docRes,
-                r'''$.manufacturer''',
-              ).toString().toString(),
-              model: getJsonField(
-                _model.docRes,
-                r'''$.model''',
-              ).toString().toString(),
-              outletName: '',
-              outletId: '',
-              board: '',
-              serial: getJsonField(
+            ).toString().toString()) {
+        } else {
+          var deviceRecordReference = DeviceRecord.collection.doc();
+          await deviceRecordReference.set(createDeviceRecordData(
+            createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+            deviceId: valueOrDefault<String>(
+              getJsonField(
                 _model.docRes,
                 r'''$.deviceId''',
-              ).toString().toString(),
-              branch: '',
-              billingType: FFAppState().navigate == 'GROCERY'
-                  ? 'REGULAR'
-                  : FFAppState().navigate,
+              )?.toString()?.toString(),
+              '0',
             ),
-            deviceRecordReference);
-
-        await _model.refnew!.reference.update(createDeviceRecordData(
-          id: _model.refnew?.reference.id,
-        ));
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              'Device Add Succefully!',
-              style: TextStyle(
-                color: FlutterFlowTheme.of(context).primaryBackground,
+            active: false,
+            brand: getJsonField(
+              _model.docRes,
+              r'''$.brand''',
+            ).toString().toString(),
+            manufacture: getJsonField(
+              _model.docRes,
+              r'''$.manufacturer''',
+            ).toString().toString(),
+            model: getJsonField(
+              _model.docRes,
+              r'''$.model''',
+            ).toString().toString(),
+            outletName: '',
+            outletId: '',
+            board: '',
+            serial: getJsonField(
+              _model.docRes,
+              r'''$.deviceId''',
+            ).toString().toString(),
+            branch: '',
+            billingType: FFAppState().navigate == 'GROCERY'
+                ? 'REGULAR'
+                : FFAppState().navigate,
+          ));
+          _model.refnew = DeviceRecord.getDocumentFromData(
+              createDeviceRecordData(
+                createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+                deviceId: valueOrDefault<String>(
+                  getJsonField(
+                    _model.docRes,
+                    r'''$.deviceId''',
+                  )?.toString()?.toString(),
+                  '0',
+                ),
+                active: false,
+                brand: getJsonField(
+                  _model.docRes,
+                  r'''$.brand''',
+                ).toString().toString(),
+                manufacture: getJsonField(
+                  _model.docRes,
+                  r'''$.manufacturer''',
+                ).toString().toString(),
+                model: getJsonField(
+                  _model.docRes,
+                  r'''$.model''',
+                ).toString().toString(),
+                outletName: '',
+                outletId: '',
+                board: '',
+                serial: getJsonField(
+                  _model.docRes,
+                  r'''$.deviceId''',
+                ).toString().toString(),
+                branch: '',
+                billingType: FFAppState().navigate == 'GROCERY'
+                    ? 'REGULAR'
+                    : FFAppState().navigate,
               ),
+              deviceRecordReference);
+
+          await _model.refnew!.reference.update(createDeviceRecordData(
+            id: _model.refnew?.reference.id,
+          ));
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'Device Add Succefully!',
+                style: TextStyle(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                ),
+              ),
+              duration: Duration(milliseconds: 4000),
+              backgroundColor: FlutterFlowTheme.of(context).info,
             ),
-            duration: Duration(milliseconds: 4000),
-            backgroundColor: FlutterFlowTheme.of(context).info,
-          ),
+          );
+        }
+
+        context.pushNamed(WindowsLoginWidget.routeName);
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              content: Text('No Internet Available !'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
         );
       }
-
-      context.pushNamed(WindowsLoginWidget.routeName);
     });
 
     animationsMap.addAll({
