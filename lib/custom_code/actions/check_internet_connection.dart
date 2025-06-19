@@ -17,6 +17,6 @@ import 'package:internet_connection_checker_plus/internet_connection_checker_plu
 Future<bool> checkInternetConnection() async {
   // This returns true if the app is connected to the internet (determined by checking access to certain websites) and false if no internet connection can be established
 
-  bool result = await InternetConnection().hasInternetAccess;
+  bool result = true; //await InternetConnection().hasInternetAccess;
   return result;
 }

@@ -4094,7 +4094,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             width:
                                                                                 MediaQuery.sizeOf(context).width * 0.49,
                                                                             height:
-                                                                                MediaQuery.sizeOf(context).height * 0.07,
+                                                                                MediaQuery.sizeOf(context).height * 0.08,
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
