@@ -56,13 +56,13 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
           },
         );
       }
-      FFAppState().filtervalue = '';
-      FFAppState().filterDate = functions.getDayId();
-      FFAppState().update(() {});
       _model.saleReport = await actions.productSaleReport(
         functions.getDayId(),
         FFAppState().outletIdRef!.id,
       );
+      FFAppState().filtervalue = '';
+      FFAppState().filterDate = functions.getDayId();
+      safeSetState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));

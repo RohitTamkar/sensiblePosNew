@@ -64,10 +64,8 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
         return;
       }
       FFAppState().filterDate = getCurrentTimestamp.toString();
-      FFAppState().selectStartDate = getCurrentTimestamp.millisecondsSinceEpoch;
-      FFAppState().selectEndDate = functions
-          .returnDateNextday(getCurrentTimestamp)
-          .millisecondsSinceEpoch;
+      FFAppState().selectStartDate = functions.getCurrentMonth('first');
+      FFAppState().selectEndDate = functions.getCurrentMonth('last');
       FFAppState().update(() {});
     });
 
@@ -301,12 +299,39 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 15.0, 0.0),
                                     child: Text(
-                                      dateTimeFormat(
+                                      'Start Date:${dateTimeFormat(
                                         "yMMMd",
-                                        getCurrentTimestamp,
+                                        DateTime.fromMillisecondsSinceEpoch(
+                                            FFAppState().selectStartDate),
                                         locale: FFLocalizations.of(context)
                                             .languageCode,
-                                      ),
+                                      )}',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBtnText,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
+                                          ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 15.0, 0.0),
+                                    child: Text(
+                                      'End Date:${dateTimeFormat(
+                                        "yMMMd",
+                                        DateTime.fromMillisecondsSinceEpoch(
+                                            FFAppState().selectEndDate),
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
+                                      )}',
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
