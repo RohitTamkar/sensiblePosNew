@@ -4944,6 +4944,8 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                         ).toString(),
                                                                                         isDeleted: false,
                                                                                         count: FFAppState().newcount,
+                                                                                        kotStatus: 'PENDING',
+                                                                                        tableId: FFAppState().tableNo,
                                                                                       ),
                                                                                       ...mapToFirestore(
                                                                                         {
@@ -4991,6 +4993,8 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                         ).toString(),
                                                                                         isDeleted: false,
                                                                                         count: FFAppState().newcount,
+                                                                                        kotStatus: 'PENDING',
+                                                                                        tableId: FFAppState().tableNo,
                                                                                       ),
                                                                                       ...mapToFirestore(
                                                                                         {
@@ -5479,6 +5483,8 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                   ).toString(),
                                                                                   isDeleted: false,
                                                                                   count: FFAppState().newcount,
+                                                                                  kotStatus: 'PENDING',
+                                                                                  tableId: FFAppState().tableNo,
                                                                                 ),
                                                                                 ...mapToFirestore(
                                                                                   {
@@ -5526,6 +5532,8 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                   ).toString(),
                                                                                   isDeleted: false,
                                                                                   count: FFAppState().newcount,
+                                                                                  kotStatus: 'PENDING',
+                                                                                  tableId: FFAppState().tableNo,
                                                                                 ),
                                                                                 ...mapToFirestore(
                                                                                   {

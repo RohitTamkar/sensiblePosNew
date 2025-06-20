@@ -181,6 +181,11 @@ class InvoiceRecord extends FirestoreRecord {
   bool get isDeleted => _isDeleted ?? false;
   bool hasIsDeleted() => _isDeleted != null;
 
+  // "tableId" field.
+  String? _tableId;
+  String get tableId => _tableId ?? '';
+  bool hasTableId() => _tableId != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -220,6 +225,7 @@ class InvoiceRecord extends FirestoreRecord {
     _weight = snapshotData['weight'] as String?;
     _source = snapshotData['source'] as String?;
     _isDeleted = snapshotData['isDeleted'] as bool?;
+    _tableId = snapshotData['tableId'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -294,6 +300,7 @@ Map<String, dynamic> createInvoiceRecordData({
   String? weight,
   String? source,
   bool? isDeleted,
+  String? tableId,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -329,6 +336,7 @@ Map<String, dynamic> createInvoiceRecordData({
       'weight': weight,
       'source': source,
       'isDeleted': isDeleted,
+      'tableId': tableId,
     }.withoutNulls,
   );
 
@@ -373,7 +381,8 @@ class InvoiceRecordDocumentEquality implements Equality<InvoiceRecord> {
         e1?.kotStatus == e2?.kotStatus &&
         e1?.weight == e2?.weight &&
         e1?.source == e2?.source &&
-        e1?.isDeleted == e2?.isDeleted;
+        e1?.isDeleted == e2?.isDeleted &&
+        e1?.tableId == e2?.tableId;
   }
 
   @override
@@ -410,7 +419,8 @@ class InvoiceRecordDocumentEquality implements Equality<InvoiceRecord> {
         e?.kotStatus,
         e?.weight,
         e?.source,
-        e?.isDeleted
+        e?.isDeleted,
+        e?.tableId
       ]);
 
   @override
