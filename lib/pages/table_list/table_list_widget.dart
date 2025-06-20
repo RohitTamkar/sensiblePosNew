@@ -2981,6 +2981,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                             (context) {
                                                                           final bill = functions
                                                                               .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                              .where((e) => !getJsonField(
+                                                                                    e,
+                                                                                    r'''$.isDeleted''',
+                                                                                  ))
                                                                               .toList();
 
                                                                           return ListView
@@ -3339,7 +3343,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                               onTap: () async {
                                                                                                 FFAppState().groceryshow = false;
                                                                                                 safeSetState(() {});
-                                                                                                _model.res20 = await actions.removeHoldListItem(
+                                                                                                await actions.removeListItemTable(
                                                                                                   getJsonField(
                                                                                                     billItem,
                                                                                                     r'''$''',

@@ -58,6 +58,7 @@ Future<List<dynamic>> addToHoldListprdplus(
       "price": (document.price)!.toDouble(),
       "quantity": quantity,
       "qtystring": quantity,
+
       "total": total, // Include taxAmt for exclusive tax
       "id": document!.id,
       "catId": document!.categoryId,

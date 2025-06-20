@@ -67,6 +67,7 @@ Future<List<dynamic>> addToHoldListprdplusGrocery(
       "name": document!.name,
       "price": (document.sellingPrice)!.toDouble(),
       "quantity": quantity,
+
       "unit": unitRecord.unitType,
       "total": total, // Include taxAmt for exclusive tax
       "id": document!.id,

@@ -54,7 +54,7 @@ Future<List<SelItemListStruct>> filterProductsKot(
               disPer: itemList[j]["disPer"],
               disAmt: itemList[j]["disAmt"],
               qtystring: itemList[j]["qtystring"].toString(),
-              isDeletedItem: false,
+              isDeletedItem: itemList[j]["isDeleted"],
               printKot: kot,
               kotTime: timems,
             );

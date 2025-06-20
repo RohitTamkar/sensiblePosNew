@@ -116,6 +116,7 @@ Future<List<dynamic>> addToHoldListprdtable(
       "stockable": document.stockable,
       "currentStock": document.stock,
       "printKot": false,
+      "isDeleted": false,
       "kotTime": getCurrentTimestamp.millisecondsSinceEpoch,
     };
 

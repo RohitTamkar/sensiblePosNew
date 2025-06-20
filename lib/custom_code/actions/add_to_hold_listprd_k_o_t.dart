@@ -113,7 +113,8 @@ Future<List<dynamic>> addToHoldListprdKOT(
               "stockable": false,
               "currentStock": 0,
               "printKot": document.printKot,
-              "kotTime": document.kotTime,
+              "kotTime": document.isDeletedItem,
+              "isDeleted": false,
             };
             itemList.add(data);
           }

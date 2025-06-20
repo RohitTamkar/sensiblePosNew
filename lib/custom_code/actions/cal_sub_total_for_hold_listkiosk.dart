@@ -28,23 +28,25 @@ Future<double> calSubTotalForHoldListkiosk(
           itemList = (allBillList[i]["details"]["itemList"]);
           if (itemList.isNotEmpty) {
             for (int i = 0; i < itemList.length; i++) {
-              tax += itemList[i]["taxAmt"];
-              //tax = 0;
-              double tax2 = itemList[i]["taxAmt"];
-              if (inclusiveorexclusive.toLowerCase() == 'exclusive') {
-                if (itemList[i]["taxPer"] > 0.0) {
-                  total +=
-                      itemList[i]["quantity"] * itemList[i]["price"] + tax2;
+              if (itemList[i]["isDeleted"] = false) {
+                tax += itemList[i]["taxAmt"];
+                //tax = 0;
+                double tax2 = itemList[i]["taxAmt"];
+                if (inclusiveorexclusive.toLowerCase() == 'exclusive') {
+                  if (itemList[i]["taxPer"] > 0.0) {
+                    total +=
+                        itemList[i]["quantity"] * itemList[i]["price"] + tax2;
+                  } else {
+                    total += itemList[i]["quantity"] * itemList[i]["price"];
+                  }
                 } else {
                   total += itemList[i]["quantity"] * itemList[i]["price"];
                 }
-              } else {
-                total += itemList[i]["quantity"] * itemList[i]["price"];
+                // total += itemList[i]["total"];
+                qty += itemList[i]["quantity"];
+                print("total");
+                print(total);
               }
-              // total += itemList[i]["total"];
-              qty += itemList[i]["quantity"];
-              print("total");
-              print(total);
             }
           }
           FFAppState().subTotal = total.toDouble();

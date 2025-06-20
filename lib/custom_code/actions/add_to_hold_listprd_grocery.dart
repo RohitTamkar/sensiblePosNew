@@ -109,6 +109,7 @@ Future<List<dynamic>> addToHoldListprdGrocery(
       "expDate": " ",
       "stockable": document.stockable,
       "currentStock": document.stock,
+      "isDeleted": false,
     };
 
     // Add or update item in the bill list
