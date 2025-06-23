@@ -9,15 +9,7 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
 import '/custom_code/actions/index.dart' as actions;
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
 
 Future<List<dynamic>> addToHoldListprdKOT(
   int billno,
@@ -113,8 +105,8 @@ Future<List<dynamic>> addToHoldListprdKOT(
               "stockable": false,
               "currentStock": 0,
               "printKot": document.printKot,
-              "kotTime": document.isDeletedItem,
-              "isDeleted": false,
+              "kotTime": document.kotTime,
+              "isDeleted": document.isDeletedItem,
             };
             itemList.add(data);
           }

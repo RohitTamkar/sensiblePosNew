@@ -2449,7 +2449,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                'xii4rxsy' /* Bill no(12345679) */,
+                                                                'xii4rxsy' /* Enter Bill No */,
                                                               ),
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
@@ -2717,7 +2717,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                '36zw03mb' /* 2020-06-07 */,
+                                                                '36zw03mb' /* Enter Date  */,
                                                               ),
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
@@ -2918,9 +2918,14 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                           .delCharges,
                                                                   document: FFAppState()
                                                                       .productHive
-                                                                      .where((e) =>
-                                                                          e.stockable)
-                                                                      .toList(),
+                                                                      .where((e) => e
+                                                                          .stockable)
+                                                                      .toList()
+                                                                      .sortedList(
+                                                                          keyOf: (e) => e
+                                                                              .name,
+                                                                          desc:
+                                                                              false),
                                                                   taxcollection:
                                                                       widget!
                                                                           .taxDetails!,

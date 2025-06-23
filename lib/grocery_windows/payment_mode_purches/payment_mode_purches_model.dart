@@ -89,6 +89,12 @@ class PaymentModePurchesModel
   List<ProductStructStruct>? newupdatedproductlist22;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   PartyRecord? partydetails;
+  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
+  bool? resDevice2CopyCopy;
+  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
+  bool? connectdevice4;
+  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
+  List<dynamic>? selected4;
   // Stores action output result for [Custom Action - generateInvoice] action in Button widget.
   String? returnurl2;
 

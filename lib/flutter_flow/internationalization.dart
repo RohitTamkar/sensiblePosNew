@@ -18305,7 +18305,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     'xii4rxsy': {
-      'en': 'Bill no(12345679)',
+      'en': 'Enter Bill No',
       'hi': 'बिल नं(12345679)',
       'kn': 'ಬಿಲ್ ಸಂಖ್ಯೆ (12345679)',
       'mr': 'बिल क्रमांक (१२३४५६७९)',
@@ -18329,7 +18329,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     '36zw03mb': {
-      'en': '2020-06-07',
+      'en': 'Enter Date ',
       'hi': '2020-06-06T18:30:00Z',
       'kn': '2020-06-06ಟಿ 18:30:00ಝಡ್',
       'mr': '२०२०-०६-०६ट१८:३०:००झ',
@@ -22977,6 +22977,30 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ugec74qw': {
       'en': '35mm*25mm',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    'gaaoxjvp': {
+      'en': '50mm*25mm',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    'vfjs8di4': {
+      'en': '35mm*15mm',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    '76voyilj': {
+      'en': '25mm*15mm',
       'hi': '',
       'kn': '',
       'mr': '',

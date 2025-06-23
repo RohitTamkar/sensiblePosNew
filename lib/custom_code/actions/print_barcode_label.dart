@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:convert';
 
 import 'dart:typed_data';
@@ -145,29 +147,35 @@ Future printBarcodeLabel(
         tsplCommands.add('CLS');
 
         int y = 20;
+        if (shopeName) {
+          // Example shop or manufacturer info
+          tsplCommands
+              .add('TEXT 15,$y,"0",0,12,12,"${FFAppState().outletName}"');
+          y += 40;
+        }
 
         // Example shop or manufacturer info
-        tsplCommands.add('TEXT 15,$y,"0",0,12,12,"${FFAppState().outletName}"');
-        y += 40;
-        // Example shop or manufacturer info
-        tsplCommands.add('TEXT 15,$y,"0",0,9,9,"${branch}"');
-        y += 40;
-        tsplCommands.add('TEXT 15,$y,"0",0,9,9,"${contact}"');
-        y += 40;
-
+        if (branchflag) {
+          tsplCommands.add('TEXT 15,$y,"0",0,9,9,"${branch}"');
+          y += 40;
+        }
+        if (contactsflag) {
+          tsplCommands.add('TEXT 15,$y,"0",0,9,9,"${contact}"');
+          y += 40;
+        }
         // Item name
         String productName = product['name'] ?? "Item";
         if (productName.length > 18) {
           productName = productName.substring(0, 18) + '...';
         }
         tsplCommands.add('TEXT 15,$y,"0",0,0,12,"$productName"');
-        y += 50;
+        y += 40;
 
         // Net weight
         if (product.containsKey('netWt')) {
           tsplCommands.add(
               'TEXT 15,$y,"0",0,0,$fontSizeLarge,"Net Weight : ${product['netWt']} ${product['unit']}"');
-          y += 50;
+          y += 40;
         }
 
         // Batch number (if applicable)
@@ -188,39 +196,40 @@ Future printBarcodeLabel(
         // Price
         tsplCommands.add(
             'TEXT 200,$y,"0",0,0,$fontSizeLarge,"Price : RS ${product['price']?.toStringAsFixed(2) ?? "0.00"}"');
-        y += 50;
+        y += 40;
 
         //INGREDIENT
+        if (ingredient) {
+          if (product.containsKey('ingredient')) {
+            String ingrd = product['ingredient'];
+            const int maxLineLength =
+                20; // Adjust based on label width and font size
+            List<String> lines = [];
 
-        if (product.containsKey('ingredient')) {
-          String ingrd = product['ingredient'];
-          const int maxLineLength =
-              20; // Adjust based on label width and font size
-          List<String> lines = [];
-
-          // Manually split text into lines that fit the label width
-          while (ingrd.isNotEmpty) {
-            if (ingrd.length <= maxLineLength) {
-              lines.add(ingrd);
-              break;
-            } else {
-              int splitAt = ingrd.lastIndexOf(' ', maxLineLength);
-              if (splitAt == -1) splitAt = maxLineLength;
-              lines.add(ingrd.substring(0, splitAt).trim());
-              ingrd = ingrd.substring(splitAt).trim();
+            // Manually split text into lines that fit the label width
+            while (ingrd.isNotEmpty) {
+              if (ingrd.length <= maxLineLength) {
+                lines.add(ingrd);
+                break;
+              } else {
+                int splitAt = ingrd.lastIndexOf(' ', maxLineLength);
+                if (splitAt == -1) splitAt = maxLineLength;
+                lines.add(ingrd.substring(0, splitAt).trim());
+                ingrd = ingrd.substring(splitAt).trim();
+              }
             }
-          }
 
-          // Print each line at incremented y position
-          for (int i = 0; i < lines.length; i++) {
-            if (i == 0) {
-              tsplCommands.add(
-                  'TEXT 15,$y,"0",0,0,$fontSizeLarge,"Ingredient : ${lines[i]}"');
-            } else {
-              tsplCommands
-                  .add('TEXT 15,$y,"0",0,0,$fontSizeLarge,"${lines[i]}"');
+            // Print each line at incremented y position
+            for (int i = 0; i < lines.length; i++) {
+              if (i == 0) {
+                tsplCommands.add(
+                    'TEXT 15,$y,"0",0,0,$fontSizeLarge,"Ingredient : ${lines[i]}"');
+              } else {
+                tsplCommands
+                    .add('TEXT 15,$y,"0",0,0,$fontSizeLarge,"${lines[i]}"');
+              }
+              y += 40; // line spacing
             }
-            y += 30; // line spacing
           }
         }
 
@@ -249,6 +258,182 @@ Future printBarcodeLabel(
         //tsplCommands.add('BAR 0,420,800,2');
         // tsplCommands.add('BAR 0,480,800,2');
 
+        tsplCommands.add('PRINT 1,1');
+
+        allLabelsCommands.addAll(tsplCommands);
+      }
+    }
+  } else if (labelSize == '50mm*25mm') {
+    labelWidth = 50.0; // mm
+    labelHeight = 25.0; // mm
+    fontSizeLarge = 3; // adjust as needed
+    fontSizeMedium = 1;
+    fontSizeSmall = 0;
+    barcodeHeight = 15; // adjust for your printer
+    topMargin = 5;
+    bottomMargin = 5;
+    sideMargin = 2;
+
+    const int dpi = 203;
+    const double dotsPerMm = dpi / 25.4;
+
+    final int widthInDots = (labelWidth * dotsPerMm).round();
+    final int heightInDots = (labelHeight * dotsPerMm).round();
+
+    for (var product in productList) {
+      for (int i = 0; i < (product['quantity'] ?? 1); i++) {
+        List<String> tsplCommands = [];
+
+        // Label setup
+        tsplCommands.add('SIZE ${labelWidth} mm, ${labelHeight} mm');
+        tsplCommands.add('GAP 2.5 mm,0 mm\r\n');
+        tsplCommands.add('DIRECTION 1');
+        tsplCommands.add('DENSITY 12');
+        tsplCommands.add('CLS');
+        tsplCommands.add('REFERENCE 0,0');
+
+        // 1️⃣ Item name
+        String productName = product['name'] ?? "Item";
+        if (productName.length > 15) {
+          productName = productName.substring(0, 15) + '...';
+        }
+        tsplCommands.add('TEXT 20,10,"B.FNT",0,2,2,"$productName"\r\n');
+
+        // 2️⃣ MRP and Rate on the same line
+        String mrp = product['mrpPrice']?.toStringAsFixed(2) ?? "0.00";
+        String rate = product['price']?.toStringAsFixed(2) ?? "0.00";
+        tsplCommands
+            .add('TEXT 20,40,"3.EFT",0,1,1,"MRP:$mrp    Rate:$rate"\r\n');
+
+        // 3️⃣ Mfg Date & Exp Date
+        if (product.containsKey('mfgDate')) {
+          tsplCommands.add(
+              'TEXT 20,70,"3.EFT",0,1,1,"Mfg Date: ${product['mfgDate']}"\r\n');
+        }
+        if (product.containsKey('expDate')) {
+          tsplCommands.add(
+              'TEXT 20,90,"3.EFT",0,1,1,"Exp Date: ${product['expDate']}"\r\n');
+        }
+
+        // 4️⃣ Barcode
+        if (product['barcode']?.isNotEmpty ?? false) {
+          tsplCommands.add(
+              'BARCODE 20,120,"128",$barcodeHeight,1,0,2,2,"${product['barcode']}"\r\n');
+        }
+
+        // 5️⃣ Print command for this label
+        tsplCommands.add('PRINT 1,1');
+
+        allLabelsCommands.addAll(tsplCommands);
+      }
+    }
+  } else if (labelSize == '35mm*15mm') {
+    labelWidth = 35.0; // mm
+    labelHeight = 15.0; // mm
+    fontSizeLarge = 1; // smaller font for this small label
+    fontSizeMedium = 1;
+    fontSizeSmall = 0;
+    barcodeHeight = 50; // smaller height to fit within 15mm
+    topMargin = 2;
+    bottomMargin = 2;
+    sideMargin = 2;
+
+    const int dpi = 203;
+    const double dotsPerMm = dpi / 25.4;
+
+    final int widthInDots = (labelWidth * dotsPerMm).round();
+    final int heightInDots = (labelHeight * dotsPerMm).round();
+
+    for (var product in productList) {
+      for (int i = 0; i < (product['quantity'] ?? 1); i++) {
+        List<String> tsplCommands = [];
+
+        // Label setup
+        tsplCommands.add('SIZE ${labelWidth} mm, ${labelHeight} mm');
+        tsplCommands.add('GAP 2.5 mm,0 mm\r\n');
+        tsplCommands.add('DIRECTION 1');
+        tsplCommands.add('DENSITY 12');
+        tsplCommands.add('CLS');
+        tsplCommands.add('REFERENCE 0,0');
+
+        // 1️⃣ Item name
+        String productName = product['name'] ?? "Item";
+        if (productName.length > 10) {
+          productName = productName.substring(0, 10) + '...';
+        }
+        tsplCommands.add('TEXT 10,10,"B.FNT",0,1,1,"$productName"\r\n');
+
+        // 2️⃣ MRP
+        String mrp = product['mrpPrice']?.toStringAsFixed(2) ?? "0.00";
+        tsplCommands.add('TEXT 10,30,"3.EFT",0,1,1,"MRP: $mrp"\r\n');
+
+        // 3️⃣ Rate
+        String rate = product['price']?.toStringAsFixed(2) ?? "0.00";
+        tsplCommands.add('TEXT 10,50,"3.EFT",0,1,1,"Rate: $rate"\r\n');
+
+        // 4️⃣ Barcode
+        if (product['barcode']?.isNotEmpty ?? false) {
+          tsplCommands.add(
+              'BARCODE 10,70,"128",$barcodeHeight,1,0,2,2,"${product['barcode']}"\r\n');
+        }
+
+        // Print command
+        tsplCommands.add('PRINT 1,1');
+
+        allLabelsCommands.addAll(tsplCommands);
+      }
+    }
+  } else if (labelSize == '25mm*15mm') {
+    labelWidth = 25.0; // mm
+    labelHeight = 15.0; // mm
+    fontSizeLarge = 1; // small font for compact label
+    fontSizeMedium = 1;
+    fontSizeSmall = 0;
+    barcodeHeight = 40; // reduced to fit small height
+    topMargin = 2;
+    bottomMargin = 2;
+    sideMargin = 2;
+
+    const int dpi = 203;
+    const double dotsPerMm = dpi / 25.4;
+
+    final int widthInDots = (labelWidth * dotsPerMm).round();
+    final int heightInDots = (labelHeight * dotsPerMm).round();
+
+    for (var product in productList) {
+      for (int i = 0; i < (product['quantity'] ?? 1); i++) {
+        List<String> tsplCommands = [];
+
+        // Label setup
+        tsplCommands.add('SIZE ${labelWidth} mm, ${labelHeight} mm');
+        tsplCommands.add('GAP 2.5 mm,0 mm\r\n');
+        tsplCommands.add('DIRECTION 1');
+        tsplCommands.add('DENSITY 12');
+        tsplCommands.add('CLS');
+        tsplCommands.add('REFERENCE 0,0');
+
+        // 1️⃣ Item name
+        String productName = product['name'] ?? "Item";
+        if (productName.length > 8) {
+          productName = productName.substring(0, 8) + '...';
+        }
+        tsplCommands.add('TEXT 5,25,"B.FNT",0,1,1,"$productName"\r\n');
+
+        // 2️⃣ MRP
+        String mrp = product['mrpPrice']?.toStringAsFixed(2) ?? "0.00";
+        tsplCommands.add('TEXT 6,45,"3.EFT",0,1,1,"MRP: $mrp"\r\n');
+
+        // 3️⃣ Rate
+        String rate = product['price']?.toStringAsFixed(2) ?? "0.00";
+        tsplCommands.add('TEXT 5,65,"3.EFT",0,1,1,"Rate: $rate"\r\n');
+
+        // 4️⃣ Barcode
+        if (product['barcode']?.isNotEmpty ?? false) {
+          tsplCommands.add(
+              'BARCODE 2,82,"128",$barcodeHeight,1,0,2,2,"${product['barcode']}"\r\n');
+        }
+
+        // Print command
         tsplCommands.add('PRINT 1,1');
 
         allLabelsCommands.addAll(tsplCommands);

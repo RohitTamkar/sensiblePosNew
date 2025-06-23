@@ -3830,7 +3830,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                 singleRecord: true,
                                               ).then((s) => s.firstOrNull);
                                               _shouldSetState = true;
-                                              if (isAndroid) {
+                                              if (true) {
                                                 var confirmDialogResponse =
                                                     await showDialog<bool>(
                                                           context: context,
@@ -3883,10 +3883,51 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                   ).then((value) =>
                                                       safeSetState(() {}));
 
-                                                  await actions.labelPrint(
-                                                    _model.prdlinstnewtx!
-                                                        .toList(),
+                                                  if (!functions
+                                                      .isPrinterSelected(
+                                                          FFAppState()
+                                                              .printerDevice)!) {
+                                                    _model.resDevice2CopyCopy =
+                                                        await actions
+                                                            .scanPrinter(
+                                                      FFAppState().posMode,
+                                                    );
+                                                    _shouldSetState = true;
+                                                  }
+                                                  _model.connectdevice4 =
+                                                      await actions
+                                                          .connectDevice(
+                                                    FFAppState().printerDevice,
+                                                    FFAppState().printerIndex,
+                                                  );
+                                                  _shouldSetState = true;
+                                                  _model.selected4 =
+                                                      await actions
+                                                          .newCustomAction(
+                                                    FFAppState().printerIndex,
+                                                  );
+                                                  _shouldSetState = true;
+                                                  await actions
+                                                      .printBarcodeLabel(
+                                                    _model.selected4!.toList(),
+                                                    FFAppState()
+                                                        .isPrinterConnected,
+                                                    FFAppState().printerName,
                                                     FFAppState().laelsize,
+                                                    functions
+                                                        .filterBillList(
+                                                            FFAppState()
+                                                                .selBill,
+                                                            FFAppState()
+                                                                .allBillsList
+                                                                .toList())
+                                                        .toList(),
+                                                    '',
+                                                    '',
+                                                    false,
+                                                    false,
+                                                    false,
+                                                    false,
                                                   );
                                                 }
                                               }

@@ -28,7 +28,7 @@ Future<double> calSubTotalForHoldListkiosk(
           itemList = (allBillList[i]["details"]["itemList"]);
           if (itemList.isNotEmpty) {
             for (int i = 0; i < itemList.length; i++) {
-              if (itemList[i]["isDeleted"] = false) {
+              if (itemList[i]["isDeleted"] == false) {
                 tax += itemList[i]["taxAmt"];
                 //tax = 0;
                 double tax2 = itemList[i]["taxAmt"];
