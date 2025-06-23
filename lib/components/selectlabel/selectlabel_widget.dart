@@ -161,13 +161,13 @@ class _SelectlabelWidgetState extends State<SelectlabelWidget> {
                                 child: FlutterFlowRadioButton(
                                   options: [
                                     FFLocalizations.of(context).getText(
-                                      'xpzd4iqs' /* SIZE 50mm,25mm */,
+                                      'xpzd4iqs' /* 50mm*25mm */,
                                     ),
                                     FFLocalizations.of(context).getText(
-                                      'ay4fly8h' /* SIZE 35mm,15mm */,
+                                      'ay4fly8h' /* 35mm*15mm */,
                                     ),
                                     FFLocalizations.of(context).getText(
-                                      'dp8dx1n5' /* SIZE 25mm,15mm */,
+                                      'dp8dx1n5' /* 25mm*15mm */,
                                     )
                                   ].toList(),
                                   onChanged: (val) => safeSetState(() {}),

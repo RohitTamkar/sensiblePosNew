@@ -28088,7 +28088,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': 'เลือกขนาดฉลาก',
     },
     'xpzd4iqs': {
-      'en': 'SIZE 50mm,25mm',
+      'en': '50mm*25mm',
       'hi': 'आकार 50मिमी,25मिमी',
       'kn': 'ಗಾತ್ರ 50 ಮಿಮೀ, 25 ಮಿಮೀ',
       'mr': 'आकार ५० मिमी, २५ मिमी',
@@ -28096,7 +28096,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': 'ขนาด 50มม.,25มม.',
     },
     'ay4fly8h': {
-      'en': 'SIZE 35mm,15mm',
+      'en': '35mm*15mm',
       'hi': 'आकार 35मिमी,15मिमी',
       'kn': 'ಗಾತ್ರ 35 ಮಿಮೀ, 15 ಮಿಮೀ',
       'mr': 'आकार ३५ मिमी, १५ मिमी',
@@ -28104,7 +28104,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': 'ขนาด 35มม.,15มม.',
     },
     'dp8dx1n5': {
-      'en': 'SIZE 25mm,15mm',
+      'en': '25mm*15mm',
       'hi': 'आकार 25मिमी,15मिमी',
       'kn': 'ಗಾತ್ರ 25ಮಿಮೀ, 15ಮಿಮೀ',
       'mr': 'आकार २५ मिमी, १५ मिमी',
