@@ -744,49 +744,50 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      Expanded(
-                                        child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
-                                          },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            '3cgj4eoh' /*  */,
-                                          ),
-                                          icon: Icon(
-                                            Icons.print_sharp,
-                                            size: 15.0,
-                                          ),
-                                          options: FFButtonOptions(
-                                            height: 30.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts:
-                                                          !FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumIsCustom,
-                                                    ),
-                                            elevation: 0.0,
-                                            borderRadius:
-                                                BorderRadius.circular(6.0),
+                                      if (false)
+                                        Expanded(
+                                          child: FFButtonWidget(
+                                            onPressed: () {
+                                              print('Button pressed ...');
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              '3cgj4eoh' /*  */,
+                                            ),
+                                            icon: Icon(
+                                              Icons.print_sharp,
+                                              size: 15.0,
+                                            ),
+                                            options: FFButtonOptions(
+                                              height: 30.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 16.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
+                                                      ),
+                                              elevation: 0.0,
+                                              borderRadius:
+                                                  BorderRadius.circular(6.0),
+                                            ),
                                           ),
                                         ),
-                                      ),
                                       Expanded(
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -922,7 +923,7 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'hnkvya6y' /*  */,
+                                            'hnkvya6y' /* View */,
                                           ),
                                           icon: Icon(
                                             Icons.remove_red_eye_outlined,
@@ -933,7 +934,7 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
-                                            iconAlignment: IconAlignment.start,
+                                            iconAlignment: IconAlignment.end,
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),

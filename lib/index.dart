@@ -204,3 +204,5 @@ export '/pages/captain_table_list/captain_table_list_widget.dart'
     show CaptainTableListWidget;
 export '/pages/captain_product_cart/captain_product_cart_widget.dart'
     show CaptainProductCartWidget;
+export '/pages/report_screen/table_bill_report_new/table_bill_report_new_widget.dart'
+    show TableBillReportNewWidget;
