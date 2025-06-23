@@ -2617,9 +2617,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 billno:
                                                                     FFAppState()
                                                                         .selBill,
-                                                                document:
-                                                                    FFAppState()
-                                                                        .productHive,
+                                                                document: FFAppState()
+                                                                    .productHive
+                                                                    .sortedList(
+                                                                        keyOf: (e) => e
+                                                                            .name,
+                                                                        desc:
+                                                                            false),
                                                                 billnum:
                                                                     FFAppState()
                                                                         .selBill
