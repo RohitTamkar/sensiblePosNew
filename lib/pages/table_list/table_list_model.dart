@@ -171,7 +171,7 @@ class TableListModel extends FlutterFlowModel<TableListWidget> {
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   TableKotRecord? kot;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  TableKotRecord? tablekot;
+  TableKotRecord? tablekot2;
   // Stores action output result for [Custom Action - selectBillPrint] action in Button widget.
   List<dynamic>? returnedListkot;
   // Stores action output result for [Custom Action - newCustomAction] action in Button widget.

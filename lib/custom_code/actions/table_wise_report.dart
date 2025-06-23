@@ -10,6 +10,31 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 Future<List<dynamic>> tableWiseReport(List<InvoiceRecord> invoiceList) async {
-  // Add your function code here!
-  return [];
+  // Map to hold aggregated data per table
+  final Map<String, Map<String, dynamic>> tableReport = {};
+
+  for (var invoice in invoiceList) {
+    // Skip deleted invoices if needed
+    if (invoice.isDeleted == true) continue;
+
+    final tableId = invoice.tableId ?? 'Unknown';
+
+    if (!tableReport.containsKey(tableId)) {
+      tableReport[tableId] = {
+        'tableNo': tableId,
+        'noOfOrders': 0,
+        'totalSales': 0.0,
+        'discount': 0.0,
+        'netSales': 0.0,
+      };
+    }
+
+    tableReport[tableId]!['noOfOrders'] += invoice.count ?? 0;
+    tableReport[tableId]!['totalSales'] += invoice.billAmt ?? 0.0;
+    tableReport[tableId]!['discount'] += invoice.discountAmt ?? 0.0;
+    tableReport[tableId]!['netSales'] += invoice.finalBillAmt ?? 0.0;
+  }
+
+  // Return as a list
+  return tableReport.values.toList();
 }

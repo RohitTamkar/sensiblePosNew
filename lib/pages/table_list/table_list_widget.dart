@@ -4059,7 +4059,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                       await FFAppState().kotDocRef!.update({
                                                                                         ...createTableKotRecordData(
                                                                                           finalBillAmt: FFAppState().finalAmt,
-                                                                                          id: '',
+                                                                                          billAmt: FFAppState().billAmt,
                                                                                         ),
                                                                                         ...mapToFirestore(
                                                                                           {
@@ -4286,7 +4286,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                     safeSetState(() {});
                                                                                   }
 
-                                                                                  _model.tablekot = await queryTableKotRecordOnce(
+                                                                                  _model.tablekot2 = await queryTableKotRecordOnce(
                                                                                     parent: FFAppState().outletIdRef,
                                                                                     queryBuilder: (tableKotRecord) => tableKotRecord.where(
                                                                                       'id',
@@ -4314,7 +4314,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                       _model.devicekot!.toList(),
                                                                                       FFAppState().isPrinterConnected,
                                                                                       FFAppState().printerName,
-                                                                                      _model.tablekot!,
+                                                                                      _model.tablekot2!,
                                                                                       FFAppState().paperSize,
                                                                                       tableListAppSettingsRecord!,
                                                                                       _model.spoutletkot!.toList(),
@@ -4326,7 +4326,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                       _model.devicekot!.toList(),
                                                                                       FFAppState().isPrinterConnected,
                                                                                       FFAppState().printerName,
-                                                                                      _model.tablekot!,
+                                                                                      _model.tablekot2!,
                                                                                       FFAppState().paperSize,
                                                                                       _model.spoutletkot!.toList(),
                                                                                       tableListAppSettingsRecord!,
