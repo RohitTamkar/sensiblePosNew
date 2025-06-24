@@ -386,8 +386,11 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                       decoration: BoxDecoration(),
                       child: Builder(
                         builder: (context) {
-                          final list =
-                              widget!.tablekot?.productList?.toList() ?? [];
+                          final list = widget!.tablekot?.productList
+                                  ?.sortedList(
+                                      keyOf: (e) => e.kotTime, desc: false)
+                                  ?.toList() ??
+                              [];
 
                           return ListView.separated(
                             padding: EdgeInsets.zero,
@@ -411,7 +414,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                           color: listItem.isDeletedItem
                                               ? Color(0x6AEF0909)
                                               : FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
+                                                  .secondaryBackground,
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
@@ -464,7 +467,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                           color: listItem.isDeletedItem
                                               ? Color(0x6AEF0909)
                                               : FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
+                                                  .secondaryBackground,
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
@@ -516,7 +519,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                           color: listItem.isDeletedItem
                                               ? Color(0x6AEF0909)
                                               : FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
+                                                  .secondaryBackground,
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
@@ -561,7 +564,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                           color: listItem.isDeletedItem
                                               ? Color(0x6AEF0909)
                                               : FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
+                                                  .secondaryBackground,
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
@@ -606,7 +609,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                           color: listItem.isDeletedItem
                                               ? Color(0x6AEF0909)
                                               : FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
+                                                  .secondaryBackground,
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
