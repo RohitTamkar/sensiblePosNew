@@ -1,7 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/customer_details/customer_details_widget.dart';
-import '/components/header/header_widget.dart';
 import '/components/selection_option/selection_option_widget.dart';
 import '/components/sendemail/sendemail_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -235,7 +234,7 @@ class _CustomerLedgerreportWidgetState
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: MediaQuery.sizeOf(context).height * 0.12,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: Color(0xC81C4494),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -606,18 +605,6 @@ class _CustomerLedgerreportWidgetState
                                           ),
                                         ),
                                       ],
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 2,
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 0.0, 0.0),
-                                    child: wrapWithModel(
-                                      model: _model.headerModel,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: HeaderWidget(),
                                     ),
                                   ),
                                 ),
