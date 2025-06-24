@@ -59,6 +59,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
   var hasContainerTriggered10 = false;
   var hasContainerTriggered11 = false;
   var hasContainerTriggered12 = false;
+  var hasContainerTriggered13 = false;
   final animationsMap = <String, AnimationInfo>{};
 
   @override
@@ -308,6 +309,26 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
         ],
       ),
       'containerOnActionTriggerAnimation12': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: Offset(0.92, 0.92),
+            end: Offset(1.0, 1.0),
+          ),
+          SaturateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation13': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: false,
         effectsBuilder: () => [
@@ -611,680 +632,794 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                     width: 1.0,
                                   ),
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: MediaQuery.sizeOf(context).width *
-                                          1.0,
-                                      height:
-                                          MediaQuery.sizeOf(context).height *
-                                              0.06,
-                                      decoration: BoxDecoration(
-                                        color: Color(0x879DB8FF),
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            FFLocalizations.of(context).getText(
-                                              'k39j3g42' /* DAILY UPDATE */,
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
+                                        height:
+                                            MediaQuery.sizeOf(context).height *
+                                                0.06,
+                                        decoration: BoxDecoration(
+                                          color: Color(0x879DB8FF),
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'k39j3g42' /* DAILY UPDATE */,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .headlineSmall
+                                                  .override(
+                                                    fontFamily: FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .lineColor,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w600,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmallIsCustom,
+                                                  ),
                                             ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .headlineSmall
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmallFamily,
+                                          ],
+                                        ),
+                                      ),
+                                      ListView(
+                                        padding: EdgeInsets.zero,
+                                        shrinkWrap: true,
+                                        scrollDirection: Axis.vertical,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 10.0, 0.0, 0.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsets.all(5.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                          BillReportNewWidget
+                                                              .routeName);
+
+                                                      if (animationsMap[
+                                                              'containerOnActionTriggerAnimation1'] !=
+                                                          null) {
+                                                        safeSetState(() =>
+                                                            hasContainerTriggered1 =
+                                                                true);
+                                                        SchedulerBinding
+                                                            .instance
+                                                            .addPostFrameCallback((_) async =>
+                                                                await animationsMap[
+                                                                        'containerOnActionTriggerAnimation1']!
+                                                                    .controller
+                                                                    .forward(
+                                                                        from:
+                                                                            0.0));
+                                                      }
+                                                    },
+                                                    child: Container(
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          1.0,
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.08,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'lmmcz6ew' /* BILL REPORT */,
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMediumIsCustom,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ).animateOnActionTrigger(
+                                                      animationsMap[
+                                                          'containerOnActionTriggerAnimation1']!,
+                                                      hasBeenTriggered:
+                                                          hasContainerTriggered1),
+                                                ),
+                                                Divider(
+                                                  thickness: 0.2,
+                                                  indent: 10.0,
+                                                  endIndent: 10.0,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .lineColor,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                  useGoogleFonts:
-                                                      !FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmallIsCustom,
+                                                      .primaryText,
                                                 ),
+                                                Padding(
+                                                  padding: EdgeInsets.all(5.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      FFAppState().filterDate =
+                                                          dateTimeFormat(
+                                                        "yyyy-MM-dd",
+                                                        getCurrentTimestamp,
+                                                        locale:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode,
+                                                      );
+                                                      safeSetState(() {});
+
+                                                      context.pushNamed(
+                                                          CategoryReportnewWidget
+                                                              .routeName);
+
+                                                      if (animationsMap[
+                                                              'containerOnActionTriggerAnimation2'] !=
+                                                          null) {
+                                                        safeSetState(() =>
+                                                            hasContainerTriggered2 =
+                                                                true);
+                                                        SchedulerBinding
+                                                            .instance
+                                                            .addPostFrameCallback((_) async =>
+                                                                await animationsMap[
+                                                                        'containerOnActionTriggerAnimation2']!
+                                                                    .controller
+                                                                    .forward(
+                                                                        from:
+                                                                            0.0));
+                                                      }
+                                                    },
+                                                    child: Container(
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          1.0,
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.08,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              '0mhmmzq9' /* CATEGORY REPORT */,
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMediumIsCustom,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ).animateOnActionTrigger(
+                                                      animationsMap[
+                                                          'containerOnActionTriggerAnimation2']!,
+                                                      hasBeenTriggered:
+                                                          hasContainerTriggered2),
+                                                ),
+                                                Divider(
+                                                  thickness: 0.2,
+                                                  indent: 10.0,
+                                                  endIndent: 10.0,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    ListView(
-                                      padding: EdgeInsets.zero,
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.vertical,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 10.0, 0.0, 0.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsets.all(5.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    context.pushNamed(
-                                                        BillReportNewWidget
-                                                            .routeName);
+                                      Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            FFAppState().filterDate =
+                                                dateTimeFormat(
+                                              "yyyy-MM-dd",
+                                              getCurrentTimestamp,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            );
+                                            safeSetState(() {});
 
-                                                    if (animationsMap[
-                                                            'containerOnActionTriggerAnimation1'] !=
-                                                        null) {
-                                                      safeSetState(() =>
-                                                          hasContainerTriggered1 =
-                                                              true);
-                                                      SchedulerBinding.instance
-                                                          .addPostFrameCallback((_) async =>
-                                                              await animationsMap[
-                                                                      'containerOnActionTriggerAnimation1']!
-                                                                  .controller
-                                                                  .forward(
-                                                                      from:
-                                                                          0.0));
-                                                    }
-                                                  },
-                                                  child: Container(
-                                                    width: MediaQuery.sizeOf(
-                                                                context)
-                                                            .width *
-                                                        1.0,
-                                                    height: MediaQuery.sizeOf(
-                                                                context)
-                                                            .height *
-                                                        0.08,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'lmmcz6ew' /* BILL REPORT */,
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                            context.pushNamed(
+                                                ProductWiseReportWidget
+                                                    .routeName);
+
+                                            if (animationsMap[
+                                                    'containerOnActionTriggerAnimation3'] !=
+                                                null) {
+                                              safeSetState(() =>
+                                                  hasContainerTriggered3 =
+                                                      true);
+                                              SchedulerBinding.instance
+                                                  .addPostFrameCallback((_) async =>
+                                                      await animationsMap[
+                                                              'containerOnActionTriggerAnimation3']!
+                                                          .controller
+                                                          .forward(from: 0.0));
+                                            }
+                                          },
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.08,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'aqwrvlu1' /* PRODUCT REPORT */,
+                                                  ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleMediumFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMediumIsCustom,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ).animateOnActionTrigger(
-                                                    animationsMap[
-                                                        'containerOnActionTriggerAnimation1']!,
-                                                    hasBeenTriggered:
-                                                        hasContainerTriggered1),
-                                              ),
-                                              Divider(
-                                                thickness: 0.2,
-                                                indent: 10.0,
-                                                endIndent: 10.0,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.all(5.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    FFAppState().filterDate =
-                                                        dateTimeFormat(
-                                                      "yyyy-MM-dd",
-                                                      getCurrentTimestamp,
-                                                      locale:
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .languageCode,
-                                                    );
-                                                    safeSetState(() {});
-
-                                                    context.pushNamed(
-                                                        CategoryReportnewWidget
-                                                            .routeName);
-
-                                                    if (animationsMap[
-                                                            'containerOnActionTriggerAnimation2'] !=
-                                                        null) {
-                                                      safeSetState(() =>
-                                                          hasContainerTriggered2 =
-                                                              true);
-                                                      SchedulerBinding.instance
-                                                          .addPostFrameCallback((_) async =>
-                                                              await animationsMap[
-                                                                      'containerOnActionTriggerAnimation2']!
-                                                                  .controller
-                                                                  .forward(
-                                                                      from:
-                                                                          0.0));
-                                                    }
-                                                  },
-                                                  child: Container(
-                                                    width: MediaQuery.sizeOf(
-                                                                context)
-                                                            .width *
-                                                        1.0,
-                                                    height: MediaQuery.sizeOf(
-                                                                context)
-                                                            .height *
-                                                        0.08,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            '0mhmmzq9' /* CATEGORY REPORT */,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumIsCustom,
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ).animateOnActionTrigger(
+                                            animationsMap[
+                                                'containerOnActionTriggerAnimation3']!,
+                                            hasBeenTriggered:
+                                                hasContainerTriggered3),
+                                      ),
+                                      Divider(
+                                        thickness: 0.2,
+                                        indent: 10.0,
+                                        endIndent: 10.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                                ClosingstockReportWidget
+                                                    .routeName);
+
+                                            if (animationsMap[
+                                                    'containerOnActionTriggerAnimation4'] !=
+                                                null) {
+                                              safeSetState(() =>
+                                                  hasContainerTriggered4 =
+                                                      true);
+                                              SchedulerBinding.instance
+                                                  .addPostFrameCallback((_) async =>
+                                                      await animationsMap[
+                                                              'containerOnActionTriggerAnimation4']!
+                                                          .controller
+                                                          .forward(from: 0.0));
+                                            }
+                                          },
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.08,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'gk7e02mn' /* CLOSING STOCK REPORT */,
+                                                  ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleMediumFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMediumIsCustom,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumIsCustom,
+                                                          ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ).animateOnActionTrigger(
+                                            animationsMap[
+                                                'containerOnActionTriggerAnimation4']!,
+                                            hasBeenTriggered:
+                                                hasContainerTriggered4),
+                                      ),
+                                      Divider(
+                                        thickness: 0.2,
+                                        indent: 10.0,
+                                        endIndent: 10.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            FFAppState().filterDate =
+                                                dateTimeFormat(
+                                              "yyyy-MM-dd",
+                                              getCurrentTimestamp,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            );
+                                            safeSetState(() {});
+
+                                            context.pushNamed(
+                                                TodayStockOutWindowsWidget
+                                                    .routeName);
+
+                                            if (animationsMap[
+                                                    'containerOnActionTriggerAnimation5'] !=
+                                                null) {
+                                              safeSetState(() =>
+                                                  hasContainerTriggered5 =
+                                                      true);
+                                              SchedulerBinding.instance
+                                                  .addPostFrameCallback((_) async =>
+                                                      await animationsMap[
+                                                              'containerOnActionTriggerAnimation5']!
+                                                          .controller
+                                                          .forward(from: 0.0));
+                                            }
+                                          },
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.08,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'dsxup2zg' /* TODAY STOCK SUMMARY */,
                                                   ),
-                                                ).animateOnActionTrigger(
-                                                    animationsMap[
-                                                        'containerOnActionTriggerAnimation2']!,
-                                                    hasBeenTriggered:
-                                                        hasContainerTriggered2),
-                                              ),
-                                              Divider(
-                                                thickness: 0.2,
-                                                indent: 10.0,
-                                                endIndent: 10.0,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(5.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          FFAppState().filterDate =
-                                              dateTimeFormat(
-                                            "yyyy-MM-dd",
-                                            getCurrentTimestamp,
-                                            locale: FFLocalizations.of(context)
-                                                .languageCode,
-                                          );
-                                          safeSetState(() {});
-
-                                          context.pushNamed(
-                                              ProductWiseReportWidget
-                                                  .routeName);
-
-                                          if (animationsMap[
-                                                  'containerOnActionTriggerAnimation3'] !=
-                                              null) {
-                                            safeSetState(() =>
-                                                hasContainerTriggered3 = true);
-                                            SchedulerBinding.instance
-                                                .addPostFrameCallback((_) async =>
-                                                    await animationsMap[
-                                                            'containerOnActionTriggerAnimation3']!
-                                                        .controller
-                                                        .forward(from: 0.0));
-                                          }
-                                        },
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.08,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'aqwrvlu1' /* PRODUCT REPORT */,
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumIsCustom,
+                                                          ),
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleMediumIsCustom,
-                                                        ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ).animateOnActionTrigger(
-                                          animationsMap[
-                                              'containerOnActionTriggerAnimation3']!,
-                                          hasBeenTriggered:
-                                              hasContainerTriggered3),
-                                    ),
-                                    Divider(
-                                      thickness: 0.2,
-                                      indent: 10.0,
-                                      endIndent: 10.0,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(5.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.pushNamed(
-                                              ClosingstockReportWidget
-                                                  .routeName);
+                                        ).animateOnActionTrigger(
+                                            animationsMap[
+                                                'containerOnActionTriggerAnimation5']!,
+                                            hasBeenTriggered:
+                                                hasContainerTriggered5),
+                                      ),
+                                      Divider(
+                                        thickness: 0.2,
+                                        indent: 10.0,
+                                        endIndent: 10.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            FFAppState().filterDate =
+                                                dateTimeFormat(
+                                              "yyyy-MM-dd",
+                                              getCurrentTimestamp,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            );
+                                            safeSetState(() {});
 
-                                          if (animationsMap[
-                                                  'containerOnActionTriggerAnimation4'] !=
-                                              null) {
-                                            safeSetState(() =>
-                                                hasContainerTriggered4 = true);
-                                            SchedulerBinding.instance
-                                                .addPostFrameCallback((_) async =>
-                                                    await animationsMap[
-                                                            'containerOnActionTriggerAnimation4']!
-                                                        .controller
-                                                        .forward(from: 0.0));
-                                          }
-                                        },
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.08,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'gk7e02mn' /* CLOSING STOCK REPORT */,
+                                            context.pushNamed(
+                                                InstockReportWidget.routeName);
+
+                                            if (animationsMap[
+                                                    'containerOnActionTriggerAnimation6'] !=
+                                                null) {
+                                              safeSetState(() =>
+                                                  hasContainerTriggered6 =
+                                                      true);
+                                              SchedulerBinding.instance
+                                                  .addPostFrameCallback((_) async =>
+                                                      await animationsMap[
+                                                              'containerOnActionTriggerAnimation6']!
+                                                          .controller
+                                                          .forward(from: 0.0));
+                                            }
+                                          },
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.08,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'r6sxhafz' /* IN STOCK REPORT */,
+                                                  ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumIsCustom,
+                                                          ),
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleMediumIsCustom,
-                                                        ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ).animateOnActionTrigger(
-                                          animationsMap[
-                                              'containerOnActionTriggerAnimation4']!,
-                                          hasBeenTriggered:
-                                              hasContainerTriggered4),
-                                    ),
-                                    Divider(
-                                      thickness: 0.2,
-                                      indent: 10.0,
-                                      endIndent: 10.0,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(5.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          FFAppState().filterDate =
-                                              dateTimeFormat(
-                                            "yyyy-MM-dd",
-                                            getCurrentTimestamp,
-                                            locale: FFLocalizations.of(context)
-                                                .languageCode,
-                                          );
-                                          safeSetState(() {});
+                                        ).animateOnActionTrigger(
+                                            animationsMap[
+                                                'containerOnActionTriggerAnimation6']!,
+                                            hasBeenTriggered:
+                                                hasContainerTriggered6),
+                                      ),
+                                      Divider(
+                                        thickness: 0.2,
+                                        indent: 10.0,
+                                        endIndent: 10.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            FFAppState().filterDate =
+                                                dateTimeFormat(
+                                              "yyyy-MM-dd",
+                                              getCurrentTimestamp,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            );
+                                            safeSetState(() {});
 
-                                          context.pushNamed(
-                                              TodayStockOutWindowsWidget
-                                                  .routeName);
+                                            context.pushNamed(
+                                                OutstockReportWidget.routeName);
 
-                                          if (animationsMap[
-                                                  'containerOnActionTriggerAnimation5'] !=
-                                              null) {
-                                            safeSetState(() =>
-                                                hasContainerTriggered5 = true);
-                                            SchedulerBinding.instance
-                                                .addPostFrameCallback((_) async =>
-                                                    await animationsMap[
-                                                            'containerOnActionTriggerAnimation5']!
-                                                        .controller
-                                                        .forward(from: 0.0));
-                                          }
-                                        },
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.08,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'dsxup2zg' /* TODAY STOCK SUMMARY */,
+                                            if (animationsMap[
+                                                    'containerOnActionTriggerAnimation7'] !=
+                                                null) {
+                                              safeSetState(() =>
+                                                  hasContainerTriggered7 =
+                                                      true);
+                                              SchedulerBinding.instance
+                                                  .addPostFrameCallback((_) async =>
+                                                      await animationsMap[
+                                                              'containerOnActionTriggerAnimation7']!
+                                                          .controller
+                                                          .forward(from: 0.0));
+                                            }
+                                          },
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.08,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'e3ya4ln2' /* OUT STOCK REPORT */,
+                                                  ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumIsCustom,
+                                                          ),
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleMediumIsCustom,
-                                                        ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ).animateOnActionTrigger(
-                                          animationsMap[
-                                              'containerOnActionTriggerAnimation5']!,
-                                          hasBeenTriggered:
-                                              hasContainerTriggered5),
-                                    ),
-                                    Divider(
-                                      thickness: 0.2,
-                                      indent: 10.0,
-                                      endIndent: 10.0,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(5.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          FFAppState().filterDate =
-                                              dateTimeFormat(
-                                            "yyyy-MM-dd",
-                                            getCurrentTimestamp,
-                                            locale: FFLocalizations.of(context)
-                                                .languageCode,
-                                          );
-                                          safeSetState(() {});
+                                        ).animateOnActionTrigger(
+                                            animationsMap[
+                                                'containerOnActionTriggerAnimation7']!,
+                                            hasBeenTriggered:
+                                                hasContainerTriggered7),
+                                      ),
+                                      Divider(
+                                        thickness: 0.2,
+                                        indent: 10.0,
+                                        endIndent: 10.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            FFAppState().filterDate =
+                                                dateTimeFormat(
+                                              "yyyy-MM-dd",
+                                              getCurrentTimestamp,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            );
+                                            safeSetState(() {});
+                                            if (animationsMap[
+                                                    'containerOnActionTriggerAnimation8'] !=
+                                                null) {
+                                              safeSetState(() =>
+                                                  hasContainerTriggered8 =
+                                                      true);
+                                              SchedulerBinding.instance
+                                                  .addPostFrameCallback((_) async =>
+                                                      await animationsMap[
+                                                              'containerOnActionTriggerAnimation8']!
+                                                          .controller
+                                                          .forward(from: 0.0));
+                                            }
 
-                                          context.pushNamed(
-                                              InstockReportWidget.routeName);
-
-                                          if (animationsMap[
-                                                  'containerOnActionTriggerAnimation6'] !=
-                                              null) {
-                                            safeSetState(() =>
-                                                hasContainerTriggered6 = true);
-                                            SchedulerBinding.instance
-                                                .addPostFrameCallback((_) async =>
-                                                    await animationsMap[
-                                                            'containerOnActionTriggerAnimation6']!
-                                                        .controller
-                                                        .forward(from: 0.0));
-                                          }
-                                        },
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.08,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'r6sxhafz' /* IN STOCK REPORT */,
+                                            context.pushNamed(
+                                                TableWiseReportWidget
+                                                    .routeName);
+                                          },
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                0.08,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'mhpsxc8o' /* TABLE WISE SALE REPORT */,
+                                                  ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumIsCustom,
+                                                          ),
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleMediumIsCustom,
-                                                        ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ).animateOnActionTrigger(
-                                          animationsMap[
-                                              'containerOnActionTriggerAnimation6']!,
-                                          hasBeenTriggered:
-                                              hasContainerTriggered6),
-                                    ),
-                                    Divider(
-                                      thickness: 0.2,
-                                      indent: 10.0,
-                                      endIndent: 10.0,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(5.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          FFAppState().filterDate =
-                                              dateTimeFormat(
-                                            "yyyy-MM-dd",
-                                            getCurrentTimestamp,
-                                            locale: FFLocalizations.of(context)
-                                                .languageCode,
-                                          );
-                                          safeSetState(() {});
-
-                                          context.pushNamed(
-                                              OutstockReportWidget.routeName);
-
-                                          if (animationsMap[
-                                                  'containerOnActionTriggerAnimation7'] !=
-                                              null) {
-                                            safeSetState(() =>
-                                                hasContainerTriggered7 = true);
-                                            SchedulerBinding.instance
-                                                .addPostFrameCallback((_) async =>
-                                                    await animationsMap[
-                                                            'containerOnActionTriggerAnimation7']!
-                                                        .controller
-                                                        .forward(from: 0.0));
-                                          }
-                                        },
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.08,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'e3ya4ln2' /* OUT STOCK REPORT */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleMediumIsCustom,
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ).animateOnActionTrigger(
-                                          animationsMap[
-                                              'containerOnActionTriggerAnimation7']!,
-                                          hasBeenTriggered:
-                                              hasContainerTriggered7),
-                                    ),
-                                    Divider(
-                                      thickness: 0.2,
-                                      indent: 10.0,
-                                      endIndent: 10.0,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ],
+                                        ).animateOnActionTrigger(
+                                            animationsMap[
+                                                'containerOnActionTriggerAnimation8']!,
+                                            hasBeenTriggered:
+                                                hasContainerTriggered8),
+                                      ),
+                                      Divider(
+                                        thickness: 0.2,
+                                        indent: 10.0,
+                                        endIndent: 10.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -1436,15 +1571,15 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                             );
 
                                                             if (animationsMap[
-                                                                    'containerOnActionTriggerAnimation8'] !=
+                                                                    'containerOnActionTriggerAnimation9'] !=
                                                                 null) {
                                                               safeSetState(() =>
-                                                                  hasContainerTriggered8 =
+                                                                  hasContainerTriggered9 =
                                                                       true);
                                                               SchedulerBinding
                                                                   .instance
                                                                   .addPostFrameCallback((_) async => await animationsMap[
-                                                                          'containerOnActionTriggerAnimation8']!
+                                                                          'containerOnActionTriggerAnimation9']!
                                                                       .controller
                                                                       .forward(
                                                                           from:
@@ -1505,9 +1640,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                           ),
                                                         ).animateOnActionTrigger(
                                                             animationsMap[
-                                                                'containerOnActionTriggerAnimation8']!,
+                                                                'containerOnActionTriggerAnimation9']!,
                                                             hasBeenTriggered:
-                                                                hasContainerTriggered8);
+                                                                hasContainerTriggered9);
                                                       },
                                                     ),
                                                   ),
@@ -1593,9 +1728,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                     ),
                                                   ).animateOnActionTrigger(
                                                       animationsMap[
-                                                          'containerOnActionTriggerAnimation9']!,
+                                                          'containerOnActionTriggerAnimation10']!,
                                                       hasBeenTriggered:
-                                                          hasContainerTriggered9),
+                                                          hasContainerTriggered10),
                                                 ),
                                                 Divider(
                                                   thickness: 0.2,
@@ -1622,16 +1757,16 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                               .routeName);
 
                                                       if (animationsMap[
-                                                              'containerOnActionTriggerAnimation10'] !=
+                                                              'containerOnActionTriggerAnimation11'] !=
                                                           null) {
                                                         safeSetState(() =>
-                                                            hasContainerTriggered10 =
+                                                            hasContainerTriggered11 =
                                                                 true);
                                                         SchedulerBinding
                                                             .instance
                                                             .addPostFrameCallback((_) async =>
                                                                 await animationsMap[
-                                                                        'containerOnActionTriggerAnimation10']!
+                                                                        'containerOnActionTriggerAnimation11']!
                                                                     .controller
                                                                     .forward(
                                                                         from:
@@ -1690,9 +1825,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                     ),
                                                   ).animateOnActionTrigger(
                                                       animationsMap[
-                                                          'containerOnActionTriggerAnimation10']!,
+                                                          'containerOnActionTriggerAnimation11']!,
                                                       hasBeenTriggered:
-                                                          hasContainerTriggered10),
+                                                          hasContainerTriggered11),
                                                 ),
                                                 Divider(
                                                   thickness: 0.2,
@@ -1832,128 +1967,6 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                           safeSetState(() {}));
 
                                                       if (animationsMap[
-                                                              'containerOnActionTriggerAnimation11'] !=
-                                                          null) {
-                                                        safeSetState(() =>
-                                                            hasContainerTriggered11 =
-                                                                true);
-                                                        SchedulerBinding
-                                                            .instance
-                                                            .addPostFrameCallback((_) async =>
-                                                                await animationsMap[
-                                                                        'containerOnActionTriggerAnimation11']!
-                                                                    .controller
-                                                                    .forward(
-                                                                        from:
-                                                                            0.0));
-                                                      }
-                                                    },
-                                                    child: Container(
-                                                      width: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .width *
-                                                          1.0,
-                                                      height: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .height *
-                                                          0.08,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                      ),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'zwbf4uap' /* DAY WISE SALE */,
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .titleMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      !FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMediumIsCustom,
-                                                                ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ).animateOnActionTrigger(
-                                                      animationsMap[
-                                                          'containerOnActionTriggerAnimation11']!,
-                                                      hasBeenTriggered:
-                                                          hasContainerTriggered11),
-                                                ),
-                                                Divider(
-                                                  thickness: 0.2,
-                                                  indent: 10.0,
-                                                  endIndent: 10.0,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsets.all(5.0),
-                                                  child: InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await showModalBottomSheet(
-                                                        isScrollControlled:
-                                                            true,
-                                                        backgroundColor:
-                                                            Colors.transparent,
-                                                        barrierColor:
-                                                            Color(0x00000000),
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return GestureDetector(
-                                                            onTap: () {
-                                                              FocusScope.of(
-                                                                      context)
-                                                                  .unfocus();
-                                                              FocusManager
-                                                                  .instance
-                                                                  .primaryFocus
-                                                                  ?.unfocus();
-                                                            },
-                                                            child: Padding(
-                                                              padding: MediaQuery
-                                                                  .viewInsetsOf(
-                                                                      context),
-                                                              child:
-                                                                  CalenderWidget(
-                                                                reportType:
-                                                                    'billwise',
-                                                              ),
-                                                            ),
-                                                          );
-                                                        },
-                                                      ).then((value) =>
-                                                          safeSetState(() {}));
-
-                                                      if (animationsMap[
                                                               'containerOnActionTriggerAnimation12'] !=
                                                           null) {
                                                         safeSetState(() =>
@@ -1995,7 +2008,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'v9w8ujml' /* BILL WISE SALE */,
+                                                              'zwbf4uap' /* DAY WISE SALE */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -2067,6 +2080,128 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                               child:
                                                                   CalenderWidget(
                                                                 reportType:
+                                                                    'billwise',
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+
+                                                      if (animationsMap[
+                                                              'containerOnActionTriggerAnimation13'] !=
+                                                          null) {
+                                                        safeSetState(() =>
+                                                            hasContainerTriggered13 =
+                                                                true);
+                                                        SchedulerBinding
+                                                            .instance
+                                                            .addPostFrameCallback((_) async =>
+                                                                await animationsMap[
+                                                                        'containerOnActionTriggerAnimation13']!
+                                                                    .controller
+                                                                    .forward(
+                                                                        from:
+                                                                            0.0));
+                                                      }
+                                                    },
+                                                    child: Container(
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          1.0,
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.08,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'v9w8ujml' /* BILL WISE SALE */,
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMediumIsCustom,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ).animateOnActionTrigger(
+                                                      animationsMap[
+                                                          'containerOnActionTriggerAnimation13']!,
+                                                      hasBeenTriggered:
+                                                          hasContainerTriggered13),
+                                                ),
+                                                Divider(
+                                                  thickness: 0.2,
+                                                  indent: 10.0,
+                                                  endIndent: 10.0,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.all(5.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        barrierColor:
+                                                            Color(0x00000000),
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return GestureDetector(
+                                                            onTap: () {
+                                                              FocusScope.of(
+                                                                      context)
+                                                                  .unfocus();
+                                                              FocusManager
+                                                                  .instance
+                                                                  .primaryFocus
+                                                                  ?.unfocus();
+                                                            },
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child:
+                                                                  CalenderWidget(
+                                                                reportType:
                                                                     'catwise',
                                                               ),
                                                             ),
@@ -2076,16 +2211,16 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                           safeSetState(() {}));
 
                                                       if (animationsMap[
-                                                              'containerOnActionTriggerAnimation12'] !=
+                                                              'containerOnActionTriggerAnimation13'] !=
                                                           null) {
                                                         safeSetState(() =>
-                                                            hasContainerTriggered12 =
+                                                            hasContainerTriggered13 =
                                                                 true);
                                                         SchedulerBinding
                                                             .instance
                                                             .addPostFrameCallback((_) async =>
                                                                 await animationsMap[
-                                                                        'containerOnActionTriggerAnimation12']!
+                                                                        'containerOnActionTriggerAnimation13']!
                                                                     .controller
                                                                     .forward(
                                                                         from:
@@ -2197,16 +2332,16 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                           safeSetState(() {}));
 
                                                       if (animationsMap[
-                                                              'containerOnActionTriggerAnimation12'] !=
+                                                              'containerOnActionTriggerAnimation13'] !=
                                                           null) {
                                                         safeSetState(() =>
-                                                            hasContainerTriggered12 =
+                                                            hasContainerTriggered13 =
                                                                 true);
                                                         SchedulerBinding
                                                             .instance
                                                             .addPostFrameCallback((_) async =>
                                                                 await animationsMap[
-                                                                        'containerOnActionTriggerAnimation12']!
+                                                                        'containerOnActionTriggerAnimation13']!
                                                                     .controller
                                                                     .forward(
                                                                         from:
