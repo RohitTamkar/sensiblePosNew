@@ -206,3 +206,5 @@ export '/pages/captain_product_cart/captain_product_cart_widget.dart'
     show CaptainProductCartWidget;
 export '/pages/report_screen/table_bill_report_new/table_bill_report_new_widget.dart'
     show TableBillReportNewWidget;
+export '/pages/report_screen/table_wise_report/table_wise_report_widget.dart'
+    show TableWiseReportWidget;

@@ -129,7 +129,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 3.0, 0.0),
+                                    0.0, 0.0, 15.0, 0.0),
                                 child: Text(
                                   functions.totalDuration(
                                       widget!.tablekot!.createdDate),
@@ -155,26 +155,22 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                   shape: BoxShape.circle,
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'wi714nnx' /* Deleted Kot's */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .bodyMediumFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .bodyMediumIsCustom,
-                                      ),
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'wi714nnx' /* Deleted Kot's */,
                                 ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
+                                    ),
                               ),
-                            ],
+                            ].divide(SizedBox(width: 5.0)),
                           ),
                         ),
                       ),
@@ -396,266 +392,238 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                             padding: EdgeInsets.zero,
                             scrollDirection: Axis.vertical,
                             itemCount: list.length,
-                            separatorBuilder: (_, __) => SizedBox(height: 3.0),
+                            separatorBuilder: (_, __) => SizedBox(height: 5.0),
                             itemBuilder: (context, listIndex) {
                               final listItem = list[listIndex];
-                              return Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 3.0, 0.0, 3.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      flex: 9,
-                                      child: Container(
-                                        width: 100.0,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(
-                                          color: listItem.isDeletedItem
-                                              ? Color(0x6AEF0909)
-                                              : FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 0.0, 0.0, 0.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 3.0, 0.0, 3.0),
-                                                child: Text(
-                                                  listItem.name,
-                                                  style:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                            fontSize: 13.0,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallIsCustom,
-                                                          ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
+                              return Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    flex: 9,
+                                    child: Container(
+                                      width: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: listItem.isDeletedItem
+                                            ? Color(0x6AEF0909)
+                                            : FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(7.0),
                                       ),
-                                    ),
-                                    Expanded(
-                                      flex: 4,
-                                      child: Container(
-                                        width: 100.0,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(
-                                          color: listItem.isDeletedItem
-                                              ? Color(0x6AEF0909)
-                                              : FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 3.0, 0.0, 3.0),
-                                              child: Text(
-                                                dateTimeFormat(
-                                                  "jm",
-                                                  DateTime
-                                                      .fromMillisecondsSinceEpoch(
-                                                          listItem.kotTime),
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelSmallIsCustom,
-                                                        ),
-                                              ),
+                                            Text(
+                                              listItem.name,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmallFamily,
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmallIsCustom,
+                                                      ),
                                             ),
                                           ],
                                         ),
                                       ),
                                     ),
-                                    Expanded(
-                                      flex: 2,
-                                      child: Container(
-                                        width: 100.0,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(
-                                          color: listItem.isDeletedItem
-                                              ? Color(0x6AEF0909)
-                                              : FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
+                                  ),
+                                  Expanded(
+                                    flex: 4,
+                                    child: Container(
+                                      width: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: listItem.isDeletedItem
+                                            ? Color(0x6AEF0909)
+                                            : FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(7.0),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 3.0, 0.0, 3.0),
-                                              child: Text(
-                                                listItem.quantity.toString(),
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelSmallIsCustom,
-                                                        ),
+                                            Text(
+                                              dateTimeFormat(
+                                                "jm",
+                                                DateTime
+                                                    .fromMillisecondsSinceEpoch(
+                                                        listItem.kotTime),
+                                                locale:
+                                                    FFLocalizations.of(context)
+                                                        .languageCode,
                                               ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmallFamily,
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmallIsCustom,
+                                                      ),
                                             ),
                                           ],
                                         ),
                                       ),
                                     ),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Container(
-                                        width: 100.0,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(
-                                          color: listItem.isDeletedItem
-                                              ? Color(0x6AEF0909)
-                                              : FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
+                                  ),
+                                  Expanded(
+                                    flex: 2,
+                                    child: Container(
+                                      width: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: listItem.isDeletedItem
+                                            ? Color(0x6AEF0909)
+                                            : FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(7.0),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 3.0, 0.0, 3.0),
-                                              child: Text(
-                                                listItem.price.toString(),
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelSmallIsCustom,
-                                                        ),
-                                              ),
+                                            Text(
+                                              listItem.quantity.toString(),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmallFamily,
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmallIsCustom,
+                                                      ),
                                             ),
                                           ],
                                         ),
                                       ),
                                     ),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Container(
-                                        width: 100.0,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(
-                                          color: listItem.isDeletedItem
-                                              ? Color(0x6AEF0909)
-                                              : FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 10.0, 0.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 3.0, 0.0, 3.0),
-                                                child: Text(
-                                                  listItem.total.toString(),
-                                                  textAlign: TextAlign.end,
-                                                  style:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                            fontSize: 13.0,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallIsCustom,
-                                                          ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                                  ),
+                                  Expanded(
+                                    flex: 3,
+                                    child: Container(
+                                      width: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: listItem.isDeletedItem
+                                            ? Color(0x6AEF0909)
+                                            : FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(7.0),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              listItem.price.toString(),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmallFamily,
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmallIsCustom,
+                                                      ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
-                                  ].divide(SizedBox(width: 4.0)),
-                                ),
+                                  ),
+                                  Expanded(
+                                    flex: 3,
+                                    child: Container(
+                                      width: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: listItem.isDeletedItem
+                                            ? Color(0x6AEF0909)
+                                            : FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(7.0),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          children: [
+                                            Text(
+                                              listItem.total.toString(),
+                                              textAlign: TextAlign.end,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmallFamily,
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmallIsCustom,
+                                                      ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ].divide(SizedBox(width: 4.0)),
                               );
                             },
                           );

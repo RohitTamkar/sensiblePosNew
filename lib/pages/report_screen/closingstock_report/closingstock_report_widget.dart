@@ -607,10 +607,6 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                                     .where(
                                                       'stockable',
                                                       isEqualTo: true,
-                                                    )
-                                                    .where(
-                                                      'purchasable',
-                                                      isEqualTo: true,
                                                     ),
                                                 parent:
                                                     FFAppState().outletIdRef),

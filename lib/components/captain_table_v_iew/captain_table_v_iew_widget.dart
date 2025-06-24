@@ -73,7 +73,7 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
             crossAxisCount: 3,
             crossAxisSpacing: 12.0,
             mainAxisSpacing: 12.0,
-            childAspectRatio: 0.97,
+            childAspectRatio: 0.9,
           ),
           shrinkWrap: true,
           scrollDirection: Axis.vertical,
@@ -146,7 +146,7 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                       .firstOrNull
                                       ?.kotStatus ==
                                   'PENDING')) {
-                            return FlutterFlowTheme.of(context).tertiary;
+                            return Color(0xFF9AF286);
                           } else if (containerTableKotRecordList
                                   .where((e) =>
                                       e.tableNo ==
@@ -158,13 +158,13 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                   .firstOrNull
                                   ?.kotStatus ==
                               'BILLING') {
-                            return FlutterFlowTheme.of(context).primary;
+                            return Color(0xFFF485A2);
                           } else if ('EMPTY' ==
                               getJsonField(
                                 tablelistItem,
                                 r'''$.status''',
                               ).toString()) {
-                            return FlutterFlowTheme.of(context).warning;
+                            return Color(0xFFFEEB70);
                           } else {
                             return Color(0xFFD1CDCD);
                           }
@@ -198,7 +198,7 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 3.0),
+                                      0.0, 3.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -554,36 +554,77 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          if (false)
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 0.0, 3.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                if (false)
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
+                                                            .fromSTEB(3.0, 0.0,
                                                                 3.0, 0.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'e3a4y04e' /* 45 */,
-                                                      ),
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style:
-                                                          FlutterFlowTheme.of(
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      3.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'e3a4y04e' /* 45 */,
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodySmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmallFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .lineColor,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmallIsCustom,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          FFLocalizations.of(
                                                                   context)
+                                                              .getText(
+                                                            'uaxyhfet' /* Mins */,
+                                                          ),
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily: FlutterFlowTheme.of(
@@ -599,140 +640,127 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                                                             context)
                                                                         .bodySmallIsCustom,
                                                               ),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ),
-                                                  Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'uaxyhfet' /* Mins */,
-                                                    ),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodySmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodySmallFamily,
-                                                          color: FlutterFlowTheme
+                                                if (false)
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(3.0, 0.0,
+                                                                3.0, 0.0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '1y6ri0te' /* ₹  */,
+                                                          ),
+                                                          style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .lineColor,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodySmallIsCustom,
+                                                              .labelSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmallIsCustom,
+                                                              ),
                                                         ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          if (false)
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 0.0, 3.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '1y6ri0te' /* ₹  */,
+                                                        Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '2o1h0096' /* 70 */,
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmallIsCustom,
+                                                              ),
+                                                        ),
+                                                      ],
                                                     ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelSmallIsCustom,
-                                                        ),
                                                   ),
-                                                  Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '2o1h0096' /* 70 */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelSmallIsCustom,
-                                                        ),
-                                                  ),
-                                                ],
-                                              ),
+                                              ],
                                             ),
-                                          Text(
-                                            getJsonField(
-                                              tablelistItem,
-                                              r'''$.typeName''',
-                                            ).toString(),
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelSmall
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmallFamily,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                  useGoogleFonts:
-                                                      !FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmallIsCustom,
-                                                ),
-                                          ),
-                                          if (getJsonField(
-                                                tablelistItem,
-                                                r'''$.mergedTables''',
-                                              ) !=
-                                              null)
                                             Text(
-                                              '(${getJsonField(
+                                              getJsonField(
                                                 tablelistItem,
-                                                r'''$.mergedTables''',
-                                              ).toString()})',
+                                                r'''$.typeName''',
+                                              ).toString(),
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.of(
                                                       context)
-                                                  .labelLarge
+                                                  .labelSmall
                                                   .override(
                                                     fontFamily:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .labelLargeFamily,
-                                                    color: Color(0xAD5000B6),
-                                                    fontSize: 12.0,
+                                                            .labelSmallFamily,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                     useGoogleFonts:
                                                         !FlutterFlowTheme.of(
                                                                 context)
-                                                            .labelLargeIsCustom,
+                                                            .labelSmallIsCustom,
                                                   ),
                                             ),
-                                        ].divide(SizedBox(height: 3.0)),
+                                            if (getJsonField(
+                                                  tablelistItem,
+                                                  r'''$.mergedTables''',
+                                                ) !=
+                                                null)
+                                              Text(
+                                                '(${getJsonField(
+                                                  tablelistItem,
+                                                  r'''$.mergedTables''',
+                                                ).toString()})',
+                                                textAlign: TextAlign.center,
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .labelLarge
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLargeFamily,
+                                                      color: Color(0xAD5000B6),
+                                                      fontSize: 12.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLargeIsCustom,
+                                                    ),
+                                              ),
+                                          ].divide(SizedBox(height: 3.0)),
+                                        ),
                                       ),
                                     ),
                                   ),

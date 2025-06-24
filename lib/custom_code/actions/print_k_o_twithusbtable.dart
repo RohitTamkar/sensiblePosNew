@@ -9,14 +9,6 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -34,42 +26,32 @@ Future printKOTwithusbtable(
   AppSettingsRecord appSetting,
   List<ServicePointOutletRecord> list,
 ) async {
-  // Add your function code here!
-  int size = 32;
-  if (printerSize == "3 inch") {
-    size = 46;
-  } else if (printerSize == "2 inch") {
-    size = 32;
-  }
+  int size = printerSize == "3 inch" ? 46 : 32;
+
   final profile = await CapabilityProfile.load();
   final generator = size == 32
       ? Generator(PaperSize.mm58, profile)
       : Generator(PaperSize.mm80, profile);
 
   var printerManager = PrinterManager.instance;
-  List<int>? pendingTask;
-  BTStatus _currentStatus = BTStatus.none;
-  USBStatus _currentUsbStatus = USBStatus.none;
-  if (statusName == "BTStatus.connected") {
-    _currentStatus = BTStatus.connected;
-  }
-  // _currentUsbStatus is only supports on Android
-  if (statusName == "connected usb") {
-    _currentUsbStatus = USBStatus.connected;
-  }
-  FFAppState().printerName = "";
-  List<int> bytes = [];
-  String billColumn3;
-  String taxColumn3;
-  dynamic obj;
 
-  Map<String, List<dynamic>> servicePointProducts = {};
+  // Separate products into normal and cancelled
+  List<dynamic> normalProducts = [];
+  List<dynamic> cancelledProducts = [];
+
   for (var product in tableKotDetails.productList) {
-    if (product.printKot) {
-      print('Kot Already Printed !');
+    if (product.isDeletedItem == true && !product.printKot) {
+      cancelledProducts.add(product);
     } else {
-      QuerySnapshot querySnapshot;
-      querySnapshot = await FirebaseFirestore.instance
+      normalProducts.add(product);
+    }
+  }
+
+  // Group by service point for normal products
+  Map<String, List<dynamic>> normalServicePointProducts = {};
+  for (var product in normalProducts) {
+    if (!product.printKot) {
+      QuerySnapshot querySnapshot = await FirebaseFirestore.instance
           .collection('OUTLET')
           .doc(FFAppState().outletIdRef?.id)
           .collection('PRODUCT')
@@ -78,296 +60,161 @@ Future printKOTwithusbtable(
 
       for (var doc in querySnapshot.docs) {
         var serviceOutletRefId = doc["serviceRefId"];
-        if (!servicePointProducts.containsKey(serviceOutletRefId)) {
-          servicePointProducts[serviceOutletRefId] = [];
-        }
-        servicePointProducts[serviceOutletRefId]?.add(product);
+        normalServicePointProducts.putIfAbsent(serviceOutletRefId, () => []);
+        normalServicePointProducts[serviceOutletRefId]?.add(product);
       }
+    } else {
+      print('KOT already printed!');
     }
   }
 
-  // Iterate through service points to print products
+  // Group by service point for cancelled products (always print)
+  Map<String, List<dynamic>> cancelledServicePointProducts = {};
+  for (var product in cancelledProducts) {
+    QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+        .collection('OUTLET')
+        .doc(FFAppState().outletIdRef?.id)
+        .collection('PRODUCT')
+        .where('id', isEqualTo: product.id)
+        .get();
+
+    for (var doc in querySnapshot.docs) {
+      var serviceOutletRefId = doc["serviceRefId"];
+      cancelledServicePointProducts.putIfAbsent(serviceOutletRefId, () => []);
+      cancelledServicePointProducts[serviceOutletRefId]?.add(product);
+    }
+  }
+
+  // Loop for each service point
   for (var servicePoint in list) {
-    if (servicePointProducts.containsKey(servicePoint.id)) {
-      List<dynamic> productsToPrint = servicePointProducts[servicePoint.id]!;
-      List<int> bytes = [];
-      if (size == 46) {
-        String billColumn3 = "  ITEM NAME                              QTY  ";
+    // 1) Print NEW KOT if needed
+    if (normalServicePointProducts.containsKey(servicePoint.id)) {
+      List<dynamic> productsToPrint =
+          normalServicePointProducts[servicePoint.id]!;
+      await printKotForServicePoint(
+        generator,
+        printerManager,
+        selectedPrinter,
+        FFAppState().index,
+        servicePoint,
+        productsToPrint,
+        tableKotDetails,
+        printerSize,
+        status,
+        statusName,
+        "NEW KOT",
+      );
+    }
 
-        /*
-
-         bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-
-        bytes += generator.text(FFAppState().PayMode,
-            styles: const PosStyles(
-                height: PosTextSize.size2,
-                width: PosTextSize.size2,
-                bold: false,
-                align: PosAlign.center));
-
-                */
-
-        bytes += generator.text("# NEW KOT #",
-            styles: PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size2,
-                align: PosAlign.center));
-        bytes += generator.text(servicePoint.name,
-            styles: PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size2,
-                align: PosAlign.center));
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-
-        String printLine = '';
-        /*   String dateString = '';
-        String serialTemp = 'Serial no: ' + FFAppState().count.toString();
-
-        final DateTime now = DateTime.now();
-        final DateFormat formatter = DateFormat('dd-MM-yyyy');
-        final String formatted = formatter.format(now);
-        dateString = formatted.toString();
-        printLine = serialTemp;
-        for (int i = 1;
-            i <= (size - (serialTemp.length + dateString.length));
-            i++) {
-          printLine += " ";
-        }
-
-        printLine += dateString;
-
-        bytes += generator.text(printLine,
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false));*/
-        printLine = '';
-        final DateTime now1 = DateTime.now();
-        final DateFormat formatter1 = DateFormat('dd-MM-yyyy h:mm:ss');
-        final String formatted1 = formatter1.format(now1);
-
-        String dateTimeString = formatted1.toString();
-        String billNo = 'Table No: ' + tableKotDetails.tableNo;
-        printLine = billNo;
-        for (int i = 1;
-            i <= (size - (billNo.length + dateTimeString.length));
-            i++) {
-          printLine += " ";
-        }
-        printLine += dateTimeString;
-        bytes += generator.text(printLine,
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false));
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-        bytes += generator.text(billColumn3,
-            styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-            ));
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-        for (var product in productsToPrint) {
-          bytes += generatePrintBytes(generator, product);
-        }
-      } else {
-        String billColumn3 = "ITEM NAME                   QTY";
-        bytes += generator.text("# NEW KOT #",
-            styles: PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                align: PosAlign.center));
-        bytes += generator.text(servicePoint.name,
-            styles: PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                align: PosAlign.center));
-
-        String printLine = '';
-        String dateString = '';
-        String serialTemp = 'Serial no: ' + FFAppState().count.toString();
-
-        final DateTime now = DateTime.now();
-        final DateFormat formatter = DateFormat('dd-MM-yyyy');
-        final String formatted = formatter.format(now);
-        dateString = formatted.toString();
-        printLine = serialTemp;
-        for (int i = 1;
-            i <= (size - (serialTemp.length + dateString.length));
-            i++) {
-          printLine += " ";
-        }
-
-        printLine += dateString;
-
-        bytes += generator.text(printLine,
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false));
-        printLine = '';
-        final DateTime now1 = DateTime.now();
-        final DateFormat formatter1 = DateFormat('h:mm:ss');
-        final String formatted1 = formatter1.format(now1);
-
-        String dateTimeString = formatted1.toString();
-        String billNo = 'Table No: ' + tableKotDetails.tableNo;
-        printLine = billNo;
-        for (int i = 1;
-            i <= (size - (billNo.length + dateTimeString.length));
-            i++) {
-          printLine += " ";
-        }
-        printLine += dateTimeString;
-        bytes += generator.text(printLine,
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false));
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-        bytes += generator.text(billColumn3,
-            styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-            ));
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-        for (var product in productsToPrint) {
-          bytes += generatePrintBytes(generator, product);
-        }
-      }
-      /* if (bytes.isNotEmpty) {
-        // Add the bytes for feeding and cutting paper
-        bytes += generator.feed(2);
-        bytes += generator.cut();
-
-        // Connect to the printer via Ethernet
-        await printerManager.connect(
-            type: PrinterType.network,
-            model: TcpPrinterInput(
-                ipAddress: servicePoint.printerIpAddress,
-                port: servicePoint.printerPortNumber));
-
-        // Send the bytes to the printer
-        printerManager.send(type: PrinterType.network, bytes: bytes);
-      }*/
-
-      if (bytes.isNotEmpty) {
-        //_printEscPos(bytes, generator);
-
-        if (selectedPrinter == null) return;
-        var bluetoothPrinter = selectedPrinter[FFAppState().index]!;
-
-        switch (bluetoothPrinter["typePrinter"]) {
-          case PrinterType.usb:
-            //  bytes += generator.feed(2);
-            bytes += generator.cut();
-            FFAppState().printerName = statusName;
-            FFAppState().isPrinterConnected = status;
-            await printerManager.connect(
-                type: bluetoothPrinter["typePrinter"],
-                model: UsbPrinterInput(
-                    name: bluetoothPrinter["deviceName"],
-                    productId: bluetoothPrinter["productId"],
-                    vendorId: bluetoothPrinter["vendorId"]));
-            pendingTask = null;
-            if (Platform.isAndroid) pendingTask = bytes;
-            break;
-          case PrinterType.bluetooth:
-            bytes += generator.cut();
-            FFAppState().printerName = statusName;
-            FFAppState().isPrinterConnected = status;
-            await printerManager.connect(
-                type: bluetoothPrinter["typePrinter"],
-                model: BluetoothPrinterInput(
-                  name: bluetoothPrinter["deviceName"],
-                  address: bluetoothPrinter["address"],
-                  isBle: bluetoothPrinter["isBle"] ?? false,
-                ));
-            pendingTask = null;
-            if (Platform.isIOS || Platform.isAndroid) pendingTask = bytes;
-            break;
-          case PrinterType.network:
-            //  bytes += generator.feed(2);
-            bytes += generator.cut();
-            await printerManager.connect(
-                type: bluetoothPrinter["typePrinter"],
-                model: TcpPrinterInput(ipAddress: bluetoothPrinter.address!));
-            break;
-          default:
-        }
-        if (bluetoothPrinter["typePrinter"] == PrinterType.bluetooth) {
-          _currentStatus = BTStatus.connected;
-
-          if (_currentStatus == BTStatus.connected) {
-            FFAppState().printerName = "connected bt";
-            printerManager.send(
-                type: bluetoothPrinter["typePrinter"], bytes: bytes);
-            pendingTask = null;
-          }
-        } else if (bluetoothPrinter["typePrinter"] == PrinterType.usb &&
-            Platform.isAndroid) {
-          // _currentUsbStatus is only supports on Android
-          if (_currentUsbStatus == USBStatus.connected) {
-            FFAppState().printerName = "connected usb";
-            printerManager.send(
-                type: bluetoothPrinter["typePrinter"], bytes: bytes);
-            pendingTask = null;
-          }
-        } else {
-          printerManager.send(
-              type: bluetoothPrinter["typePrinter"], bytes: bytes);
-        }
-      }
+    // 2) Print CANCELLED KOT if needed
+    if (cancelledServicePointProducts.containsKey(servicePoint.id)) {
+      List<dynamic> productsToPrint =
+          cancelledServicePointProducts[servicePoint.id]!;
+      await printKotForServicePoint(
+        generator,
+        printerManager,
+        selectedPrinter,
+        FFAppState().index,
+        servicePoint,
+        productsToPrint,
+        tableKotDetails,
+        printerSize,
+        status,
+        statusName,
+        "CANCELLED KOT",
+      );
     }
   }
 }
 
+// --------------------------------------------
+// ✅ Helper for printing a single KOT type
+// --------------------------------------------
+Future<void> printKotForServicePoint(
+  Generator generator,
+  PrinterManager printerManager,
+  List<dynamic> selectedPrinter,
+  int index,
+  ServicePointOutletRecord servicePoint,
+  List<dynamic> productsToPrint,
+  TableKotRecord tableKotDetails,
+  String printerSize,
+  bool status,
+  String statusName,
+  String kotType, // NEW KOT or CANCELLED KOT
+) async {
+  int size = printerSize == "3 inch" ? 46 : 32;
+  List<int> bytes = [];
+
+  String billColumn3 = size == 46
+      ? "  ITEM NAME                              QTY  "
+      : "ITEM NAME                   QTY";
+
+  // Header
+  bytes += generator.text("# $kotType #",
+      styles: PosStyles(
+          height: PosTextSize.size1,
+          width: PosTextSize.size2,
+          align: PosAlign.center));
+  bytes += generator.text(servicePoint.name,
+      styles: PosStyles(
+          height: PosTextSize.size1,
+          width: PosTextSize.size1,
+          align: PosAlign.center));
+
+  // Table No & DateTime
+  final DateTime now = DateTime.now();
+  final DateFormat dateFormatter = DateFormat('dd-MM-yyyy h:mm:ss');
+  String dateTimeString = dateFormatter.format(now);
+  String billNo = 'Table No: ${tableKotDetails.tableNo}';
+  String printLine = billNo;
+  for (int i = 1; i <= (size - (billNo.length + dateTimeString.length)); i++) {
+    printLine += " ";
+  }
+  printLine += dateTimeString;
+  bytes += generator.text(printLine);
+
+  // Column headers
+  bytes += generator.text("-----------------------------------------------");
+  bytes += generator.text(billColumn3);
+  bytes += generator.text("-----------------------------------------------");
+
+  // Products
+  for (var product in productsToPrint) {
+    bytes += generatePrintBytes(generator, product);
+  }
+
+  // Cut
+  bytes += generator.cut();
+
+  // Send to printer
+  var printer = selectedPrinter[index];
+  await printerManager.connect(
+    type: printer["typePrinter"],
+    model: printer["typePrinter"] == PrinterType.usb
+        ? UsbPrinterInput(
+            name: printer["deviceName"],
+            productId: printer["productId"],
+            vendorId: printer["vendorId"])
+        : printer["typePrinter"] == PrinterType.bluetooth
+            ? BluetoothPrinterInput(
+                name: printer["deviceName"],
+                address: printer["address"],
+                isBle: printer["isBle"] ?? false)
+            : TcpPrinterInput(ipAddress: printer["address"]),
+  );
+
+  printerManager.send(type: printer["typePrinter"], bytes: bytes);
+}
+
+// --------------------------------------------
+// ✅ Helper for formatting each product line
+// --------------------------------------------
 List<int> generatePrintBytes(Generator generator, dynamic product) {
   List<int> bytes = [];
 
-  // Define the maximum length per line for the product name conservatively
-  const int maxLineLength =
-      22; // Adjust this value based on your printer's actual character width per line
+  const int maxLineLength = 22;
 
-  // Split the product name into multiple lines if necessary
   String productName = product.name.toString();
   List<String> nameLines = [];
   for (int i = 0; i < productName.length; i += maxLineLength) {
@@ -377,16 +224,13 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
     nameLines.add(productName.substring(i, end));
   }
 
-  // Print each line of the product name
   for (int i = 0; i < nameLines.length; i++) {
     if (i == 0) {
-      // First line: print product name and quantity
       bytes += generator.row([
         PosColumn(
           text: nameLines[i],
           width: 8,
           styles: PosStyles(
-            //
             height: PosTextSize.size1,
             width: PosTextSize.size1,
             bold: true,
@@ -405,7 +249,6 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
         ),
       ]);
     } else {
-      // Subsequent lines: print product name parts only
       bytes += generator.row([
         PosColumn(
           text: nameLines[i],
@@ -419,7 +262,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
         ),
         PosColumn(
           text: '',
-          width: 4, // Empty column to maintain the total width of 12
+          width: 4,
           styles: PosStyles(
             height: PosTextSize.size1,
             width: PosTextSize.size1,

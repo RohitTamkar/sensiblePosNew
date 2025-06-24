@@ -1601,6 +1601,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: TableBillReportNewWidget.routeName,
               path: TableBillReportNewWidget.routePath,
               builder: (context, params) => TableBillReportNewWidget(),
+            ),
+            FFRoute(
+              name: TableWiseReportWidget.routeName,
+              path: TableWiseReportWidget.routePath,
+              builder: (context, params) => TableWiseReportWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

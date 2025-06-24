@@ -772,8 +772,9 @@ class _CaptainTableListWidgetState extends State<CaptainTableListWidget> {
                                                         Container(
                                                           decoration:
                                                               BoxDecoration(
-                                                            color: Color(
-                                                                0xFFD8D9F0),
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
@@ -804,7 +805,7 @@ class _CaptainTableListWidgetState extends State<CaptainTableListWidget> {
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleMediumFamily,
                                                                         color: FlutterFlowTheme.of(context)
-                                                                            .info,
+                                                                            .primaryBtnText,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
