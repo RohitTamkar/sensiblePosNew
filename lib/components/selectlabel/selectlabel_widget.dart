@@ -171,9 +171,12 @@ class _SelectlabelWidgetState extends State<SelectlabelWidget> {
                                     )
                                   ].toList(),
                                   onChanged: (val) => safeSetState(() {}),
-                                  controller:
-                                      _model.radioButtonValueController ??=
-                                          FormFieldController<String>(null),
+                                  controller: _model
+                                          .radioButtonValueController ??=
+                                      FormFieldController<String>(
+                                          FFLocalizations.of(context).getText(
+                                    'enrk42hr' /* 50mm*25mm */,
+                                  )),
                                   optionHeight: 32.0,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .labelMedium

@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -114,12 +116,12 @@ Future printKOTwithusbtable(
         bytes += generator.text("# NEW KOT #",
             styles: PosStyles(
                 height: PosTextSize.size1,
-                width: PosTextSize.size1,
+                width: PosTextSize.size2,
                 align: PosAlign.center));
         bytes += generator.text(servicePoint.name,
             styles: PosStyles(
                 height: PosTextSize.size1,
-                width: PosTextSize.size1,
+                width: PosTextSize.size2,
                 align: PosAlign.center));
         bytes += generator.text(
             "-----------------------------------------------",
@@ -291,7 +293,7 @@ Future printKOTwithusbtable(
         //_printEscPos(bytes, generator);
 
         if (selectedPrinter == null) return;
-        var bluetoothPrinter = selectedPrinter[0]!;
+        var bluetoothPrinter = selectedPrinter[FFAppState().index]!;
 
         switch (bluetoothPrinter["typePrinter"]) {
           case PrinterType.usb:
@@ -363,7 +365,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
 
   // Define the maximum length per line for the product name conservatively
   const int maxLineLength =
-      15; // Adjust this value based on your printer's actual character width per line
+      22; // Adjust this value based on your printer's actual character width per line
 
   // Split the product name into multiple lines if necessary
   String productName = product.name.toString();
@@ -387,7 +389,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
             //
             height: PosTextSize.size1,
             width: PosTextSize.size1,
-            bold: false,
+            bold: true,
             align: PosAlign.left,
           ),
         ),
@@ -397,7 +399,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
           styles: PosStyles(
             height: PosTextSize.size1,
             width: PosTextSize.size1,
-            bold: false,
+            bold: true,
             align: PosAlign.center,
           ),
         ),
@@ -411,7 +413,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
           styles: PosStyles(
             height: PosTextSize.size1,
             width: PosTextSize.size1,
-            bold: false,
+            bold: true,
             align: PosAlign.left,
           ),
         ),
@@ -421,7 +423,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
           styles: PosStyles(
             height: PosTextSize.size1,
             width: PosTextSize.size1,
-            bold: false,
+            bold: true,
             align: PosAlign.center,
           ),
         ),

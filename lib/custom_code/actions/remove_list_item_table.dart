@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> removeListItemTable(
   dynamic obj,
   int billNo,
@@ -25,7 +27,7 @@ Future<List<dynamic>> removeListItemTable(
           if (index != -1) {
             // Instead of removing, mark as deleted
             itemList[index]["isDeleted"] = true;
-            itemList[index]["kotPrint"] = false;
+            itemList[index]["printKot"] = false;
             allBillList[i]["details"]["itemList"] = itemList;
           }
         }

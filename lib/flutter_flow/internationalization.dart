@@ -24058,6 +24058,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': 'அட்டவணை எண் விவரங்கள்:',
       'th': 'รายละเอียดของตารางที่ :',
     },
+    'wi714nnx': {
+      'en': 'Deleted Kot\'s',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
     'btzh5ydh': {
       'en': 'Item Name',
       'hi': 'आइटम नाम',
@@ -24097,22 +24105,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': 'एकूण',
       'ta': 'மொத்தம்',
       'th': 'ทั้งหมด',
-    },
-    'kuepccr8': {
-      'en': 'Bill No. :',
-      'hi': 'बिल नहीं। :',
-      'kn': 'ಬಿಲ್ ಸಂಖ್ಯೆ:',
-      'mr': 'बिल क्रमांक :',
-      'ta': 'மசோதா எண்:',
-      'th': 'เลขที่บิล :',
-    },
-    'ydtt4sps': {
-      'en': '54569883',
-      'hi': '5464-04-22T18:30:00Z',
-      'kn': '5464-04-22T18:30:00Z',
-      'mr': '५४६४-०४-२२T१८:३०:००Z',
-      'ta': '5464-04-22T18:30:00Z அறிமுகம்',
-      'th': '5464-04-22T18:30:00Z',
     },
     'jswwo6ja': {
       'en': 'Total Amount :',
@@ -28086,6 +28078,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': 'लेबल आकार निवडा',
       'ta': 'லேபிள் அளவைத் தேர்ந்தெடுக்கவும்',
       'th': 'เลือกขนาดฉลาก',
+    },
+    'enrk42hr': {
+      'en': '50mm*25mm',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
     },
     'xpzd4iqs': {
       'en': '50mm*25mm',
