@@ -9,6 +9,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:expandable/expandable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -591,151 +592,592 @@ class _TableWiseReportWidgetState extends State<TableWiseReportWidget> {
                                       final littableItem =
                                           littable[littableIndex];
                                       return Container(
-                                        width: double.infinity,
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.06,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 10.0, 20.0, 10.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Expanded(
-                                                child: Text(
-                                                  getJsonField(
-                                                    littableItem,
-                                                    r'''$.tableNo''',
-                                                  ).toString(),
-                                                  style:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
+                                        height: 200.0,
+                                        child: Container(
+                                          width: double.infinity,
+                                          height: 200.0,
+                                          color: Color(0x00000000),
+                                          child: ExpandableNotifier(
+                                            initialExpanded: false,
+                                            child: ExpandablePanel(
+                                              header: Container(
+                                                width: double.infinity,
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height *
+                                                        0.06,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(20.0, 10.0,
+                                                          20.0, 10.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Expanded(
+                                                        child: Text(
+                                                          getJsonField(
+                                                            littableItem,
+                                                            r'''$.tableNo''',
+                                                          ).toString(),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .headlineSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .headlineSmallFamily,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallIsCustom,
-                                                          ),
-                                                ),
-                                              ),
-                                              Expanded(
-                                                child: Text(
-                                                  getJsonField(
-                                                    littableItem,
-                                                    r'''$.noOfOrders''',
-                                                  ).toString(),
-                                                  textAlign: TextAlign.center,
-                                                  style:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLargeFamily,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLargeIsCustom,
-                                                          ),
-                                                ),
-                                              ),
-                                              Expanded(
-                                                child: Text(
-                                                  getJsonField(
-                                                    littableItem,
-                                                    r'''$.totalSales''',
-                                                  ).toString(),
-                                                  textAlign: TextAlign.center,
-                                                  style:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmallIsCustom,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        child: Text(
+                                                          getJsonField(
+                                                            littableItem,
+                                                            r'''$.noOfOrders''',
+                                                          ).toString(),
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelLargeFamily,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLargeIsCustom,
-                                                          ),
-                                                ),
-                                              ),
-                                              Expanded(
-                                                child: Text(
-                                                  getJsonField(
-                                                    littableItem,
-                                                    r'''$.discount''',
-                                                  ).toString(),
-                                                  textAlign: TextAlign.center,
-                                                  style:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLargeIsCustom,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        child: Text(
+                                                          getJsonField(
+                                                            littableItem,
+                                                            r'''$.totalSales''',
+                                                          ).toString(),
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelLargeFamily,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLargeIsCustom,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        child: Text(
+                                                          getJsonField(
+                                                            littableItem,
+                                                            r'''$.discount''',
+                                                          ).toString(),
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLargeIsCustom,
-                                                          ),
-                                                ),
-                                              ),
-                                              Expanded(
-                                                child: Text(
-                                                  getJsonField(
-                                                    littableItem,
-                                                    r'''$.netSales''',
-                                                  ).toString(),
-                                                  textAlign: TextAlign.center,
-                                                  style:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLargeIsCustom,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        child: Text(
+                                                          getJsonField(
+                                                            littableItem,
+                                                            r'''$.netSales''',
+                                                          ).toString(),
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .headlineSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .headlineSmallFamily,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallIsCustom,
-                                                          ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmallIsCustom,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ].divide(
+                                                        SizedBox(width: 5.0)),
+                                                  ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(width: 5.0)),
+                                              collapsed: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'bowmginz' /* View Bills */,
+                                                    ),
+                                                    textAlign: TextAlign.start,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          color:
+                                                              Color(0x8A000000),
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                              expanded: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Container(
+                                                    width: double.infinity,
+                                                    height: MediaQuery.sizeOf(
+                                                                context)
+                                                            .height *
+                                                        0.06,
+                                                    decoration: BoxDecoration(
+                                                      color: Color(0x879DB8FF),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  20.0,
+                                                                  10.0,
+                                                                  20.0,
+                                                                  10.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                '81wl94af' /* Sr No. */,
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelLargeIsCustom,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'zib5gua7' /* Bill No */,
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelLargeIsCustom,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'j09ohbgy' /* Date */,
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelLargeIsCustom,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'yb7w9x7y' /* Payment Mode */,
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelLargeIsCustom,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'hlzgqss8' /* Net Amt */,
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelLargeIsCustom,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ].divide(SizedBox(
+                                                            width: 5.0)),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  StreamBuilder<
+                                                      List<InvoiceRecord>>(
+                                                    stream: queryInvoiceRecord(
+                                                      parent: FFAppState()
+                                                          .outletIdRef,
+                                                      queryBuilder:
+                                                          (invoiceRecord) =>
+                                                              invoiceRecord
+                                                                  .where(
+                                                                    'invoiceDate',
+                                                                    isGreaterThan:
+                                                                        FFAppState()
+                                                                            .selectStartDate,
+                                                                  )
+                                                                  .where(
+                                                                    'invoiceDate',
+                                                                    isLessThanOrEqualTo:
+                                                                        FFAppState()
+                                                                            .selectEndDate,
+                                                                  )
+                                                                  .where(
+                                                                    'tableId',
+                                                                    isEqualTo:
+                                                                        getJsonField(
+                                                                      littableItem,
+                                                                      r'''$.tableNo''',
+                                                                    ).toString(),
+                                                                  ),
+                                                    ),
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child: SizedBox(
+                                                            width: 40.0,
+                                                            height: 40.0,
+                                                            child:
+                                                                SpinKitFadingCircle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              size: 40.0,
+                                                            ),
+                                                          ),
+                                                        );
+                                                      }
+                                                      List<InvoiceRecord>
+                                                          listViewInvoiceRecordList =
+                                                          snapshot.data!;
+
+                                                      return ListView.builder(
+                                                        padding:
+                                                            EdgeInsets.zero,
+                                                        shrinkWrap: true,
+                                                        scrollDirection:
+                                                            Axis.vertical,
+                                                        itemCount:
+                                                            listViewInvoiceRecordList
+                                                                .length,
+                                                        itemBuilder: (context,
+                                                            listViewIndex) {
+                                                          final listViewInvoiceRecord =
+                                                              listViewInvoiceRecordList[
+                                                                  listViewIndex];
+                                                          return Container(
+                                                            width:
+                                                                double.infinity,
+                                                            height: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .height *
+                                                                0.06,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondary,
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          20.0,
+                                                                          10.0,
+                                                                          20.0,
+                                                                          10.0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Expanded(
+                                                                    child: Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'x4w8k3qi' /* 0 */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    child: Text(
+                                                                      listViewInvoiceRecord
+                                                                          .invoice,
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    child: Text(
+                                                                      listViewInvoiceRecord
+                                                                          .dayId,
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    child: Text(
+                                                                      listViewInvoiceRecord
+                                                                          .paymentMode,
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    child: Text(
+                                                                      listViewInvoiceRecord
+                                                                          .finalBillAmt
+                                                                          .toString(),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ].divide(SizedBox(
+                                                                    width:
+                                                                        5.0)),
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      );
+                                                    },
+                                                  ),
+                                                ],
+                                              ),
+                                              theme: ExpandableThemeData(
+                                                tapHeaderToExpand: true,
+                                                tapBodyToExpand: false,
+                                                tapBodyToCollapse: false,
+                                                headerAlignment:
+                                                    ExpandablePanelHeaderAlignment
+                                                        .center,
+                                                hasIcon: true,
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       );

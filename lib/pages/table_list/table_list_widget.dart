@@ -1701,31 +1701,45 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                   CrossAxisAlignment
                                                                       .start,
                                                               children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    getJsonField(
-                                                                      jsonItem,
-                                                                      r'''$.premise''',
-                                                                    ).toString(),
-                                                                    style: FlutterFlowTheme.of(
+                                                                Container(
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .titleMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleMediumFamily,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primary,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).titleMediumIsCustom,
+                                                                        .info,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            10.0),
+                                                                  ),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            15.0,
+                                                                            7.0,
+                                                                            15.0,
+                                                                            7.0),
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .min,
+                                                                      children: [
+                                                                        Text(
+                                                                          getJsonField(
+                                                                            jsonItem,
+                                                                            r'''$.premise''',
+                                                                          ).toString(),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .titleMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
+                                                                              ),
                                                                         ),
+                                                                      ],
+                                                                    ),
                                                                   ),
                                                                 ),
                                                                 TableVIewWidget(

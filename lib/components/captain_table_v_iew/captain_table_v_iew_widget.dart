@@ -816,181 +816,195 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                             ),
                                           ),
                                         ),
-                                      Expanded(
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            _model.tablekot =
-                                                await queryTableKotRecordOnce(
-                                              parent: FFAppState().outletIdRef,
-                                              queryBuilder: (tableKotRecord) =>
-                                                  tableKotRecord
-                                                      .where(
-                                                        'tableNo',
-                                                        isEqualTo: getJsonField(
-                                                          tablelistItem,
-                                                          r'''$.id''',
-                                                        ).toString(),
-                                                      )
-                                                      .where(
-                                                        'kotStatus',
-                                                        isNotEqualTo: 'FINAL',
-                                                      ),
-                                              singleRecord: true,
-                                            ).then((s) => s.firstOrNull);
-                                            if (_model.tablekot != null) {
-                                              await actions
-                                                  .removeFromAllBillList(
-                                                FFAppState().selBill,
-                                              );
-                                              await actions.clearValue();
-                                              FFAppState().delCharges = 0.0;
-                                              FFAppState().kotDocRef = null;
-                                              FFAppState().tableViewHideShow =
-                                                  true;
-                                              FFAppState().prdid = '';
-                                              if (FFAppState().holdBillCount ==
-                                                  0) {
-                                                FFAppState().holdBillCount =
-                                                    FFAppState().holdBillCount +
-                                                        1;
-                                                FFAppState().addToAllBillsList(
-                                                    functions
-                                                        .generateBillDetailsJson(
-                                                            0.0,
-                                                            0.0,
-                                                            0.0,
-                                                            'CASH',
-                                                            0.0,
-                                                            0.0,
-                                                            FFAppState()
-                                                                .billAmt,
-                                                            0.0,
-                                                            FFAppState()
-                                                                .finalAmt,
-                                                            '0',
-                                                            FFAppState()
-                                                                .itemCartList
-                                                                .toList(),
-                                                            FFAppState()
-                                                                .holdBillCount));
-                                                FFAppState().selBill = 1;
-                                              }
-                                              await actions.addToHoldListprdKOT(
-                                                FFAppState().selBill,
-                                                widget!.taxcollection!.toList(),
-                                                functions.enabletaxinclusive(
-                                                    widget!
-                                                        .apsetting!.settingList
-                                                        .where((e) =>
-                                                            e.title ==
-                                                            'enableInclusiveTax')
-                                                        .toList()
-                                                        .firstOrNull!
-                                                        .value),
-                                                _model.tablekot!.productList
-                                                    .toList(),
-                                              );
-                                              FFAppState().tableViewHideShow =
-                                                  false;
-                                              FFAppState().tableNo =
-                                                  getJsonField(
-                                                tablelistItem,
-                                                r'''$.id''',
-                                              ).toString();
-                                              FFAppState().selectedPremise =
-                                                  widget!.parameter3!;
-                                              FFAppState().kotDocRef =
-                                                  _model.tablekot?.reference;
+                                      if ('AVAILABLE' ==
+                                          getJsonField(
+                                            tablelistItem,
+                                            r'''$.status''',
+                                          ).toString())
+                                        Expanded(
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              _model.tablekot =
+                                                  await queryTableKotRecordOnce(
+                                                parent:
+                                                    FFAppState().outletIdRef,
+                                                queryBuilder:
+                                                    (tableKotRecord) =>
+                                                        tableKotRecord
+                                                            .where(
+                                                              'tableNo',
+                                                              isEqualTo:
+                                                                  getJsonField(
+                                                                tablelistItem,
+                                                                r'''$.id''',
+                                                              ).toString(),
+                                                            )
+                                                            .where(
+                                                              'kotStatus',
+                                                              isNotEqualTo:
+                                                                  'FINAL',
+                                                            ),
+                                                singleRecord: true,
+                                              ).then((s) => s.firstOrNull);
+                                              if (_model.tablekot != null) {
+                                                await actions
+                                                    .removeFromAllBillList(
+                                                  FFAppState().selBill,
+                                                );
+                                                await actions.clearValue();
+                                                FFAppState().delCharges = 0.0;
+                                                FFAppState().kotDocRef = null;
+                                                FFAppState().tableViewHideShow =
+                                                    true;
+                                                FFAppState().prdid = '';
+                                                if (FFAppState()
+                                                        .holdBillCount ==
+                                                    0) {
+                                                  FFAppState().holdBillCount =
+                                                      FFAppState()
+                                                              .holdBillCount +
+                                                          1;
+                                                  FFAppState().addToAllBillsList(
+                                                      functions
+                                                          .generateBillDetailsJson(
+                                                              0.0,
+                                                              0.0,
+                                                              0.0,
+                                                              'CASH',
+                                                              0.0,
+                                                              0.0,
+                                                              FFAppState()
+                                                                  .billAmt,
+                                                              0.0,
+                                                              FFAppState()
+                                                                  .finalAmt,
+                                                              '0',
+                                                              FFAppState()
+                                                                  .itemCartList
+                                                                  .toList(),
+                                                              FFAppState()
+                                                                  .holdBillCount));
+                                                  FFAppState().selBill = 1;
+                                                }
+                                                await actions
+                                                    .addToHoldListprdKOT(
+                                                  FFAppState().selBill,
+                                                  widget!.taxcollection!
+                                                      .toList(),
+                                                  functions.enabletaxinclusive(
+                                                      widget!.apsetting!
+                                                          .settingList
+                                                          .where((e) =>
+                                                              e.title ==
+                                                              'enableInclusiveTax')
+                                                          .toList()
+                                                          .firstOrNull!
+                                                          .value),
+                                                  _model.tablekot!.productList
+                                                      .toList(),
+                                                );
+                                                FFAppState().tableViewHideShow =
+                                                    false;
+                                                FFAppState().tableNo =
+                                                    getJsonField(
+                                                  tablelistItem,
+                                                  r'''$.id''',
+                                                ).toString();
+                                                FFAppState().selectedPremise =
+                                                    widget!.parameter3!;
+                                                FFAppState().kotDocRef =
+                                                    _model.tablekot?.reference;
 
-                                              _model.updatePage(() {});
+                                                _model.updatePage(() {});
 
-                                              context.goNamed(
-                                                CaptainProductCartWidget
-                                                    .routeName,
-                                                queryParameters: {
-                                                  'taxcollection':
-                                                      serializeParam(
-                                                    widget!.taxcollection,
-                                                    ParamType.Document,
-                                                    isList: true,
-                                                  ),
-                                                  'doc': serializeParam(
-                                                    FFAppState().userdoc,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                }.withoutNulls,
-                                                extra: <String, dynamic>{
-                                                  'taxcollection':
+                                                context.goNamed(
+                                                  CaptainProductCartWidget
+                                                      .routeName,
+                                                  queryParameters: {
+                                                    'taxcollection':
+                                                        serializeParam(
                                                       widget!.taxcollection,
-                                                },
-                                              );
-                                            } else {
-                                              ScaffoldMessenger.of(context)
-                                                  .showSnackBar(
-                                                SnackBar(
-                                                  content: Text(
-                                                    'Table Is Empty !',
-                                                    style: TextStyle(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
+                                                      ParamType.Document,
+                                                      isList: true,
                                                     ),
+                                                    'doc': serializeParam(
+                                                      FFAppState().userdoc,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    'taxcollection':
+                                                        widget!.taxcollection,
+                                                  },
+                                                );
+                                              } else {
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      'Table Is Empty !',
+                                                      style: TextStyle(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
+                                                    ),
+                                                    duration: Duration(
+                                                        milliseconds: 4000),
+                                                    backgroundColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondary,
                                                   ),
-                                                  duration: Duration(
-                                                      milliseconds: 4000),
-                                                  backgroundColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondary,
-                                                ),
-                                              );
-                                            }
+                                                );
+                                              }
 
-                                            safeSetState(() {});
-                                          },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'hnkvya6y' /* View */,
-                                          ),
-                                          icon: Icon(
-                                            Icons.remove_red_eye_outlined,
-                                            size: 15.0,
-                                          ),
-                                          options: FFButtonOptions(
-                                            height: 30.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            iconAlignment: IconAlignment.end,
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            iconColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts:
-                                                          !FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumIsCustom,
-                                                    ),
-                                            elevation: 0.0,
-                                            borderRadius:
-                                                BorderRadius.circular(6.0),
+                                              safeSetState(() {});
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'hnkvya6y' /* View */,
+                                            ),
+                                            icon: Icon(
+                                              Icons.remove_red_eye_outlined,
+                                              size: 15.0,
+                                            ),
+                                            options: FFButtonOptions(
+                                              height: 30.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 16.0, 0.0),
+                                              iconAlignment: IconAlignment.end,
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
+                                                      ),
+                                              elevation: 0.0,
+                                              borderRadius:
+                                                  BorderRadius.circular(6.0),
+                                            ),
                                           ),
                                         ),
-                                      ),
                                     ].divide(SizedBox(width: 4.0)),
                                   ),
                                 ),
