@@ -562,12 +562,16 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                if (false)
+                                            if ('AVAILABLE' ==
+                                                getJsonField(
+                                                  tablelistItem,
+                                                  r'''$.status''',
+                                                ).toString())
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
@@ -580,46 +584,20 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'e3a4y04e' /* 45 */,
-                                                            ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodySmall
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodySmallFamily,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .lineColor,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      !FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmallIsCustom,
-                                                                ),
-                                                          ),
-                                                        ),
                                                         Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'uaxyhfet' /* Mins */,
+                                                          valueOrDefault<
+                                                              String>(
+                                                            functions.totalDuration(containerTableKotRecordList
+                                                                .where((e) =>
+                                                                    e.tableNo ==
+                                                                    getJsonField(
+                                                                      tablelistItem,
+                                                                      r'''$.id''',
+                                                                    ).toString())
+                                                                .toList()
+                                                                .firstOrNull!
+                                                                .createdDate),
+                                                            '0min',
                                                           ),
                                                           textAlign:
                                                               TextAlign.center,
@@ -644,7 +622,6 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                                       ],
                                                     ),
                                                   ),
-                                                if (false)
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
@@ -679,10 +656,20 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                                               ),
                                                         ),
                                                         Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            '2o1h0096' /* 70 */,
+                                                          valueOrDefault<
+                                                              String>(
+                                                            containerTableKotRecordList
+                                                                .where((e) =>
+                                                                    e.tableNo ==
+                                                                    getJsonField(
+                                                                      tablelistItem,
+                                                                      r'''$.id''',
+                                                                    ).toString())
+                                                                .toList()
+                                                                .firstOrNull
+                                                                ?.finalBillAmt
+                                                                ?.toString(),
+                                                            '0',
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -705,8 +692,8 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                                       ],
                                                     ),
                                                   ),
-                                              ],
-                                            ),
+                                                ],
+                                              ),
                                             Text(
                                               getJsonField(
                                                 tablelistItem,
