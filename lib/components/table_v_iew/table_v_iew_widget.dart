@@ -628,79 +628,64 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                     ],
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          3.0, 0.0, 3.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'bsswx6co' /* ₹  */,
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .labelSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily,
-                                                              fontSize: 13.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              useGoogleFonts:
-                                                                  !FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallIsCustom,
-                                                            ),
-                                                      ),
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          containerTableKotRecordList
-                                                              .where((e) =>
-                                                                  e.tableNo ==
-                                                                  getJsonField(
-                                                                    tablelistItem,
-                                                                    r'''$.id''',
-                                                                  ).toString())
-                                                              .toList()
-                                                              .firstOrNull
-                                                              ?.finalBillAmt
-                                                              ?.toString(),
-                                                          '0',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .labelSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily,
-                                                              fontSize: 13.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              useGoogleFonts:
-                                                                  !FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallIsCustom,
-                                                            ),
-                                                      ),
-                                                    ],
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'bsswx6co' /* ₹  */,
                                                   ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                            fontSize: 13.0,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallIsCustom,
+                                                          ),
                                                 ),
-                                              ].divide(SizedBox(width: 3.0)),
+                                                Text(
+                                                  valueOrDefault<String>(
+                                                    containerTableKotRecordList
+                                                        .where((e) =>
+                                                            e.tableNo ==
+                                                            getJsonField(
+                                                              tablelistItem,
+                                                              r'''$.id''',
+                                                            ).toString())
+                                                        .toList()
+                                                        .firstOrNull
+                                                        ?.finalBillAmt
+                                                        ?.toString(),
+                                                    '0',
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                            fontSize: 13.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallIsCustom,
+                                                          ),
+                                                ),
+                                              ],
                                             ),
                                           Text(
                                             getJsonField(
