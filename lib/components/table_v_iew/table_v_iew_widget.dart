@@ -62,79 +62,121 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return Builder(
-      builder: (context) {
-        final tablelist = widget!.jsonlist?.toList() ?? [];
-
-        return GridView.builder(
-          padding: EdgeInsets.zero,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 10,
-            crossAxisSpacing: 12.0,
-            mainAxisSpacing: 12.0,
-            childAspectRatio: 0.85,
-          ),
-          shrinkWrap: true,
-          scrollDirection: Axis.vertical,
-          itemCount: tablelist.length,
-          itemBuilder: (context, tablelistIndex) {
-            final tablelistItem = tablelist[tablelistIndex];
-            return StreamBuilder<List<TableKotRecord>>(
-              stream: queryTableKotRecord(
-                parent: FFAppState().outletIdRef,
-                queryBuilder: (tableKotRecord) => tableKotRecord
-                    .where(
-                      'tableNo',
-                      isEqualTo: getJsonField(
-                        tablelistItem,
-                        r'''$.id''',
-                      ).toString(),
-                    )
-                    .where(
-                      'kotStatus',
-                      isNotEqualTo: 'FINAL',
-                    ),
+    return StreamBuilder<List<TableJsonRecord>>(
+      stream: queryTableJsonRecord(
+        parent: FFAppState().outletIdRef,
+        singleRecord: true,
+      ),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Center(
+            child: SizedBox(
+              width: 40.0,
+              height: 40.0,
+              child: SpinKitFadingCircle(
+                color: FlutterFlowTheme.of(context).primary,
+                size: 40.0,
               ),
-              builder: (context, snapshot) {
-                // Customize what your widget looks like when it's loading.
-                if (!snapshot.hasData) {
-                  return Center(
-                    child: SizedBox(
-                      width: 40.0,
-                      height: 40.0,
-                      child: SpinKitFadingCircle(
-                        color: FlutterFlowTheme.of(context).primary,
-                        size: 40.0,
-                      ),
-                    ),
-                  );
-                }
-                List<TableKotRecord> containerTableKotRecordList =
-                    snapshot.data!;
+            ),
+          );
+        }
+        List<TableJsonRecord> gridViewTableJsonRecordList = snapshot.data!;
+        // Return an empty Container when the item does not exist.
+        if (snapshot.data!.isEmpty) {
+          return Container();
+        }
+        final gridViewTableJsonRecord = gridViewTableJsonRecordList.isNotEmpty
+            ? gridViewTableJsonRecordList.first
+            : null;
 
-                return ClipRRect(
-                  borderRadius: BorderRadius.circular(15.0),
-                  child: Container(
-                    width: 100.0,
-                    height: 80.0,
-                    decoration: BoxDecoration(
-                      color: valueOrDefault<Color>(
-                        () {
-                          if ((containerTableKotRecordList
-                                      .where((e) =>
-                                          e.tableNo ==
-                                          getJsonField(
-                                            tablelistItem,
-                                            r'''$.id''',
-                                          ).toString())
-                                      .toList()
-                                      .firstOrNull
-                                      ?.tableNo ==
-                                  getJsonField(
-                                    tablelistItem,
-                                    r'''$.id''',
-                                  ).toString()) &&
-                              (containerTableKotRecordList
+        return Builder(
+          builder: (context) {
+            final tablelist = functions
+                .stringToJson(gridViewTableJsonRecord!.tableJson)
+                .toList();
+
+            return GridView.builder(
+              padding: EdgeInsets.zero,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 10,
+                crossAxisSpacing: 12.0,
+                mainAxisSpacing: 12.0,
+                childAspectRatio: 0.85,
+              ),
+              shrinkWrap: true,
+              scrollDirection: Axis.vertical,
+              itemCount: tablelist.length,
+              itemBuilder: (context, tablelistIndex) {
+                final tablelistItem = tablelist[tablelistIndex];
+                return StreamBuilder<List<TableKotRecord>>(
+                  stream: queryTableKotRecord(
+                    parent: FFAppState().outletIdRef,
+                    queryBuilder: (tableKotRecord) => tableKotRecord
+                        .where(
+                          'tableNo',
+                          isEqualTo: getJsonField(
+                            tablelistItem,
+                            r'''$.id''',
+                          ).toString(),
+                        )
+                        .where(
+                          'kotStatus',
+                          isNotEqualTo: 'FINAL',
+                        ),
+                  ),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 40.0,
+                          height: 40.0,
+                          child: SpinKitFadingCircle(
+                            color: FlutterFlowTheme.of(context).primary,
+                            size: 40.0,
+                          ),
+                        ),
+                      );
+                    }
+                    List<TableKotRecord> containerTableKotRecordList =
+                        snapshot.data!;
+
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Container(
+                        width: 100.0,
+                        height: 80.0,
+                        decoration: BoxDecoration(
+                          color: valueOrDefault<Color>(
+                            () {
+                              if ((containerTableKotRecordList
+                                          .where((e) =>
+                                              e.tableNo ==
+                                              getJsonField(
+                                                tablelistItem,
+                                                r'''$.id''',
+                                              ).toString())
+                                          .toList()
+                                          .firstOrNull
+                                          ?.tableNo ==
+                                      getJsonField(
+                                        tablelistItem,
+                                        r'''$.id''',
+                                      ).toString()) &&
+                                  (containerTableKotRecordList
+                                          .where((e) =>
+                                              e.tableNo ==
+                                              getJsonField(
+                                                tablelistItem,
+                                                r'''$.id''',
+                                              ).toString())
+                                          .toList()
+                                          .firstOrNull
+                                          ?.kotStatus ==
+                                      'PENDING')) {
+                                return Color(0xFF9AF286);
+                              } else if (containerTableKotRecordList
                                       .where((e) =>
                                           e.tableNo ==
                                           getJsonField(
@@ -144,309 +186,190 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                       .toList()
                                       .firstOrNull
                                       ?.kotStatus ==
-                                  'PENDING')) {
-                            return Color(0xFF9AF286);
-                          } else if (containerTableKotRecordList
-                                  .where((e) =>
-                                      e.tableNo ==
-                                      getJsonField(
-                                        tablelistItem,
-                                        r'''$.id''',
-                                      ).toString())
-                                  .toList()
-                                  .firstOrNull
-                                  ?.kotStatus ==
-                              'BILLING') {
-                            return Color(0xFFF485A2);
-                          } else if ('EMPTY' ==
-                              getJsonField(
-                                tablelistItem,
-                                r'''$.status''',
-                              ).toString()) {
-                            return Color(0xFFFEEB70);
-                          } else {
-                            return Color(0xFFD1CDCD);
-                          }
-                        }(),
-                        Color(0xFFFFE69E),
-                      ),
-                      borderRadius: BorderRadius.circular(15.0),
-                      border: Border.all(
-                        color: FlutterFlowTheme.of(context).primaryBtnText,
-                        width: 2.0,
-                      ),
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        if ((FFAppState().tableFlag == true) &&
-                            ('${FFAppState().tableNo}' !=
-                                getJsonField(
-                                  tablelistItem,
-                                  r'''$.id''',
-                                ).toString()))
-                          Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 3.0, 0.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          'vkcwkq0q' /* Select Table */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts:
-                                                  !FlutterFlowTheme.of(context)
-                                                      .bodyMediumIsCustom,
-                                            ),
-                                      ),
-                                      Theme(
-                                        data: ThemeData(
-                                          checkboxTheme: CheckboxThemeData(
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(4.0),
-                                            ),
-                                          ),
-                                          unselectedWidgetColor:
-                                              FlutterFlowTheme.of(context).info,
-                                        ),
-                                        child: Checkbox(
-                                          value: _model.checkboxValueMap[
-                                              tablelistItem] ??= FFAppState()
-                                                          .postableList
-                                                          .where((e) =>
-                                                              e ==
-                                                              getJsonField(
-                                                                tablelistItem,
-                                                                r'''$.id''',
-                                                              ).toString())
-                                                          .toList()
-                                                          .firstOrNull !=
-                                                      null &&
-                                                  FFAppState()
-                                                          .postableList
-                                                          .where((e) =>
-                                                              e ==
-                                                              getJsonField(
-                                                                tablelistItem,
-                                                                r'''$.id''',
-                                                              ).toString())
-                                                          .toList()
-                                                          .firstOrNull !=
-                                                      ''
-                                              ? true
-                                              : false,
-                                          onChanged: (newValue) async {
-                                            safeSetState(() =>
-                                                _model.checkboxValueMap[
-                                                    tablelistItem] = newValue!);
-                                            if (newValue!) {
-                                              FFAppState().addToPostableList(
-                                                  getJsonField(
-                                                tablelistItem,
-                                                r'''$.id''',
-                                              ).toString());
-                                              FFAppState().prmiseupdate =
-                                                  widget!.parameter3!;
-                                              safeSetState(() {});
-                                            } else {
-                                              FFAppState()
-                                                  .removeFromPostableList(
-                                                      getJsonField(
-                                                tablelistItem,
-                                                r'''$.id''',
-                                              ).toString());
-                                              FFAppState().prmiseupdate = '';
-                                              safeSetState(() {});
-                                            }
-                                          },
-                                          side: (FlutterFlowTheme.of(context)
-                                                      .info !=
-                                                  null)
-                                              ? BorderSide(
-                                                  width: 2,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .info!,
-                                                )
-                                              : null,
-                                          activeColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                          checkColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
-                                        ),
-                                      ),
-                                    ].divide(SizedBox(width: 3.0)),
-                                  ),
-                                ),
-                                Container(
-                                  width: double.infinity,
-                                  height: 1.5,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBtnText,
-                                  ),
-                                ),
-                              ],
-                            ),
+                                  'BILLING') {
+                                return Color(0xFFF485A2);
+                              } else if ('EMPTY' ==
+                                  getJsonField(
+                                    tablelistItem,
+                                    r'''$.status''',
+                                  ).toString()) {
+                                return Color(0xFFFEEB70);
+                              } else {
+                                return Color(0xFFD1CDCD);
+                              }
+                            }(),
+                            Color(0xFFFFE69E),
                           ),
-                        Expanded(
-                          child: Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Expanded(
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      if (containerTableKotRecordList
-                                              .where((e) =>
-                                                  e.tableNo ==
-                                                  getJsonField(
-                                                    tablelistItem,
-                                                    r'''$.id''',
-                                                  ).toString())
-                                              .toList()
-                                              .firstOrNull
-                                              ?.tableNo ==
-                                          getJsonField(
-                                            tablelistItem,
-                                            r'''$.id''',
-                                          ).toString()) {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              'Table Already In  Use ! ',
-                                              style: TextStyle(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                              ),
+                          borderRadius: BorderRadius.circular(15.0),
+                          border: Border.all(
+                            color: FlutterFlowTheme.of(context).primaryBtnText,
+                            width: 2.0,
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            if ((FFAppState().tableFlag == true) &&
+                                ('${FFAppState().tableNo}' !=
+                                    getJsonField(
+                                      tablelistItem,
+                                      r'''$.id''',
+                                    ).toString()))
+                              Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 3.0, 0.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              'vkcwkq0q' /* Select Table */,
                                             ),
-                                            duration:
-                                                Duration(milliseconds: 4000),
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondary,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
+                                                  letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumIsCustom,
+                                                ),
                                           ),
-                                        );
-                                      } else {
-                                        if ('EMPTY' ==
-                                            getJsonField(
-                                              tablelistItem,
-                                              r'''$.status''',
-                                            ).toString()) {
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(
-                                            SnackBar(
-                                              content: Text(
-                                                'Table Already In  Use ! ',
-                                                style: TextStyle(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
+                                          Theme(
+                                            data: ThemeData(
+                                              checkboxTheme: CheckboxThemeData(
+                                                visualDensity:
+                                                    VisualDensity.compact,
+                                                materialTapTargetSize:
+                                                    MaterialTapTargetSize
+                                                        .shrinkWrap,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          4.0),
                                                 ),
                                               ),
-                                              duration:
-                                                  Duration(milliseconds: 4000),
-                                              backgroundColor:
+                                              unselectedWidgetColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondary,
+                                                      .info,
                                             ),
-                                          );
-                                        } else {
-                                          await actions.removeFromAllBillList(
-                                            FFAppState().selBill,
-                                          );
-                                          await actions.clearValue();
-                                          FFAppState().delCharges = 0.0;
-                                          FFAppState().kotDocRef = null;
-                                          FFAppState().tableViewHideShow = true;
-                                          FFAppState().prdid = '';
-                                          FFAppState().tableViewHideShow =
-                                              false;
-                                          FFAppState().tableNo = getJsonField(
-                                            tablelistItem,
-                                            r'''$.id''',
-                                          ).toString();
-                                          FFAppState().selectedPremise =
-                                              widget!.parameter3!;
-                                          FFAppState().kotDocRef = null;
-                                          FFAppState().update(() {});
-                                        }
-                                      }
-                                    },
-                                    onLongPress: () async {
-                                      if ('MERGED' !=
-                                          getJsonField(
-                                            tablelistItem,
-                                            r'''$.status''',
-                                          ).toString()) {
-                                        if ('EMPTY' ==
-                                            getJsonField(
-                                              tablelistItem,
-                                              r'''$.status''',
-                                            ).toString()) {
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                content: Text(
-                                                    'Already Merged With Other  Tables !'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          );
-                                        } else {
-                                          FFAppState().tableFlag = true;
-                                          FFAppState().tableNo = getJsonField(
-                                            tablelistItem,
-                                            r'''$.id''',
-                                          ).toString();
-                                          FFAppState().selectedPremise =
-                                              widget!.parameter3!;
-                                          FFAppState().kotDocRef =
-                                              containerTableKotRecordList
+                                            child: Checkbox(
+                                              value: _model.checkboxValueMap[
+                                                  tablelistItem] ??= FFAppState()
+                                                              .postableList
+                                                              .where((e) =>
+                                                                  e ==
+                                                                  getJsonField(
+                                                                    tablelistItem,
+                                                                    r'''$.id''',
+                                                                  ).toString())
+                                                              .toList()
+                                                              .firstOrNull !=
+                                                          null &&
+                                                      FFAppState()
+                                                              .postableList
+                                                              .where((e) =>
+                                                                  e ==
+                                                                  getJsonField(
+                                                                    tablelistItem,
+                                                                    r'''$.id''',
+                                                                  ).toString())
+                                                              .toList()
+                                                              .firstOrNull !=
+                                                          ''
+                                                  ? true
+                                                  : false,
+                                              onChanged: (newValue) async {
+                                                safeSetState(() => _model
+                                                        .checkboxValueMap[
+                                                    tablelistItem] = newValue!);
+                                                if (newValue!) {
+                                                  FFAppState()
+                                                      .addToPostableList(
+                                                          getJsonField(
+                                                    tablelistItem,
+                                                    r'''$.id''',
+                                                  ).toString());
+                                                  FFAppState().prmiseupdate =
+                                                      widget!.parameter3!;
+                                                  safeSetState(() {});
+                                                } else {
+                                                  FFAppState()
+                                                      .removeFromPostableList(
+                                                          getJsonField(
+                                                    tablelistItem,
+                                                    r'''$.id''',
+                                                  ).toString());
+                                                  FFAppState().prmiseupdate =
+                                                      '';
+                                                  safeSetState(() {});
+                                                }
+                                              },
+                                              side:
+                                                  (FlutterFlowTheme.of(context)
+                                                              .info !=
+                                                          null)
+                                                      ? BorderSide(
+                                                          width: 2,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .info!,
+                                                        )
+                                                      : null,
+                                              activeColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              checkColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                          ),
+                                        ].divide(SizedBox(width: 3.0)),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: double.infinity,
+                                      height: 1.5,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBtnText,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            Expanded(
+                              child: Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Expanded(
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          if (containerTableKotRecordList
                                                   .where((e) =>
                                                       e.tableNo ==
                                                       getJsonField(
@@ -455,99 +378,507 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                       ).toString())
                                                   .toList()
                                                   .firstOrNull
-                                                  ?.reference;
-                                          FFAppState().update(() {});
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                content:
-                                                    Text('Choose Tables....'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
+                                                  ?.tableNo ==
+                                              getJsonField(
+                                                tablelistItem,
+                                                r'''$.id''',
+                                              ).toString()) {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Table Already In  Use ! ',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
                                                   ),
-                                                ],
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
+                                            );
+                                          } else {
+                                            if ('EMPTY' ==
+                                                getJsonField(
+                                                  tablelistItem,
+                                                  r'''$.status''',
+                                                ).toString()) {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'Table Already In  Use ! ',
+                                                    style: TextStyle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                  ),
+                                                  duration: Duration(
+                                                      milliseconds: 4000),
+                                                  backgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondary,
+                                                ),
                                               );
-                                            },
-                                          );
-                                        }
-                                      } else {
-                                        var confirmDialogResponse =
-                                            await showDialog<bool>(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: Text(
-                                                          'Already Merged !'),
-                                                      content: Text(
-                                                          'Do You Want To Split Tables?'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext,
-                                                                  false),
-                                                          child: Text('Cancel'),
-                                                        ),
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext,
-                                                                  true),
-                                                          child:
-                                                              Text('Confirm'),
-                                                        ),
-                                                      ],
-                                                    );
-                                                  },
-                                                ) ??
-                                                false;
-                                        if (confirmDialogResponse) {
-                                          FFAppState().table = functions
-                                              .splitMergeTables(
-                                                  widget!.premisedoc!.toList(),
+                                            } else {
+                                              await actions
+                                                  .removeFromAllBillList(
+                                                FFAppState().selBill,
+                                              );
+                                              await actions.clearValue();
+                                              FFAppState().delCharges = 0.0;
+                                              FFAppState().kotDocRef = null;
+                                              FFAppState().tableViewHideShow =
+                                                  true;
+                                              FFAppState().prdid = '';
+                                              FFAppState().tableViewHideShow =
+                                                  false;
+                                              FFAppState().tableNo =
                                                   getJsonField(
-                                                    tablelistItem,
-                                                    r'''$.id''',
-                                                  ).toString(),
-                                                  widget!.parameter3!,
-                                                  (getJsonField(
-                                                    tablelistItem,
-                                                    r'''$.mergedFrom''',
-                                                    true,
-                                                  ) as List)
-                                                      .map<String>(
-                                                          (s) => s.toString())
-                                                      .toList()!,
-                                                  FFAppState().table.toList())
-                                              .toList()
-                                              .cast<dynamic>();
-                                          FFAppState().update(() {});
+                                                tablelistItem,
+                                                r'''$.id''',
+                                              ).toString();
+                                              FFAppState().selectedPremise =
+                                                  widget!.parameter3!;
+                                              FFAppState().kotDocRef = null;
+                                              FFAppState().update(() {});
+                                            }
+                                          }
+                                        },
+                                        onLongPress: () async {
+                                          if ('MERGED' !=
+                                              getJsonField(
+                                                tablelistItem,
+                                                r'''$.status''',
+                                              ).toString()) {
+                                            if ('EMPTY' ==
+                                                getJsonField(
+                                                  tablelistItem,
+                                                  r'''$.status''',
+                                                ).toString()) {
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    content: Text(
+                                                        'Already Merged With Other  Tables !'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
+                                            } else {
+                                              FFAppState().tableFlag = true;
+                                              FFAppState().tableNo =
+                                                  getJsonField(
+                                                tablelistItem,
+                                                r'''$.id''',
+                                              ).toString();
+                                              FFAppState().selectedPremise =
+                                                  widget!.parameter3!;
+                                              FFAppState().kotDocRef =
+                                                  containerTableKotRecordList
+                                                      .where((e) =>
+                                                          e.tableNo ==
+                                                          getJsonField(
+                                                            tablelistItem,
+                                                            r'''$.id''',
+                                                          ).toString())
+                                                      .toList()
+                                                      .firstOrNull
+                                                      ?.reference;
+                                              FFAppState().update(() {});
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    content: Text(
+                                                        'Choose Tables....'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
+                                            }
+                                          } else {
+                                            var confirmDialogResponse =
+                                                await showDialog<bool>(
+                                                      context: context,
+                                                      builder:
+                                                          (alertDialogContext) {
+                                                        return AlertDialog(
+                                                          title: Text(
+                                                              'Already Merged !'),
+                                                          content: Text(
+                                                              'Do You Want To Split Tables?'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      false),
+                                                              child: Text(
+                                                                  'Cancel'),
+                                                            ),
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      true),
+                                                              child: Text(
+                                                                  'Confirm'),
+                                                            ),
+                                                          ],
+                                                        );
+                                                      },
+                                                    ) ??
+                                                    false;
+                                            if (confirmDialogResponse) {
+                                              FFAppState().table = functions
+                                                  .splitMergeTables(
+                                                      widget!.premisedoc!
+                                                          .toList(),
+                                                      getJsonField(
+                                                        tablelistItem,
+                                                        r'''$.id''',
+                                                      ).toString(),
+                                                      widget!.parameter3!,
+                                                      (getJsonField(
+                                                        tablelistItem,
+                                                        r'''$.mergedFrom''',
+                                                        true,
+                                                      ) as List)
+                                                          .map<String>((s) =>
+                                                              s.toString())
+                                                          .toList()!,
+                                                      FFAppState()
+                                                          .table
+                                                          .toList())
+                                                  .toList()
+                                                  .cast<dynamic>();
+                                              FFAppState().update(() {});
 
-                                          await FFAppState()
-                                              .docrefTable!
-                                              .update(createTableJsonRecordData(
-                                                tableJson: functions
-                                                    .jsonToString(FFAppState()
-                                                        .table
-                                                        .toList()),
-                                              ));
-                                        }
-                                      }
-                                    },
-                                    child: Container(
-                                      width: double.infinity,
-                                      decoration: BoxDecoration(),
-                                      child: Column(
+                                              await FFAppState()
+                                                  .docrefTable!
+                                                  .update(
+                                                      createTableJsonRecordData(
+                                                    tableJson:
+                                                        functions.jsonToString(
+                                                            FFAppState()
+                                                                .table
+                                                                .toList()),
+                                                  ));
+                                            }
+                                          }
+                                        },
+                                        child: Container(
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              if ((containerTableKotRecordList
+                                                          .where((e) =>
+                                                              e.tableNo ==
+                                                              getJsonField(
+                                                                tablelistItem,
+                                                                r'''$.id''',
+                                                              ).toString())
+                                                          .toList()
+                                                          .firstOrNull
+                                                          ?.tableNo ==
+                                                      getJsonField(
+                                                        tablelistItem,
+                                                        r'''$.id''',
+                                                      ).toString()) &&
+                                                  (containerTableKotRecordList
+                                                          .where((e) =>
+                                                              e.tableNo ==
+                                                              getJsonField(
+                                                                tablelistItem,
+                                                                r'''$.id''',
+                                                              ).toString())
+                                                          .toList()
+                                                          .firstOrNull
+                                                          ?.kotStatus !=
+                                                      'FINAL'))
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  3.0,
+                                                                  0.0,
+                                                                  3.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              functions.totalDuration(containerTableKotRecordList
+                                                                  .where((e) =>
+                                                                      e.tableNo ==
+                                                                      getJsonField(
+                                                                        tablelistItem,
+                                                                        r'''$.id''',
+                                                                      ).toString())
+                                                                  .toList()
+                                                                  .firstOrNull!
+                                                                  .createdDate),
+                                                              '0  Min',
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodySmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmallFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .lineColor,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmallIsCustom,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  3.0,
+                                                                  0.0,
+                                                                  3.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'bsswx6co' /* ₹  */,
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  fontSize:
+                                                                      13.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                          ),
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              containerTableKotRecordList
+                                                                  .where((e) =>
+                                                                      e.tableNo ==
+                                                                      getJsonField(
+                                                                        tablelistItem,
+                                                                        r'''$.id''',
+                                                                      ).toString())
+                                                                  .toList()
+                                                                  .firstOrNull
+                                                                  ?.finalBillAmt
+                                                                  ?.toString(),
+                                                              '0',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  fontSize:
+                                                                      13.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ].divide(
+                                                      SizedBox(width: 3.0)),
+                                                ),
+                                              Text(
+                                                getJsonField(
+                                                  tablelistItem,
+                                                  r'''$.typeName''',
+                                                ).toString(),
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmallFamily,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmallIsCustom,
+                                                        ),
+                                              ),
+                                              if (getJsonField(
+                                                    tablelistItem,
+                                                    r'''$.mergedTables''',
+                                                  ) !=
+                                                  null)
+                                                Text(
+                                                  '(${getJsonField(
+                                                    tablelistItem,
+                                                    r'''$.mergedTables''',
+                                                  ).toString()})',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLargeFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
+                                                        fontSize: 12.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelLargeIsCustom,
+                                                      ),
+                                                ),
+                                            ].divide(SizedBox(height: 3.0)),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(4.0),
+                                      child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                            MainAxisAlignment.spaceEvenly,
                                         children: [
+                                          if (false)
+                                            Expanded(
+                                              child: FFButtonWidget(
+                                                onPressed: () {
+                                                  print('Button pressed ...');
+                                                },
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'usclusxa' /*  */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons.print_sharp,
+                                                  size: 15.0,
+                                                ),
+                                                options: FFButtonOptions(
+                                                  height: 35.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          16.0, 0.0, 16.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
+                                                  elevation: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          6.0),
+                                                ),
+                                              ),
+                                            ),
                                           if ((containerTableKotRecordList
                                                       .where((e) =>
                                                           e.tableNo ==
@@ -573,314 +904,55 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                       .firstOrNull
                                                       ?.kotStatus !=
                                                   'FINAL'))
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          3.0, 0.0, 3.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          functions.totalDuration(
-                                                              containerTableKotRecordList
-                                                                  .where((e) =>
-                                                                      e.tableNo ==
+                                            Expanded(
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  _model.tablekot =
+                                                      await queryTableKotRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (tableKotRecord) =>
+                                                            tableKotRecord
+                                                                .where(
+                                                                  'tableNo',
+                                                                  isEqualTo:
                                                                       getJsonField(
-                                                                        tablelistItem,
-                                                                        r'''$.id''',
-                                                                      ).toString())
-                                                                  .toList()
-                                                                  .firstOrNull!
-                                                                  .createdDate),
-                                                          '0  Min',
-                                                        ),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodySmallFamily,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .lineColor,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      !FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmallIsCustom,
-                                                                ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          3.0, 0.0, 3.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'bsswx6co' /* ₹  */,
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .labelSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily,
-                                                              fontSize: 13.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              useGoogleFonts:
-                                                                  !FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallIsCustom,
-                                                            ),
-                                                      ),
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          containerTableKotRecordList
-                                                              .where((e) =>
-                                                                  e.tableNo ==
-                                                                  getJsonField(
                                                                     tablelistItem,
                                                                     r'''$.id''',
-                                                                  ).toString())
-                                                              .toList()
-                                                              .firstOrNull
-                                                              ?.finalBillAmt
-                                                              ?.toString(),
-                                                          '0',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .labelSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily,
-                                                              fontSize: 13.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              useGoogleFonts:
-                                                                  !FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallIsCustom,
-                                                            ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ].divide(SizedBox(width: 3.0)),
-                                            ),
-                                          Text(
-                                            getJsonField(
-                                              tablelistItem,
-                                              r'''$.typeName''',
-                                            ).toString(),
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelSmall
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmallFamily,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                  useGoogleFonts:
-                                                      !FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmallIsCustom,
-                                                ),
-                                          ),
-                                          if (getJsonField(
-                                                tablelistItem,
-                                                r'''$.mergedTables''',
-                                              ) !=
-                                              null)
-                                            Text(
-                                              '(${getJsonField(
-                                                tablelistItem,
-                                                r'''$.mergedTables''',
-                                              ).toString()})',
-                                              textAlign: TextAlign.center,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelLarge
-                                                  .override(
-                                                    fontFamily:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLargeFamily,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .success,
-                                                    fontSize: 12.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                    useGoogleFonts:
-                                                        !FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLargeIsCustom,
-                                                  ),
-                                            ),
-                                        ].divide(SizedBox(height: 3.0)),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.all(4.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      if (false)
-                                        Expanded(
-                                          child: FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
-                                            },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              'usclusxa' /*  */,
-                                            ),
-                                            icon: Icon(
-                                              Icons.print_sharp,
-                                              size: 15.0,
-                                            ),
-                                            options: FFButtonOptions(
-                                              height: 35.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 0.0, 16.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMediumFamily,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts:
-                                                            !FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMediumIsCustom,
-                                                      ),
-                                              elevation: 0.0,
-                                              borderRadius:
-                                                  BorderRadius.circular(6.0),
-                                            ),
-                                          ),
-                                        ),
-                                      if ((containerTableKotRecordList
-                                                  .where((e) =>
-                                                      e.tableNo ==
-                                                      getJsonField(
-                                                        tablelistItem,
-                                                        r'''$.id''',
-                                                      ).toString())
-                                                  .toList()
-                                                  .firstOrNull
-                                                  ?.tableNo ==
-                                              getJsonField(
-                                                tablelistItem,
-                                                r'''$.id''',
-                                              ).toString()) &&
-                                          (containerTableKotRecordList
-                                                  .where((e) =>
-                                                      e.tableNo ==
-                                                      getJsonField(
-                                                        tablelistItem,
-                                                        r'''$.id''',
-                                                      ).toString())
-                                                  .toList()
-                                                  .firstOrNull
-                                                  ?.kotStatus !=
-                                              'FINAL'))
-                                        Expanded(
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
-                                              _model.tablekot =
-                                                  await queryTableKotRecordOnce(
-                                                parent:
-                                                    FFAppState().outletIdRef,
-                                                queryBuilder:
-                                                    (tableKotRecord) =>
-                                                        tableKotRecord
-                                                            .where(
-                                                              'tableNo',
-                                                              isEqualTo:
-                                                                  getJsonField(
-                                                                tablelistItem,
-                                                                r'''$.id''',
-                                                              ).toString(),
-                                                            )
-                                                            .where(
-                                                              'kotStatus',
-                                                              isNotEqualTo:
-                                                                  'FINAL',
-                                                            ),
-                                                singleRecord: true,
-                                              ).then((s) => s.firstOrNull);
-                                              if (_model.tablekot != null) {
-                                                await actions
-                                                    .removeFromAllBillList(
-                                                  FFAppState().selBill,
-                                                );
-                                                await actions.clearValue();
-                                                FFAppState().delCharges = 0.0;
-                                                FFAppState().kotDocRef = null;
-                                                FFAppState().tableViewHideShow =
-                                                    true;
-                                                FFAppState().prdid = '';
-                                                if (FFAppState()
-                                                        .holdBillCount ==
-                                                    0) {
-                                                  FFAppState().holdBillCount =
+                                                                  ).toString(),
+                                                                )
+                                                                .where(
+                                                                  'kotStatus',
+                                                                  isNotEqualTo:
+                                                                      'FINAL',
+                                                                ),
+                                                    singleRecord: true,
+                                                  ).then((s) => s.firstOrNull);
+                                                  if (_model.tablekot != null) {
+                                                    await actions
+                                                        .removeFromAllBillList(
+                                                      FFAppState().selBill,
+                                                    );
+                                                    await actions.clearValue();
+                                                    FFAppState().delCharges =
+                                                        0.0;
+                                                    FFAppState().kotDocRef =
+                                                        null;
+                                                    FFAppState()
+                                                            .tableViewHideShow =
+                                                        true;
+                                                    FFAppState().prdid = '';
+                                                    if (FFAppState()
+                                                            .holdBillCount ==
+                                                        0) {
                                                       FFAppState()
-                                                              .holdBillCount +
-                                                          1;
-                                                  FFAppState().addToAllBillsList(
-                                                      functions
-                                                          .generateBillDetailsJson(
+                                                              .holdBillCount =
+                                                          FFAppState()
+                                                                  .holdBillCount +
+                                                              1;
+                                                      FFAppState().addToAllBillsList(
+                                                          functions.generateBillDetailsJson(
                                                               0.0,
                                                               0.0,
                                                               0.0,
@@ -898,115 +970,128 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                                   .toList(),
                                                               FFAppState()
                                                                   .holdBillCount));
-                                                  FFAppState().selBill = 1;
-                                                }
-                                                await actions
-                                                    .addToHoldListprdKOT(
-                                                  FFAppState().selBill,
-                                                  widget!.taxcollection!
-                                                      .toList(),
-                                                  functions.enabletaxinclusive(
-                                                      widget!.apsetting!
-                                                          .settingList
-                                                          .where((e) =>
-                                                              e.title ==
-                                                              'enableInclusiveTax')
-                                                          .toList()
-                                                          .firstOrNull!
-                                                          .value),
-                                                  _model.tablekot!.productList
-                                                      .toList(),
-                                                );
-                                                FFAppState().tableViewHideShow =
-                                                    false;
-                                                FFAppState().tableNo =
-                                                    getJsonField(
-                                                  tablelistItem,
-                                                  r'''$.id''',
-                                                ).toString();
-                                                FFAppState().selectedPremise =
-                                                    widget!.parameter3!;
-                                                FFAppState().kotDocRef =
-                                                    _model.tablekot?.reference;
+                                                      FFAppState().selBill = 1;
+                                                    }
+                                                    await actions
+                                                        .addToHoldListprdKOT(
+                                                      FFAppState().selBill,
+                                                      widget!.taxcollection!
+                                                          .toList(),
+                                                      functions.enabletaxinclusive(
+                                                          widget!.apsetting!
+                                                              .settingList
+                                                              .where((e) =>
+                                                                  e.title ==
+                                                                  'enableInclusiveTax')
+                                                              .toList()
+                                                              .firstOrNull!
+                                                              .value),
+                                                      _model
+                                                          .tablekot!.productList
+                                                          .toList(),
+                                                    );
+                                                    FFAppState()
+                                                            .tableViewHideShow =
+                                                        false;
+                                                    FFAppState().tableNo =
+                                                        getJsonField(
+                                                      tablelistItem,
+                                                      r'''$.id''',
+                                                    ).toString();
+                                                    FFAppState()
+                                                            .selectedPremise =
+                                                        widget!.parameter3!;
+                                                    FFAppState().kotDocRef =
+                                                        _model.tablekot
+                                                            ?.reference;
 
-                                                _model.updatePage(() {});
-                                              } else {
-                                                ScaffoldMessenger.of(context)
-                                                    .showSnackBar(
-                                                  SnackBar(
-                                                    content: Text(
-                                                      'Table Is Empty !',
-                                                      style: TextStyle(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                      ),
-                                                    ),
-                                                    duration: Duration(
-                                                        milliseconds: 4000),
-                                                    backgroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondary,
-                                                  ),
-                                                );
-                                              }
-
-                                              safeSetState(() {});
-                                            },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              'ya7prppr' /* View */,
-                                            ),
-                                            icon: Icon(
-                                              Icons.remove_red_eye_outlined,
-                                              size: 15.0,
-                                            ),
-                                            options: FFButtonOptions(
-                                              height: 35.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 0.0, 16.0, 0.0),
-                                              iconAlignment: IconAlignment.end,
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMediumFamily,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts:
-                                                            !FlutterFlowTheme
+                                                    _model.updatePage(() {});
+                                                  } else {
+                                                    ScaffoldMessenger.of(
+                                                            context)
+                                                        .showSnackBar(
+                                                      SnackBar(
+                                                        content: Text(
+                                                          'Table Is Empty !',
+                                                          style: TextStyle(
+                                                            color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .bodyMediumIsCustom,
+                                                                .primaryText,
+                                                          ),
+                                                        ),
+                                                        duration: Duration(
+                                                            milliseconds: 4000),
+                                                        backgroundColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondary,
                                                       ),
-                                              elevation: 0.0,
-                                              borderRadius:
-                                                  BorderRadius.circular(6.0),
+                                                    );
+                                                  }
+
+                                                  safeSetState(() {});
+                                                },
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'ya7prppr' /* View */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons.remove_red_eye_outlined,
+                                                  size: 15.0,
+                                                ),
+                                                options: FFButtonOptions(
+                                                  height: 35.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          16.0, 0.0, 16.0, 0.0),
+                                                  iconAlignment:
+                                                      IconAlignment.end,
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  iconColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
+                                                  elevation: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          6.0),
+                                                ),
+                                              ),
                                             ),
-                                          ),
-                                        ),
-                                    ].divide(SizedBox(width: 4.0)),
-                                  ),
+                                        ].divide(SizedBox(width: 4.0)),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ),
-                          ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
+                      ),
+                    );
+                  },
                 );
               },
             );
