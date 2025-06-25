@@ -700,7 +700,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                     ],
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(width: 5.0)),
+                                              ].divide(SizedBox(width: 3.0)),
                                             ),
                                           Text(
                                             getJsonField(
@@ -709,19 +709,18 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                             ).toString(),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
-                                                .labelLarge
+                                                .labelSmall
                                                 .override(
                                                   fontFamily:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelLargeFamily,
-                                                  fontSize: 15.0,
+                                                          .labelSmallFamily,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                   useGoogleFonts:
                                                       !FlutterFlowTheme.of(
                                                               context)
-                                                          .labelLargeIsCustom,
+                                                          .labelSmallIsCustom,
                                                 ),
                                           ),
                                           if (getJsonField(

@@ -127,321 +127,356 @@ class _TableWiseReportWidgetState extends State<TableWiseReportWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          FlutterFlowIconButton(
-                            borderRadius: 8.0,
-                            buttonSize: 45.0,
-                            icon: Icon(
-                              Icons.chevron_left,
-                              color:
-                                  FlutterFlowTheme.of(context).primaryBtnText,
-                              size: 24.0,
-                            ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'tkh4i6cr' /* Table Wise Report */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .headlineSmall
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .headlineSmallFamily,
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              FlutterFlowIconButton(
+                                borderRadius: 8.0,
+                                buttonSize: 45.0,
+                                icon: Icon(
+                                  Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBtnText,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: !FlutterFlowTheme.of(context)
-                                      .headlineSmallIsCustom,
+                                  size: 24.0,
                                 ),
-                          ),
-                          InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              final _datePicked1Date = await showDatePicker(
-                                context: context,
-                                initialDate: getCurrentTimestamp,
-                                firstDate: DateTime(1900),
-                                lastDate: DateTime(2050),
-                                builder: (context, child) {
-                                  return wrapInMaterialDatePickerTheme(
-                                    context,
-                                    child!,
-                                    headerBackgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    headerForegroundColor:
-                                        FlutterFlowTheme.of(context).info,
-                                    headerTextStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .headlineLarge
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineLargeFamily,
-                                              fontSize: 32.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts:
-                                                  !FlutterFlowTheme.of(context)
-                                                      .headlineLargeIsCustom,
-                                            ),
-                                    pickerBackgroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                    pickerForegroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                    selectedDateTimeBackgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    selectedDateTimeForegroundColor:
-                                        FlutterFlowTheme.of(context).info,
-                                    actionButtonForegroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                    iconSize: 24.0,
-                                  );
+                                onPressed: () {
+                                  print('IconButton pressed ...');
                                 },
-                              );
-
-                              if (_datePicked1Date != null) {
-                                safeSetState(() {
-                                  _model.datePicked1 = DateTime(
-                                    _datePicked1Date.year,
-                                    _datePicked1Date.month,
-                                    _datePicked1Date.day,
-                                  );
-                                });
-                              } else if (_model.datePicked1 != null) {
-                                safeSetState(() {
-                                  _model.datePicked1 = getCurrentTimestamp;
-                                });
-                              }
-                              FFAppState().selectStartDate =
-                                  _model.datePicked1!.millisecondsSinceEpoch;
-                              safeSetState(() {});
-                            },
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 15.0, 0.0),
-                                  child: Text(
-                                    'Start Date:${dateTimeFormat(
-                                      "yMMMd",
-                                      DateTime.fromMillisecondsSinceEpoch(
-                                          FFAppState().selectStartDate),
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    )}',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBtnText,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts:
-                                              !FlutterFlowTheme.of(context)
-                                                  .titleSmallIsCustom,
-                                        ),
-                                  ),
+                              ),
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'tkh4i6cr' /* Table Wise Sale Report */,
                                 ),
-                                Icon(
-                                  Icons.calendar_month,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  size: 30.0,
-                                ),
-                              ],
-                            ),
-                          ),
-                          InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              final _datePicked2Date = await showDatePicker(
-                                context: context,
-                                initialDate: getCurrentTimestamp,
-                                firstDate: DateTime(1900),
-                                lastDate: DateTime(2050),
-                                builder: (context, child) {
-                                  return wrapInMaterialDatePickerTheme(
-                                    context,
-                                    child!,
-                                    headerBackgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    headerForegroundColor:
-                                        FlutterFlowTheme.of(context).info,
-                                    headerTextStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .headlineLarge
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineLargeFamily,
-                                              fontSize: 32.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts:
-                                                  !FlutterFlowTheme.of(context)
-                                                      .headlineLargeIsCustom,
-                                            ),
-                                    pickerBackgroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                    pickerForegroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                    selectedDateTimeBackgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    selectedDateTimeForegroundColor:
-                                        FlutterFlowTheme.of(context).info,
-                                    actionButtonForegroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                    iconSize: 24.0,
-                                  );
-                                },
-                              );
-
-                              if (_datePicked2Date != null) {
-                                safeSetState(() {
-                                  _model.datePicked2 = DateTime(
-                                    _datePicked2Date.year,
-                                    _datePicked2Date.month,
-                                    _datePicked2Date.day,
-                                  );
-                                });
-                              } else if (_model.datePicked2 != null) {
-                                safeSetState(() {
-                                  _model.datePicked2 = getCurrentTimestamp;
-                                });
-                              }
-                              FFAppState().selectEndDate =
-                                  _model.datePicked2!.millisecondsSinceEpoch;
-                              safeSetState(() {});
-                              _model.loader = true;
-                              safeSetState(() {});
-                              _model.invoicecustom =
-                                  await queryInvoiceRecordOnce(
-                                parent: FFAppState().outletIdRef,
-                                queryBuilder: (invoiceRecord) => invoiceRecord
-                                    .where(
-                                      'invoiceDate',
-                                      isGreaterThan:
-                                          FFAppState().selectStartDate,
-                                    )
-                                    .where(
-                                      'invoiceDate',
-                                      isLessThan: FFAppState().selectEndDate,
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineSmall
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineSmallFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBtnText,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .headlineSmallIsCustom,
                                     ),
-                              );
-                              _model.jsonlisttablecustom =
-                                  await actions.tableWiseReport(
-                                _model.invoicecustom!.toList(),
-                              );
-                              _model.jsonlist = _model.jsonlisttablecustom!
-                                  .toList()
-                                  .cast<dynamic>();
-                              _model.loader = false;
-                              safeSetState(() {});
-
-                              safeSetState(() {});
-                            },
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 15.0, 0.0),
-                                  child: Text(
-                                    'End Date:${dateTimeFormat(
-                                      "yMMMd",
-                                      DateTime.fromMillisecondsSinceEpoch(
-                                          FFAppState().selectEndDate),
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    )}',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBtnText,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts:
-                                              !FlutterFlowTheme.of(context)
-                                                  .titleSmallIsCustom,
-                                        ),
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.calendar_month,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  size: 30.0,
-                                ),
-                              ],
-                            ),
+                              ),
+                            ].divide(SizedBox(width: 15.0)),
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                5.0, 5.0, 10.0, 5.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                await showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  barrierColor: Color(0x00000000),
-                                  context: context,
-                                  builder: (context) {
-                                    return GestureDetector(
-                                      onTap: () {
-                                        FocusScope.of(context).unfocus();
-                                        FocusManager.instance.primaryFocus
-                                            ?.unfocus();
+                                15.0, 0.0, 15.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    final _datePicked1Date =
+                                        await showDatePicker(
+                                      context: context,
+                                      initialDate: getCurrentTimestamp,
+                                      firstDate: DateTime(1900),
+                                      lastDate: DateTime(2050),
+                                      builder: (context, child) {
+                                        return wrapInMaterialDatePickerTheme(
+                                          context,
+                                          child!,
+                                          headerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          headerForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          headerTextStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .headlineLarge
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineLargeFamily,
+                                                fontSize: 32.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineLargeIsCustom,
+                                              ),
+                                          pickerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          pickerForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          selectedDateTimeBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          selectedDateTimeForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          actionButtonForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          iconSize: 24.0,
+                                        );
                                       },
-                                      child: Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: CustomDateWidget(),
-                                      ),
                                     );
+
+                                    if (_datePicked1Date != null) {
+                                      safeSetState(() {
+                                        _model.datePicked1 = DateTime(
+                                          _datePicked1Date.year,
+                                          _datePicked1Date.month,
+                                          _datePicked1Date.day,
+                                        );
+                                      });
+                                    } else if (_model.datePicked1 != null) {
+                                      safeSetState(() {
+                                        _model.datePicked1 =
+                                            getCurrentTimestamp;
+                                      });
+                                    }
+                                    FFAppState().selectStartDate = _model
+                                        .datePicked1!.millisecondsSinceEpoch;
+                                    safeSetState(() {});
                                   },
-                                ).then((value) => safeSetState(() {}));
-                              },
-                              child: Material(
-                                color: Colors.transparent,
-                                elevation: 2.0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5.0),
-                                ),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .customColor1,
-                                    borderRadius: BorderRadius.circular(5.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 15.0, 0.0),
+                                        child: Text(
+                                          'Start Date:${dateTimeFormat(
+                                            "yMMMd",
+                                            DateTime.fromMillisecondsSinceEpoch(
+                                                FFAppState().selectStartDate),
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          )}',
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBtnText,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleSmallIsCustom,
+                                              ),
+                                        ),
+                                      ),
+                                      Icon(
+                                        Icons.calendar_month,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        size: 30.0,
+                                      ),
+                                    ],
                                   ),
                                 ),
-                              ),
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    final _datePicked2Date =
+                                        await showDatePicker(
+                                      context: context,
+                                      initialDate: getCurrentTimestamp,
+                                      firstDate: DateTime(1900),
+                                      lastDate: DateTime(2050),
+                                      builder: (context, child) {
+                                        return wrapInMaterialDatePickerTheme(
+                                          context,
+                                          child!,
+                                          headerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          headerForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          headerTextStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .headlineLarge
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineLargeFamily,
+                                                fontSize: 32.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineLargeIsCustom,
+                                              ),
+                                          pickerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          pickerForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          selectedDateTimeBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          selectedDateTimeForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          actionButtonForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          iconSize: 24.0,
+                                        );
+                                      },
+                                    );
+
+                                    if (_datePicked2Date != null) {
+                                      safeSetState(() {
+                                        _model.datePicked2 = DateTime(
+                                          _datePicked2Date.year,
+                                          _datePicked2Date.month,
+                                          _datePicked2Date.day,
+                                        );
+                                      });
+                                    } else if (_model.datePicked2 != null) {
+                                      safeSetState(() {
+                                        _model.datePicked2 =
+                                            getCurrentTimestamp;
+                                      });
+                                    }
+                                    FFAppState().selectEndDate = _model
+                                        .datePicked2!.millisecondsSinceEpoch;
+                                    safeSetState(() {});
+                                    _model.loader = true;
+                                    safeSetState(() {});
+                                    _model.invoicecustom =
+                                        await queryInvoiceRecordOnce(
+                                      parent: FFAppState().outletIdRef,
+                                      queryBuilder: (invoiceRecord) =>
+                                          invoiceRecord
+                                              .where(
+                                                'invoiceDate',
+                                                isGreaterThan: FFAppState()
+                                                    .selectStartDate,
+                                              )
+                                              .where(
+                                                'invoiceDate',
+                                                isLessThan:
+                                                    FFAppState().selectEndDate,
+                                              ),
+                                    );
+                                    _model.jsonlisttablecustom =
+                                        await actions.tableWiseReport(
+                                      _model.invoicecustom!.toList(),
+                                    );
+                                    _model.jsonlist = _model
+                                        .jsonlisttablecustom!
+                                        .toList()
+                                        .cast<dynamic>();
+                                    _model.loader = false;
+                                    safeSetState(() {});
+
+                                    safeSetState(() {});
+                                  },
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 15.0, 0.0),
+                                        child: Text(
+                                          'End Date:${dateTimeFormat(
+                                            "yMMMd",
+                                            DateTime.fromMillisecondsSinceEpoch(
+                                                FFAppState().selectEndDate),
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          )}',
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBtnText,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleSmallIsCustom,
+                                              ),
+                                        ),
+                                      ),
+                                      Icon(
+                                        Icons.calendar_month,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        size: 30.0,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 5.0, 10.0, 5.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        barrierColor: Color(0x00000000),
+                                        context: context,
+                                        builder: (context) {
+                                          return GestureDetector(
+                                            onTap: () {
+                                              FocusScope.of(context).unfocus();
+                                              FocusManager.instance.primaryFocus
+                                                  ?.unfocus();
+                                            },
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: CustomDateWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => safeSetState(() {}));
+                                    },
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      elevation: 2.0,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .customColor1,
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ].divide(SizedBox(width: 15.0)),
                             ),
                           ),
-                        ].divide(SizedBox(width: 15.0)),
+                        ],
                       ),
                     ),
                   ),
@@ -467,7 +502,7 @@ class _TableWiseReportWidgetState extends State<TableWiseReportWidget> {
                               ),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 10.0, 20.0, 10.0),
+                                    20.0, 10.0, 50.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -592,10 +627,8 @@ class _TableWiseReportWidgetState extends State<TableWiseReportWidget> {
                                       final littableItem =
                                           littable[littableIndex];
                                       return Container(
-                                        height: 200.0,
                                         child: Container(
                                           width: double.infinity,
-                                          height: 200.0,
                                           color: Color(0x00000000),
                                           child: ExpandableNotifier(
                                             initialExpanded: false,
@@ -613,8 +646,8 @@ class _TableWiseReportWidgetState extends State<TableWiseReportWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(20.0, 10.0,
-                                                          20.0, 10.0),
+                                                      .fromSTEB(20.0, 10.0, 0.0,
+                                                          10.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -757,47 +790,61 @@ class _TableWiseReportWidgetState extends State<TableWiseReportWidget> {
                                                   ),
                                                 ),
                                               ),
-                                              collapsed: Column(
-                                                mainAxisSize: MainAxisSize.min,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'bowmginz' /* View Bills */,
-                                                    ),
-                                                    textAlign: TextAlign.start,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
-                                                          color:
-                                                              Color(0x8A000000),
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMediumIsCustom,
+                                              collapsed: Container(
+                                                width: double.infinity,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 30.0, 10.0),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'bowmginz' /* View Bills */,
                                                         ),
+                                                        textAlign:
+                                                            TextAlign.start,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
+                                                                ),
+                                                      ),
+                                                    ],
                                                   ),
-                                                ],
+                                                ),
                                               ),
                                               expanded: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Container(
                                                     width: double.infinity,
-                                                    height: MediaQuery.sizeOf(
-                                                                context)
-                                                            .height *
-                                                        0.06,
                                                     decoration: BoxDecoration(
-                                                      color: Color(0x879DB8FF),
+                                                      color: Color(0xFFBCAB93),
                                                     ),
                                                     child: Padding(
                                                       padding:
@@ -805,13 +852,13 @@ class _TableWiseReportWidgetState extends State<TableWiseReportWidget> {
                                                               .fromSTEB(
                                                                   20.0,
                                                                   10.0,
-                                                                  20.0,
+                                                                  50.0,
                                                                   10.0),
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Expanded(
+                                                          Flexible(
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -953,218 +1000,213 @@ class _TableWiseReportWidgetState extends State<TableWiseReportWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                  StreamBuilder<
-                                                      List<InvoiceRecord>>(
-                                                    stream: queryInvoiceRecord(
-                                                      parent: FFAppState()
-                                                          .outletIdRef,
-                                                      queryBuilder:
-                                                          (invoiceRecord) =>
-                                                              invoiceRecord
-                                                                  .where(
-                                                                    'invoiceDate',
-                                                                    isGreaterThan:
-                                                                        FFAppState()
-                                                                            .selectStartDate,
-                                                                  )
-                                                                  .where(
-                                                                    'invoiceDate',
-                                                                    isLessThanOrEqualTo:
-                                                                        FFAppState()
-                                                                            .selectEndDate,
-                                                                  )
-                                                                  .where(
-                                                                    'tableId',
-                                                                    isEqualTo:
-                                                                        getJsonField(
-                                                                      littableItem,
-                                                                      r'''$.tableNo''',
-                                                                    ).toString(),
-                                                                  ),
-                                                    ),
-                                                    builder:
-                                                        (context, snapshot) {
-                                                      // Customize what your widget looks like when it's loading.
-                                                      if (!snapshot.hasData) {
-                                                        return Center(
-                                                          child: SizedBox(
-                                                            width: 40.0,
-                                                            height: 40.0,
-                                                            child:
-                                                                SpinKitFadingCircle(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              size: 40.0,
-                                                            ),
-                                                          ),
-                                                        );
-                                                      }
-                                                      List<InvoiceRecord>
-                                                          listViewInvoiceRecordList =
-                                                          snapshot.data!;
-
-                                                      return ListView.builder(
-                                                        padding:
-                                                            EdgeInsets.zero,
-                                                        shrinkWrap: true,
-                                                        scrollDirection:
-                                                            Axis.vertical,
-                                                        itemCount:
-                                                            listViewInvoiceRecordList
-                                                                .length,
-                                                        itemBuilder: (context,
-                                                            listViewIndex) {
-                                                          final listViewInvoiceRecord =
-                                                              listViewInvoiceRecordList[
-                                                                  listViewIndex];
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .height *
-                                                                0.06,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondary,
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          20.0,
-                                                                          10.0,
-                                                                          20.0,
-                                                                          10.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child: Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'x4w8k3qi' /* 0 */,
-                                                                      ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
-                                                                          ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 2.0,
+                                                                0.0, 0.0),
+                                                    child: StreamBuilder<
+                                                        List<InvoiceRecord>>(
+                                                      stream:
+                                                          queryInvoiceRecord(
+                                                        parent: FFAppState()
+                                                            .outletIdRef,
+                                                        queryBuilder:
+                                                            (invoiceRecord) =>
+                                                                invoiceRecord
+                                                                    .where(
+                                                                      'invoiceDate',
+                                                                      isGreaterThan:
+                                                                          FFAppState()
+                                                                              .selectStartDate,
+                                                                    )
+                                                                    .where(
+                                                                      'invoiceDate',
+                                                                      isLessThanOrEqualTo:
+                                                                          FFAppState()
+                                                                              .selectEndDate,
+                                                                    )
+                                                                    .where(
+                                                                      'tableId',
+                                                                      isEqualTo:
+                                                                          getJsonField(
+                                                                        littableItem,
+                                                                        r'''$.tableNo''',
+                                                                      ).toString(),
                                                                     ),
-                                                                  ),
-                                                                  Expanded(
-                                                                    child: Text(
-                                                                      listViewInvoiceRecord
-                                                                          .invoice,
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                  Expanded(
-                                                                    child: Text(
-                                                                      listViewInvoiceRecord
-                                                                          .dayId,
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                  Expanded(
-                                                                    child: Text(
-                                                                      listViewInvoiceRecord
-                                                                          .paymentMode,
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                  Expanded(
-                                                                    child: Text(
-                                                                      listViewInvoiceRecord
-                                                                          .finalBillAmt
-                                                                          .toString(),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ].divide(SizedBox(
-                                                                    width:
-                                                                        5.0)),
+                                                      ),
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (!snapshot.hasData) {
+                                                          return Center(
+                                                            child: SizedBox(
+                                                              width: 40.0,
+                                                              height: 40.0,
+                                                              child:
+                                                                  SpinKitFadingCircle(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                size: 40.0,
                                                               ),
                                                             ),
                                                           );
-                                                        },
-                                                      );
-                                                    },
+                                                        }
+                                                        List<InvoiceRecord>
+                                                            listViewInvoiceRecordList =
+                                                            snapshot.data!;
+
+                                                        return ListView
+                                                            .separated(
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          shrinkWrap: true,
+                                                          scrollDirection:
+                                                              Axis.vertical,
+                                                          itemCount:
+                                                              listViewInvoiceRecordList
+                                                                  .length,
+                                                          separatorBuilder: (_,
+                                                                  __) =>
+                                                              SizedBox(
+                                                                  height: 1.0),
+                                                          itemBuilder: (context,
+                                                              listViewIndex) {
+                                                            final listViewInvoiceRecord =
+                                                                listViewInvoiceRecordList[
+                                                                    listViewIndex];
+                                                            return Container(
+                                                              width: double
+                                                                  .infinity,
+                                                              height: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .height *
+                                                                  0.06,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondary,
+                                                              ),
+                                                              child: Padding(
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        20.0,
+                                                                        10.0,
+                                                                        50.0,
+                                                                        10.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Flexible(
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            (listViewIndex + 1).toString(),
+                                                                            '1',
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .headlineSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w600,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        listViewInvoiceRecord
+                                                                            .invoice,
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        listViewInvoiceRecord
+                                                                            .dayId,
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        listViewInvoiceRecord
+                                                                            .paymentMode,
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        listViewInvoiceRecord
+                                                                            .finalBillAmt
+                                                                            .toString(),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .headlineSmall
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                  ].divide(SizedBox(
+                                                                      width:
+                                                                          5.0)),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          },
+                                                        );
+                                                      },
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -1176,6 +1218,7 @@ class _TableWiseReportWidgetState extends State<TableWiseReportWidget> {
                                                     ExpandablePanelHeaderAlignment
                                                         .center,
                                                 hasIcon: true,
+                                                iconSize: 30.0,
                                               ),
                                             ),
                                           ),

@@ -23412,7 +23412,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // TableWiseReport
   {
     'tkh4i6cr': {
-      'en': 'Table Wise Report',
+      'en': 'Table Wise Sale Report',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -23501,14 +23501,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hlzgqss8': {
       'en': 'Net Amt',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-      'th': '',
-    },
-    'x4w8k3qi': {
-      'en': '0',
       'hi': '',
       'kn': '',
       'mr': '',
