@@ -562,10 +562,21 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            if ('AVAILABLE' !=
+                                            if (containerTableKotRecordList
+                                                    .where((e) =>
+                                                        (e.tableNo ==
+                                                            getJsonField(
+                                                              tablelistItem,
+                                                              r'''$.id''',
+                                                            ).toString()) &&
+                                                        (e.kotStatus !=
+                                                            'FINAL'))
+                                                    .toList()
+                                                    .firstOrNull
+                                                    ?.tableNo ==
                                                 getJsonField(
                                                   tablelistItem,
-                                                  r'''$.status''',
+                                                  r'''$.id''',
                                                 ).toString())
                                               Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -803,10 +814,20 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                             ),
                                           ),
                                         ),
-                                      if ('AVAILABLE' !=
+                                      if (containerTableKotRecordList
+                                              .where((e) =>
+                                                  (e.tableNo ==
+                                                      getJsonField(
+                                                        tablelistItem,
+                                                        r'''$.id''',
+                                                      ).toString()) &&
+                                                  (e.kotStatus != 'FINAL'))
+                                              .toList()
+                                              .firstOrNull
+                                              ?.tableNo ==
                                           getJsonField(
                                             tablelistItem,
-                                            r'''$.status''',
+                                            r'''$.id''',
                                           ).toString())
                                         Expanded(
                                           child: FFButtonWidget(
