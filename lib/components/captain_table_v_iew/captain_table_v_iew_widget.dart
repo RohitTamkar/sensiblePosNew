@@ -562,7 +562,7 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            if ('AVAILABLE' ==
+                                            if ('AVAILABLE' !=
                                                 getJsonField(
                                                   tablelistItem,
                                                   r'''$.status''',
@@ -803,7 +803,7 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                             ),
                                           ),
                                         ),
-                                      if ('AVAILABLE' ==
+                                      if ('AVAILABLE' !=
                                           getJsonField(
                                             tablelistItem,
                                             r'''$.status''',
