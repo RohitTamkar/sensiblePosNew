@@ -604,41 +604,42 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            functions.totalDuration(containerTableKotRecordList
-                                                                .where((e) =>
-                                                                    e.tableNo ==
-                                                                    getJsonField(
-                                                                      tablelistItem,
-                                                                      r'''$.id''',
-                                                                    ).toString())
-                                                                .toList()
-                                                                .firstOrNull!
-                                                                .createdDate),
-                                                            '0min',
+                                                        if (false)
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              functions.totalDuration(containerTableKotRecordList
+                                                                  .where((e) =>
+                                                                      e.tableNo ==
+                                                                      getJsonField(
+                                                                        tablelistItem,
+                                                                        r'''$.id''',
+                                                                      ).toString())
+                                                                  .toList()
+                                                                  .firstOrNull!
+                                                                  .createdDate),
+                                                              '0min',
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodySmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmallFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .lineColor,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmallIsCustom,
+                                                                ),
                                                           ),
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodySmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmallFamily,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .lineColor,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmallIsCustom,
-                                                              ),
-                                                        ),
                                                       ],
                                                     ),
                                                   ),

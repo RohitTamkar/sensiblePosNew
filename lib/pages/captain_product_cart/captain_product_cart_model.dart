@@ -168,8 +168,6 @@ class CaptainProductCartModel
   List<dynamic>? resultplus;
   // Stores action output result for [Custom Action - calBillAmt] action in Plus widget.
   double? reuslt12;
-  // Stores action output result for [Custom Action - removeHoldListItem] action in Icon widget.
-  List<dynamic>? res20;
   // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in Icon widget.
   double? ddddd;
   // Stores action output result for [Custom Action - calBillAmt] action in Icon widget.

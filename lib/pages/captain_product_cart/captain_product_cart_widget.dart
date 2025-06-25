@@ -865,7 +865,9 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                                     finalBillAmt:
                                                                         FFAppState()
                                                                             .finalAmt,
-                                                                    id: '',
+                                                                    billAmt:
+                                                                        FFAppState()
+                                                                            .billAmt,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -3354,7 +3356,7 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                                                       onTap: () async {
                                                                                         FFAppState().groceryshow = false;
                                                                                         safeSetState(() {});
-                                                                                        _model.res20 = await actions.removeHoldListItem(
+                                                                                        await actions.removeListItemTable(
                                                                                           getJsonField(
                                                                                             billItem,
                                                                                             r'''$''',
