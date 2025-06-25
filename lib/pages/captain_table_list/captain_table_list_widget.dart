@@ -734,118 +734,162 @@ class _CaptainTableListWidgetState extends State<CaptainTableListWidget> {
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 0.0),
-                                        child: Container(
-                                          width: double.infinity,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                        child: StreamBuilder<
+                                            List<TableJsonRecord>>(
+                                          stream: queryTableJsonRecord(
+                                            parent: FFAppState().outletIdRef,
+                                            singleRecord: true,
                                           ),
-                                          child: Builder(
-                                            builder: (context) {
-                                              final json =
-                                                  FFAppState().table.toList();
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 40.0,
+                                                  height: 40.0,
+                                                  child: SpinKitFadingCircle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 40.0,
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                            List<TableJsonRecord>
+                                                containerTableJsonRecordList =
+                                                snapshot.data!;
+                                            // Return an empty Container when the item does not exist.
+                                            if (snapshot.data!.isEmpty) {
+                                              return Container();
+                                            }
+                                            final containerTableJsonRecord =
+                                                containerTableJsonRecordList
+                                                        .isNotEmpty
+                                                    ? containerTableJsonRecordList
+                                                        .first
+                                                    : null;
 
-                                              return ListView.separated(
-                                                padding: EdgeInsets.zero,
-                                                shrinkWrap: true,
-                                                scrollDirection: Axis.vertical,
-                                                itemCount: json.length,
-                                                separatorBuilder: (_, __) =>
-                                                    SizedBox(height: 25.0),
-                                                itemBuilder:
-                                                    (context, jsonIndex) {
-                                                  final jsonItem =
-                                                      json[jsonIndex];
-                                                  return Container(
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10.0),
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Container(
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .info,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        5.0),
-                                                          ),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
+                                            return Container(
+                                              width: double.infinity,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                              ),
+                                              child: Builder(
+                                                builder: (context) {
+                                                  final json = functions
+                                                      .stringToJson(
+                                                          containerTableJsonRecord!
+                                                              .tableJson)
+                                                      .toList();
+
+                                                  return ListView.separated(
+                                                    padding: EdgeInsets.zero,
+                                                    shrinkWrap: true,
+                                                    scrollDirection:
+                                                        Axis.vertical,
+                                                    itemCount: json.length,
+                                                    separatorBuilder: (_, __) =>
+                                                        SizedBox(height: 25.0),
+                                                    itemBuilder:
+                                                        (context, jsonIndex) {
+                                                      final jsonItem =
+                                                          json[jsonIndex];
+                                                      return Container(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10.0),
+                                                        ),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Container(
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .info,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            5.0),
+                                                              ),
+                                                              child: Padding(
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         7.0,
                                                                         10.0,
                                                                         7.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  getJsonField(
-                                                                    jsonItem,
-                                                                    r'''$.premise''',
-                                                                  ).toString(),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryBtnText,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.normal,
-                                                                        useGoogleFonts:
-                                                                            !FlutterFlowTheme.of(context).titleMediumIsCustom,
-                                                                      ),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Text(
+                                                                      getJsonField(
+                                                                        jsonItem,
+                                                                        r'''$.premise''',
+                                                                      ).toString(),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryBtnText,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.normal,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
+                                                                          ),
+                                                                    ),
+                                                                  ],
                                                                 ),
-                                                              ],
+                                                              ),
                                                             ),
-                                                          ),
+                                                            CaptainTableVIewWidget(
+                                                              key: Key(
+                                                                  'Keyoyg_${jsonIndex}_of_${json.length}'),
+                                                              parameter3:
+                                                                  getJsonField(
+                                                                jsonItem,
+                                                                r'''$.premise''',
+                                                              ).toString(),
+                                                              taxcollection: widget!
+                                                                  .taxcollection,
+                                                              apsetting:
+                                                                  captainTableListAppSettingsRecord,
+                                                              jsonlist:
+                                                                  getJsonField(
+                                                                jsonItem,
+                                                                r'''$.type''',
+                                                              ),
+                                                              premisedoc:
+                                                                  containerPremisesRecordList,
+                                                            ),
+                                                          ].divide(SizedBox(
+                                                              height: 10.0)),
                                                         ),
-                                                        CaptainTableVIewWidget(
-                                                          key: Key(
-                                                              'Keyoyg_${jsonIndex}_of_${json.length}'),
-                                                          parameter3:
-                                                              getJsonField(
-                                                            jsonItem,
-                                                            r'''$.premise''',
-                                                          ).toString(),
-                                                          taxcollection: widget!
-                                                              .taxcollection,
-                                                          apsetting:
-                                                              captainTableListAppSettingsRecord,
-                                                          jsonlist:
-                                                              getJsonField(
-                                                            jsonItem,
-                                                            r'''$.type''',
-                                                          ),
-                                                          premisedoc:
-                                                              containerPremisesRecordList,
-                                                        ),
-                                                      ].divide(SizedBox(
-                                                          height: 10.0)),
-                                                    ),
+                                                      );
+                                                    },
                                                   );
                                                 },
-                                              );
-                                            },
-                                          ),
+                                              ),
+                                            );
+                                          },
                                         ),
                                       ),
                                     ),
