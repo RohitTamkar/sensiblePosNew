@@ -3025,14 +3025,20 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                             child: Builder(
                                                               builder:
                                                                   (context) {
-                                                                final bill = functions
-                                                                    .filterBillList(
-                                                                        FFAppState()
-                                                                            .selBill,
-                                                                        FFAppState()
-                                                                            .allBillsList
-                                                                            .toList())
-                                                                    .toList();
+                                                                final bill =
+                                                                    functions
+                                                                        .filterBillList(
+                                                                            FFAppState()
+                                                                                .selBill,
+                                                                            FFAppState()
+                                                                                .allBillsList
+                                                                                .toList())
+                                                                        .where((e) =>
+                                                                            !getJsonField(
+                                                                              e,
+                                                                              r'''$.isDeleted''',
+                                                                            ))
+                                                                        .toList();
 
                                                                 return ListView
                                                                     .builder(
