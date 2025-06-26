@@ -113,6 +113,7 @@ Future<List<dynamic>> addToHoldListprdKOT(
             "printKot": document.printKot,
             "kotTime": document.kotTime,
             "isDeleted": isDeleted,
+            "kotRemark": document.kotRemark,
           };
           itemList.add(data);
         }

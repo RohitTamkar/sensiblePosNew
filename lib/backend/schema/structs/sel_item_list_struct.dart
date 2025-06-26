@@ -27,6 +27,7 @@ class SelItemListStruct extends FFFirebaseStruct {
     String? qtystring,
     int? kotTime,
     bool? printKot,
+    List<String>? kotRemark,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _name = name,
         _price = price,
@@ -45,6 +46,7 @@ class SelItemListStruct extends FFFirebaseStruct {
         _qtystring = qtystring,
         _kotTime = kotTime,
         _printKot = printKot,
+        _kotRemark = kotRemark,
         super(firestoreUtilData);
 
   // "name" field.
@@ -182,6 +184,17 @@ class SelItemListStruct extends FFFirebaseStruct {
 
   bool hasPrintKot() => _printKot != null;
 
+  // "kotRemark" field.
+  List<String>? _kotRemark;
+  List<String> get kotRemark => _kotRemark ?? const [];
+  set kotRemark(List<String>? val) => _kotRemark = val;
+
+  void updateKotRemark(Function(List<String>) updateFn) {
+    updateFn(_kotRemark ??= []);
+  }
+
+  bool hasKotRemark() => _kotRemark != null;
+
   static SelItemListStruct fromMap(Map<String, dynamic> data) =>
       SelItemListStruct(
         name: data['name'] as String?,
@@ -201,6 +214,7 @@ class SelItemListStruct extends FFFirebaseStruct {
         qtystring: data['qtystring'] as String?,
         kotTime: castToType<int>(data['kotTime']),
         printKot: data['printKot'] as bool?,
+        kotRemark: getDataList(data['kotRemark']),
       );
 
   static SelItemListStruct? maybeFromMap(dynamic data) => data is Map
@@ -225,6 +239,7 @@ class SelItemListStruct extends FFFirebaseStruct {
         'qtystring': _qtystring,
         'kotTime': _kotTime,
         'printKot': _printKot,
+        'kotRemark': _kotRemark,
       }.withoutNulls;
 
   @override
@@ -296,6 +311,11 @@ class SelItemListStruct extends FFFirebaseStruct {
         'printKot': serializeParam(
           _printKot,
           ParamType.bool,
+        ),
+        'kotRemark': serializeParam(
+          _kotRemark,
+          ParamType.String,
+          isList: true,
         ),
       }.withoutNulls;
 
@@ -386,6 +406,11 @@ class SelItemListStruct extends FFFirebaseStruct {
           ParamType.bool,
           false,
         ),
+        kotRemark: deserializeParam<String>(
+          data['kotRemark'],
+          ParamType.String,
+          true,
+        ),
       );
 
   @override
@@ -393,6 +418,7 @@ class SelItemListStruct extends FFFirebaseStruct {
 
   @override
   bool operator ==(Object other) {
+    const listEquality = ListEquality();
     return other is SelItemListStruct &&
         name == other.name &&
         price == other.price &&
@@ -410,7 +436,8 @@ class SelItemListStruct extends FFFirebaseStruct {
         ordertype == other.ordertype &&
         qtystring == other.qtystring &&
         kotTime == other.kotTime &&
-        printKot == other.printKot;
+        printKot == other.printKot &&
+        listEquality.equals(kotRemark, other.kotRemark);
   }
 
   @override
@@ -431,7 +458,8 @@ class SelItemListStruct extends FFFirebaseStruct {
         ordertype,
         qtystring,
         kotTime,
-        printKot
+        printKot,
+        kotRemark
       ]);
 }
 

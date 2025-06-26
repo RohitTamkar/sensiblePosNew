@@ -57,6 +57,7 @@ Future<List<SelItemListStruct>> filterProductsKot(
               isDeletedItem: itemList[j]["isDeleted"],
               printKot: kot,
               kotTime: timems,
+              kotRemark: itemList[j]["kotRemark"],
             );
 
             returnList.add(struct);
