@@ -661,6 +661,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _docrefTable = prefs.getString('ff_docrefTable')?.ref ?? _docrefTable;
     });
+    _safeInit(() {
+      _role = prefs.getString('ff_role') ?? _role;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3730,6 +3733,13 @@ class FFAppState extends ChangeNotifier {
     value != null
         ? prefs.setString('ff_docrefTable', value.path)
         : prefs.remove('ff_docrefTable');
+  }
+
+  String _role = '';
+  String get role => _role;
+  set role(String value) {
+    _role = value;
+    prefs.setString('ff_role', value);
   }
 
   final _appsdettingManager = StreamRequestManager<List<AppSettingsRecord>>();

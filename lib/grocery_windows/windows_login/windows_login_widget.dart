@@ -1255,12 +1255,14 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                       _shouldSetState = true;
                                                                                       _model.internetconnection = await actions.checkInternetConnection();
                                                                                       _shouldSetState = true;
-                                                                                      if (true) {
+                                                                                      if (_model.internetconnection!) {
                                                                                         if (_model.outletdoc?.active == true) {
                                                                                           if (containerDeviceRecord?.active == true) {
                                                                                             if (getCurrentTimestamp.millisecondsSinceEpoch <= _model.outletdoc!.renewalDate) {
                                                                                               if (_model.userProfile?.reference != null) {
                                                                                                 FFAppState().userName = _model.userProfile!.name;
+                                                                                                FFAppState().userdoc = _model.userProfile?.reference;
+                                                                                                FFAppState().role = _model.userProfile!.role;
                                                                                                 safeSetState(() {});
                                                                                                 _model.shiftdetailsnewonline = await actions.shiftDetailNewpark(
                                                                                                   _model.shiftlistonline?.toList(),

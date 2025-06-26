@@ -219,12 +219,12 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                               ),
                             ),
-                          if (widget!.appSettings23?.settingList
-                                  ?.where((e) => e.title == 'editbillPos')
+                          if (widget!.appSettings23!.settingList
+                                  .where((e) => e.title == 'editbillPos')
                                   .toList()
-                                  ?.firstOrNull
-                                  ?.value ??
-                              true)
+                                  .firstOrNull!
+                                  .value &&
+                              (FFAppState().role == 'admin'))
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 1.5),
@@ -515,12 +515,12 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                               ),
                             ),
-                          if (widget!.appSettings23?.settingList
-                                  ?.where((e) => e.title == 'enableGrn')
+                          if (widget!.appSettings23!.settingList
+                                  .where((e) => e.title == 'enableGrn')
                                   .toList()
-                                  ?.firstOrNull
-                                  ?.value ??
-                              true)
+                                  .firstOrNull!
+                                  .value &&
+                              (FFAppState().role == 'admin'))
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 1.5),
