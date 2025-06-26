@@ -1260,10 +1260,16 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                   FFAppState().port =
                                                       FFAppState().port;
                                                   safeSetState(() {});
-                                                  _model.paymentmode =
-                                                      await queryPaymentModeRecordOnce();
+                                                  await actions
+                                                      .removeFromAllBillList(
+                                                    FFAppState().selBill,
+                                                  );
+                                                  await actions.clearValue();
                                                   if (FFAppState().navigate ==
                                                       'GROCERY') {
+                                                    _model.paymentmode =
+                                                        await queryPaymentModeRecordOnce();
+
                                                     context.goNamed(
                                                       BillingGroceryNewWidget
                                                           .routeName,
