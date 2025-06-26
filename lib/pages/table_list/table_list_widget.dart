@@ -1,6 +1,7 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget.dart';
+import '/components/kot_remark/kot_remark_widget.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/mix_payment_mode/mix_payment_mode_widget.dart';
 import '/components/qty_edit_widget.dart';
@@ -3086,22 +3087,54 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                                   children: [
                                                                                                     Padding(
                                                                                                       padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
-                                                                                                      child: Text(
-                                                                                                        getJsonField(
-                                                                                                          billItem,
-                                                                                                          r'''$.name''',
-                                                                                                        ).toString().maybeHandleOverflow(
-                                                                                                              maxChars: 15,
-                                                                                                              replacement: '…',
-                                                                                                            ),
-                                                                                                        textAlign: TextAlign.start,
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                              color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                              fontSize: 15.0,
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                                                                                                            ),
+                                                                                                      child: InkWell(
+                                                                                                        splashColor: Colors.transparent,
+                                                                                                        focusColor: Colors.transparent,
+                                                                                                        hoverColor: Colors.transparent,
+                                                                                                        highlightColor: Colors.transparent,
+                                                                                                        onTap: () async {
+                                                                                                          await showModalBottomSheet(
+                                                                                                            isScrollControlled: true,
+                                                                                                            backgroundColor: Colors.transparent,
+                                                                                                            enableDrag: false,
+                                                                                                            context: context,
+                                                                                                            builder: (context) {
+                                                                                                              return GestureDetector(
+                                                                                                                onTap: () {
+                                                                                                                  FocusScope.of(context).unfocus();
+                                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                                },
+                                                                                                                child: Padding(
+                                                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                                                  child: Container(
+                                                                                                                    height: 200.0,
+                                                                                                                    child: KotRemarkWidget(
+                                                                                                                      jsonObj: billItem,
+                                                                                                                    ),
+                                                                                                                  ),
+                                                                                                                ),
+                                                                                                              );
+                                                                                                            },
+                                                                                                          ).then((value) => safeSetState(() {}));
+                                                                                                        },
+                                                                                                        child: Text(
+                                                                                                          getJsonField(
+                                                                                                            billItem,
+                                                                                                            r'''$.name''',
+                                                                                                          ).toString().maybeHandleOverflow(
+                                                                                                                maxChars: 15,
+                                                                                                                replacement: '…',
+                                                                                                              ),
+                                                                                                          textAlign: TextAlign.start,
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                fontSize: 15.0,
+                                                                                                                letterSpacing: 0.0,
+                                                                                                                decoration: TextDecoration.underline,
+                                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                                              ),
+                                                                                                        ),
                                                                                                       ),
                                                                                                     ),
                                                                                                     Row(

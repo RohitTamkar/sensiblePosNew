@@ -1,4 +1,5 @@
 export 'check_platform.dart' show checkPlatform;
+export 'update_item_tablekot.dart' show updateItemTablekot;
 export 'remove_list_item_table.dart' show removeListItemTable;
 export 'print_billtable.dart' show printBilltable;
 export 'filter_products_kot.dart' show filterProductsKot;

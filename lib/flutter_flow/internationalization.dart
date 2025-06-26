@@ -29099,6 +29099,65 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': 'พัสดุ',
     },
   },
+  // KotRemark
+  {
+    'pkelusir': {
+      'en': 'Kot Remark',
+      'hi': 'टिप्पणी',
+      'kn': 'ಕಾಮೆಂಟ್ ಮಾಡಿ',
+      'mr': 'टिप्पणी',
+      'ta': 'கருத்து',
+      'th': 'ความคิดเห็น',
+    },
+    'clhb1dzf': {
+      'en': 'Select...',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    'sjmu0teh': {
+      'en': 'Search...',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    'dcc82gj6': {
+      'en': 'SPICeY ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    '4tpvee1g': {
+      'en': 'CHEESY',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    'zlulgumx': {
+      'en': 'EXTRA ONION',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    '6hhdes1m': {
+      'en': 'Add',
+      'hi': 'ऑर्डर अस्वीकार करें',
+      'kn': 'ಆದೇಶವನ್ನು ತಿರಸ್ಕರಿಸಿ',
+      'mr': 'ऑर्डर नाकारा',
+      'ta': 'ஆர்டரை நிராகரி',
+      'th': 'ปฏิเสธคำสั่งซื้อ',
+    },
+  },
   // Miscellaneous
   {
     'c0tsq8sj': {

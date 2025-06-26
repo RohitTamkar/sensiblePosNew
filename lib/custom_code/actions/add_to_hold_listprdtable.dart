@@ -118,6 +118,7 @@ Future<List<dynamic>> addToHoldListprdtable(
       "printKot": false,
       "isDeleted": false,
       "kotTime": getCurrentTimestamp.millisecondsSinceEpoch,
+      "kotRemark": "",
     };
 
     // Add or update item in the bill list
