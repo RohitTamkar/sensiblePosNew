@@ -139,8 +139,8 @@ class _TableWiseReportWidgetState extends State<TableWiseReportWidget> {
                                       .primaryBtnText,
                                   size: 24.0,
                                 ),
-                                onPressed: () {
-                                  print('IconButton pressed ...');
+                                onPressed: () async {
+                                  context.safePop();
                                 },
                               ),
                               Text(

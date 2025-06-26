@@ -3299,7 +3299,7 @@ class FFAppState extends ChangeNotifier {
     _kioskAmt = value;
   }
 
-  String _version = '1.0.44';
+  String _version = '1.0.45';
   String get version => _version;
   set version(String value) {
     _version = value;
