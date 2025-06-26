@@ -110,6 +110,11 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                             ),
                       ),
                     ),
+                    Icon(
+                      Icons.dinner_dining_sharp,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 24.0,
+                    ),
                   ],
                 ),
                 Row(
@@ -131,7 +136,7 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                       )),
                       options: [
                         FFLocalizations.of(context).getText(
-                          'dcc82gj6' /* SPICeY  */,
+                          'dcc82gj6' /* SPICEY  */,
                         ),
                         FFLocalizations.of(context).getText(
                           '4tpvee1g' /* CHEESY */,
@@ -165,7 +170,10 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                           .override(
                             fontFamily:
                                 FlutterFlowTheme.of(context).bodyMediumFamily,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 17.0,
                             letterSpacing: 0.0,
+                            fontWeight: FontWeight.w600,
                             useGoogleFonts: !FlutterFlowTheme.of(context)
                                 .bodyMediumIsCustom,
                           ),
@@ -177,12 +185,12 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                       ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 24.0,
                       ),
-                      fillColor: Color(0x779DB8FF),
+                      fillColor: Color(0xFB9DFAFF),
                       elevation: 2.0,
-                      borderColor: Colors.transparent,
+                      borderColor: FlutterFlowTheme.of(context).primary,
                       borderWidth: 0.0,
                       borderRadius: 8.0,
                       margin:

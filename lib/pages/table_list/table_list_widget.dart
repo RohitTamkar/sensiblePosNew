@@ -3106,11 +3106,8 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                                                 },
                                                                                                                 child: Padding(
                                                                                                                   padding: MediaQuery.viewInsetsOf(context),
-                                                                                                                  child: Container(
-                                                                                                                    height: 200.0,
-                                                                                                                    child: KotRemarkWidget(
-                                                                                                                      jsonObj: billItem,
-                                                                                                                    ),
+                                                                                                                  child: KotRemarkWidget(
+                                                                                                                    jsonObj: billItem,
                                                                                                                   ),
                                                                                                                 ),
                                                                                                               );
