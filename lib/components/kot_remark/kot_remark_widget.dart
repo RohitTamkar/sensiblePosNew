@@ -142,6 +142,24 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                       ],
                       width: 250.0,
                       height: 40.0,
+                      searchHintTextStyle: FlutterFlowTheme.of(context)
+                          .labelMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).labelMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: !FlutterFlowTheme.of(context)
+                                .labelMediumIsCustom,
+                          ),
+                      searchTextStyle: FlutterFlowTheme.of(context)
+                          .bodyMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: !FlutterFlowTheme.of(context)
+                                .bodyMediumIsCustom,
+                          ),
                       textStyle: FlutterFlowTheme.of(context)
                           .bodyMedium
                           .override(
@@ -153,6 +171,9 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                           ),
                       hintText: FFLocalizations.of(context).getText(
                         'clhb1dzf' /* Select... */,
+                      ),
+                      searchHintText: FFLocalizations.of(context).getText(
+                        'sjmu0teh' /* Search... */,
                       ),
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -168,7 +189,7 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                           EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                       hidesUnderline: true,
                       isOverButton: false,
-                      isSearchable: false,
+                      isSearchable: true,
                       isMultiSelect: true,
                       onMultiSelectChanged: (val) =>
                           safeSetState(() => _model.dropDownValue = val),
