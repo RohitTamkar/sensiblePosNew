@@ -89,7 +89,7 @@ Future<List<dynamic>> addToHoldListprdminus(
       if (flag1) {
         for (int j = 0; j < itemList.length; j++) {
           if (itemList[j]["quantity"] > 1) {
-            if (itemList[j]["name"] == data["name"]) {
+            if (itemList[j]["id"] == data["id"]) {
               itemList[j]["quantity"]--;
               itemList[j]["qtystring"] = itemList[j]["quantity"];
               itemList[j]["taxAmt"] = itemList[j]["quantity"] *

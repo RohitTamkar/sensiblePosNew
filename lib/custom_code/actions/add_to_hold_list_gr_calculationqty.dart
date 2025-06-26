@@ -93,7 +93,7 @@ Future<List<dynamic>> addToHoldListGrCalculationqty(
 
     // Iterate over existing items in the bill
     for (int j = 0; j < itemList.length; j++) {
-      if (itemList[j]["name"] == data["name"]) {
+      if (itemList[j]["id"] == data["id"]) {
         itemExists = true;
 
         // Update quantity
