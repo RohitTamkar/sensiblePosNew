@@ -241,7 +241,23 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
       bytes += generator.row([
         PosColumn(
           text: nameLines[i],
-          width: 8,
+          width: 5,
+          styles: PosStyles(
+            height: PosTextSize.size1,
+            width: PosTextSize.size1,
+            bold: true,
+            align: PosAlign.left,
+          ),
+        ),
+        PosColumn(
+          text: product.kotRemark
+                  .toString()
+                  .replaceAll('[', '')
+                  .replaceAll(']', '')
+                  .replaceAll(',', '')
+                  .trim() ??
+              '',
+          width: 4,
           styles: PosStyles(
             height: PosTextSize.size1,
             width: PosTextSize.size1,
@@ -251,7 +267,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
         ),
         PosColumn(
           text: product.quantity.toString(),
-          width: 4,
+          width: 3,
           styles: PosStyles(
             height: PosTextSize.size1,
             width: PosTextSize.size1,

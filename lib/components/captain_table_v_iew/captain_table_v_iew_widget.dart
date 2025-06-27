@@ -75,6 +75,7 @@ class _CaptainTableVIewWidgetState extends State<CaptainTableVIewWidget> {
             mainAxisSpacing: 12.0,
             childAspectRatio: 0.9,
           ),
+          primary: false,
           shrinkWrap: true,
           scrollDirection: Axis.vertical,
           itemCount: tablelist.length,

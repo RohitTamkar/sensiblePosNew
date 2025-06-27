@@ -792,7 +792,7 @@ class _CaptainTableListWidgetState extends State<CaptainTableListWidget> {
                                                         Axis.vertical,
                                                     itemCount: json.length,
                                                     separatorBuilder: (_, __) =>
-                                                        SizedBox(height: 25.0),
+                                                        SizedBox(height: 55.0),
                                                     itemBuilder:
                                                         (context, jsonIndex) {
                                                       final jsonItem =
