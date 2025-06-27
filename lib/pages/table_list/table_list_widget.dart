@@ -3131,6 +3131,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                                                 fontSize: 15.0,
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                decoration: TextDecoration.underline,
                                                                                                                 useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                               ),
                                                                                                         ),
