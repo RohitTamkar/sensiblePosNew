@@ -29109,6 +29109,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': 'கருத்து',
       'th': 'ความคิดเห็น',
     },
+    '6hhdes1m': {
+      'en': 'Add',
+      'hi': 'ऑर्डर अस्वीकार करें',
+      'kn': 'ಆದೇಶವನ್ನು ತಿರಸ್ಕರಿಸಿ',
+      'mr': 'ऑर्डर नाकारा',
+      'ta': 'ஆர்டரை நிராகரி',
+      'th': 'ปฏิเสธคำสั่งซื้อ',
+    },
     'clhb1dzf': {
       'en': 'Select...',
       'hi': '',
@@ -29148,14 +29156,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
       'th': '',
-    },
-    '6hhdes1m': {
-      'en': 'Add',
-      'hi': 'ऑर्डर अस्वीकार करें',
-      'kn': 'ಆದೇಶವನ್ನು ತಿರಸ್ಕರಿಸಿ',
-      'mr': 'ऑर्डर नाकारा',
-      'ta': 'ஆர்டரை நிராகரி',
-      'th': 'ปฏิเสธคำสั่งซื้อ',
     },
   },
   // Miscellaneous

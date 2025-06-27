@@ -115,6 +115,48 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                       color: FlutterFlowTheme.of(context).primaryText,
                       size: 24.0,
                     ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          await actions.updateItemTablekot(
+                            widget!.jsonObj!,
+                            FFAppState().selBill,
+                            _model.dropDownValue!.toList(),
+                          );
+                          Navigator.pop(context);
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          '6hhdes1m' /* Add */,
+                        ),
+                        options: FFButtonOptions(
+                          width: 120.0,
+                          height: 30.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                color: Colors.white,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .titleSmallIsCustom,
+                              ),
+                          elevation: 2.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 Row(
@@ -188,7 +230,7 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                         color: FlutterFlowTheme.of(context).primaryText,
                         size: 24.0,
                       ),
-                      fillColor: Color(0xFB9DFAFF),
+                      fillColor: Color(0xFBCEE7E9),
                       elevation: 2.0,
                       borderColor: FlutterFlowTheme.of(context).primary,
                       borderWidth: 0.0,
@@ -209,50 +251,7 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            await actions.updateItemTablekot(
-                              widget!.jsonObj!,
-                              FFAppState().selBill,
-                              _model.dropDownValue!.toList(),
-                            );
-                            Navigator.pop(context);
-                          },
-                          text: FFLocalizations.of(context).getText(
-                            '6hhdes1m' /* Add */,
-                          ),
-                          options: FFButtonOptions(
-                            width: 120.0,
-                            height: 30.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleSmallFamily,
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: !FlutterFlowTheme.of(context)
-                                      .titleSmallIsCustom,
-                                ),
-                            elevation: 2.0,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                      ),
-                    ],
+                    children: [],
                   ),
                 ),
               ],
