@@ -282,7 +282,7 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                     margin:
                         EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     hidesUnderline: true,
-                    isOverButton: false,
+                    isOverButton: true,
                     isSearchable: true,
                     isMultiSelect: true,
                     onMultiSelectChanged: (val) =>
