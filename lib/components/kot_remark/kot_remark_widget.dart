@@ -178,13 +178,58 @@ class _KotRemarkWidgetState extends State<KotRemarkWidget> {
                       )),
                       options: [
                         FFLocalizations.of(context).getText(
-                          'dcc82gj6' /* SPICEY  */,
+                          'dcc82gj6' /* Spicy  */,
                         ),
                         FFLocalizations.of(context).getText(
-                          '4tpvee1g' /* CHEESY */,
+                          '4tpvee1g' /* Extra Spicy */,
                         ),
                         FFLocalizations.of(context).getText(
-                          'zlulgumx' /* EXTRA ONION */,
+                          'zlulgumx' /* Less Spicy */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'amvzbq3r' /* No Spice */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'bab931xi' /* Medium Spice */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          '708ms00n' /* Cheesy */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          '6k008bxp' /* Extra Cheese */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'rkttagv2' /* Butter */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          '5vu9vejo' /* Extra Butter */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'n04bb81q' /* Garlic */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'tf0kli32' /* Extra Garlic */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'v8ivjhcb' /* Extra Onion */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'vzuesy0p' /* Crispy */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'ktjdibp9' /* Soft */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'oj32in9l' /* Less Oil */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'w9jbhrzz' /* No Oil */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          'mth7cbxn' /* Less Salt */,
+                        ),
+                        FFLocalizations.of(context).getText(
+                          '31ilbjhp' /* No Sugar */,
                         )
                       ],
                       width: 250.0,
