@@ -29099,25 +29099,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': 'พัสดุ',
     },
   },
-  // KotRemark
+  // kotremark
   {
-    'pkelusir': {
-      'en': 'Kot Remark',
-      'hi': 'टिप्पणी',
-      'kn': 'ಕಾಮೆಂಟ್ ಮಾಡಿ',
-      'mr': 'टिप्पणी',
-      'ta': 'கருத்து',
-      'th': 'ความคิดเห็น',
-    },
-    '6hhdes1m': {
-      'en': 'Add',
-      'hi': 'ऑर्डर अस्वीकार करें',
-      'kn': 'ಆದೇಶವನ್ನು ತಿರಸ್ಕರಿಸಿ',
-      'mr': 'ऑर्डर नाकारा',
-      'ta': 'ஆர்டரை நிராகரி',
-      'th': 'ปฏิเสธคำสั่งซื้อ',
-    },
-    'clhb1dzf': {
+    '6au3cfpt': {
       'en': 'Select...',
       'hi': '',
       'kn': '',
@@ -29125,7 +29109,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'sjmu0teh': {
+    'ai1pk02g': {
       'en': 'Search...',
       'hi': '',
       'kn': '',
@@ -29133,7 +29117,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'dcc82gj6': {
+    'v0zmkqql': {
       'en': 'Spicy ',
       'hi': '',
       'kn': '',
@@ -29141,7 +29125,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    '4tpvee1g': {
+    'ro61i71w': {
       'en': 'Extra Spicy',
       'hi': '',
       'kn': '',
@@ -29149,7 +29133,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'zlulgumx': {
+    'snpp58w5': {
       'en': 'Less Spicy',
       'hi': '',
       'kn': '',
@@ -29157,7 +29141,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'amvzbq3r': {
+    'ffwoyo2a': {
       'en': 'No Spice',
       'hi': '',
       'kn': '',
@@ -29165,7 +29149,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'bab931xi': {
+    '2nj2zpjf': {
       'en': 'Medium Spice',
       'hi': '',
       'kn': '',
@@ -29173,7 +29157,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    '708ms00n': {
+    'adpjkb59': {
       'en': 'Cheesy',
       'hi': '',
       'kn': '',
@@ -29181,7 +29165,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    '6k008bxp': {
+    'd76farzo': {
       'en': 'Extra Cheese',
       'hi': '',
       'kn': '',
@@ -29189,7 +29173,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'rkttagv2': {
+    '46589gik': {
       'en': 'Butter',
       'hi': '',
       'kn': '',
@@ -29197,7 +29181,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    '5vu9vejo': {
+    'ac24onun': {
       'en': 'Extra Butter',
       'hi': '',
       'kn': '',
@@ -29205,7 +29189,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'n04bb81q': {
+    'd8f1vb6g': {
       'en': 'Garlic',
       'hi': '',
       'kn': '',
@@ -29213,7 +29197,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'tf0kli32': {
+    'nfhv1d0e': {
       'en': 'Extra Garlic',
       'hi': '',
       'kn': '',
@@ -29221,7 +29205,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'v8ivjhcb': {
+    'ic95jwdv': {
       'en': 'Extra Onion',
       'hi': '',
       'kn': '',
@@ -29229,7 +29213,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'vzuesy0p': {
+    'mlzbjs0w': {
       'en': 'Crispy',
       'hi': '',
       'kn': '',
@@ -29237,7 +29221,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'ktjdibp9': {
+    '9n63m5c0': {
       'en': 'Soft',
       'hi': '',
       'kn': '',
@@ -29245,7 +29229,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'oj32in9l': {
+    'xkhg1sqv': {
       'en': 'Less Oil',
       'hi': '',
       'kn': '',
@@ -29253,7 +29237,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'w9jbhrzz': {
+    'b7tvul4k': {
       'en': 'No Oil',
       'hi': '',
       'kn': '',
@@ -29261,7 +29245,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'mth7cbxn': {
+    '598r49tk': {
       'en': 'Less Salt',
       'hi': '',
       'kn': '',
@@ -29269,7 +29253,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    '31ilbjhp': {
+    'hhbxyyew': {
       'en': 'No Sugar',
       'hi': '',
       'kn': '',
