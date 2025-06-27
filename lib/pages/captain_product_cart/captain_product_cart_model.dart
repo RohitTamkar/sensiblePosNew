@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/kot_remark/kot_remark_widget.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/qty_edit_widget.dart';
 import '/components/table_details/table_details_widget.dart';

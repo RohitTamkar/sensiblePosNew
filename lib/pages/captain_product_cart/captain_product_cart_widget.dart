@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/kot_remark/kot_remark_widget.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/qty_edit_widget.dart';
 import '/components/table_details/table_details_widget.dart';
@@ -3084,22 +3085,54 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Expanded(
-                                                                                    child: Text(
-                                                                                      getJsonField(
-                                                                                        billItem,
-                                                                                        r'''$.name''',
-                                                                                      ).toString().maybeHandleOverflow(
-                                                                                            maxChars: 15,
-                                                                                            replacement: '…',
-                                                                                          ),
-                                                                                      textAlign: TextAlign.start,
-                                                                                      style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                                            fontSize: 13.0,
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
-                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                                          ),
+                                                                                    child: InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        await showModalBottomSheet(
+                                                                                          isScrollControlled: true,
+                                                                                          backgroundColor: Colors.transparent,
+                                                                                          enableDrag: false,
+                                                                                          context: context,
+                                                                                          builder: (context) {
+                                                                                            return GestureDetector(
+                                                                                              onTap: () {
+                                                                                                FocusScope.of(context).unfocus();
+                                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                                              },
+                                                                                              child: Padding(
+                                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                                child: Container(
+                                                                                                  height: 1000.0,
+                                                                                                  child: KotRemarkWidget(
+                                                                                                    jsonObj: billItem,
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            );
+                                                                                          },
+                                                                                        ).then((value) => safeSetState(() {}));
+                                                                                      },
+                                                                                      child: Text(
+                                                                                        getJsonField(
+                                                                                          billItem,
+                                                                                          r'''$.name''',
+                                                                                        ).toString().maybeHandleOverflow(
+                                                                                              maxChars: 15,
+                                                                                              replacement: '…',
+                                                                                            ),
+                                                                                        textAlign: TextAlign.start,
+                                                                                        style: FlutterFlowTheme.of(context).labelSmall.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                              fontSize: 13.0,
+                                                                                              letterSpacing: 0.0,
+                                                                                              fontWeight: FontWeight.w600,
+                                                                                              decoration: TextDecoration.underline,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                                            ),
+                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                   Row(
