@@ -332,7 +332,13 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 15.0, 0.0),
                                     child: Text(
-                                      'End Date:${FFAppState().filterDate}',
+                                      'End Date:${dateTimeFormat(
+                                        "yMMMd",
+                                        DateTime.fromMillisecondsSinceEpoch(
+                                            FFAppState().selectEndDate),
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
+                                      )}',
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
