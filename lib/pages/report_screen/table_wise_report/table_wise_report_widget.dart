@@ -60,7 +60,7 @@ class _TableWiseReportWidgetState extends State<TableWiseReportWidget> {
         return;
       }
       FFAppState().filterDate = getCurrentTimestamp.toString();
-      FFAppState().selectStartDate = functions.getCurrentMonth('first');
+      FFAppState().selectStartDate = functions.getCurrentMonth('start');
       FFAppState().selectEndDate = functions.getCurrentMonth('last');
       FFAppState().update(() {});
       _model.loader = true;

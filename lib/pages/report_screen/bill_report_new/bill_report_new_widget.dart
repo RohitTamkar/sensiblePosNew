@@ -63,9 +63,16 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
         );
         return;
       }
-      FFAppState().filterDate = getCurrentTimestamp.toString();
-      FFAppState().selectStartDate = functions.getCurrentMonth('first');
-      FFAppState().selectEndDate = functions.getCurrentMonth('last');
+      FFAppState().filterDate = dateTimeFormat(
+        "yMMMd",
+        DateTime.fromMillisecondsSinceEpoch(functions.getCurrentMonth('last')),
+        locale: FFLocalizations.of(context).languageCode,
+      );
+      FFAppState().selectStartDate = functions.getCurrentMonth('start');
+      FFAppState().selectEndDate = functions
+          .returnDateNextday(DateTime.fromMillisecondsSinceEpoch(
+              functions.getCurrentMonth('last')))
+          .millisecondsSinceEpoch;
       FFAppState().update(() {});
     });
 
@@ -325,13 +332,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 15.0, 0.0),
                                     child: Text(
-                                      'End Date:${dateTimeFormat(
-                                        "yMMMd",
-                                        DateTime.fromMillisecondsSinceEpoch(
-                                            FFAppState().selectEndDate),
-                                        locale: FFLocalizations.of(context)
-                                            .languageCode,
-                                      )}',
+                                      'End Date:${FFAppState().filterDate}',
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(

@@ -9,9 +9,9 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'instock_report_widget.dart' show InstockReportWidget;
 import 'package:expandable/expandable.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -24,7 +24,6 @@ class InstockReportModel extends FlutterFlowModel<InstockReportWidget> {
 
   // Stores action output result for [Custom Action - checkInternetConnection] action in InstockReport widget.
   bool? internetCheck;
-  DateTime? datePicked;
   // Stores action output result for [Custom Action - scanPrinter] action in FloatingActionButton widget.
   bool? resDevice;
   // Stores action output result for [Custom Action - scanPrinter] action in FloatingActionButton widget.
