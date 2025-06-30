@@ -338,6 +338,12 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                 FFAppState().selectEndDate = functions
                                     .returnDateNextday(_model.datePicked2!)
                                     .millisecondsSinceEpoch;
+                                FFAppState().filterDate = dateTimeFormat(
+                                  "yMMMd",
+                                  _model.datePicked2,
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
+                                );
                                 safeSetState(() {});
                                 Navigator.pop(context);
                               },
@@ -433,8 +439,8 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    Navigator.pop(context);
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     '9dr3jp1g' /* Cancel */,
