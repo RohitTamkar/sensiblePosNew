@@ -69,7 +69,10 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
         locale: FFLocalizations.of(context).languageCode,
       );
       FFAppState().selectStartDate = functions.getCurrentMonth('start');
-      FFAppState().selectEndDate = functions.getCurrentMonth('last');
+      FFAppState().selectEndDate = functions
+          .returnDateNextday(DateTime.fromMillisecondsSinceEpoch(
+              functions.getCurrentMonth('last')))
+          .millisecondsSinceEpoch;
       FFAppState().update(() {});
     });
 
