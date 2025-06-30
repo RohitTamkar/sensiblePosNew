@@ -1926,6 +1926,8 @@ class _CaptainProductCartWidgetState extends State<CaptainProductCartWidget>
                                                                       childAspectRatio:
                                                                           1.0,
                                                                     ),
+                                                                    primary:
+                                                                        false,
                                                                     scrollDirection:
                                                                         Axis.vertical,
                                                                     itemCount:

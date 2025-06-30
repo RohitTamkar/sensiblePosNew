@@ -798,6 +798,7 @@ class _CaptainTableListWidgetState extends State<CaptainTableListWidget> {
                                                       final jsonItem =
                                                           json[jsonIndex];
                                                       return Container(
+                                                        height: 520.0,
                                                         decoration:
                                                             BoxDecoration(
                                                           borderRadius:
@@ -860,25 +861,29 @@ class _CaptainTableListWidgetState extends State<CaptainTableListWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                            CaptainTableVIewWidget(
-                                                              key: Key(
-                                                                  'Keyoyg_${jsonIndex}_of_${json.length}'),
-                                                              parameter3:
-                                                                  getJsonField(
-                                                                jsonItem,
-                                                                r'''$.premise''',
-                                                              ).toString(),
-                                                              taxcollection: widget!
-                                                                  .taxcollection,
-                                                              apsetting:
-                                                                  captainTableListAppSettingsRecord,
-                                                              jsonlist:
-                                                                  getJsonField(
-                                                                jsonItem,
-                                                                r'''$.type''',
+                                                            Expanded(
+                                                              child:
+                                                                  CaptainTableVIewWidget(
+                                                                key: Key(
+                                                                    'Keyoyg_${jsonIndex}_of_${json.length}'),
+                                                                parameter3:
+                                                                    getJsonField(
+                                                                  jsonItem,
+                                                                  r'''$.premise''',
+                                                                ).toString(),
+                                                                taxcollection:
+                                                                    widget!
+                                                                        .taxcollection,
+                                                                apsetting:
+                                                                    captainTableListAppSettingsRecord,
+                                                                jsonlist:
+                                                                    getJsonField(
+                                                                  jsonItem,
+                                                                  r'''$.type''',
+                                                                ),
+                                                                premisedoc:
+                                                                    containerPremisesRecordList,
                                                               ),
-                                                              premisedoc:
-                                                                  containerPremisesRecordList,
                                                             ),
                                                           ].divide(SizedBox(
                                                               height: 10.0)),
