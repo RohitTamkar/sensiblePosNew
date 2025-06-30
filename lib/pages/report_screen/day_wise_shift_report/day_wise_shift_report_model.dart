@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/components/custom_date/custom_date_widget.dart';
-import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -19,8 +18,6 @@ class DayWiseShiftReportModel
     extends FlutterFlowModel<DayWiseShiftReportWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Model for Header component.
-  late HeaderModel headerModel;
   // Stores action output result for [Custom Action - scanPrinter] action in IconButton widget.
   bool? resDevice;
   // Stores action output result for [Custom Action - scanPrinter] action in IconButton widget.
@@ -31,12 +28,8 @@ class DayWiseShiftReportModel
   bool? rd1;
 
   @override
-  void initState(BuildContext context) {
-    headerModel = createModel(context, () => HeaderModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    headerModel.dispose();
-  }
+  void dispose() {}
 }

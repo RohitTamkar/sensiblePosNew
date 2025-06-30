@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/components/custom_date/custom_date_widget.dart';
-import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -64,7 +63,7 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
         queryBuilder: (shiftRecord) => shiftRecord
             .where(
               'startTime',
-              isGreaterThanOrEqualTo: FFAppState().selectStartDate,
+              isGreaterThan: FFAppState().selectStartDate,
             )
             .where(
               'startTime',
@@ -209,7 +208,7 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: MediaQuery.sizeOf(context).height * 0.12,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).primary,
+                            color: FlutterFlowTheme.of(context).info,
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -354,7 +353,7 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondary,
+                                                        .alternate,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             5.0),
@@ -422,18 +421,6 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                   ),
                                 ),
                               ),
-                              Expanded(
-                                flex: 2,
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 0.0, 0.0),
-                                  child: wrapWithModel(
-                                    model: _model.headerModel,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: HeaderWidget(),
-                                  ),
-                                ),
-                              ),
                             ],
                           ),
                         ),
@@ -461,7 +448,7 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                         0.06,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondary,
+                                          .alternate,
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
