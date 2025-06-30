@@ -183,8 +183,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   context: context,
                                   builder: (alertDialogContext) {
                                     return AlertDialog(
-                                      content: Text(
-                                          'Customer Mobile No Already Exists !'),
+                                      content: Text(' Already Exists !'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
