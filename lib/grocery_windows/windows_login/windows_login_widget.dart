@@ -1434,8 +1434,8 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                               FFAppState().dId,
                                                           barcode:
                                                               Barcode.qrCode(),
-                                                          width: 250.0,
-                                                          height: 250.0,
+                                                          width: 200.0,
+                                                          height: 200.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -1446,8 +1446,8 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                               (_context,
                                                                       _error) =>
                                                                   SizedBox(
-                                                            width: 250.0,
-                                                            height: 250.0,
+                                                            width: 200.0,
+                                                            height: 200.0,
                                                           ),
                                                           drawText: false,
                                                         ),
